@@ -40,14 +40,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AAW-YQ-qOr">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-jC-ydJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNITS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-jC-ydJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xhz-sf-sln">
-                                                <rect key="frame" x="138.5" y="-1" width="196.5" height="37"/>
+                                                <rect key="frame" x="152.5" y="0.0" width="182.5" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="l83-OB-ctl"/>
                                                 </constraints>
@@ -55,19 +55,22 @@
                                                     <segment title="MSec"/>
                                                     <segment title="Sec"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="unitsChanged:" destination="noH-fe-75o" eventType="valueChanged" id="i0Q-Nb-xiT"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="phU-f7-gnc">
-                                        <rect key="frame" x="0.0" y="121" width="335" height="36"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="335" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-bD-dMm">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-US-WFE">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QT" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-US-WFE">
                                                 <rect key="frame" x="185" y="0.0" width="150" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="XoI-zx-gB9"/>
@@ -75,12 +78,12 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-UI-YPW">
-                                        <rect key="frame" x="0.0" y="241.5" width="335" height="36"/>
+                                        <rect key="frame" x="0.0" y="199.5" width="335" height="36"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-oG-nbc">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="37"/>
@@ -88,8 +91,11 @@
                                                     <segment title="RR"/>
                                                     <segment title="Rate"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="intervalRateChanged:" destination="noH-fe-75o" eventType="valueChanged" id="pXS-lq-fnl"/>
+                                                </connections>
                                             </segmentedControl>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F35-8C-Ots">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RR or Rate" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F35-8C-Ots">
                                                 <rect key="frame" x="185" y="0.0" width="150" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="0sj-hy-2G7"/>
@@ -97,41 +103,51 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfA-B6-y5R">
+                                        <rect key="frame" x="0.0" y="299" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-FQ-t9s">
-                                        <rect key="frame" x="0.0" y="362.5" width="335" height="36"/>
+                                        <rect key="frame" x="0.0" y="383.5" width="335" height="36"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-MU-SX8">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-MU-SX8">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-Vk-StC">
-                                                <rect key="frame" x="111" y="0.0" width="224" height="37"/>
+                                                <rect key="frame" x="72" y="0.0" width="263" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="HZt-ni-J6p"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="Unknown"/>
                                                     <segment title="Male"/>
                                                     <segment title="Female"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="sexChanged:" destination="noH-fe-75o" eventType="valueChanged" id="XqA-ha-OH1"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-ME-mSx">
                                         <rect key="frame" x="0.0" y="483" width="335" height="36"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGE (y)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mp-G2-MR3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGE (y)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mp-G2-MR3">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d28-y2-f5u">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age in years" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d28-y2-f5u">
                                                 <rect key="frame" x="185" y="0.0" width="150" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="Ktn-r4-8u8"/>
@@ -139,7 +155,10 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                <connections>
+                                                    <action selector="ageChanged:" destination="noH-fe-75o" eventType="editingDidEnd" id="AiU-hj-lG6"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -148,8 +167,16 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DG2-oX-V6l">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Calculate" id="iUa-84-lGK"/>
-                                    <barButtonItem title="Clear" id="hwE-dR-flQ"/>
+                                    <barButtonItem title="Calculate" id="iUa-84-lGK">
+                                        <connections>
+                                            <action selector="calculate:" destination="noH-fe-75o" id="tfS-i4-Rdw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear" id="hwE-dR-flQ">
+                                        <connections>
+                                            <action selector="clear:" destination="noH-fe-75o" id="clN-w8-QLN"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -167,10 +194,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="EP QTc" id="vHI-Sa-LtM"/>
                     <connections>
+                        <outlet property="ageLabel" destination="1mp-G2-MR3" id="pXm-GL-xac"/>
                         <outlet property="ageTextField" destination="d28-y2-f5u" id="3wf-0C-qUf"/>
                         <outlet property="intervalRateSegmentedControl" destination="CUN-oG-nbc" id="SH1-wa-LpZ"/>
                         <outlet property="intervalRateTextField" destination="F35-8C-Ots" id="4wn-bK-p8O"/>
                         <outlet property="qtTextField" destination="PAt-US-WFE" id="4LI-Mk-6Yd"/>
+                        <outlet property="sexLabel" destination="5Cw-MU-SX8" id="28f-lF-od9"/>
                         <outlet property="sexSegmentedControl" destination="VQd-Vk-StC" id="9mT-L3-LOl"/>
                         <outlet property="unitsSegmentedControl" destination="xhz-sf-sln" id="Na8-Hl-ERT"/>
                     </connections>
