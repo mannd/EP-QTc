@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,136 +35,145 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9jk-27-hHr">
-                                <rect key="frame" x="20" y="84" width="335" height="519"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnG-Ib-4EF">
+                                <rect key="frame" x="20" y="84" width="335" height="539"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AAW-YQ-qOr">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9jk-27-hHr">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="523"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNITS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-jC-ydJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AAW-YQ-qOr">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNITS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-jC-ydJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xhz-sf-sln">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="37"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="l83-OB-ctl"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="MSec"/>
+                                                            <segment title="Sec"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="unitsChanged:" destination="noH-fe-75o" eventType="valueChanged" id="i0Q-Nb-xiT"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="phU-f7-gnc">
+                                                <rect key="frame" x="0.0" y="100.5" width="335" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-bD-dMm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QT" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-US-WFE">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="bqB-h3-THH"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-UI-YPW">
+                                                <rect key="frame" x="0.0" y="201" width="335" height="36"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-oG-nbc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="37"/>
+                                                        <segments>
+                                                            <segment title="RR"/>
+                                                            <segment title="Rate"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="intervalRateChanged:" destination="noH-fe-75o" eventType="valueChanged" id="pXS-lq-fnl"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RR or Rate" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F35-8C-Ots">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="N4p-mT-dLM"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfA-B6-y5R">
+                                                <rect key="frame" x="0.0" y="301.5" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xhz-sf-sln">
-                                                <rect key="frame" x="152.5" y="0.0" width="182.5" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="l83-OB-ctl"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="MSec"/>
-                                                    <segment title="Sec"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="unitsChanged:" destination="noH-fe-75o" eventType="valueChanged" id="i0Q-Nb-xiT"/>
-                                                </connections>
-                                            </segmentedControl>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="phU-f7-gnc">
-                                        <rect key="frame" x="0.0" y="99.5" width="335" height="36"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-bD-dMm">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QT" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-US-WFE">
-                                                <rect key="frame" x="185" y="0.0" width="150" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="XoI-zx-gB9"/>
-                                                    <constraint firstAttribute="height" constant="36" id="bqB-h3-THH"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-UI-YPW">
-                                        <rect key="frame" x="0.0" y="199.5" width="335" height="36"/>
-                                        <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-oG-nbc">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="37"/>
-                                                <segments>
-                                                    <segment title="RR"/>
-                                                    <segment title="Rate"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="intervalRateChanged:" destination="noH-fe-75o" eventType="valueChanged" id="pXS-lq-fnl"/>
-                                                </connections>
-                                            </segmentedControl>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RR or Rate" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F35-8C-Ots">
-                                                <rect key="frame" x="185" y="0.0" width="150" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="0sj-hy-2G7"/>
-                                                    <constraint firstAttribute="height" constant="36" id="N4p-mT-dLM"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfA-B6-y5R">
-                                        <rect key="frame" x="0.0" y="299" width="335" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-FQ-t9s">
-                                        <rect key="frame" x="0.0" y="383.5" width="335" height="36"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-MU-SX8">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-Vk-StC">
-                                                <rect key="frame" x="72" y="0.0" width="263" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="HZt-ni-J6p"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="Unknown"/>
-                                                    <segment title="Male"/>
-                                                    <segment title="Female"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="sexChanged:" destination="noH-fe-75o" eventType="valueChanged" id="XqA-ha-OH1"/>
-                                                </connections>
-                                            </segmentedControl>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-ME-mSx">
-                                        <rect key="frame" x="0.0" y="483" width="335" height="36"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGE (y)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mp-G2-MR3">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age in years" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d28-y2-f5u">
-                                                <rect key="frame" x="185" y="0.0" width="150" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="Ktn-r4-8u8"/>
-                                                    <constraint firstAttribute="height" constant="36" id="dUz-zi-J1o"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                                <connections>
-                                                    <action selector="ageChanged:" destination="noH-fe-75o" eventType="editingDidEnd" id="AiU-hj-lG6"/>
-                                                </connections>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-FQ-t9s">
+                                                <rect key="frame" x="0.0" y="386.5" width="335" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-MU-SX8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-Vk-StC">
+                                                        <rect key="frame" x="72" y="0.0" width="263" height="37"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="HZt-ni-J6p"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Unknown"/>
+                                                            <segment title="Male"/>
+                                                            <segment title="Female"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="sexChanged:" destination="noH-fe-75o" eventType="valueChanged" id="XqA-ha-OH1"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-ME-mSx">
+                                                <rect key="frame" x="0.0" y="487" width="335" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGE (y)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mp-G2-MR3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age in years" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d28-y2-f5u">
+                                                        <rect key="frame" x="171.5" y="0.0" width="163.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="dUz-zi-J1o"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                        <connections>
+                                                            <action selector="ageChanged:" destination="noH-fe-75o" eventType="editingDidEnd" id="AiU-hj-lG6"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9jk-27-hHr" secondAttribute="bottom" id="569-4y-akR"/>
+                                    <constraint firstItem="9jk-27-hHr" firstAttribute="leading" secondItem="PnG-Ib-4EF" secondAttribute="leading" id="6MY-lj-vTg"/>
+                                    <constraint firstItem="9jk-27-hHr" firstAttribute="top" secondItem="PnG-Ib-4EF" secondAttribute="top" id="C2Q-0b-Pw1"/>
+                                    <constraint firstItem="9jk-27-hHr" firstAttribute="width" secondItem="PnG-Ib-4EF" secondAttribute="width" id="ex5-Lf-OSu"/>
+                                    <constraint firstAttribute="trailing" secondItem="9jk-27-hHr" secondAttribute="trailing" id="py1-pO-RaN"/>
+                                </constraints>
+                            </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DG2-oX-V6l">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -182,12 +192,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DG2-oX-V6l" firstAttribute="top" secondItem="9jk-27-hHr" secondAttribute="bottom" constant="20" id="25M-Kr-hgD"/>
-                            <constraint firstAttribute="trailing" secondItem="9jk-27-hHr" secondAttribute="trailing" constant="20" id="7Gl-uP-Vgn"/>
-                            <constraint firstItem="9jk-27-hHr" firstAttribute="leading" secondItem="gMy-CJ-DKC" secondAttribute="leading" constant="20" id="8qX-MD-Dei"/>
-                            <constraint firstItem="9jk-27-hHr" firstAttribute="top" secondItem="gMy-CJ-DKC" secondAttribute="top" constant="20" id="Jhb-IA-mNi"/>
+                            <constraint firstItem="DG2-oX-V6l" firstAttribute="top" secondItem="PnG-Ib-4EF" secondAttribute="bottom" id="1FI-U2-yQd"/>
+                            <constraint firstItem="PnG-Ib-4EF" firstAttribute="top" secondItem="gMy-CJ-DKC" secondAttribute="top" constant="20" id="94l-Zb-lIZ"/>
                             <constraint firstItem="DG2-oX-V6l" firstAttribute="leading" secondItem="gMy-CJ-DKC" secondAttribute="leading" id="Mrv-HL-Vfs"/>
+                            <constraint firstItem="PnG-Ib-4EF" firstAttribute="leading" secondItem="gMy-CJ-DKC" secondAttribute="leading" constant="20" id="Nft-vA-c67"/>
+                            <constraint firstItem="PnG-Ib-4EF" firstAttribute="trailing" secondItem="gMy-CJ-DKC" secondAttribute="trailing" constant="-20" id="Ufg-YY-1Nh"/>
                             <constraint firstItem="DG2-oX-V6l" firstAttribute="bottom" secondItem="gMy-CJ-DKC" secondAttribute="bottom" id="kiq-mD-QMd"/>
+                            <constraint firstItem="9jk-27-hHr" firstAttribute="height" secondItem="gMy-CJ-DKC" secondAttribute="height" constant="-80" id="sQc-SW-S1P"/>
                             <constraint firstItem="DG2-oX-V6l" firstAttribute="trailing" secondItem="gMy-CJ-DKC" secondAttribute="trailing" id="zv3-FJ-4cq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gMy-CJ-DKC"/>
@@ -199,6 +210,7 @@
                         <outlet property="intervalRateSegmentedControl" destination="CUN-oG-nbc" id="SH1-wa-LpZ"/>
                         <outlet property="intervalRateTextField" destination="F35-8C-Ots" id="4wn-bK-p8O"/>
                         <outlet property="qtTextField" destination="PAt-US-WFE" id="4LI-Mk-6Yd"/>
+                        <outlet property="scrollView" destination="PnG-Ib-4EF" id="yYy-h7-QT0"/>
                         <outlet property="sexLabel" destination="5Cw-MU-SX8" id="28f-lF-od9"/>
                         <outlet property="sexSegmentedControl" destination="VQd-Vk-StC" id="9mT-L3-LOl"/>
                         <outlet property="unitsSegmentedControl" destination="xhz-sf-sln" id="Na8-Hl-ERT"/>
