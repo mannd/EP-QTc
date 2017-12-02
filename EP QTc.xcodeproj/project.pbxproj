@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
+		8E6E55A31FD30B66004B1B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A21FD30B66004B1B2F /* ViewController.swift */; };
+		8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A41FD30B66004B1B2F /* Main.storyboard */; };
+		8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A71FD30B66004B1B2F /* Assets.xcassets */; };
+		8E6E55AB1FD30B66004B1B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A91FD30B66004B1B2F /* LaunchScreen.storyboard */; };
+		8E6E55B61FD30B66004B1B2F /* EP_QTcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E6E55B21FD30B66004B1B2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E6E55951FD30B66004B1B2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E6E559C1FD30B66004B1B2F;
+			remoteInfo = "EP QTc";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E6E55A21FD30B66004B1B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E6E55A51FD30B66004B1B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E6E55A71FD30B66004B1B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E6E55AA1FD30B66004B1B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E6E55AC1FD30B66004B1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E6E55B11FD30B66004B1B2F /* EP QTcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EP QTcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EP_QTcTests.swift; sourceTree = "<group>"; };
+		8E6E55B71FD30B66004B1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E6E559A1FD30B66004B1B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E6E55AE1FD30B66004B1B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E6E55941FD30B66004B1B2F = {
+			isa = PBXGroup;
+			children = (
+				8E6E559F1FD30B66004B1B2F /* EP QTc */,
+				8E6E55B41FD30B66004B1B2F /* EP QTcTests */,
+				8E6E559E1FD30B66004B1B2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E6E559E1FD30B66004B1B2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E6E559D1FD30B66004B1B2F /* EP QTc.app */,
+				8E6E55B11FD30B66004B1B2F /* EP QTcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E6E559F1FD30B66004B1B2F /* EP QTc */ = {
+			isa = PBXGroup;
+			children = (
+				8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */,
+				8E6E55A21FD30B66004B1B2F /* ViewController.swift */,
+				8E6E55A41FD30B66004B1B2F /* Main.storyboard */,
+				8E6E55A71FD30B66004B1B2F /* Assets.xcassets */,
+				8E6E55A91FD30B66004B1B2F /* LaunchScreen.storyboard */,
+				8E6E55AC1FD30B66004B1B2F /* Info.plist */,
+			);
+			path = "EP QTc";
+			sourceTree = "<group>";
+		};
+		8E6E55B41FD30B66004B1B2F /* EP QTcTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */,
+				8E6E55B71FD30B66004B1B2F /* Info.plist */,
+			);
+			path = "EP QTcTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E6E559C1FD30B66004B1B2F /* EP QTc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E6E55BA1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTc" */;
+			buildPhases = (
+				8E6E55991FD30B66004B1B2F /* Sources */,
+				8E6E559A1FD30B66004B1B2F /* Frameworks */,
+				8E6E559B1FD30B66004B1B2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EP QTc";
+			productName = "EP QTc";
+			productReference = 8E6E559D1FD30B66004B1B2F /* EP QTc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E6E55B01FD30B66004B1B2F /* EP QTcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E6E55BD1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTcTests" */;
+			buildPhases = (
+				8E6E55AD1FD30B66004B1B2F /* Sources */,
+				8E6E55AE1FD30B66004B1B2F /* Frameworks */,
+				8E6E55AF1FD30B66004B1B2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E6E55B31FD30B66004B1B2F /* PBXTargetDependency */,
+			);
+			name = "EP QTcTests";
+			productName = "EP QTcTests";
+			productReference = 8E6E55B11FD30B66004B1B2F /* EP QTcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E6E55951FD30B66004B1B2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "EP Studios";
+				TargetAttributes = {
+					8E6E559C1FD30B66004B1B2F = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					8E6E55B01FD30B66004B1B2F = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8E6E559C1FD30B66004B1B2F;
+					};
+				};
+			};
+			buildConfigurationList = 8E6E55981FD30B66004B1B2F /* Build configuration list for PBXProject "EP QTc" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E6E55941FD30B66004B1B2F;
+			productRefGroup = 8E6E559E1FD30B66004B1B2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E6E559C1FD30B66004B1B2F /* EP QTc */,
+				8E6E55B01FD30B66004B1B2F /* EP QTcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E6E559B1FD30B66004B1B2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6E55AB1FD30B66004B1B2F /* LaunchScreen.storyboard in Resources */,
+				8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */,
+				8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E6E55AF1FD30B66004B1B2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E6E55991FD30B66004B1B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6E55A31FD30B66004B1B2F /* ViewController.swift in Sources */,
+				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E6E55AD1FD30B66004B1B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6E55B61FD30B66004B1B2F /* EP_QTcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E6E55B31FD30B66004B1B2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E6E559C1FD30B66004B1B2F /* EP QTc */;
+			targetProxy = 8E6E55B21FD30B66004B1B2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E6E55A41FD30B66004B1B2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E6E55A51FD30B66004B1B2F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E6E55A91FD30B66004B1B2F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E6E55AA1FD30B66004B1B2F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E6E55B81FD30B66004B1B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E6E55B91FD30B66004B1B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E6E55BB1FD30B66004B1B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W74NPJXYEG;
+				INFOPLIST_FILE = "EP QTc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E6E55BC1FD30B66004B1B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W74NPJXYEG;
+				INFOPLIST_FILE = "EP QTc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8E6E55BE1FD30B66004B1B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W74NPJXYEG;
+				INFOPLIST_FILE = "EP QTcTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EP QTc.app/EP QTc";
+			};
+			name = Debug;
+		};
+		8E6E55BF1FD30B66004B1B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W74NPJXYEG;
+				INFOPLIST_FILE = "EP QTcTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EP QTc.app/EP QTc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E6E55981FD30B66004B1B2F /* Build configuration list for PBXProject "EP QTc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E6E55B81FD30B66004B1B2F /* Debug */,
+				8E6E55B91FD30B66004B1B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E6E55BA1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E6E55BB1FD30B66004B1B2F /* Debug */,
+				8E6E55BC1FD30B66004B1B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E6E55BD1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E6E55BE1FD30B66004B1B2F /* Debug */,
+				8E6E55BF1FD30B66004B1B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E6E55951FD30B66004B1B2F /* Project object */;
+}
