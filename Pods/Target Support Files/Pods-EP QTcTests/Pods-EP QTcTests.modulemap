@@ -1,0 +1,6 @@
+framework module Pods_EP_QTcTests {
+  umbrella header "Pods-EP QTcTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

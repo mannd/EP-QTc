@@ -1,0 +1,16 @@
+PODS:
+  - QTc (2.1.0)
+
+DEPENDENCIES:
+  - QTc (from `../QTc`)
+
+EXTERNAL SOURCES:
+  QTc:
+    :path: ../QTc
+
+SPEC CHECKSUMS:
+  QTc: 05cdb74c5aa2906eb7ba514013ab488f320e823f
+
+PODFILE CHECKSUM: 7cef4f99a8e8a495fb492bf29ff52c735821fd8f
+
+COCOAPODS: 1.3.1

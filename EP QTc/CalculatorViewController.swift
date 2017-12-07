@@ -119,6 +119,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func stringToDouble(string: String?) -> Double? {
+        guard let string = string else { return nil }
+        let double = Double(string)
+        return double
+    }
+    
     private func clearFields() {
         qtTextField.text = ""
         intervalRateTextField.text = ""

@@ -1,0 +1,6 @@
+framework module Pods_EP_QTc {
+  umbrella header "Pods-EP QTc-umbrella.h"
+
+  export *
+  module * { export * }
+}

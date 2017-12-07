@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05B5355F288C971005B121CDA9DE1A92 /* QTc.h in Headers */ = {isa = PBXBuildFile; fileRef = 543F90F0CBD1DED6018083768BEAC413 /* QTc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EE5190AA93026EC85C887906292A52C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		4D4AB045D64DA3F735DDF241F0EE8BC5 /* QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F326282C60FEE186CD1E886C64C330 /* QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D693CE96B773C50ACABC4067336A36F /* QTc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB02D3F1FDAACEC8C442C05728D7CA9 /* QTc.swift */; };
+		4DE7FEC72CC5359BADC8B25A07EB0E45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		642BCD01E405CAA4024D6A2E6688F154 /* QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 551475D0994062029D881FB34D49F2C8 /* QTc-dummy.m */; };
+		719DF600D11056AAC45035789A65FA19 /* Formulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976160AC9D69572688B00B724D22D3E4 /* Formulas.swift */; };
+		7F56625E7300D6CEBC5C8F686077BAA1 /* Pods-EP QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D64B54D07FAC186A591B74DE35436DB8 /* Pods-EP QTc-dummy.m */; };
+		822B08373FEF46A01A871BE76BED90B5 /* Pods-EP QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DD60E0EB8B832927C0B3BF2EEC140FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B102532C668305382D56999F9B7B7A1C /* Pods-EP QTcTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B566A74E820704E981410574CFB58A1D /* Pods-EP QTcTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCB5B83ADB5B179217D16F37345C4E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C705861F442088E023EE1C7898D74F4C;
+			remoteInfo = QTc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0047C72FE53C5DEA68E77FDAD02B1625 /* Pods-EP QTcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.release.xcconfig"; sourceTree = "<group>"; };
+		01F326282C60FEE186CD1E886C64C330 /* QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-umbrella.h"; sourceTree = "<group>"; };
+		1AEFE44BB720702585D5CEF0A4B8FD32 /* QTc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-prefix.pch"; sourceTree = "<group>"; };
+		1FB02D3F1FDAACEC8C442C05728D7CA9 /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
+		26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
+		275F9E852A4BBF4B8FD5C7B79D96A3B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EFA0FA9DECA1AE0D2C39CB10D638649 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
+		43364854E11C65E3867529BCBBEB07C1 /* Pods-EP QTcTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTcTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		43AA69E8B5F55366796A60A893EA4B07 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		543F90F0CBD1DED6018083768BEAC413 /* QTc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QTc.h; path = CommonSource/QTc.h; sourceTree = "<group>"; };
+		551475D0994062029D881FB34D49F2C8 /* QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QTc-dummy.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		67A43E942A3EC94D14AA8EF1A3C73BC5 /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = QTc.modulemap; sourceTree = "<group>"; };
+		787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTc-umbrella.h"; sourceTree = "<group>"; };
+		93609645C2AB59F257CFE5F007A03405 /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		958A8C673A740CE2BE8B1B534A1BF9F6 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		976160AC9D69572688B00B724D22D3E4 /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
+		998FA71D2D8B658DE8DC4C01A28FE973 /* Pods-EP QTc-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTc-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A27CDFA20D40F98037FD35E480C07F70 /* Pods-EP QTc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-frameworks.sh"; sourceTree = "<group>"; };
+		AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTcTests-umbrella.h"; sourceTree = "<group>"; };
+		ABAB9532AA06A1F0AACB48FD69C97458 /* Pods-EP QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EP QTc.modulemap"; sourceTree = "<group>"; };
+		ABE2E55A1B0BE5C152223A19AA58B911 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B100F533170679BCBA0CA660262B2B2C /* Pods-EP QTcTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-resources.sh"; sourceTree = "<group>"; };
+		C095B1ACE7ECD16E0E6539CCF566DCDD /* Pods-EP QTc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-resources.sh"; sourceTree = "<group>"; };
+		C2EE8966E7E804539F244B783D3BF754 /* Pods-EP QTcTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EP QTcTests.modulemap"; sourceTree = "<group>"; };
+		C31FA9B6E9903D2F59789A9FAADA362E /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5844BF3A4F9F8E51FFED8A2D82D49C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D64B54D07FAC186A591B74DE35436DB8 /* Pods-EP QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTc-dummy.m"; sourceTree = "<group>"; };
+		DA4129199DE0656BF102DE9846DFBDFD /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
+		E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTcTests-dummy.m"; sourceTree = "<group>"; };
+		EDED30C2211B5509E28571FAE9D42BB7 /* Pods-EP QTcTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-frameworks.sh"; sourceTree = "<group>"; };
+		EE90A199FD116F15031FFA788869F690 /* Pods-EP QTc-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTc-acknowledgements.plist"; sourceTree = "<group>"; };
+		F4067D278A98AA729E39C03B90296573 /* Pods-EP QTcTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTcTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A2554D48525325E42D828475ECBE47B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE5190AA93026EC85C887906292A52C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DFA2514C6A307D5A3CF8B79749BEDF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DD60E0EB8B832927C0B3BF2EEC140FB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D5E40551664794BAD071CB2271CCB2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DE7FEC72CC5359BADC8B25A07EB0E45 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2006D2A77520666467D0D50FB76C5A4C /* Pods-EP QTc */ = {
+			isa = PBXGroup;
+			children = (
+				ABE2E55A1B0BE5C152223A19AA58B911 /* Info.plist */,
+				ABAB9532AA06A1F0AACB48FD69C97458 /* Pods-EP QTc.modulemap */,
+				998FA71D2D8B658DE8DC4C01A28FE973 /* Pods-EP QTc-acknowledgements.markdown */,
+				EE90A199FD116F15031FFA788869F690 /* Pods-EP QTc-acknowledgements.plist */,
+				D64B54D07FAC186A591B74DE35436DB8 /* Pods-EP QTc-dummy.m */,
+				A27CDFA20D40F98037FD35E480C07F70 /* Pods-EP QTc-frameworks.sh */,
+				C095B1ACE7ECD16E0E6539CCF566DCDD /* Pods-EP QTc-resources.sh */,
+				787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */,
+				26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */,
+				DA4129199DE0656BF102DE9846DFBDFD /* Pods-EP QTc.release.xcconfig */,
+			);
+			name = "Pods-EP QTc";
+			path = "Target Support Files/Pods-EP QTc";
+			sourceTree = "<group>";
+		};
+		49F7ABFAC7D9C32EF9ED1C36EE778083 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				275F9E852A4BBF4B8FD5C7B79D96A3B4 /* Info.plist */,
+				67A43E942A3EC94D14AA8EF1A3C73BC5 /* QTc.modulemap */,
+				93609645C2AB59F257CFE5F007A03405 /* QTc.xcconfig */,
+				551475D0994062029D881FB34D49F2C8 /* QTc-dummy.m */,
+				1AEFE44BB720702585D5CEF0A4B8FD32 /* QTc-prefix.pch */,
+				01F326282C60FEE186CD1E886C64C330 /* QTc-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../EP QTc/Pods/Target Support Files/QTc";
+			sourceTree = "<group>";
+		};
+		66046339A0C76A5FF40AB9E57B2D0B99 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2006D2A77520666467D0D50FB76C5A4C /* Pods-EP QTc */,
+				9CBB8299F2C07C3D1E31E2436BB3CB99 /* Pods-EP QTcTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				EEA8E0C7E403E86F3A1365561D7FF21C /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9EC636A9141002E982D7703A1AF2DC21 /* Products */,
+				66046339A0C76A5FF40AB9E57B2D0B99 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9CBB8299F2C07C3D1E31E2436BB3CB99 /* Pods-EP QTcTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB5844BF3A4F9F8E51FFED8A2D82D49C /* Info.plist */,
+				C2EE8966E7E804539F244B783D3BF754 /* Pods-EP QTcTests.modulemap */,
+				F4067D278A98AA729E39C03B90296573 /* Pods-EP QTcTests-acknowledgements.markdown */,
+				43364854E11C65E3867529BCBBEB07C1 /* Pods-EP QTcTests-acknowledgements.plist */,
+				E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */,
+				EDED30C2211B5509E28571FAE9D42BB7 /* Pods-EP QTcTests-frameworks.sh */,
+				B100F533170679BCBA0CA660262B2B2C /* Pods-EP QTcTests-resources.sh */,
+				AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */,
+				2EFA0FA9DECA1AE0D2C39CB10D638649 /* Pods-EP QTcTests.debug.xcconfig */,
+				0047C72FE53C5DEA68E77FDAD02B1625 /* Pods-EP QTcTests.release.xcconfig */,
+			);
+			name = "Pods-EP QTcTests";
+			path = "Target Support Files/Pods-EP QTcTests";
+			sourceTree = "<group>";
+		};
+		9EC636A9141002E982D7703A1AF2DC21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43AA69E8B5F55366796A60A893EA4B07 /* Pods_EP_QTc.framework */,
+				958A8C673A740CE2BE8B1B534A1BF9F6 /* Pods_EP_QTcTests.framework */,
+				C31FA9B6E9903D2F59789A9FAADA362E /* QTc.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E0C0F58027411150ADAE8A80607F443B /* QTc */ = {
+			isa = PBXGroup;
+			children = (
+				976160AC9D69572688B00B724D22D3E4 /* Formulas.swift */,
+				543F90F0CBD1DED6018083768BEAC413 /* QTc.h */,
+				1FB02D3F1FDAACEC8C442C05728D7CA9 /* QTc.swift */,
+				49F7ABFAC7D9C32EF9ED1C36EE778083 /* Support Files */,
+			);
+			name = QTc;
+			path = ../../QTc;
+			sourceTree = "<group>";
+		};
+		EEA8E0C7E403E86F3A1365561D7FF21C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0F58027411150ADAE8A80607F443B /* QTc */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3E95C9131EF8B6A9EA28F4F1E09D7D24 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B102532C668305382D56999F9B7B7A1C /* Pods-EP QTcTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F32C19BD32AAF1910FE86CAE1EE43F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				822B08373FEF46A01A871BE76BED90B5 /* Pods-EP QTc-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A85861BC87D8A38E6100CEBC8A1CCF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D4AB045D64DA3F735DDF241F0EE8BC5 /* QTc-umbrella.h in Headers */,
+				05B5355F288C971005B121CDA9DE1A92 /* QTc.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		80527E1A7E30C8EB461D619D604360D3 /* Pods-EP QTcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61538403E6780A3878A52F7FC364D60C /* Build configuration list for PBXNativeTarget "Pods-EP QTcTests" */;
+			buildPhases = (
+				1C98D7727DC40750696A9DB9D69050A3 /* Sources */,
+				4DFA2514C6A307D5A3CF8B79749BEDF7 /* Frameworks */,
+				3E95C9131EF8B6A9EA28F4F1E09D7D24 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-EP QTcTests";
+			productName = "Pods-EP QTcTests";
+			productReference = 958A8C673A740CE2BE8B1B534A1BF9F6 /* Pods_EP_QTcTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C705861F442088E023EE1C7898D74F4C /* QTc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AF1877505CE678EEFCD6E9FCFC41C80 /* Build configuration list for PBXNativeTarget "QTc" */;
+			buildPhases = (
+				8475FC8433AFBAEB7D17E9C824FC1F80 /* Sources */,
+				5D5E40551664794BAD071CB2271CCB2B /* Frameworks */,
+				51A85861BC87D8A38E6100CEBC8A1CCF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QTc;
+			productName = QTc;
+			productReference = C31FA9B6E9903D2F59789A9FAADA362E /* QTc.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED5EECC21A01B75CE65D9AA9B180CFB3 /* Pods-EP QTc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F97FEA7123F0F5A265E2111E3EDF04 /* Build configuration list for PBXNativeTarget "Pods-EP QTc" */;
+			buildPhases = (
+				CF1A30E60D8AE1BFB4CD8FBD397D3904 /* Sources */,
+				3A2554D48525325E42D828475ECBE47B /* Frameworks */,
+				3F32C19BD32AAF1910FE86CAE1EE43F9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05683782F13A4D8FBA777D10E9653B47 /* PBXTargetDependency */,
+			);
+			name = "Pods-EP QTc";
+			productName = "Pods-EP QTc";
+			productReference = 43AA69E8B5F55366796A60A893EA4B07 /* Pods_EP_QTc.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0910;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 9EC636A9141002E982D7703A1AF2DC21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED5EECC21A01B75CE65D9AA9B180CFB3 /* Pods-EP QTc */,
+				80527E1A7E30C8EB461D619D604360D3 /* Pods-EP QTcTests */,
+				C705861F442088E023EE1C7898D74F4C /* QTc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C98D7727DC40750696A9DB9D69050A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B566A74E820704E981410574CFB58A1D /* Pods-EP QTcTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8475FC8433AFBAEB7D17E9C824FC1F80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719DF600D11056AAC45035789A65FA19 /* Formulas.swift in Sources */,
+				642BCD01E405CAA4024D6A2E6688F154 /* QTc-dummy.m in Sources */,
+				4D693CE96B773C50ACABC4067336A36F /* QTc.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF1A30E60D8AE1BFB4CD8FBD397D3904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F56625E7300D6CEBC5C8F686077BAA1 /* Pods-EP QTc-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05683782F13A4D8FBA777D10E9653B47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QTc;
+			target = C705861F442088E023EE1C7898D74F4C /* QTc */;
+			targetProxy = DCB5B83ADB5B179217D16F37345C4E6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D23278938ADF334174C5BF2A4B6B1B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		4B4DE383278549C4CA7674E2D7670F58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93609645C2AB59F257CFE5F007A03405 /* QTc.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/QTc/QTc-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QTc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QTc/QTc.modulemap";
+				PRODUCT_NAME = QTc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		76A7AAB41F1EA11F387197C70B965770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93609645C2AB59F257CFE5F007A03405 /* QTc.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/QTc/QTc-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QTc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QTc/QTc.modulemap";
+				PRODUCT_NAME = QTc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		97DF63631B96843575D6A78AA2B8DC66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0047C72FE53C5DEA68E77FDAD02B1625 /* Pods-EP QTcTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EP QTcTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EP_QTcTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		995C3A53DEAA96B47E756185345E180D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E245A15BEF251DA80F25A905EBEA6B97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFA0FA9DECA1AE0D2C39CB10D638649 /* Pods-EP QTcTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EP QTcTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EP_QTcTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EA48BC17D3AAA520F3F8387C1F805D61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EP QTc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EP QTc/Pods-EP QTc.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EP_QTc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB2FA1B0DAD946B43BB40213ABCE591C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA4129199DE0656BF102DE9846DFBDFD /* Pods-EP QTc.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EP QTc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EP QTc/Pods-EP QTc.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EP_QTc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AF1877505CE678EEFCD6E9FCFC41C80 /* Build configuration list for PBXNativeTarget "QTc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B4DE383278549C4CA7674E2D7670F58 /* Debug */,
+				76A7AAB41F1EA11F387197C70B965770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				995C3A53DEAA96B47E756185345E180D /* Debug */,
+				1D23278938ADF334174C5BF2A4B6B1B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F97FEA7123F0F5A265E2111E3EDF04 /* Build configuration list for PBXNativeTarget "Pods-EP QTc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA48BC17D3AAA520F3F8387C1F805D61 /* Debug */,
+				FB2FA1B0DAD946B43BB40213ABCE591C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61538403E6780A3878A52F7FC364D60C /* Build configuration list for PBXNativeTarget "Pods-EP QTcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E245A15BEF251DA80F25A905EBEA6B97 /* Debug */,
+				97DF63631B96843575D6A78AA2B8DC66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

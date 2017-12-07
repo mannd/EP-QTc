@@ -26,11 +26,12 @@ class EP_QTcTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testStringToDouble() {
+        let vc = CalculatorViewController()
+        XCTAssertNil(vc.stringToDouble(string: nil))
+        XCTAssert(vc.stringToDouble(string: "0") == 0.0)
+        XCTAssertEqual(vc.stringToDouble(string: "123.45")!, 123.45, accuracy: 0.001)
+        XCTAssertNil(vc.stringToDouble(string: "ABCCD"))
     }
     
 }

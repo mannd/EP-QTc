@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CB2DDD2616C9562F37ABB47 /* Pods_EP_QTcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2EACE7DDA29E87FEFD52 /* Pods_EP_QTcTests.framework */; };
 		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
 		8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A41FD30B66004B1B2F /* Main.storyboard */; };
 		8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A71FD30B66004B1B2F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 		8E6E55B61FD30B66004B1B2F /* EP_QTcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */; };
 		8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */; };
 		8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */; };
+		D6512A8429284F9B56472953 /* Pods_EP_QTc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFB314B3243AD0F00E814FA /* Pods_EP_QTc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14D88AEA7446D00FCD024D60 /* Pods-EP QTcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTcTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F1A2EACE7DDA29E87FEFD52 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFB314B3243AD0F00E814FA /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E6E55A51FD30B66004B1B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		8E6E55B71FD30B66004B1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtMeasurement.swift; sourceTree = "<group>"; };
+		B4FD7E35C75C62C4BC7A8109 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
+		C0F3BA5FA95FB14EAB6F0104 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTcTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EED7F4CDC8CBCC6A88645A4C /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.release.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6512A8429284F9B56472953 /* Pods_EP_QTc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CB2DDD2616C9562F37ABB47 /* Pods_EP_QTcTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C884E0CA2294839591E53EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BFB314B3243AD0F00E814FA /* Pods_EP_QTc.framework */,
+				4F1A2EACE7DDA29E87FEFD52 /* Pods_EP_QTcTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8E6E55941FD30B66004B1B2F = {
 			isa = PBXGroup;
 			children = (
 				8E6E559F1FD30B66004B1B2F /* EP QTc */,
 				8E6E55B41FD30B66004B1B2F /* EP QTcTests */,
 				8E6E559E1FD30B66004B1B2F /* Products */,
+				A4CB48FA253EB566D8208846 /* Pods */,
+				0C884E0CA2294839591E53EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +120,17 @@
 			path = "EP QTcTests";
 			sourceTree = "<group>";
 		};
+		A4CB48FA253EB566D8208846 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4FD7E35C75C62C4BC7A8109 /* Pods-EP QTc.debug.xcconfig */,
+				EED7F4CDC8CBCC6A88645A4C /* Pods-EP QTc.release.xcconfig */,
+				C0F3BA5FA95FB14EAB6F0104 /* Pods-EP QTcTests.debug.xcconfig */,
+				14D88AEA7446D00FCD024D60 /* Pods-EP QTcTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E6E55BA1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTc" */;
 			buildPhases = (
+				6DD53B036390C19285BC01C3 /* [CP] Check Pods Manifest.lock */,
 				8E6E55991FD30B66004B1B2F /* Sources */,
 				8E6E559A1FD30B66004B1B2F /* Frameworks */,
 				8E6E559B1FD30B66004B1B2F /* Resources */,
+				AB4061BF1192D5F95A6FE542 /* [CP] Embed Pods Frameworks */,
+				61915E97722716A4AD110CC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E6E55BD1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTcTests" */;
 			buildPhases = (
+				DA61641D6E87F460086BB018 /* [CP] Check Pods Manifest.lock */,
 				8E6E55AD1FD30B66004B1B2F /* Sources */,
 				8E6E55AE1FD30B66004B1B2F /* Frameworks */,
 				8E6E55AF1FD30B66004B1B2F /* Resources */,
+				5642397A4FF0D0C29BB91408 /* [CP] Embed Pods Frameworks */,
+				90DA8A08DB149B3058C066A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +234,108 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5642397A4FF0D0C29BB91408 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61915E97722716A4AD110CC7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DD53B036390C19285BC01C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EP QTc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90DA8A08DB149B3058C066A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB4061BF1192D5F95A6FE542 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/QTc/QTc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QTc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA61641D6E87F460086BB018 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EP QTcTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E6E55991FD30B66004B1B2F /* Sources */ = {
@@ -355,6 +495,7 @@
 		};
 		8E6E55BB1FD30B66004B1B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4FD7E35C75C62C4BC7A8109 /* Pods-EP QTc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,6 +511,7 @@
 		};
 		8E6E55BC1FD30B66004B1B2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EED7F4CDC8CBCC6A88645A4C /* Pods-EP QTc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -385,6 +527,7 @@
 		};
 		8E6E55BE1FD30B66004B1B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F3BA5FA95FB14EAB6F0104 /* Pods-EP QTcTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -402,6 +545,7 @@
 		};
 		8E6E55BF1FD30B66004B1B2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14D88AEA7446D00FCD024D60 /* Pods-EP QTcTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

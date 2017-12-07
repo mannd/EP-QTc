@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import QTc
 
 public enum Units {
     case msec
