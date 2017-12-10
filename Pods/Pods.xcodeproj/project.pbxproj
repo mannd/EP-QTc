@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,7 +69,7 @@
 		006C3A37000176926A76417B454DBB3F /* ValidationRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRule.swift; path = Validator/Sources/ValidationRule.swift; sourceTree = "<group>"; };
 		08DED745921A9B354E33CDB0018F8344 /* QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QTc-dummy.m"; sourceTree = "<group>"; };
 		0A5081447564F97ED483100668C79B78 /* ValidationRuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleURL.swift; path = Validator/Sources/Rules/ValidationRuleURL.swift; sourceTree = "<group>"; };
-		14E43FE6942AE3D715C2DFF389EF902E /* Validator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Validator.modulemap; sourceTree = "<group>"; };
+		14E43FE6942AE3D715C2DFF389EF902E /* Validator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Validator.modulemap; sourceTree = "<group>"; };
 		1B205E377F43BEEAB725165CA46B3876 /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
 		24A12E2FE61B3FA7532A10433D711F8C /* ContainsNumberValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainsNumberValidationPattern.swift; path = Validator/Sources/ContainsNumberValidationPattern.swift; sourceTree = "<group>"; };
 		26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,23 +84,23 @@
 		5271628B966CB9235134624D893D69C1 /* Validator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-umbrella.h"; sourceTree = "<group>"; };
 		5FF256B43BFA230461166D12B5B4FA17 /* ValidationRulePaymentCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRulePaymentCard.swift; path = Validator/Sources/Rules/ValidationRulePaymentCard.swift; sourceTree = "<group>"; };
 		6286CA345C0D30E8058B20D1ACA281F7 /* UISlider+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UISlider+Validator.swift"; sourceTree = "<group>"; };
-		62E47ACC395B43C8E567A5EECA093E64 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTcTests.framework; path = "Pods-EP QTcTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62E47ACC395B43C8E567A5EECA093E64 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63041110837121EB8CE6CE8981C23C4C /* ValidatableInterfaceElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidatableInterfaceElement.swift; path = "Validator/Sources/UIKit+Validator/ValidatableInterfaceElement.swift"; sourceTree = "<group>"; };
 		65E5AEA37842EA7133E61FADC76C05F3 /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Validator/Sources/Validatable.swift; sourceTree = "<group>"; };
-		67782D2F46B7707ED44E6D5997B7ADC3 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTc.framework; path = "Pods-EP QTc.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7412B975DB9F8628B45518469E9CA67F /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QTc.framework; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67782D2F46B7707ED44E6D5997B7ADC3 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7412B975DB9F8628B45518469E9CA67F /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTc-umbrella.h"; sourceTree = "<group>"; };
-		7E9468266F461F326F56DF0F83E13C3C /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Validator.framework; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9468266F461F326F56DF0F83E13C3C /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		822EAF8C7A09911B53E5AF0B5D45E35C /* Validator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-prefix.pch"; sourceTree = "<group>"; };
 		8978A12D3D900D537FA47663D6BDAD5C /* Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Sources/Validator.swift; sourceTree = "<group>"; };
 		925B66AED37598F4A2A09EF15F3EAB3F /* ValidationRuleRequired.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleRequired.swift; path = Validator/Sources/Rules/ValidationRuleRequired.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		998FA71D2D8B658DE8DC4C01A28FE973 /* Pods-EP QTc-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTc-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9A4CA17B548EB8575DF4051D1075E87F /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
 		A27CDFA20D40F98037FD35E480C07F70 /* Pods-EP QTc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-frameworks.sh"; sourceTree = "<group>"; };
 		A5D05D429089B6491FF8511FBBEE6672 /* ValidationRuleContains.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleContains.swift; path = Validator/Sources/Rules/ValidationRuleContains.swift; sourceTree = "<group>"; };
 		AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTcTests-umbrella.h"; sourceTree = "<group>"; };
-		ABAB9532AA06A1F0AACB48FD69C97458 /* Pods-EP QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EP QTc.modulemap"; sourceTree = "<group>"; };
+		ABAB9532AA06A1F0AACB48FD69C97458 /* Pods-EP QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EP QTc.modulemap"; sourceTree = "<group>"; };
 		ABE2E55A1B0BE5C152223A19AA58B911 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACFB8DD6CAC0D89F83287944ADC87E58 /* Validator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Validator-dummy.m"; sourceTree = "<group>"; };
 		B100F533170679BCBA0CA660262B2B2C /* Pods-EP QTcTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-resources.sh"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		B80D0A855D31FFF5A724BF5D893B3F04 /* Validator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validator.xcconfig; sourceTree = "<group>"; };
 		C095B1ACE7ECD16E0E6539CCF566DCDD /* Pods-EP QTc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-resources.sh"; sourceTree = "<group>"; };
 		C16D1B6E9D76A8B7C40CC9E1BF0EA957 /* ValidationRulePattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRulePattern.swift; path = Validator/Sources/Rules/ValidationRulePattern.swift; sourceTree = "<group>"; };
-		C2EE8966E7E804539F244B783D3BF754 /* Pods-EP QTcTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EP QTcTests.modulemap"; sourceTree = "<group>"; };
+		C2EE8966E7E804539F244B783D3BF754 /* Pods-EP QTcTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EP QTcTests.modulemap"; sourceTree = "<group>"; };
 		C7772334EACD4B63D0C60EEDA48A04DB /* ValidationResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationResult.swift; path = Validator/Sources/ValidationResult.swift; sourceTree = "<group>"; };
 		CAB414D274B278699D87D1E9850A6EE7 /* UITextField+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextField+Validator.swift"; sourceTree = "<group>"; };
 		CB5844BF3A4F9F8E51FFED8A2D82D49C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTcTests-dummy.m"; sourceTree = "<group>"; };
 		EDED30C2211B5509E28571FAE9D42BB7 /* Pods-EP QTcTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-frameworks.sh"; sourceTree = "<group>"; };
 		EE90A199FD116F15031FFA788869F690 /* Pods-EP QTc-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTc-acknowledgements.plist"; sourceTree = "<group>"; };
-		F1F282198957962B899A1B5D9BA462A5 /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = QTc.modulemap; sourceTree = "<group>"; };
+		F1F282198957962B899A1B5D9BA462A5 /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = QTc.modulemap; sourceTree = "<group>"; };
 		F2E43A40FF6C79E239A5021961BB9EAA /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
 		F306369C828D1E971ED04DAAA19B84B3 /* ValidationRuleCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleCondition.swift; path = Validator/Sources/Rules/ValidationRuleCondition.swift; sourceTree = "<group>"; };
 		F4067D278A98AA729E39C03B90296573 /* Pods-EP QTcTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTcTests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -222,7 +222,6 @@
 				8978A12D3D900D537FA47663D6BDAD5C /* Validator.swift */,
 				9C8D2B16A7766DF1A55D94C9607454B3 /* Support Files */,
 			);
-			name = Validator;
 			path = Validator;
 			sourceTree = "<group>";
 		};
@@ -328,7 +327,6 @@
 				1B205E377F43BEEAB725165CA46B3876 /* QTc.swift */,
 				7F085B1D8BCF00BB19836B9056EE8843 /* Support Files */,
 			);
-			name = QTc;
 			path = QTc;
 			sourceTree = "<group>";
 		};
@@ -448,7 +446,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -630,6 +628,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

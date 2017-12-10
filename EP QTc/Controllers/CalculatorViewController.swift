@@ -11,8 +11,7 @@ import Validator
 
 // Best way to dismiss keyboard on tap on view.
 // See https://stackoverflow.com/questions/32281651/how-to-dismiss-keyboard-when-touching-anywhere-outside-uitextfield-in-swift
-extension UIViewController
-{
+extension UIViewController {
     func hideKeyboard()
     {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
@@ -29,23 +28,43 @@ extension UIViewController
 }
 
 
+
 class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     // All the controls on the calculator form
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var unitsSegmentedControl: UISegmentedControl!
-    @IBOutlet var qtTextField: UITextField!
+    @IBOutlet var qtTextField: CalculatorTextField!
     @IBOutlet var intervalRateSegmentedControl: UISegmentedControl!
-    @IBOutlet var intervalRateTextField: UITextField!
+    @IBOutlet var intervalRateTextField: CalculatorTextField!
     @IBOutlet var sexLabel: UILabel!
     @IBOutlet var sexSegmentedControl: UISegmentedControl!
     @IBOutlet var ageLabel: UILabel!
-    @IBOutlet var ageTextField: UITextField!
+    @IBOutlet var ageTextField: AgeTextField!
+    @IBOutlet var qtUnitsLabel: UILabel!
+    @IBOutlet var intervalRateUnitsLabel: UILabel!
+    @IBOutlet var calculateButton: UIBarButtonItem!
+ 
+    private let msecText = "msec"
+    private let secText = "sec"
+    private let bpmText = "bpm"
+    private let qtHintInMsec = "QT in msec"
+    private let qtHintInSec = "QT in sec"
+    private let intervalRateHintInMsec = "RR interval in msec"
+    private let intervalRateHintInSec = "RR interval in sec"
+    private let intervalRateHintInBpm = "Heart rate in bpm"
     
     private var activeField: UITextField? = nil
     private var errorMessage = ""
+    private var units: Units = .msec
+    private var intervalRate: IntervalRate = .interval
     
-
+    enum EntryErrorCode {
+        case invalidEntry
+        case zeroOrNegativeEntry
+        case noError
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -56,7 +75,20 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         let aboutButton = UIButton(type: .infoLight)
         aboutButton.addTarget(self, action: #selector(showAbout), for: UIControlEvents.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
-
+        
+        qtTextField.placeholder = qtHintInMsec
+        intervalRateTextField.placeholder = intervalRateHintInMsec
+        
+        let separator = NSLocale.current.decimalSeparator
+        // regex now prohibits negative values, 0, and things like 0.0, i.e. only positive floats accepted
+        let localizedPattern = String("^[+]?(?!0*(\(separator ?? ".")0+)?$)(\\d*[\(separator ?? ".")])?\\d+$")
+        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "Invalid number"))
+        var rules = ValidationRuleSet<String>()
+        rules.add(rule: isNumberRule)
+        qtTextField.validationRules = rules
+        intervalRateTextField.validationRules = rules
+        ageTextField.validationRules = rules
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,14 +143,55 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func unitsChanged(_ sender: Any) {
-        // I'm not sure if should clear fields when units change.  For example,
-        // someone might fill in the numbers and then realize they are using
-        // secs instead of msec.  Just changing the units without erasing all the
-        // inputted numbers would probably be the nicest thing to do.
-        //clearFields()
+        switch unitsSegmentedControl.selectedSegmentIndex {
+        case 0:
+            units = .msec
+        case 1:
+            units = .sec
+        default:
+            units = .msec
+        }
+        switch units {
+        case .msec:
+            qtUnitsLabel.text = msecText
+            qtTextField.placeholder = qtHintInMsec
+            if intervalRate == .interval {
+                intervalRateUnitsLabel.text = msecText
+                intervalRateTextField.placeholder = intervalRateHintInMsec
+            }
+        case .sec:
+            qtUnitsLabel.text = secText
+            qtTextField.placeholder = qtHintInSec
+            if intervalRate == .interval {
+                intervalRateUnitsLabel.text = secText
+                intervalRateTextField.placeholder = intervalRateHintInSec
+            }
+        }
     }
 
     @IBAction func intervalRateChanged(_ sender: Any) {
+        switch intervalRateSegmentedControl.selectedSegmentIndex {
+        case 0:
+            intervalRate = .interval
+        case 1:
+            intervalRate = .rate
+        default:
+            intervalRate = .interval
+        }
+        switch intervalRate {
+        case .interval:
+            if units == .msec {
+                intervalRateUnitsLabel.text = msecText
+                intervalRateTextField.placeholder = intervalRateHintInMsec
+            }
+            else {
+                intervalRateUnitsLabel.text = secText
+                intervalRateTextField.placeholder = intervalRateHintInSec
+            }
+        case .rate:
+            intervalRateUnitsLabel.text = bpmText
+            intervalRateTextField.placeholder = intervalRateHintInBpm
+        }
     }
     
     @IBAction func sexChanged(_ sender: Any) {
@@ -140,32 +213,60 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func calculate(_ sender: Any) {
-        //"^[-+]?(\\d*[.])?\\d+$"
-        // Need to vary pattern according to region
-        let separator = NSLocale.current.decimalSeparator
-        let localizedPattern = String("^[-+]?(\\d*[\(separator ?? ".")])?\\d+$")
-        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "No a true number"))
-
-        let result = qtTextField.validate(rule: isNumberRule)
-        switch result {
-        case .valid: print("😀")
-        case .invalid(let errors as? [ValidationError]): print(errors.first?.message)
+        let validationCode = fieldsValidationResult()
+        var message = ""
+        var error = false
+        switch validationCode {
+        case .invalidEntry:
+            message = "Empty or invalid field(s)"
+            error = true
+        case .zeroOrNegativeEntry:
+            message = "Zero or negative value(s)"
+            error = true
+        case .noError:
+            break
         }
-        let number = stringToDouble(qtTextField.text)
-        if let number = number {
-            let rangeRule = ValidationRuleComparison<Double>(min: 100, max: 1200, error: ValidationError(message: "Number not in range"))
-            let result = number.validate(rule: rangeRule)
-            switch result {
-            case .valid: print("😀")
-            case .invalid(let error as? ValidationError): print(error.message)
+        if error {
+            showErrorMessage(message)
+            return
+        }
+        // segue here
+        
+    }
+    
+    private func fieldsValidationResult() -> EntryErrorCode {
+        // Empty qt and interval fields will be considered invalid
+        var resultCode: EntryErrorCode = .invalidEntry
+        let qtIsValid = qtTextField.validate() == .valid
+        let intervalRateIsValid = intervalRateTextField.validate() == .valid
+        // Empty age field is OK
+        let ageIsValid = ageTextField.text == nil || ageTextField.text!.isEmpty || ageTextField.validate() == .valid
+        if qtIsValid && intervalRateIsValid && ageIsValid {
+            resultCode = .noError
+        }
+        // Check for zero and negative values.
+        if let qt = stringToDouble(qtTextField.text) {
+            if qt <= 0 {
+                resultCode = .zeroOrNegativeEntry
             }
         }
-        else {
-            print("bad number is nil!")
+        if let rr = stringToDouble(intervalRateTextField.text) {
+            if rr <= 0 {
+                resultCode = .zeroOrNegativeEntry
+            }
         }
-        //        if validateFields() {
-        //            performSegue(withIdentifier: "showResultsSegue", sender: self)
-        //        }
+        if let age = stringToDouble(ageTextField.text) {
+            if age <= 0 {
+                resultCode = .zeroOrNegativeEntry
+            }
+        }
+        return resultCode
+    }
+    
+    private func showErrorMessage(_ message: String) {
+        let dialog = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(dialog, animated: true, completion: nil)
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -175,10 +276,10 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     private func resetFieldBorder(_ textFields: [UITextField]) {
         for textField in textFields {
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-            textField.layer.borderWidth = 0.25
+            textField.resetFieldBorder()
         }
     }
+    
     
     // This version of stringToDouble respects locale
     // (i.e. 140.4 OK in US, 140,4 OK in France

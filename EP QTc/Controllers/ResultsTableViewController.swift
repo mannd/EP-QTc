@@ -16,7 +16,7 @@ class ResultsTableViewController: UITableViewController {
     var rr: Double = 0
     var intervalRate: IntervalRate = .interval
     var sex: Sex = .unknown
-    var age: Double = 0
+    var age: Double? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
