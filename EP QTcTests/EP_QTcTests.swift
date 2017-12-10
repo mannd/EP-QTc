@@ -32,6 +32,9 @@ class EP_QTcTests: XCTestCase {
         XCTAssert(vc.stringToDouble(string: "0") == 0.0)
         XCTAssertEqual(vc.stringToDouble(string: "123.45")!, 123.45, accuracy: 0.001)
         XCTAssertNil(vc.stringToDouble(string: "ABCCD"))
+        XCTAssertNotNil(vc.stringToDouble(string: "+345."))
+        XCTAssertEqual(vc.stringToDouble(string: "+345.")!, 345)
+        XCTAssertNil(vc.stringToDouble(string: "-+345.0.1"))
     }
     
 }

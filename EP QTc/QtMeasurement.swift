@@ -22,11 +22,12 @@ public enum IntervalRate {
 public enum Sex {
     case male
     case female
+    case unknown
 }
 
 public struct QtMeasurement {
-    var qt: Double?
-    var rrRate: Double?
+    var qt: Double
+    var rrRate: Double
     var units: Units
     var intervalRate: IntervalRate
     var sex: Sex?
