@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6CB2DDD2616C9562F37ABB47 /* Pods_EP_QTcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2EACE7DDA29E87FEFD52 /* Pods_EP_QTcTests.framework */; };
 		8E097EEE1FDE1489003F380A /* AgeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E097EED1FDE1489003F380A /* AgeTextField.swift */; };
+		8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892A1FDF9AA70018D8D1 /* About.swift */; };
 		8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
 		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		4F1A2EACE7DDA29E87FEFD52 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFB314B3243AD0F00E814FA /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E097EED1FDE1489003F380A /* AgeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTextField.swift; sourceTree = "<group>"; };
+		8E0B892A1FDF9AA70018D8D1 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
 		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 			children = (
 				8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */,
 				8E097EED1FDE1489003F380A /* AgeTextField.swift */,
+				8E0B892A1FDF9AA70018D8D1 /* About.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			files = (
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
+				8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */,
 				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,
 				8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */,

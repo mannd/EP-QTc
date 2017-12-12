@@ -140,6 +140,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     @objc
     fileprivate func showAbout() {
         NSLog("Show about")
+        let about = About()
+        about.show(viewController: self)
     }
 
     @IBAction func unitsChanged(_ sender: Any) {
