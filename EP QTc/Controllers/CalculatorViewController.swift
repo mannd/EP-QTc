@@ -48,11 +48,11 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     private let msecText = "msec"
     private let secText = "sec"
     private let bpmText = "bpm"
-    private let qtHintInMsec = "QT in msec"
-    private let qtHintInSec = "QT in sec"
-    private let intervalRateHintInMsec = "RR interval in msec"
-    private let intervalRateHintInSec = "RR interval in sec"
-    private let intervalRateHintInBpm = "Heart rate in bpm"
+    private let qtHintInMsec = "QT (msec)"
+    private let qtHintInSec = "QT (sec)"
+    private let intervalRateHintInMsec = "RR (msec)"
+    private let intervalRateHintInSec = "RR (sec)"
+    private let intervalRateHintInBpm = "Heart rate (bpm)"
     
     private var activeField: UITextField? = nil
     private var errorMessage = ""
@@ -79,9 +79,10 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         qtTextField.placeholder = qtHintInMsec
         intervalRateTextField.placeholder = intervalRateHintInMsec
         
-        let separator = NSLocale.current.decimalSeparator
+        let separator = NSLocale.current.decimalSeparator ?? "."
         // regex now prohibits negative values, 0, and things like 0.0, i.e. only positive floats accepted
-        let localizedPattern = String("^[+]?(?!0*(\(separator ?? ".")0+)?$)(\\d*[\(separator ?? ".")])?\\d+$")
+        // see https://stackoverflow.com/questions/8910972/regex-exclude-zero
+        let localizedPattern = String(format:"^(?!0*(\\%@0+)?$)(\\d+|\\d*\\%@\\d+)$", separator, separator)
         let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "Invalid number"))
         var rules = ValidationRuleSet<String>()
         rules.add(rule: isNumberRule)
@@ -217,23 +218,20 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     @IBAction func calculate(_ sender: Any) {
         let validationCode = fieldsValidationResult()
         var message = ""
-        var error = false
+        var error = true
         switch validationCode {
         case .invalidEntry:
             message = "Empty or invalid field(s)"
-            error = true
         case .zeroOrNegativeEntry:
             message = "Zero or negative value(s)"
-            error = true
         case .noError:
-            break
+            error = false
         }
         if error {
             showErrorMessage(message)
             return
         }
-        // segue here
-        
+        performSegue(withIdentifier: "resultsTableSegue", sender: self)
     }
     
     private func fieldsValidationResult() -> EntryErrorCode {
@@ -308,8 +306,37 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let vc = segue.destination as? ResultsTableViewController
-        
+        let vc = segue.destination as! ResultsTableViewController
+        vc.qt = stringToDouble(qtTextField.text) ?? 0
+        vc.rr = stringToDouble(intervalRateTextField.text) ?? 0
+        // these conditions are checked in validation and shouldPerformSegue, so should never happen!
+        assert(vc.qt != 0 && vc.rr != 0)
+        vc.units = unitsSegmentedControl.selectedSegmentIndex == 0 ? .msec : .sec
+        vc.intervalRate = intervalRateSegmentedControl.selectedSegmentIndex == 0 ? .interval : .rate
+        switch sexSegmentedControl.selectedSegmentIndex {
+        case 0:
+            vc.sex = .unspecified
+        case 1:
+            vc.sex = .male
+        case 2:
+            vc.sex = .female
+        default:
+            vc.sex = .unspecified
+        }
+        vc.age = stringToDouble(ageTextField.text)
+    }
+    
+    
+    // TODO:  this isn't working
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "resultsTableSegue" {
+            let qt = stringToDouble(qtTextField.text) ?? 0
+            let rr = stringToDouble(intervalRateTextField.text) ?? 0
+            if (qt == 0 || rr == 0) {
+                return false
+            }
+        }
+        return true
     }
 
     

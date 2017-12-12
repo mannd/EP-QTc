@@ -15,7 +15,7 @@ class ResultsTableViewController: UITableViewController {
     var qt: Double = 0
     var rr: Double = 0
     var intervalRate: IntervalRate = .interval
-    var sex: Sex = .unknown
+    var sex: Sex = .unspecified
     var age: Double? = nil
 
     override func viewDidLoad() {
@@ -26,6 +26,7 @@ class ResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        processParameters()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +34,23 @@ class ResultsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func processParameters() {
+        NSLog("qt = %f", qt)
+        NSLog("rr = %f", rr)
+        NSLog("intervalRate = %@", intervalRate == .interval ? "interval" : "rate")
+        NSLog("age = %f", age ?? 0)
+        let sexString: String
+        if sex == .unspecified {
+            sexString = "unspecified"
+        }
+        else if sex == .male {
+            sexString = "male"
+        }
+        else {
+            sexString = "female"
+        }
+        NSLog("sex = %@", sexString)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

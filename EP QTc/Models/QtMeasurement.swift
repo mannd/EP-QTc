@@ -22,7 +22,7 @@ public enum IntervalRate {
 public enum Sex {
     case male
     case female
-    case unknown
+    case unspecified
 }
 
 public struct QtMeasurement {
