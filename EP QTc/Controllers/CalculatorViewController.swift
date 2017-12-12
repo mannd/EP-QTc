@@ -53,6 +53,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     private let intervalRateHintInMsec = "RR (msec)"
     private let intervalRateHintInSec = "RR (sec)"
     private let intervalRateHintInBpm = "Heart rate (bpm)"
+    private let invalidFieldsMessage = "Empty or invalid field(s)"
+    private let badValuesMessage = "Zero or negative value(s)"
+    private let ageOutOfRangeMessage = "Oldest human died at age 122"
+    private let intervalOutOfRangeMessage = "Seems like your intervals are a bit too long"
+    private let maxAge = 123.0
+    private let maxInterval = 10_000.0
     
     private var activeField: UITextField? = nil
     private var errorMessage = ""
@@ -62,6 +68,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     enum EntryErrorCode {
         case invalidEntry
         case zeroOrNegativeEntry
+        case ageOutOfRange
+        case intervalOutOfRange
         case noError
     }
     
@@ -206,27 +214,30 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     }
 
     struct ValidationError: Error {
-        
         public let message: String
-        
+
         public init(message m: String) {
             message = m
         }
-
     }
-    
+
     @IBAction func calculate(_ sender: Any) {
         let validationCode = fieldsValidationResult()
         var message = ""
         var error = true
         switch validationCode {
         case .invalidEntry:
-            message = "Empty or invalid field(s)"
+            message = invalidFieldsMessage
         case .zeroOrNegativeEntry:
-            message = "Zero or negative value(s)"
+            message = badValuesMessage
+        case .ageOutOfRange:
+            message = ageOutOfRangeMessage
+        case .intervalOutOfRange:
+            message = intervalOutOfRangeMessage
         case .noError:
             error = false
         }
+        // one last check to ensure no nulls or 0s sent over
         if error {
             showErrorMessage(message)
             return
@@ -249,15 +260,24 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
             if qt <= 0 {
                 resultCode = .zeroOrNegativeEntry
             }
+            if qt > maxInterval {
+                resultCode = .intervalOutOfRange
+            }
         }
         if let rr = stringToDouble(intervalRateTextField.text) {
             if rr <= 0 {
                 resultCode = .zeroOrNegativeEntry
+                if rr > maxInterval {
+                    resultCode = .intervalOutOfRange
+                }
             }
         }
         if let age = stringToDouble(ageTextField.text) {
             if age <= 0 {
                 resultCode = .zeroOrNegativeEntry
+            }
+            if age >= maxAge {
+                resultCode = .ageOutOfRange
             }
         }
         return resultCode
@@ -306,11 +326,16 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        // First, final sanity check!
+        if !finalValueCheck() {
+            showErrorMessage(invalidFieldsMessage)
+            return
+        }
         let vc = segue.destination as! ResultsTableViewController
         vc.qt = stringToDouble(qtTextField.text) ?? 0
         vc.rr = stringToDouble(intervalRateTextField.text) ?? 0
-        // these conditions are checked in validation and shouldPerformSegue, so should never happen!
-        assert(vc.qt != 0 && vc.rr != 0)
+        // these conditions are checked in validation and in finaValueCheck(), so should never happen!
+        assert(vc.qt > 0 && vc.rr > 0)
         vc.units = unitsSegmentedControl.selectedSegmentIndex == 0 ? .msec : .sec
         vc.intervalRate = intervalRateSegmentedControl.selectedSegmentIndex == 0 ? .interval : .rate
         switch sexSegmentedControl.selectedSegmentIndex {
@@ -327,18 +352,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    // TODO:  this isn't working
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "resultsTableSegue" {
-            let qt = stringToDouble(qtTextField.text) ?? 0
-            let rr = stringToDouble(intervalRateTextField.text) ?? 0
-            if (qt == 0 || rr == 0) {
-                return false
-            }
-        }
-        return true
+    func finalValueCheck() -> Bool {
+        // Don't ever send any nils, zeros or negative numbers to the poor calculators!
+        let qt = stringToDouble(qtTextField.text) ?? 0
+        let rr = stringToDouble(intervalRateTextField.text) ?? 0
+        return qt > 0 && rr > 0
     }
-
     
     // MARK: - Delegates
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
