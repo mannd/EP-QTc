@@ -8,6 +8,7 @@
 
 import UIKit
 import Validator
+import QTc
 
 // Best way to dismiss keyboard on tap on view.
 // See https://stackoverflow.com/questions/32281651/how-to-dismiss-keyboard-when-touching-anywhere-outside-uitextfield-in-swift
@@ -63,7 +64,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     private var activeField: UITextField? = nil
     private var errorMessage = ""
     private var units: Units = .msec
-    private var intervalRate: IntervalRate = .interval
+    private var intervalRateType: IntervalRateType = .interval
     
     enum EntryErrorCode {
         case invalidEntry
@@ -166,14 +167,14 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         case .msec:
             qtUnitsLabel.text = msecText
             qtTextField.placeholder = qtHintInMsec
-            if intervalRate == .interval {
+            if intervalRateType == .interval {
                 intervalRateUnitsLabel.text = msecText
                 intervalRateTextField.placeholder = intervalRateHintInMsec
             }
         case .sec:
             qtUnitsLabel.text = secText
             qtTextField.placeholder = qtHintInSec
-            if intervalRate == .interval {
+            if intervalRateType == .interval {
                 intervalRateUnitsLabel.text = secText
                 intervalRateTextField.placeholder = intervalRateHintInSec
             }
@@ -183,13 +184,13 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     @IBAction func intervalRateChanged(_ sender: Any) {
         switch intervalRateSegmentedControl.selectedSegmentIndex {
         case 0:
-            intervalRate = .interval
+            intervalRateType = .interval
         case 1:
-            intervalRate = .rate
+            intervalRateType = .rate
         default:
-            intervalRate = .interval
+            intervalRateType = .interval
         }
-        switch intervalRate {
+        switch intervalRateType {
         case .interval:
             if units == .msec {
                 intervalRateUnitsLabel.text = msecText
@@ -331,24 +332,29 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
             showErrorMessage(invalidFieldsMessage)
             return
         }
+        
         let vc = segue.destination as! ResultsTableViewController
-        vc.qt = stringToDouble(qtTextField.text) ?? 0
-        vc.rr = stringToDouble(intervalRateTextField.text) ?? 0
+        
+        let qt = stringToDouble(qtTextField.text) ?? 0
+        let rr = stringToDouble(intervalRateTextField.text) ?? 0
         // these conditions are checked in validation and in finaValueCheck(), so should never happen!
-        assert(vc.qt > 0 && vc.rr > 0)
-        vc.units = unitsSegmentedControl.selectedSegmentIndex == 0 ? .msec : .sec
-        vc.intervalRate = intervalRateSegmentedControl.selectedSegmentIndex == 0 ? .interval : .rate
+        assert(qt > 0 && rr > 0)
+        let units: Units = unitsSegmentedControl.selectedSegmentIndex == 0 ? .msec : .sec
+        let intervalRateType: IntervalRateType = intervalRateSegmentedControl.selectedSegmentIndex == 0 ? .interval : .rate
+        var sex: Sex = .unspecified
         switch sexSegmentedControl.selectedSegmentIndex {
         case 0:
-            vc.sex = .unspecified
+            sex = .unspecified
         case 1:
-            vc.sex = .male
+            sex = .male
         case 2:
-            vc.sex = .female
+            sex = .female
         default:
-            vc.sex = .unspecified
+            sex = .unspecified
         }
-        vc.age = stringToDouble(ageTextField.text)
+        let age = stringToDouble(ageTextField.text)
+        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType, sex: sex, age: age)
+        vc.qtMeasurement = qtMeasurement
     }
     
     

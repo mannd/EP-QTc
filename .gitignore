@@ -21,3 +21,6 @@ profiles.*
 # Emacs tmp file
 .#*
 \#*
+
+# Cocoapods
+Pods/

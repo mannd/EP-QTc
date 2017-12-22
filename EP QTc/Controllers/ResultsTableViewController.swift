@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import QTc
 
 class ResultsTableViewController: UITableViewController {
+    var formulas: [QTcFormula]? = nil
     
     // these are passed via the segue
-    var units: Units = .msec
-    var qt: Double = 0
-    var rr: Double = 0
-    var intervalRate: IntervalRate = .interval
-    var sex: Sex = .unspecified
-    var age: Double? = nil
+    var qtMeasurement: QtMeasurement? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +24,9 @@ class ResultsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         processParameters()
+        let qtFormulas = QtFormulas()
+        formulas = qtFormulas.formulas
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,15 +35,17 @@ class ResultsTableViewController: UITableViewController {
     }
 
     func processParameters() {
-        NSLog("qt = %f", qt)
-        NSLog("rr = %f", rr)
-        NSLog("intervalRate = %@", intervalRate == .interval ? "interval" : "rate")
-        NSLog("age = %f", age ?? 0)
+        guard let qtMeasurement = qtMeasurement else { return }
+        NSLog("units = %@", qtMeasurement.units == .msec ? "msec" : "sec")
+        NSLog("qt = %f", qtMeasurement.qt)
+        NSLog("rr = %f", qtMeasurement.intervalRate)
+        NSLog("intervalRateType = %@", qtMeasurement.intervalRateType == .interval ? "interval" : "rate")
+        NSLog("age = %f", qtMeasurement.age ?? -1)
         let sexString: String
-        if sex == .unspecified {
+        if qtMeasurement.sex == .unspecified {
             sexString = "unspecified"
         }
-        else if sex == .male {
+        else if qtMeasurement.sex == .male {
             sexString = "male"
         }
         else {
@@ -51,27 +53,39 @@ class ResultsTableViewController: UITableViewController {
         }
         NSLog("sex = %@", sexString)
     }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return formulas?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! ResultTableViewCell
 
         // Configure the cell...
-
+        let row = indexPath.row
+        let qtcFormula = formulas?[row]
+        if let qtcFormula = qtcFormula {
+            let qtcCalculator = QTc.qtcCalculator(formula: qtcFormula)
+            cell.calculatorNameLabel.text = qtcCalculator.longName
+            cell.resultLabel.text = qtcCalculator.shortName
+        }
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

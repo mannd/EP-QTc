@@ -14,45 +14,23 @@ public enum Units {
     case sec
 }
 
-public enum IntervalRate {
+public enum IntervalRateType {
     case interval
     case rate
 }
 
-public enum Sex {
-    case male
-    case female
-    case unspecified
-}
+//public enum Sex {
+//    case male
+//    case female
+//    case unspecified
+//}
 
 public struct QtMeasurement {
     var qt: Double
-    var rrRate: Double
+    var intervalRate: Double
     var units: Units
-    var intervalRate: IntervalRate
-    var sex: Sex?
+    var intervalRateType: IntervalRateType
+    var sex: Sex
     var age: Double?
-    
-    public func qtInSec() -> Double {
-        return 0
-    }
-    
-    public func rrInSec() -> Double {
-        return 0
-    }
-    
-    public func qtInMsec() -> Double {
-        return 0
-    }
-    
-    public func rrInMsec() -> Double {
-        return 0
-    }
-    
-    public func isValid() -> Bool {
-        // validateQt
-        // validateRrRate
-        return true
-    }
     
 }
