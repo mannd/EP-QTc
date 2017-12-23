@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import QTc
 
 class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet var calculatorNameLabel: UILabel!
     @IBOutlet var resultLabel: UILabel!
+    
+    var formula: QTcFormula!
+    var qtMeasurement: QtMeasurement! {
+        didSet {
+            resultLabel.text = String(format: "%.1f %@", qtMeasurement.calculateQTc(formula: formula) ?? 0, qtMeasurement.units == .msec ? " msec" : " sec")
+            calculatorNameLabel.text = qtMeasurement.calculatorName(formula: formula)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
