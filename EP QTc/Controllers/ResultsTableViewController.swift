@@ -79,9 +79,8 @@ class ResultsTableViewController: UITableViewController {
         let row = indexPath.row
         let qtcFormula = formulas?[row]
         if let qtcFormula = qtcFormula {
-            let qtcCalculator = QTc.qtcCalculator(formula: qtcFormula)
-            cell.calculatorNameLabel.text = qtcCalculator.longName
-            cell.resultLabel.text = qtcCalculator.shortName
+            cell.formula = qtcFormula
+            cell.qtMeasurement = qtMeasurement
         }
         return cell
     }
