@@ -17,7 +17,17 @@ class ResultTableViewCell: UITableViewCell {
     var formula: QTcFormula!
     var qtMeasurement: QtMeasurement! {
         didSet {
-            resultLabel.text = String(format: "%.1f %@", qtMeasurement.calculateQTc(formula: formula) ?? 0, qtMeasurement.units == .msec ? " msec" : " sec")
+            var formatString: String
+            var unitsString: String
+            if qtMeasurement.units == .msec {
+                unitsString = "msec"
+                formatString = "%.1f %@ "
+            }
+            else {
+                unitsString = "sec"
+                formatString = "%.4f %@ "
+            }
+            resultLabel.text = String(format: formatString, qtMeasurement.calculateQTc(formula: formula) ?? 0, unitsString)
             calculatorNameLabel.text = qtMeasurement.calculatorName(formula: formula)
         }
     }

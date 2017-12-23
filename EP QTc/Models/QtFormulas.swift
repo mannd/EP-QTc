@@ -20,7 +20,8 @@ class QtFormulas {
         .qtcArr,
         .qtcKwt,
         .qtcDmt,
-        .qtcYos
+        .qtcYos,
+        .qtcAdm
     ]
     
     

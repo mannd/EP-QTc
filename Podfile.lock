@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   QTc:
-    :commit: ef6a361156e9551b5a6355998652ea056c657b80
+    :commit: 06f08300068e18ec23db563b1d2be6e49dc444e7
     :git: https://github.com/mannd/QTc.git
   Validator:
     :commit: ac1bff003705f37d795ca58aaeaceac932699a8d
