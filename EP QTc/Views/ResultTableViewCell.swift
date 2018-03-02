@@ -13,29 +13,25 @@ class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet var calculatorNameLabel: UILabel!
     @IBOutlet var resultLabel: UILabel!
+    @IBOutlet var shortNameLabel: UILabel!
+    
+    var resultViewModel: ResultViewModel!
     
     var formula: QTcFormula!
     var qtMeasurement: QtMeasurement! {
         didSet {
-            var formatString: String
-            var unitsString: String
-            if qtMeasurement.units == .msec {
-                unitsString = "msec"
-                formatString = "%.1f %@ "
-            }
-            else {
-                unitsString = "sec"
-                formatString = "%.4f %@ "
-            }
-            resultLabel.text = String(format: formatString, qtMeasurement.calculateQTc(formula: formula) ?? 0, unitsString)
-            calculatorNameLabel.text = qtMeasurement.calculatorName(formula: formula)
+            resultViewModel = ResultViewModel(formula: formula, qtMeasurement: qtMeasurement)
+            resultLabel.text = resultViewModel.resultLabel()
+            calculatorNameLabel.text = resultViewModel.longCalculatorName()
+            shortNameLabel.text = resultViewModel.shortCalculatorName()
         }
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        resultLabel.font = .boldSystemFont(ofSize: 24)
+        resultLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: .bold)
         accessoryType = .disclosureIndicator
     }
 

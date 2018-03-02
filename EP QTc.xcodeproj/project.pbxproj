@@ -21,6 +21,8 @@
 		8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */; };
 		8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */; };
 		8E8C22941FECA6AE000A1C9A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */; };
+		8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9674C52049032200D49C05 /* ResultViewModel.swift */; };
+		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		D6512A8429284F9B56472953 /* Pods_EP_QTc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFB314B3243AD0F00E814FA /* Pods_EP_QTc.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtMeasurement.swift; sourceTree = "<group>"; };
 		8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		8E9674C52049032200D49C05 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		B4FD7E35C75C62C4BC7A8109 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F3BA5FA95FB14EAB6F0104 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTcTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EED7F4CDC8CBCC6A88645A4C /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.release.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */,
 				8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */,
+				8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */,
 				8E30F00F1FDDBFC60072E5A8 /* Storyboards */,
 				8E30F0111FDDC04B0072E5A8 /* Models */,
+				8E9674C72049033200D49C05 /* ViewModels */,
 				8E30F0101FDDC00F0072E5A8 /* Controllers */,
 				8E30F0121FDDC0820072E5A8 /* Views */,
 				8E6E55A71FD30B66004B1B2F /* Assets.xcassets */,
@@ -168,6 +174,14 @@
 				8E6E55B71FD30B66004B1B2F /* Info.plist */,
 			);
 			path = "EP QTcTests";
+			sourceTree = "<group>";
+		};
+		8E9674C72049033200D49C05 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8E9674C52049032200D49C05 /* ResultViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A4CB48FA253EB566D8208846 /* Pods */ = {
@@ -397,9 +411,11 @@
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
 				8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */,
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
+				8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */,
 				8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */,
 				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,
+				8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */,
 				8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */,
 				8E8C22941FECA6AE000A1C9A /* ResultTableViewCell.swift in Sources */,
 				8E097EEE1FDE1489003F380A /* AgeTextField.swift in Sources */,

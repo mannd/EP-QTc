@@ -67,7 +67,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="phU-f7-gnc">
-                                                <rect key="frame" x="0.0" y="80.5" width="280" height="36"/>
+                                                <rect key="frame" x="0.0" y="80" width="280" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-bD-dMm">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="36"/>
@@ -96,7 +96,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-UI-YPW">
-                                                <rect key="frame" x="0.0" y="161.5" width="280" height="36"/>
+                                                <rect key="frame" x="0.0" y="160" width="280" height="36"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-oG-nbc">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="37"/>
@@ -132,14 +132,14 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfA-B6-y5R">
-                                                <rect key="frame" x="0.0" y="242" width="280" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="240" width="280" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=compact" hidden="YES"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-FQ-t9s">
-                                                <rect key="frame" x="0.0" y="307.5" width="280" height="36"/>
+                                                <rect key="frame" x="0.0" y="308" width="280" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-MU-SX8">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="36"/>
@@ -153,7 +153,7 @@
                                                             <constraint firstAttribute="height" constant="36" id="HZt-ni-J6p"/>
                                                         </constraints>
                                                         <segments>
-                                                            <segment title="Unknown"/>
+                                                            <segment title="N/A"/>
                                                             <segment title="Male"/>
                                                             <segment title="Female"/>
                                                         </segments>
@@ -252,6 +252,7 @@
                         <outlet property="intervalRateSegmentedControl" destination="CUN-oG-nbc" id="SH1-wa-LpZ"/>
                         <outlet property="intervalRateTextField" destination="F35-8C-Ots" id="4wn-bK-p8O"/>
                         <outlet property="intervalRateUnitsLabel" destination="8Jj-cC-L0A" id="slg-5Z-oYM"/>
+                        <outlet property="optionalInformationLabel" destination="GfA-B6-y5R" id="MWq-f8-8bi"/>
                         <outlet property="qtTextField" destination="PAt-US-WFE" id="4LI-Mk-6Yd"/>
                         <outlet property="qtUnitsLabel" destination="p1f-Ls-7b5" id="OiS-Yv-NP0"/>
                         <outlet property="scrollView" destination="PnG-Ib-4EF" id="yYy-h7-QT0"/>
@@ -293,17 +294,28 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgX-cJ-52r">
+                                            <rect key="frame" x="16" y="38" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XmF-JH-0CO" firstAttribute="bottom" secondItem="g01-s9-nFV" secondAttribute="bottomMargin" id="N50-hK-nAJ"/>
                                         <constraint firstItem="Kdj-iD-SfH" firstAttribute="top" secondItem="g01-s9-nFV" secondAttribute="topMargin" id="QJX-iG-jNX"/>
                                         <constraint firstItem="XmF-JH-0CO" firstAttribute="trailing" secondItem="g01-s9-nFV" secondAttribute="trailingMargin" id="Uld-J2-YJM"/>
+                                        <constraint firstItem="YgX-cJ-52r" firstAttribute="bottom" secondItem="g01-s9-nFV" secondAttribute="bottomMargin" id="WPd-ku-hAc"/>
+                                        <constraint firstItem="XmF-JH-0CO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YgX-cJ-52r" secondAttribute="trailing" constant="10" id="YKP-QF-q1z"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Kdj-iD-SfH" secondAttribute="trailing" constant="10" id="bYq-o4-0YP"/>
                                         <constraint firstItem="Kdj-iD-SfH" firstAttribute="leading" secondItem="g01-s9-nFV" secondAttribute="leadingMargin" id="q8M-pn-w95"/>
+                                        <constraint firstItem="YgX-cJ-52r" firstAttribute="leading" secondItem="g01-s9-nFV" secondAttribute="leadingMargin" id="xLL-Ti-vYq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="calculatorNameLabel" destination="Kdj-iD-SfH" id="i1H-xA-Ccj"/>
                                     <outlet property="resultLabel" destination="XmF-JH-0CO" id="ies-4O-CWg"/>
+                                    <outlet property="shortNameLabel" destination="YgX-cJ-52r" id="nYT-gp-wuv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -312,10 +324,41 @@
                             <outlet property="delegate" destination="Hrc-3Z-VXJ" id="h2O-Eu-WEK"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Czm-Y4-ul2" kind="show" identifier="detailsTableSegue" id="JyU-FN-nFM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2c-I1-6Kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2300.625" y="-46.478873239436624"/>
+            <point key="canvasLocation" x="2278" y="-46"/>
+        </scene>
+        <!--Details Table View Controller-->
+        <scene sceneID="uy4-MV-7JR">
+            <objects>
+                <tableViewController id="Czm-Y4-ul2" customClass="DetailsTableViewController" customModule="EP_QTc" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T5R-41-THS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="TOw-YJ-6FS">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TOw-YJ-6FS" id="kjY-1h-Rin">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Czm-Y4-ul2" id="V5v-Ka-7E4"/>
+                            <outlet property="delegate" destination="Czm-Y4-ul2" id="JGB-AI-tGs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLh-VC-M9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2966" y="-45"/>
         </scene>
     </scenes>
 </document>

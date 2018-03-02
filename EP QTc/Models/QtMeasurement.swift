@@ -19,12 +19,6 @@ public enum IntervalRateType {
     case rate
 }
 
-//public enum Sex {
-//    case male
-//    case female
-//    case unspecified
-//}
-
 public struct QtMeasurement {
     var qt: Double
     var intervalRate: Double
@@ -36,6 +30,11 @@ public struct QtMeasurement {
     func calculatorName(formula: QTcFormula) -> String {
         let qtcCalculator = QTc.qtcCalculator(formula: formula)
         return qtcCalculator.longName
+    }
+    
+    func calculatorShortName(formula: QTcFormula) -> String {
+        let qtcCalculator = QTc.qtcCalculator(formula: formula)
+        return qtcCalculator.shortName
     }
     
     func calculateQTc(formula: QTcFormula) -> Double? {

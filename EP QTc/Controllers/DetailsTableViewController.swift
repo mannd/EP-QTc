@@ -1,19 +1,16 @@
 //
-//  ResultsTableViewController.swift
+//  DetailsTableViewController.swift
 //  EP QTc
 //
-//  Created by David Mann on 12/7/17.
-//  Copyright © 2017 EP Studios. All rights reserved.
+//  Created by David Mann on 1/24/18.
+//  Copyright © 2018 EP Studios. All rights reserved.
 //
 
 import UIKit
 import QTc
 
-class ResultsTableViewController: UITableViewController {
-    var formulas: [QTcFormula]?
-    var selectedFormula: QTcFormula?
-    
-    // these are passed via the segue
+class DetailsTableViewController: UITableViewController {
+    var formula: QTcFormula?
     var qtMeasurement: QtMeasurement?
 
     override func viewDidLoad() {
@@ -24,11 +21,14 @@ class ResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-       
-//        processParameters()
-        let qtFormulas = QtFormulas()
-        formulas = qtFormulas.formulas
         
+        if let formula = self.formula {
+            let qtcCalculator = QTc.qtcCalculator(formula: formula)
+            self.title = "Details \(qtcCalculator.shortName)"
+        }
+        else {
+            self.title = "Details"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,63 +36,27 @@ class ResultsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-//    func processParameters() {
-//        guard let qtMeasurement = qtMeasurement else { return }
-//        NSLog("units = %@", qtMeasurement.units == .msec ? "msec" : "sec")
-//        NSLog("qt = %f", qtMeasurement.qt)
-//        NSLog("rr = %f", qtMeasurement.intervalRate)
-//        NSLog("intervalRateType = %@", qtMeasurement.intervalRateType == .interval ? "interval" : "rate")
-//        NSLog("age = %f", qtMeasurement.age ?? -1)
-//        let sexString: String
-//        if qtMeasurement.sex == .unspecified {
-//            sexString = "unspecified"
-//        }
-//        else if qtMeasurement.sex == .male {
-//            sexString = "male"
-//        }
-//        else {
-//            sexString = "female"
-//        }
-//        NSLog("sex = %@", sexString)
-//    }
-    
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return formulas?.count ?? 0
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! ResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        let row = indexPath.row
-        let qtcFormula = formulas?[row]
-        if let qtcFormula = qtcFormula {
-            cell.formula = qtcFormula
-            cell.qtMeasurement = qtMeasurement
-        }
+
         return cell
     }
-    
-    // MARK: - Table view delegate
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        selectedFormula = formulas?[row]
-        performSegue(withIdentifier: "detailsTableSegue", sender: self)
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -129,20 +93,14 @@ class ResultsTableViewController: UITableViewController {
     }
     */
 
-
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "detailsTableSegue" {
-            let vc = segue.destination as! DetailsTableViewController
-            vc.formula = selectedFormula
-            vc.qtMeasurement = qtMeasurement
-        }
-        
     }
-
+    */
 
 }

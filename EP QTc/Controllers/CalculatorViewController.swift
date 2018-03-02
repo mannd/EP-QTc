@@ -45,7 +45,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var qtUnitsLabel: UILabel!
     @IBOutlet var intervalRateUnitsLabel: UILabel!
     @IBOutlet var calculateButton: UIBarButtonItem!
- 
+    @IBOutlet var optionalInformationLabel: UILabel!
+    
     private let msecText = "msec"
     private let secText = "sec"
     private let bpmText = "bpm"
@@ -149,7 +150,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @objc
     fileprivate func showAbout() {
-        NSLog("Show about")
         let about = About()
         about.show(viewController: self)
     }
@@ -208,10 +208,16 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func sexChanged(_ sender: Any) {
         sexLabel.isEnabled = !(sexSegmentedControl.selectedSegmentIndex == 0)
+        updateOptionalInformationLabel()
     }
     
     @IBAction func ageChanged(_ sender: Any) {
         ageLabel.isEnabled = ageTextField.text != nil && !ageTextField.text!.isEmpty
+        updateOptionalInformationLabel()
+    }
+    
+    private func updateOptionalInformationLabel() {
+        optionalInformationLabel.isEnabled = sexLabel.isEnabled || ageLabel.isEnabled
     }
 
     struct ValidationError: Error {
@@ -318,6 +324,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         ageLabel.isEnabled = false
         sexSegmentedControl.selectedSegmentIndex = 0  // set sex to "unknown"
         sexLabel.isEnabled = false
+        optionalInformationLabel.isEnabled = false
     }
     
     
