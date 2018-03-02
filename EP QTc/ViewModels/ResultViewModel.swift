@@ -10,8 +10,8 @@ import UIKit
 import QTc
 
 class ResultViewModel: NSObject {
-    var formula: QTcFormula
-    var qtMeasurement: QtMeasurement
+    let formula: QTcFormula
+    let qtMeasurement: QtMeasurement
     
     init(formula: QTcFormula, qtMeasurement: QtMeasurement) {
         self.formula = formula

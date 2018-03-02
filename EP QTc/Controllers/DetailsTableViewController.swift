@@ -12,6 +12,7 @@ import QTc
 class DetailsTableViewController: UITableViewController {
     var formula: QTcFormula?
     var qtMeasurement: QtMeasurement?
+    var detailsViewModel: DetailsViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,10 @@ class DetailsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        if let formula = self.formula {
-            let qtcCalculator = QTc.qtcCalculator(formula: formula)
-            self.title = "Details \(qtcCalculator.shortName)"
+        if let formula = formula, let qtMeasurement = qtMeasurement {
+            detailsViewModel = DetailsViewModel(formula: formula, qtMeasurement: qtMeasurement)
         }
-        else {
-            self.title = "Details"
-        }
+        self.title = detailsViewModel?.title() ?? "Details"
     }
 
     override func didReceiveMemoryWarning() {
