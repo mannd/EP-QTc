@@ -20,6 +20,10 @@ public enum IntervalRateType {
 }
 
 public struct QtMeasurement {
+    let bpmString = NSLocalizedString("bpm", comment: "abbreviation for beats per minute")
+    let msecString = NSLocalizedString("msec", comment: "abbreviation for milliseconds")
+    let secString = NSLocalizedString("sec", comment: "abbreviation for seconds")
+    
     var qt: Double
     var intervalRate: Double
     var units: Units
@@ -62,6 +66,68 @@ public struct QtMeasurement {
         }
         return result
     }
+    
+    func intervalUnits() -> String {
+        switch units {
+        case .msec:
+            return msecString
+        case .sec:
+            return secString
+        }
+    }
+    
+    func intervalRateUnits() -> String {
+        switch intervalRateType {
+        case .interval:
+            return intervalUnits()
+        case .rate:
+            return bpmString
+        }
+    }
+    
+    func heartRateUnits() -> String {
+        return bpmString
+    }
+    
+    func rrInterval() -> Double {
+        switch intervalRateType {
+        case .interval:
+            return intervalRate
+        case .rate:
+            switch units {
+            case .msec:
+                return QTc.bpmToMsec(intervalRate)
+            case .sec:
+                return QTc.bpmToSec(intervalRate)
+            }
+        }
+    }
+    
+    func heartRate() -> Double {
+        switch intervalRateType {
+        case .rate:
+            return intervalRate
+        case .interval:
+            switch units {
+            case .msec:
+                return QTc.msecToBpm(intervalRate)
+            case .sec:
+                return QTc.secToBpm(intervalRate)
+            }
+        }
+    }
+    
+    func sexString() -> String {
+        switch sex {
+        case .female:
+            return "female"
+        case .male:
+            return "male"
+        case .unspecified:
+            return "unspecified"
+        }
+    }
+    
 }
 
 

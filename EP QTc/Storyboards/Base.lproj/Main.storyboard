@@ -341,13 +341,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="TOw-YJ-6FS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormulaNameCell" id="TOw-YJ-6FS" customClass="FormulaNameCell" customModule="EP_QTc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TOw-YJ-6FS" id="kjY-1h-Rin">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdN-QI-n08">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qdN-QI-n08" firstAttribute="top" secondItem="kjY-1h-Rin" secondAttribute="topMargin" id="D0O-mG-v3c"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qdN-QI-n08" secondAttribute="trailingMargin" id="Qes-oE-ABd"/>
+                                        <constraint firstItem="qdN-QI-n08" firstAttribute="leading" secondItem="kjY-1h-Rin" secondAttribute="leadingMargin" id="dn4-Pj-GXj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qdN-QI-n08" secondAttribute="bottom" constant="1" id="iNT-iU-toO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="qdN-QI-n08" id="8lG-ow-AEo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

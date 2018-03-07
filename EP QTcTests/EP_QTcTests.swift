@@ -28,13 +28,27 @@ class EP_QTcTests: XCTestCase {
     
     func testStringToDouble() {
         let vc = CalculatorViewController()
-        XCTAssertNil(vc.stringToDouble(string: nil))
-        XCTAssert(vc.stringToDouble(string: "0") == 0.0)
-        XCTAssertEqual(vc.stringToDouble(string: "123.45")!, 123.45, accuracy: 0.001)
-        XCTAssertNil(vc.stringToDouble(string: "ABCCD"))
-        XCTAssertNotNil(vc.stringToDouble(string: "+345."))
-        XCTAssertEqual(vc.stringToDouble(string: "+345.")!, 345)
-        XCTAssertNil(vc.stringToDouble(string: "-+345.0.1"))
+        XCTAssertNil(vc.stringToDouble(nil))
+        XCTAssert(vc.stringToDouble("0") == 0.0)
+        XCTAssertEqual(vc.stringToDouble("123.45")!, 123.45, accuracy: 0.001)
+        XCTAssertNil(vc.stringToDouble("ABCCD"))
+        XCTAssertNotNil(vc.stringToDouble("-345.0"))
+        XCTAssertEqual(vc.stringToDouble("345"), 345)
+        XCTAssertNil(vc.stringToDouble("-+345.0.1"))
+    }
+    
+    func testUnits() {
+        var qtMeasurement = QtMeasurement(qt: 500, intervalRate: 600, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
+        XCTAssert(qtMeasurement.intervalUnits() == "msec")
+        XCTAssert(qtMeasurement.intervalRateUnits() == "msec")
+        qtMeasurement.intervalRateType = .rate
+        XCTAssert(qtMeasurement.intervalRateUnits() == "bpm")
+        qtMeasurement.units = .sec
+        XCTAssert(qtMeasurement.intervalUnits() == "sec")
+        XCTAssert(qtMeasurement.intervalRateUnits() == "bpm")
+        qtMeasurement.intervalRateType = .interval
+        XCTAssert(qtMeasurement.intervalRateUnits() == "sec")
+        XCTAssert(qtMeasurement.heartRateUnits() == "bpm")
     }
     
 }
