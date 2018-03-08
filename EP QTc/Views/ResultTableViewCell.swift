@@ -10,6 +10,7 @@ import UIKit
 import QTc
 
 class ResultTableViewCell: UITableViewCell {
+    static let identifier = "ResultCell"
 
     @IBOutlet var calculatorNameLabel: UILabel!
     @IBOutlet var resultLabel: UILabel!

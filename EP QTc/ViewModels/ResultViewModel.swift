@@ -30,11 +30,11 @@ class ResultViewModel: NSObject {
     }
     
     func longCalculatorName() -> String {
-        return qtMeasurement.calculatorName(formula: formula)
+        return formula.calculatorName()
     }
     
     func shortCalculatorName() -> String {
-        return qtMeasurement.calculatorShortName(formula: formula)
+        return formula.calculatorShortName()
     }
         
 }

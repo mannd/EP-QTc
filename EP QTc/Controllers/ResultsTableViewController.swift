@@ -35,37 +35,15 @@ class ResultsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-//    func processParameters() {
-//        guard let qtMeasurement = qtMeasurement else { return }
-//        NSLog("units = %@", qtMeasurement.units == .msec ? "msec" : "sec")
-//        NSLog("qt = %f", qtMeasurement.qt)
-//        NSLog("rr = %f", qtMeasurement.intervalRate)
-//        NSLog("intervalRateType = %@", qtMeasurement.intervalRateType == .interval ? "interval" : "rate")
-//        NSLog("age = %f", qtMeasurement.age ?? -1)
-//        let sexString: String
-//        if qtMeasurement.sex == .unspecified {
-//            sexString = "unspecified"
-//        }
-//        else if qtMeasurement.sex == .male {
-//            sexString = "male"
-//        }
-//        else {
-//            sexString = "female"
-//        }
-//        NSLog("sex = %@", sexString)
-//    }
     
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return formulas?.count ?? 0
     }
     
@@ -75,7 +53,7 @@ class ResultsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! ResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
 
         // Configure the cell...
         let row = indexPath.row

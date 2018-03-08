@@ -86,7 +86,7 @@ class DetailsViewModelResultItem: DetailsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Result"
+        return "QTc"
     }
     
     let resultString:String
@@ -114,9 +114,9 @@ class DetailsViewModelFormulaDetailsItem: DetailsViewModelItem {
     
     init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
         details = [String]()
-        let name = "Formula name = \(qtMeasurement.calculatorName(formula: formula))"
+        let name = "Formula name = \(formula.calculatorName)"
         details.append(name)
-        let shortName = "Short formula name = \(qtMeasurement.calculatorShortName)"
+        let shortName = "Short formula name = \(formula.calculatorShortName)"
         details.append(shortName)
         let formulaType = "Formula type = QTc"
         details.append(formulaType)
@@ -156,7 +156,7 @@ class DetailsViewModel: NSObject {
     }
     
     func title() -> String {
-        return "Details \(qtcCalculator.shortName)"
+        return "Details \(formula.calculatorShortName)"
     }
 }
 

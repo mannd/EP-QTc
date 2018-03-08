@@ -9,6 +9,30 @@
 import Foundation
 import QTc
 
+extension QTcCalculator {
+    func calculate(qt: Double, intervalRate: Double, intervalRateType: IntervalRateType,
+                   sex: Sex, age: Int, units: Units) -> Double? {
+        var result: Double?
+        switch units {
+        case .msec:
+            if intervalRateType == .interval {
+                result = calculate(qtInMsec: qt, rrInMsec: intervalRate, sex: sex, age: age)
+            }
+            else {
+                result = calculate(qtInMsec: qt, rate: intervalRate, sex: sex, age: age)
+            }
+        case .sec:
+            if intervalRateType == .interval {
+                result = calculate(qtInSec: qt, rrInSec: intervalRate, sex: sex, age: age)
+            }
+            else {
+                result = calculate(qtInSec: qt, rate: intervalRate, sex: sex, age: age)
+            }
+        }
+        return result
+    }
+}
+
 public enum Units {
     case msec
     case sec
@@ -19,10 +43,18 @@ public enum IntervalRateType {
     case rate
 }
 
+public enum FormatType {
+    case rawFormat
+    case 
+}
+
 public struct QtMeasurement {
     let bpmString = NSLocalizedString("bpm", comment: "abbreviation for beats per minute")
     let msecString = NSLocalizedString("msec", comment: "abbreviation for milliseconds")
     let secString = NSLocalizedString("sec", comment: "abbreviation for seconds")
+    let maleString = NSLocalizedString("male", comment: "")
+    let femaleString = NSLocalizedString("female", comment: "")
+    let unspecifiedString = NSLocalizedString("unspecified", comment: "for example 'unspecified sex'")
     
     var qt: Double
     var intervalRate: Double
@@ -31,40 +63,13 @@ public struct QtMeasurement {
     var sex: Sex
     var age: Double?
     
-    func calculatorName(formula: QTcFormula) -> String {
-        let qtcCalculator = QTc.qtcCalculator(formula: formula)
-        return qtcCalculator.longName
-    }
-    
-    func calculatorShortName(formula: QTcFormula) -> String {
-        let qtcCalculator = QTc.qtcCalculator(formula: formula)
-        return qtcCalculator.shortName
-    }
-    
     func calculateQTc(formula: QTcFormula) -> Double? {
-        var result: Double? = nil
         let qtcCalculator = QTc.qtcCalculator(formula: formula)
         var intAge = QTcCalculator.unspecified
         if let age = age {
             intAge = Int(age)
         }
-        switch units {
-        case .msec:
-            if intervalRateType == .interval {
-                result = qtcCalculator.calculate(qtInMsec: qt, rrInMsec: intervalRate, sex: sex, age: intAge)
-            }
-            else {
-                result = qtcCalculator.calculate(qtInMsec: qt, rate: intervalRate, sex: sex, age: intAge)
-            }
-        case .sec:
-            if intervalRateType == .interval {
-                result = qtcCalculator.calculate(qtInSec: qt, rrInSec: intervalRate, sex: sex, age: intAge)
-            }
-            else {
-                result = qtcCalculator.calculate(qtInSec: qt, rate: intervalRate, sex: sex, age: intAge)
-            }
-        }
-        return result
+        return qtcCalculator.calculate(qt: qt, intervalRate: intervalRate, intervalRateType: intervalRateType, sex: sex, age: intAge, units: units)
     }
     
     func intervalUnits() -> String {
@@ -120,11 +125,11 @@ public struct QtMeasurement {
     func sexString() -> String {
         switch sex {
         case .female:
-            return "female"
+            return femaleString
         case .male:
-            return "male"
+            return maleString
         case .unspecified:
-            return "unspecified"
+            return unspecifiedString
         }
     }
     

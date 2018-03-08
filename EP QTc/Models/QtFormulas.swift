@@ -9,6 +9,16 @@
 import Foundation
 import QTc
 
+extension QTcFormula {
+    func calculatorName() -> String {
+        return QTc.qtcCalculator(formula: self).longName
+    }
+    
+    func calculatorShortName() -> String {
+        return QTc.qtcCalculator(formula: self).shortName
+    }
+}
+
 class QtFormulas {
     public let formulas: [QTcFormula] = [
         .qtcBzt,

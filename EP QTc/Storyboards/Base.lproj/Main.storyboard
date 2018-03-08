@@ -366,6 +366,31 @@
                                     <outlet property="nameLabel" destination="qdN-QI-n08" id="8lG-ow-AEo"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParameterCell" id="R2T-7k-Oi5" customClass="ParameterCell">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R2T-7k-Oi5" id="pq1-gq-5Qa">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLs-q9-mh1">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vLs-q9-mh1" firstAttribute="leading" secondItem="pq1-gq-5Qa" secondAttribute="leadingMargin" id="HeD-wt-igq"/>
+                                        <constraint firstItem="vLs-q9-mh1" firstAttribute="top" secondItem="pq1-gq-5Qa" secondAttribute="topMargin" id="JYI-Rx-dWe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vLs-q9-mh1" secondAttribute="bottom" constant="1" id="qcX-4n-e0M"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vLs-q9-mh1" secondAttribute="trailingMargin" id="s2W-Vs-KkZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="parameterLabel" destination="vLs-q9-mh1" id="2H0-6D-zvm"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Czm-Y4-ul2" id="V5v-Ka-7E4"/>
