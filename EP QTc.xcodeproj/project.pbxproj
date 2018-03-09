@@ -27,6 +27,8 @@
 		8EA5108D20509EB600D77A77 /* FormulaNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5108C20509EB600D77A77 /* FormulaNameCell.swift */; };
 		8EA5108F2050F3C100D77A77 /* ParameterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5108E2050F3C100D77A77 /* ParameterCell.swift */; };
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
+		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
+		8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */; };
 		D6512A8429284F9B56472953 /* Pods_EP_QTc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFB314B3243AD0F00E814FA /* Pods_EP_QTc.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		8EA5108C20509EB600D77A77 /* FormulaNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaNameCell.swift; sourceTree = "<group>"; };
 		8EA5108E2050F3C100D77A77 /* ParameterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParameterCell.swift; path = "/Users/mannd/dev/EP QTc/EP QTc/Views/ParameterCell.swift"; sourceTree = "<absolute>"; };
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
+		8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelCell.swift; sourceTree = "<group>"; };
 		B4FD7E35C75C62C4BC7A8109 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F3BA5FA95FB14EAB6F0104 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTcTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EED7F4CDC8CBCC6A88645A4C /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.release.xcconfig"; path = "Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */,
 				8EA5108E2050F3C100D77A77 /* ParameterCell.swift */,
 				8EA5108C20509EB600D77A77 /* FormulaNameCell.swift */,
+				8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */,
+				8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,10 +428,12 @@
 			files = (
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
 				8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */,
+				8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */,
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
 				8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */,
 				8EA5108F2050F3C100D77A77 /* ParameterCell.swift in Sources */,
 				8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */,
+				8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */,
 				8EA5108D20509EB600D77A77 /* FormulaNameCell.swift in Sources */,
 				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,

@@ -44,8 +44,44 @@ public enum IntervalRateType {
 }
 
 public enum FormatType {
-    case rawFormat
-    case 
+    case raw
+    case roundOnePlace
+    case roundFourPlaces
+    case roundToInteger
+    
+    static let rawFormatString = "%.8f"
+    static let onePlaceFormatString = "%.1f"
+    static let fourPlacesFormatString = "%.4f"
+    static let roundToIntegerFormatString = "%.f"
+    
+    func formattedDouble(_ double: Double) -> String {
+        var formatString: String
+        switch self {
+        case .raw:
+            formatString = FormatType.rawFormatString
+        case .roundOnePlace:
+            formatString = FormatType.onePlaceFormatString
+        case .roundFourPlaces:
+            formatString = FormatType.fourPlacesFormatString
+        case .roundToInteger:
+            formatString = FormatType.roundToIntegerFormatString
+        }
+        return String.localizedStringWithFormat(formatString, double)
+    }
+    
+    // Precision depends on FormatType, EXCEPT intervals in secs always using 4 decimal places unless using raw which
+    // gives 8 places.
+    // Otherwise too much precision is lost.  Otherwise intervals and rates respect the FormatType.
+    func formattedMeasurement(measurement: Double, units: Units, intervalRateType: IntervalRateType) -> String {
+        if units == .sec && intervalRateType != .rate && self != .raw {
+            // ignore the actual FormatType
+            let formatString = FormatType.fourPlacesFormatString
+            return String.localizedStringWithFormat(formatString, measurement)
+        }
+        else {
+            return formattedDouble(measurement)
+        }
+    }
 }
 
 public struct QtMeasurement {

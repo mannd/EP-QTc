@@ -13,20 +13,21 @@ class ResultViewModel: NSObject {
     let formula: QTcFormula
     let qtMeasurement: QtMeasurement
     
+    // parameter to be eventually set in Settings
+    let defaultFormatType: FormatType = .roundToInteger
+    
     init(formula: QTcFormula, qtMeasurement: QtMeasurement) {
         self.formula = formula
         self.qtMeasurement = qtMeasurement
     }
     
     func resultLabel() -> String {
-        let formatString: String
-        switch qtMeasurement.units {
-        case .msec:
-            formatString = "%.1f %@ "
-        case .sec:
-            formatString = "%.4f %@ "
-        }
-        return String.localizedStringWithFormat(formatString, qtMeasurement.calculateQTc(formula: formula) ?? 0, qtMeasurement.intervalUnits())
+        let formatType: FormatType = defaultFormatType
+        // TODO: deal with other rounding options, e.g. msec rounded to integer
+        let qtc = qtMeasurement.calculateQTc(formula: formula) ?? 0
+        let formatString = formatType.formattedMeasurement(measurement: qtc, units: qtMeasurement.units, intervalRateType: .interval)
+        let resultString = String.localizedStringWithFormat("\(formatString) %@", qtMeasurement.intervalUnits())
+        return resultString
     }
     
     func longCalculatorName() -> String {

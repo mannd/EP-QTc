@@ -18,8 +18,14 @@ class DetailsModel {
 
     init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
         let calculator = QTc.qtcCalculator(formula: formula)
+        // parameters
+        let qtParameter = Parameter()
+        qtParameter.key = "QT"
+        qtParameter.value = String.localizedStringWithFormat("%@ %@", qtMeasurement.qt, qtMeasurement.intervalUnits())
+        parameters.append(qtParameter)
         formulaName = calculator.longName
         shortFormulaName = calculator.shortName
+        
         let formatString: String
         switch qtMeasurement.units {
         case .msec:

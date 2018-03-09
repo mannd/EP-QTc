@@ -11,18 +11,16 @@ import UIKit
 class FormulaNameCell: UITableViewCell {
     static let identifier = "FormulaNameCell"
     
-    @IBOutlet var nameLabel: UILabel!
-    
-    var item: DetailsViewModelItem? {
-        didSet {
-            guard let item = item as? DetailsViewModelFormulaNameItem
-                else {
-                    return
-            }
-            
-            nameLabel.text = item.name
-        }
-    }
+//    var item: DetailsViewModelItem? {
+//        didSet {
+//            guard let item = item as? DetailsViewModelFormulaNameItem
+//                else {
+//                    return
+//            }
+//            
+//            nameLabel.text = item.name
+//        }
+//    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

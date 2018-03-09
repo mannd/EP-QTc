@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -341,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormulaNameCell" id="TOw-YJ-6FS" customClass="FormulaNameCell" customModule="EP_QTc" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormulaNameCell" id="TOw-YJ-6FS" customClass="SingleLabelCell" customModule="EP_QTc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TOw-YJ-6FS" id="kjY-1h-Rin">
@@ -363,10 +364,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="qdN-QI-n08" id="8lG-ow-AEo"/>
+                                    <outlet property="label" destination="qdN-QI-n08" id="LZ9-kR-pJr"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParameterCell" id="R2T-7k-Oi5" customClass="ParameterCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParameterCell" id="R2T-7k-Oi5" customClass="TwoLabelCell" customModule="EP_QTc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R2T-7k-Oi5" id="pq1-gq-5Qa">
@@ -379,16 +380,27 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUX-0l-chW">
+                                            <rect key="frame" x="262" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="mUX-0l-chW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pq1-gq-5Qa" secondAttribute="leadingMargin" id="BC2-7k-Opf"/>
                                         <constraint firstItem="vLs-q9-mh1" firstAttribute="leading" secondItem="pq1-gq-5Qa" secondAttribute="leadingMargin" id="HeD-wt-igq"/>
                                         <constraint firstItem="vLs-q9-mh1" firstAttribute="top" secondItem="pq1-gq-5Qa" secondAttribute="topMargin" id="JYI-Rx-dWe"/>
+                                        <constraint firstItem="mUX-0l-chW" firstAttribute="trailing" secondItem="pq1-gq-5Qa" secondAttribute="trailingMargin" id="YVu-1Q-ww9"/>
+                                        <constraint firstItem="mUX-0l-chW" firstAttribute="firstBaseline" secondItem="vLs-q9-mh1" secondAttribute="firstBaseline" id="kFj-v6-hvh"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="vLs-q9-mh1" secondAttribute="bottom" constant="1" id="qcX-4n-e0M"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vLs-q9-mh1" secondAttribute="trailingMargin" id="s2W-Vs-KkZ"/>
+                                        <constraint firstItem="mUX-0l-chW" firstAttribute="baseline" secondItem="vLs-q9-mh1" secondAttribute="baseline" id="tJS-Nk-Dx9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="parameterLabel" destination="vLs-q9-mh1" id="2H0-6D-zvm"/>
+                                    <outlet property="leftLabel" destination="vLs-q9-mh1" id="5Sv-eX-Aa5"/>
+                                    <outlet property="rightLabel" destination="mUX-0l-chW" id="kbK-gF-ZBH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

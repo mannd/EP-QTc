@@ -10,18 +10,16 @@ import UIKit
 class ParameterCell: UITableViewCell {
     static let identifier = "ParameterCell"
 
-    @IBOutlet var parameterLabel: UILabel!
-    
-    var item: DetailsViewModelItem? {
-        didSet {
-            guard let item = item as? DetailsViewModelParametersItem
-                else {
-                    return
-            }
-            
-            //parameterLabel.text = item.
-        }
-    }
+//    var item: DetailsViewModelItem? {
+//        didSet {
+//            guard let item = item as? DetailsViewModelParametersItem
+//                else {
+//                    return
+//            }
+//            
+//            //parameterLabel.text = item.
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

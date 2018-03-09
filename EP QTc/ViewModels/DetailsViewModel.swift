@@ -10,10 +10,12 @@ import UIKit
 import QTc
 
 enum DetailsViewModelItemType {
-    case formulaName
     case parameters
     case result
     case formulaDetails
+    case equation
+    case reference
+    case notes
 }
 
 protocol DetailsViewModelItem {
@@ -25,22 +27,6 @@ protocol DetailsViewModelItem {
 extension DetailsViewModelItem {
     var rowCount: Int {
         return 1
-    }
-}
-
-class DetailsViewModelFormulaNameItem: DetailsViewModelItem {
-    var type: DetailsViewModelItemType {
-        return .formulaName
-    }
-    
-    var sectionTitle: String {
-        return "Formula"
-    }
-    
-    let name: String
-    
-    init(name: String) {
-        self.name = "\(name) formula"
     }
 }
 
@@ -110,9 +96,12 @@ class DetailsViewModelFormulaDetailsItem: DetailsViewModelItem {
         return "Formula details"
     }
     
+    let detailsModel: DetailsModel
+    
     var details: [String]
     
     init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
+        detailsModel = DetailsModel(qtMeasurement: qtMeasurement, formula: formula)
         details = [String]()
         let name = "Formula name = \(formula.calculatorName)"
         details.append(name)
@@ -144,8 +133,6 @@ class DetailsViewModel: NSObject {
         self.qtMeasurement = qtMeasurement
         qtcCalculator = QTc.qtcCalculator(formula: formula)
         
-        let nameItem = DetailsViewModelFormulaNameItem(name: qtcCalculator.longName)
-        items.append(nameItem)
         let parametersItem = DetailsViewModelParametersItem(qtMeasurement: qtMeasurement)
         items.append(parametersItem)
         let resultItem = DetailsViewModelResultItem(qtMeasurement: qtMeasurement, formula: formula)
@@ -156,7 +143,8 @@ class DetailsViewModel: NSObject {
     }
     
     func title() -> String {
-        return "Details \(formula.calculatorShortName)"
+        let formulaName = formula.calculatorShortName()
+        return String.localizedStringWithFormat("Details %@", formulaName)
     }
 }
 
@@ -166,16 +154,16 @@ extension DetailsViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.section]
-        switch item.type {
-        case .formulaName:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: FormulaNameCell.identifier, for: indexPath) as? FormulaNameCell {
-                cell.item = item
-                return cell
-            }
-        default:
-            return UITableViewCell()
-        }
+//        let item = items[indexPath.section]
+//        switch item.type {
+//        case .formulaName:
+//            if let cell = tableView.dequeueReusableCell(withIdentifier: FormulaNameCell.identifier, for: indexPath) as? FormulaNameCell {
+//                cell.item = item
+//                return cell
+//            }
+//        default:
+//            return UITableViewCell()
+//        }
         return UITableViewCell()
 
     }
