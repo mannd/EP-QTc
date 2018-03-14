@@ -87,7 +87,17 @@ class EP_QTcTests: XCTestCase {
         XCTAssertEqual(formatType.formattedDouble(double), "4")
         double = 3.49999999999
         XCTAssertEqual(formatType.formattedDouble(double), "3")
+        formatType = .roundFourFigures
+        XCTAssertEqual(formatType.formattedDouble(double), "3.5")
+        double = 3.4333333
+        XCTAssertEqual(formatType.formattedDouble(double), "3.433")
+        double = 455.16
+        XCTAssertEqual(formatType.formattedDouble(double), "455.2")
+
+
         // test formattedMeasurement() which takes into account units and rate/interval in formatting
+        double = 3.49999999999
+        formatType = .roundToInteger
         var formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "3.5000")
         formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
@@ -110,7 +120,33 @@ class EP_QTcTests: XCTestCase {
         XCTAssertEqual(formattedMeasurement, "431.77777777")
         formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "431.77777777")
+        formatType = .roundFourFigures
+        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
+        XCTAssertEqual(formattedMeasurement, "431.8")
 
+        
+    }
+    
+    func testFormattedMeasurement() {
+        var qtMeasurement = QtMeasurement(qt: 333, intervalRate: 444, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
+        var formatType: FormatType = .roundToInteger
+        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: .msec, intervalRateType: .interval), "333 msec")
+        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: .msec, intervalRateType: .rate), "333 bpm")
+        qtMeasurement.qt = 3.333
+        qtMeasurement.units = .sec
+        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "3.3330 sec")
+        formatType = .roundFourFigures
+        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "3.333 sec")
+        qtMeasurement.qt = 440.12
+        qtMeasurement.units = .msec
+        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "440.1 msec")
+    }
+    
+    func testAgeString() {
+        var qtMeasurement = QtMeasurement(qt: 333, intervalRate: 444, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
+        XCTAssertEqual(qtMeasurement.ageString(), "unspecified")
+        qtMeasurement.age = 33.3
+        XCTAssertEqual(qtMeasurement.ageString(), "33")
 
     }
     

@@ -9,6 +9,9 @@
 import UIKit
 import QTc
 
+// This TableView code is based on this very useful Medium article:
+// https://medium.com/@stasost/ios-how-to-build-a-table-view-with-multiple-cell-types-2df91a206429
+
 enum DetailsViewModelItemType {
     case parameters
     case result
@@ -39,26 +42,10 @@ class DetailsViewModelParametersItem: DetailsViewModelItem {
         return "Parameters"
     }
     
-    var parameters:[String]
+    var parameters: [Parameter]
     
-    init(qtMeasurement: QtMeasurement) {
-        parameters = [String]()
-        let qtParameter = "QT interval = \(qtMeasurement.qt) \(qtMeasurement.intervalUnits())"
-        parameters.append(qtParameter)
-        let rrIntervalParameter = "RR interval = \(qtMeasurement.rrInterval()) \(qtMeasurement.intervalUnits())"
-        parameters.append(rrIntervalParameter)
-        let heartRateParameter = "Heart rate = \(qtMeasurement.heartRate()) \(qtMeasurement.heartRateUnits())"
-        parameters.append(heartRateParameter)
-        let ageParameter: String
-        if let age = qtMeasurement.age {
-            ageParameter = "Age = \(age) years"
-        }
-        else {
-            ageParameter = "Age = unspecified"
-        }
-        parameters.append(ageParameter)
-        let sexParameter = "Sex = \(qtMeasurement.sexString())"
-        parameters.append(sexParameter)
+    init(parameters: [Parameter]) {
+        self.parameters = parameters
     }
     
     var rowCount: Int {
@@ -72,22 +59,17 @@ class DetailsViewModelResultItem: DetailsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "QTc"
+        return "Calculated QTc"
     }
     
-    let resultString:String
+    var result: String
     
-    init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
-        if let result = qtMeasurement.calculateQTc(formula: formula) {
-            resultString = "QTc = \(result) \(qtMeasurement.intervalUnits)"
-        }
-        else {
-            resultString = "QTc = ERROR"
-        }
+    init(result: String) {
+        self.result = result
     }
 }
 
-class DetailsViewModelFormulaDetailsItem: DetailsViewModelItem {
+class DetailsViewModelDetailsItem: DetailsViewModelItem {
     var type: DetailsViewModelItemType {
         return .formulaDetails
     }
@@ -96,55 +78,96 @@ class DetailsViewModelFormulaDetailsItem: DetailsViewModelItem {
         return "Formula details"
     }
     
-    let detailsModel: DetailsModel
+    var details: [Detail]
     
-    var details: [String]
-    
-    init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
-        detailsModel = DetailsModel(qtMeasurement: qtMeasurement, formula: formula)
-        details = [String]()
-        let name = "Formula name = \(formula.calculatorName)"
-        details.append(name)
-        let shortName = "Short formula name = \(formula.calculatorShortName)"
-        details.append(shortName)
-        let formulaType = "Formula type = QTc"
-        details.append(formulaType)
-        let qtcCalculator = QTc.qtcCalculator(formula: formula)
-        let equation = "Equation = \(qtcCalculator.equation)"
-        details.append(equation)
-        // add reference, notes, but must calculate number of rows
+    init(details: [Detail]) {
+        self.details = details
     }
     
     var rowCount: Int {
         return details.count
     }
+}
+
+class DetailsViewModelEquationItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .equation
+    }
     
+    var sectionTitle: String {
+        return "Equation"
+    }
+    
+    var equation: String
+    
+    init(equation: String) {
+        self.equation = equation
+    }
+}
+
+class DetailsViewModelReferenceItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .reference
+    }
+    
+    var sectionTitle: String {
+        return "Reference"
+    }
+    
+    var reference: String
+    
+    init(reference: String) {
+        self.reference = reference
+    }
+}
+
+class DetailsViewModelNotesItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .notes
+    }
+    
+    var sectionTitle: String {
+        return "Notes"
+    }
+    
+    var notes: String
+    
+    init(notes: String) {
+        self.notes = notes
+    }
 }
 
 class DetailsViewModel: NSObject {
-    var items = [DetailsViewModelItem]()
+    var items: [DetailsViewModelItem] = []
+    let parameters: [Parameter]
+    let details: [Detail]
+    let shortName: String
     
-    let formula: QTcFormula
-    let qtMeasurement: QtMeasurement
-    let qtcCalculator: QTcCalculator
-    
-    init(formula: QTcFormula, qtMeasurement: QtMeasurement) {
-        self.formula = formula
-        self.qtMeasurement = qtMeasurement
-        qtcCalculator = QTc.qtcCalculator(formula: formula)
-        
-        let parametersItem = DetailsViewModelParametersItem(qtMeasurement: qtMeasurement)
+    init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
+        let model = DetailsModel(qtMeasurement: qtMeasurement, formula: formula)
+        parameters = model.parameters
+        let parametersItem = DetailsViewModelParametersItem(parameters: model.parameters)
         items.append(parametersItem)
-        let resultItem = DetailsViewModelResultItem(qtMeasurement: qtMeasurement, formula: formula)
+        let resultItem = DetailsViewModelResultItem(result: model.result)
         items.append(resultItem)
-        let formulaDetailsItem = DetailsViewModelFormulaDetailsItem(qtMeasurement: qtMeasurement, formula: formula)
-        items.append(formulaDetailsItem)
+        details = model.details
+        let detailsItem = DetailsViewModelDetailsItem(details: model.details)
+        items.append(detailsItem)
+        let equationItem = DetailsViewModelEquationItem(equation: model.equation)
+        items.append(equationItem)
+        let referenceItem = DetailsViewModelReferenceItem(reference: model.reference)
+        items.append(referenceItem)
+        let notesItem = DetailsViewModelNotesItem(notes: model.notes)
+        // notes are sometimes emplty
+        if !notesItem.notes.isEmpty {
+            items.append(notesItem)
+        }
         
+        shortName = model.shortFormulaName
     }
     
     func title() -> String {
-        let formulaName = formula.calculatorShortName()
-        return String.localizedStringWithFormat("Details %@", formulaName)
+        return String.localizedStringWithFormat("Details %@", shortName)
     }
 }
 
@@ -154,21 +177,48 @@ extension DetailsViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let item = items[indexPath.section]
-//        switch item.type {
-//        case .formulaName:
-//            if let cell = tableView.dequeueReusableCell(withIdentifier: FormulaNameCell.identifier, for: indexPath) as? FormulaNameCell {
-//                cell.item = item
-//                return cell
-//            }
-//        default:
-//            return UITableViewCell()
-//        }
+        let item = items[indexPath.section]
+        switch item.type {
+        case .parameters:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ParameterCell.identifier, for: indexPath) as? ParameterCell {
+                cell.item = parameters[indexPath.row]
+                return cell
+            }
+        case .result:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ResultCell.identifier, for: indexPath) as? ResultCell {
+                cell.item = item
+                return cell
+            }
+        case .formulaDetails:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DetailsCell.identifier, for: indexPath) as? DetailsCell {
+                cell.item = details[indexPath.row]
+                return cell
+            }
+        case .equation:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: EquationCell.identifier, for: indexPath) as? EquationCell {
+                cell.item = item
+                return cell
+            }
+        case .reference:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ReferenceCell.identifier, for: indexPath) as? ReferenceCell {
+                cell.item = item
+                return cell
+            }
+        case .notes:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: NotesCell.identifier, for: indexPath) as? NotesCell {
+                cell.item = item
+                return cell
+            }
+        }
         return UITableViewCell()
 
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return items[section].sectionTitle
     }
 }

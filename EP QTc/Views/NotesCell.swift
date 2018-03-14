@@ -1,16 +1,26 @@
 //
-//  SingleLabelCell.swift
+//  NotesCell.swift
 //  EP QTc
 //
-//  Created by David Mann on 3/8/18.
+//  Created by David Mann on 3/16/18.
 //  Copyright © 2018 EP Studios. All rights reserved.
 //
 
 import UIKit
 
-class SingleLabelCell: UITableViewCell {
+class NotesCell: UITableViewCell {
+    static let identifier = "NotesCell"
 
     @IBOutlet var label: UILabel!
+    
+    var item: DetailsViewModelItem? {
+        didSet {
+            guard let item = item as? DetailsViewModelNotesItem else {
+                return
+            }
+            label.text = item.notes
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,6 +17,11 @@ extension QTcFormula {
     func calculatorShortName() -> String {
         return QTc.qtcCalculator(formula: self).shortName
     }
+    
+    func classificationName() -> String {
+        return QTc.qtcCalculator(formula: self).classificationName
+    }
+    
 }
 
 class QtFormulas {

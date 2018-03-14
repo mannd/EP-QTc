@@ -1,18 +1,20 @@
 //
-//  ParameterCell.swift
-//  
+//  DetailsCell.swift
+//  EP QTc
 //
-//  Created by David Mann on 3/7/18.
+//  Created by David Mann on 3/16/18.
+//  Copyright © 2018 EP Studios. All rights reserved.
 //
 
 import UIKit
 
-class ParameterCell: UITableViewCell {
-    static let identifier = "ParameterCell"
-    
+class DetailsCell: UITableViewCell {
+    static let identifier = "DetailsCell"
+
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
-    var item: Parameter? {
+    
+    var item: Detail? {
         didSet {
             guard let item = item else {
                 return
@@ -21,7 +23,7 @@ class ParameterCell: UITableViewCell {
             rightLabel.text = item.value
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

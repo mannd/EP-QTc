@@ -1,24 +1,23 @@
 //
-//  ParameterCell.swift
-//  
+//  ResultCell.swift
+//  EP QTc
 //
-//  Created by David Mann on 3/7/18.
+//  Created by David Mann on 3/14/18.
+//  Copyright © 2018 EP Studios. All rights reserved.
 //
 
 import UIKit
 
-class ParameterCell: UITableViewCell {
-    static let identifier = "ParameterCell"
+class ResultCell: UITableViewCell {
+    static let identifier = "QTcResultCell"
     
-    @IBOutlet var leftLabel: UILabel!
-    @IBOutlet var rightLabel: UILabel!
-    var item: Parameter? {
+    @IBOutlet var label: UILabel!
+    var item: DetailsViewModelItem? {
         didSet {
-            guard let item = item else {
+            guard let item = item as? DetailsViewModelResultItem else {
                 return
             }
-            leftLabel.text = item.key
-            rightLabel.text = item.value
+            label.text = item.result
         }
     }
 

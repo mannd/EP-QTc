@@ -14,7 +14,7 @@ class ResultViewModel: NSObject {
     let qtMeasurement: QtMeasurement
     
     // parameter to be eventually set in Settings
-    let defaultFormatType: FormatType = .roundToInteger
+    let defaultFormatType: FormatType = .roundOnePlace
     
     init(formula: QTcFormula, qtMeasurement: QtMeasurement) {
         self.formula = formula

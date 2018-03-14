@@ -48,11 +48,14 @@ public enum FormatType {
     case roundOnePlace
     case roundFourPlaces
     case roundToInteger
+    case roundFourFigures
     
     static let rawFormatString = "%.8f"
     static let onePlaceFormatString = "%.1f"
     static let fourPlacesFormatString = "%.4f"
     static let roundToIntegerFormatString = "%.f"
+    static let fourFiguresFormatString = "%.4g"
+    static let errorMessage = "ERROR"
     
     func formattedDouble(_ double: Double) -> String {
         var formatString: String
@@ -65,6 +68,8 @@ public enum FormatType {
             formatString = FormatType.fourPlacesFormatString
         case .roundToInteger:
             formatString = FormatType.roundToIntegerFormatString
+        case .roundFourFigures:
+            formatString = FormatType.fourFiguresFormatString
         }
         return String.localizedStringWithFormat(formatString, double)
     }
@@ -72,7 +77,13 @@ public enum FormatType {
     // Precision depends on FormatType, EXCEPT intervals in secs always using 4 decimal places unless using raw which
     // gives 8 places.
     // Otherwise too much precision is lost.  Otherwise intervals and rates respect the FormatType.
-    func formattedMeasurement(measurement: Double, units: Units, intervalRateType: IntervalRateType) -> String {
+    func formattedMeasurement(measurement: Double?, units: Units, intervalRateType: IntervalRateType) -> String {
+        guard let measurement = measurement else {
+            return FormatType.errorMessage
+        }
+        if self == .roundFourFigures {
+           return formattedDouble(measurement)
+        }
         if units == .sec && intervalRateType != .rate && self != .raw {
             // ignore the actual FormatType
             let formatString = FormatType.fourPlacesFormatString
@@ -81,6 +92,27 @@ public enum FormatType {
         else {
             return formattedDouble(measurement)
         }
+    }
+    
+    func formattedMeasurementWithUnits(measurement: Double?, units: Units, intervalRateType: IntervalRateType) -> String {
+        guard let measurement = measurement else {
+            return FormatType.errorMessage
+        }
+        let result = formattedMeasurement(measurement: measurement, units: units, intervalRateType: intervalRateType)
+        var unitString: String
+        if intervalRateType == .rate {
+            unitString = "bpm"
+        }
+        else {
+            if units == .msec {
+                unitString = "msec"
+            }
+            else {
+                unitString = "sec"
+            }
+            
+        }
+        return String.localizedStringWithFormat("%@ %@", result, unitString)
     }
 }
 
@@ -167,6 +199,13 @@ public struct QtMeasurement {
         case .unspecified:
             return unspecifiedString
         }
+    }
+    
+    func ageString() -> String {
+        guard let age = age else {
+            return unspecifiedString
+        }
+        return String(Int(age))
     }
     
 }

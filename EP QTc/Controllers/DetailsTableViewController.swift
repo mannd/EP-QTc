@@ -26,7 +26,7 @@ class DetailsTableViewController: UITableViewController {
         
         
         if let formula = formula, let qtMeasurement = qtMeasurement {
-            detailsViewModel = DetailsViewModel(formula: formula, qtMeasurement: qtMeasurement)
+            detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, formula: formula)
             tableView?.dataSource = detailsViewModel
         }
         self.title = detailsViewModel?.title() ?? "Details"
@@ -36,6 +36,8 @@ class DetailsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
   
 
