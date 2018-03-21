@@ -60,6 +60,10 @@ class DetailsModel {
         shortNameDetail.key = "Short name"
         shortNameDetail.value = shortFormulaName
         details.append(shortNameDetail)
+        let dateDetail = Detail()
+        dateDetail.key = "Publication date"
+        dateDetail.value = calculator.publicationDate
+        details.append(dateDetail)
         let classificationDetail = Detail()
         classificationDetail.key = "Classification"
         classificationDetail.value = calculator.classificationName
