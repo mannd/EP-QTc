@@ -15,6 +15,18 @@ class ResultsTableViewController: UITableViewController {
     
     // these are passed via the segue
     var qtMeasurement: QtMeasurement?
+    
+    enum FormulaSorting {
+        case none
+        case byDate
+        case byName
+        case bigFourFirstByDate
+        case bigFourFirstByName
+    }
+    
+    // Preferences
+    // TODO: need mechanism to set preferences
+    var sortingPreference: FormulaSorting = .bigFourFirstByDate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +39,18 @@ class ResultsTableViewController: UITableViewController {
        
 //        processParameters()
         let qtFormulas = QtFormulas()
-        formulas = qtFormulas.formulas
-        
+        switch sortingPreference {
+        case .none:
+            formulas = qtFormulas.formulas
+        case .byDate:
+            formulas = qtFormulas.sortedByDate()
+        case .byName:
+            formulas = qtFormulas.sortedByName()
+        case .bigFourFirstByDate:
+            formulas = qtFormulas.bigFourFirstSortedByDate()
+        case .bigFourFirstByName:
+            formulas = qtFormulas.bigFourFirstSortedByName()
+        }
     }
 
     override func didReceiveMemoryWarning() {
