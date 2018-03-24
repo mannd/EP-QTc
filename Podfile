@@ -7,7 +7,8 @@ target 'EP QTc' do
   use_frameworks!
 
   # Pods for EP QTc
-  pod 'QTc', :git => 'https://github.com/mannd/QTc.git', :branch => 'master'
+  # pod 'QTc', :git => 'https://github.com/mannd/QTc.git', :branch => 'master'
+  pod 'QTc', :path => '~/dev/QTc'
   pod 'Validator', :git => 'https://github.com/adamwaite/Validator.git', :branch => 'master'
   
   target 'EP QTcTests' do

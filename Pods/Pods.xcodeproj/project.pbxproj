@@ -3,48 +3,48 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C4FD5BCE047F596120688F404DFEE2F /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C3A37000176926A76417B454DBB3F /* ValidationRule.swift */; };
-		1DCFB8A1376B56E1DBB8EFE3A20742E5 /* QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DED745921A9B354E33CDB0018F8344 /* QTc-dummy.m */; };
-		24BD3B09723276970F031869303D3BC7 /* ValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA81E25875083B2475C570426026AD6 /* ValidationPattern.swift */; };
-		25CA6B539D90A21828C6BEB0E6782189 /* Formulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CA17B548EB8575DF4051D1075E87F /* Formulas.swift */; };
-		2B274BC3BCCA5CAB17296D3C9B8CCA38 /* ValidationRuleContains.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D05D429089B6491FF8511FBBEE6672 /* ValidationRuleContains.swift */; };
+		0C4FD5BCE047F596120688F404DFEE2F /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D593A642A64FA629DA399F82B36B440D /* ValidationRule.swift */; };
+		1DCFB8A1376B56E1DBB8EFE3A20742E5 /* QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F639CFE4A73D7450A62B0B5E5C1499 /* QTc-dummy.m */; };
+		24BD3B09723276970F031869303D3BC7 /* ValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F93C03164F2B8F624AAA72CFB6F95A1 /* ValidationPattern.swift */; };
+		25CA6B539D90A21828C6BEB0E6782189 /* Formulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BFA554A38E6AB747077888BE703B47 /* Formulas.swift */; };
+		2B274BC3BCCA5CAB17296D3C9B8CCA38 /* ValidationRuleContains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398F632012964213E9520E1977E089B /* ValidationRuleContains.swift */; };
 		3621A9A3F8BD47131ABB0DB09D201C1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		38A9A49690288323CBFD536E90CCB680 /* UITextField+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB414D274B278699D87D1E9850A6EE7 /* UITextField+Validator.swift */; };
-		3A346375D380ECF30B305704AB6C2BD5 /* ValidationRuleURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5081447564F97ED483100668C79B78 /* ValidationRuleURL.swift */; };
+		38A9A49690288323CBFD536E90CCB680 /* UITextField+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC038AD92C8B85BCA9F7EEA06C907EB /* UITextField+Validator.swift */; };
+		3A346375D380ECF30B305704AB6C2BD5 /* ValidationRuleURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC522FB3F4721B2B1CC7BEACECD0977 /* ValidationRuleURL.swift */; };
 		6067D59588995DAA60EEE1409987CAE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		629A0A842003D1B2AE640AB6D19ECBC6 /* ContainsNumberValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A12E2FE61B3FA7532A10433D711F8C /* ContainsNumberValidationPattern.swift */; };
-		644E1FE82E3F482ABA461F5104038828 /* ValidationRuleComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA98C029A5CE30B381D524E93B1848A /* ValidationRuleComparison.swift */; };
-		65106DE3A1F389EB34600A9433D2E717 /* ValidationRuleEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C65FA49D053D22301045DFD1A9ECE7 /* ValidationRuleEquality.swift */; };
-		6C1EB14CBF61D4A35D95C829ACA8602C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8978A12D3D900D537FA47663D6BDAD5C /* Validator.swift */; };
-		6F5F6952F809B43B0807DE225BAC0331 /* ValidationRuleLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323981A8B51B019AC18309B639C1E43 /* ValidationRuleLength.swift */; };
+		629A0A842003D1B2AE640AB6D19ECBC6 /* ContainsNumberValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE362B30DC98793E178D20C93DA287 /* ContainsNumberValidationPattern.swift */; };
+		644E1FE82E3F482ABA461F5104038828 /* ValidationRuleComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAF4A6DAA7123C8332D07EDD5DC3AB /* ValidationRuleComparison.swift */; };
+		65106DE3A1F389EB34600A9433D2E717 /* ValidationRuleEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD888F796A9EFF8463C8F79A26F76B /* ValidationRuleEquality.swift */; };
+		6C1EB14CBF61D4A35D95C829ACA8602C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64155CBEFD71C95C41479D28FCEACB9B /* Validator.swift */; };
+		6F5F6952F809B43B0807DE225BAC0331 /* ValidationRuleLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D23E227D259500CD90D167754976FC8 /* ValidationRuleLength.swift */; };
 		750125659A0A2A71D6BF60E6971C7F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		7510546763AAD2FC63B02C70BB7505D7 /* EmailValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334F1B7646C9F8CBDB752FDB9F1F7EB4 /* EmailValidationPattern.swift */; };
-		77336AB691E85174D2D9F96ECCD43A2D /* Validator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFB8DD6CAC0D89F83287944ADC87E58 /* Validator-dummy.m */; };
-		8EEB50DB76CF797A706145A298CBA7C9 /* UISlider+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6286CA345C0D30E8058B20D1ACA281F7 /* UISlider+Validator.swift */; };
-		8F5F198C526D69C96D084E6DAEE867AB /* ValidationRuleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13BFDD39B8010DCFB11776EDAB14D82 /* ValidationRuleSet.swift */; };
-		991A976B4429AD57FFA0569C30C77667 /* QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D24BD6CE33E32CB5AED73B3D1197EB1E /* QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7510546763AAD2FC63B02C70BB7505D7 /* EmailValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F036830E040B25DBBF9FF0CA4996105 /* EmailValidationPattern.swift */; };
+		77336AB691E85174D2D9F96ECCD43A2D /* Validator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A742275E2A280535F8B9FD6EBC64700F /* Validator-dummy.m */; };
+		8EEB50DB76CF797A706145A298CBA7C9 /* UISlider+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49EA110BD9F8ABE61929BA610A2EEFD /* UISlider+Validator.swift */; };
+		8F5F198C526D69C96D084E6DAEE867AB /* ValidationRuleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680907D79F734135AC619497C16F4472 /* ValidationRuleSet.swift */; };
+		991A976B4429AD57FFA0569C30C77667 /* QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFF56E0FCF084FB8320A699FDE4ACF39 /* QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A7A3BE5463BB9DB447B08C1839B6B44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		9DD60E0EB8B832927C0B3BF2EEC140FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		9F4ADBF75B4B5552CB31D1DF4BB3A2D3 /* ValidatableInterfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63041110837121EB8CE6CE8981C23C4C /* ValidatableInterfaceElement.swift */; };
-		9F65CF2B85E27E107F872481651149C3 /* Pods-EP QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A268F7BF786C75897BF8C687AD498122 /* Validator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5271628B966CB9235134624D893D69C1 /* Validator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A8D592B6E44693A3CC6DA2B515CA4BB1 /* QTc.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC3DCC37388ACC793C8C22DA7C97D12 /* QTc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAC87DA737394539F444B7FE712495A9 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5AEA37842EA7133E61FADC76C05F3 /* Validatable.swift */; };
-		B102532C668305382D56999F9B7B7A1C /* Pods-EP QTcTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B14BCF54B084252807E7058C7088376F /* Pods-EP QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D64B54D07FAC186A591B74DE35436DB8 /* Pods-EP QTc-dummy.m */; };
-		B400BA6F10FD7A7B5FD1A3A02C954DD9 /* ValidationRulePaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF256B43BFA230461166D12B5B4FA17 /* ValidationRulePaymentCard.swift */; };
-		B566A74E820704E981410574CFB58A1D /* Pods-EP QTcTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */; };
-		B689BE254E6B04BB67F9A74F70889F25 /* QTc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B205E377F43BEEAB725165CA46B3876 /* QTc.swift */; };
-		B98B25687767955B6493718864C983D0 /* ValidationRuleRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B66AED37598F4A2A09EF15F3EAB3F /* ValidationRuleRequired.swift */; };
-		BB9CA0DAC7DBBDFD0C18EC6D4153D9CC /* ValidationRuleCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F306369C828D1E971ED04DAAA19B84B3 /* ValidationRuleCondition.swift */; };
-		BC89212139EB4855016785E0063607C8 /* CaseValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468AA63AE47B7B56E895F8A3EC35B16C /* CaseValidationPattern.swift */; };
-		EDD00558E111BF10DCA0FE8D7EB99553 /* ValidationRulePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16D1B6E9D76A8B7C40CC9E1BF0EA957 /* ValidationRulePattern.swift */; };
-		F1D4F48B6FFCD89FB6A3CFBBE0CE6A99 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7772334EACD4B63D0C60EEDA48A04DB /* ValidationResult.swift */; };
-		FF48C3FB5F32AD6AE0BE25D55FFC2F44 /* UITextView+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360447D1EABB0AA44E8BA38F0FCEE296 /* UITextView+Validator.swift */; };
+		9F4ADBF75B4B5552CB31D1DF4BB3A2D3 /* ValidatableInterfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508151E08478C2B173313B0B7C422408 /* ValidatableInterfaceElement.swift */; };
+		9F65CF2B85E27E107F872481651149C3 /* Pods-EP QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F292B3181278D47F9BC08FB7E529E6B8 /* Pods-EP QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A268F7BF786C75897BF8C687AD498122 /* Validator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9681D954689DB49680FE0975D4F314 /* Validator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8D592B6E44693A3CC6DA2B515CA4BB1 /* QTc.h in Headers */ = {isa = PBXBuildFile; fileRef = A93E9C5C5A6AB9A2A13E3C23FB836AFB /* QTc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAC87DA737394539F444B7FE712495A9 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C309DCB9320BE548B438B3D758CEF /* Validatable.swift */; };
+		B102532C668305382D56999F9B7B7A1C /* Pods-EP QTcTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6F1BBBFCFE7D01645B9C03DFE223DB5 /* Pods-EP QTcTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B14BCF54B084252807E7058C7088376F /* Pods-EP QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BC1BC71F7078F21F4622D87043EDA0 /* Pods-EP QTc-dummy.m */; };
+		B400BA6F10FD7A7B5FD1A3A02C954DD9 /* ValidationRulePaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E73E063E8D66E9FB11554937418700 /* ValidationRulePaymentCard.swift */; };
+		B566A74E820704E981410574CFB58A1D /* Pods-EP QTcTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7865B64FA8CC5D8A50CB76EF85D19BDD /* Pods-EP QTcTests-dummy.m */; };
+		B689BE254E6B04BB67F9A74F70889F25 /* QTc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED8FB91E831A139C796308AFD6B4BC /* QTc.swift */; };
+		B98B25687767955B6493718864C983D0 /* ValidationRuleRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936BC57A41001737037EFCB14CB0800 /* ValidationRuleRequired.swift */; };
+		BB9CA0DAC7DBBDFD0C18EC6D4153D9CC /* ValidationRuleCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55607C3D744D8C9A5629D00223C3E156 /* ValidationRuleCondition.swift */; };
+		BC89212139EB4855016785E0063607C8 /* CaseValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77413507BE815C40F8D650A3AA407E /* CaseValidationPattern.swift */; };
+		EDD00558E111BF10DCA0FE8D7EB99553 /* ValidationRulePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B274632438CC1B6DE4633E9A79A0FAAC /* ValidationRulePattern.swift */; };
+		F1D4F48B6FFCD89FB6A3CFBBE0CE6A99 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45CBEAF8881E0A1F3C6C68C1A708080 /* ValidationResult.swift */; };
+		FF48C3FB5F32AD6AE0BE25D55FFC2F44 /* UITextView+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08384AEEA653B01CE35B006CA7D5FBA8 /* UITextView+Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,70 +65,73 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0047C72FE53C5DEA68E77FDAD02B1625 /* Pods-EP QTcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.release.xcconfig"; sourceTree = "<group>"; };
-		006C3A37000176926A76417B454DBB3F /* ValidationRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRule.swift; path = Validator/Sources/ValidationRule.swift; sourceTree = "<group>"; };
-		08DED745921A9B354E33CDB0018F8344 /* QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QTc-dummy.m"; sourceTree = "<group>"; };
-		0A5081447564F97ED483100668C79B78 /* ValidationRuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleURL.swift; path = Validator/Sources/Rules/ValidationRuleURL.swift; sourceTree = "<group>"; };
-		14E43FE6942AE3D715C2DFF389EF902E /* Validator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Validator.modulemap; sourceTree = "<group>"; };
-		1B205E377F43BEEAB725165CA46B3876 /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
-		24A12E2FE61B3FA7532A10433D711F8C /* ContainsNumberValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainsNumberValidationPattern.swift; path = Validator/Sources/ContainsNumberValidationPattern.swift; sourceTree = "<group>"; };
-		26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
-		2EFA0FA9DECA1AE0D2C39CB10D638649 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
-		334F1B7646C9F8CBDB752FDB9F1F7EB4 /* EmailValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmailValidationPattern.swift; path = Validator/Sources/EmailValidationPattern.swift; sourceTree = "<group>"; };
-		360447D1EABB0AA44E8BA38F0FCEE296 /* UITextView+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextView+Validator.swift"; sourceTree = "<group>"; };
-		3624865A0EF97C4E3CB68D298D84C43D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36C65FA49D053D22301045DFD1A9ECE7 /* ValidationRuleEquality.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleEquality.swift; path = Validator/Sources/Rules/ValidationRuleEquality.swift; sourceTree = "<group>"; };
-		43364854E11C65E3867529BCBBEB07C1 /* Pods-EP QTcTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTcTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		468AA63AE47B7B56E895F8A3EC35B16C /* CaseValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaseValidationPattern.swift; path = Validator/Sources/CaseValidationPattern.swift; sourceTree = "<group>"; };
-		4AA98C029A5CE30B381D524E93B1848A /* ValidationRuleComparison.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleComparison.swift; path = Validator/Sources/Rules/ValidationRuleComparison.swift; sourceTree = "<group>"; };
-		5271628B966CB9235134624D893D69C1 /* Validator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-umbrella.h"; sourceTree = "<group>"; };
-		5FF256B43BFA230461166D12B5B4FA17 /* ValidationRulePaymentCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRulePaymentCard.swift; path = Validator/Sources/Rules/ValidationRulePaymentCard.swift; sourceTree = "<group>"; };
-		6286CA345C0D30E8058B20D1ACA281F7 /* UISlider+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UISlider+Validator.swift"; sourceTree = "<group>"; };
-		62E47ACC395B43C8E567A5EECA093E64 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63041110837121EB8CE6CE8981C23C4C /* ValidatableInterfaceElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidatableInterfaceElement.swift; path = "Validator/Sources/UIKit+Validator/ValidatableInterfaceElement.swift"; sourceTree = "<group>"; };
-		65E5AEA37842EA7133E61FADC76C05F3 /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Validator/Sources/Validatable.swift; sourceTree = "<group>"; };
-		67782D2F46B7707ED44E6D5997B7ADC3 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7412B975DB9F8628B45518469E9CA67F /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTc-umbrella.h"; sourceTree = "<group>"; };
-		7E9468266F461F326F56DF0F83E13C3C /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		822EAF8C7A09911B53E5AF0B5D45E35C /* Validator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-prefix.pch"; sourceTree = "<group>"; };
-		8978A12D3D900D537FA47663D6BDAD5C /* Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Sources/Validator.swift; sourceTree = "<group>"; };
-		925B66AED37598F4A2A09EF15F3EAB3F /* ValidationRuleRequired.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleRequired.swift; path = Validator/Sources/Rules/ValidationRuleRequired.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		998FA71D2D8B658DE8DC4C01A28FE973 /* Pods-EP QTc-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTc-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9A4CA17B548EB8575DF4051D1075E87F /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
-		A27CDFA20D40F98037FD35E480C07F70 /* Pods-EP QTc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-frameworks.sh"; sourceTree = "<group>"; };
-		A5D05D429089B6491FF8511FBBEE6672 /* ValidationRuleContains.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleContains.swift; path = Validator/Sources/Rules/ValidationRuleContains.swift; sourceTree = "<group>"; };
-		AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTcTests-umbrella.h"; sourceTree = "<group>"; };
-		ABAB9532AA06A1F0AACB48FD69C97458 /* Pods-EP QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EP QTc.modulemap"; sourceTree = "<group>"; };
-		ABE2E55A1B0BE5C152223A19AA58B911 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACFB8DD6CAC0D89F83287944ADC87E58 /* Validator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Validator-dummy.m"; sourceTree = "<group>"; };
-		B100F533170679BCBA0CA660262B2B2C /* Pods-EP QTcTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-resources.sh"; sourceTree = "<group>"; };
-		B13BFDD39B8010DCFB11776EDAB14D82 /* ValidationRuleSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleSet.swift; path = Validator/Sources/ValidationRuleSet.swift; sourceTree = "<group>"; };
+		08384AEEA653B01CE35B006CA7D5FBA8 /* UITextView+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextView+Validator.swift"; sourceTree = "<group>"; };
+		084A3F08ED18A11C45CFE129233B7096 /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
+		0B77413507BE815C40F8D650A3AA407E /* CaseValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaseValidationPattern.swift; path = Validator/Sources/CaseValidationPattern.swift; sourceTree = "<group>"; };
+		0E03E30049216BFCAE73135A57115BEA /* Pods-EP QTc-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTc-acknowledgements.plist"; sourceTree = "<group>"; };
+		1F50F1DC2A85C49D4EF5398E5922060D /* Validator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-prefix.pch"; sourceTree = "<group>"; };
+		21E73E063E8D66E9FB11554937418700 /* ValidationRulePaymentCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRulePaymentCard.swift; path = Validator/Sources/Rules/ValidationRulePaymentCard.swift; sourceTree = "<group>"; };
+		2398F632012964213E9520E1977E089B /* ValidationRuleContains.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleContains.swift; path = Validator/Sources/Rules/ValidationRuleContains.swift; sourceTree = "<group>"; };
+		277DB90CE4DC59CCF4CD87BD7B4C8BE1 /* Pods-EP QTc-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTc-acknowledgements.markdown"; sourceTree = "<group>"; };
+		279F39C9737DE5BC354112E91546B308 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
+		29AE362B30DC98793E178D20C93DA287 /* ContainsNumberValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainsNumberValidationPattern.swift; path = Validator/Sources/ContainsNumberValidationPattern.swift; sourceTree = "<group>"; };
+		322C309DCB9320BE548B438B3D758CEF /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Validator/Sources/Validatable.swift; sourceTree = "<group>"; };
+		3B7FF5CCB7A1B07275B9269B491DE69A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		451FE82E5BF0784280B75BD2C580456F /* Pods-EP QTc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-frameworks.sh"; sourceTree = "<group>"; };
+		4CFC079A5E6A81DB05DBF3605810A31B /* Pods-EP QTcTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTcTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4D23E227D259500CD90D167754976FC8 /* ValidationRuleLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleLength.swift; path = Validator/Sources/Rules/ValidationRuleLength.swift; sourceTree = "<group>"; };
+		4EC690383B0190C7B2B4D5792DD2F689 /* QTc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-prefix.pch"; sourceTree = "<group>"; };
+		508151E08478C2B173313B0B7C422408 /* ValidatableInterfaceElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidatableInterfaceElement.swift; path = "Validator/Sources/UIKit+Validator/ValidatableInterfaceElement.swift"; sourceTree = "<group>"; };
+		55607C3D744D8C9A5629D00223C3E156 /* ValidationRuleCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleCondition.swift; path = Validator/Sources/Rules/ValidationRuleCondition.swift; sourceTree = "<group>"; };
+		62E47ACC395B43C8E567A5EECA093E64 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTcTests.framework; path = "Pods-EP QTcTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64155CBEFD71C95C41479D28FCEACB9B /* Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Sources/Validator.swift; sourceTree = "<group>"; };
+		6597DE164BA567244BEB6B58DE3BE56C /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
+		67782D2F46B7707ED44E6D5997B7ADC3 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTc.framework; path = "Pods-EP QTc.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		680907D79F734135AC619497C16F4472 /* ValidationRuleSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleSet.swift; path = Validator/Sources/ValidationRuleSet.swift; sourceTree = "<group>"; };
+		6D9681D954689DB49680FE0975D4F314 /* Validator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-umbrella.h"; sourceTree = "<group>"; };
+		7412B975DB9F8628B45518469E9CA67F /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QTc.framework; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7865B64FA8CC5D8A50CB76EF85D19BDD /* Pods-EP QTcTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTcTests-dummy.m"; sourceTree = "<group>"; };
+		7DC038AD92C8B85BCA9F7EEA06C907EB /* UITextField+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextField+Validator.swift"; sourceTree = "<group>"; };
+		7E9468266F461F326F56DF0F83E13C3C /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Validator.framework; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80BC1BC71F7078F21F4622D87043EDA0 /* Pods-EP QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTc-dummy.m"; sourceTree = "<group>"; };
+		84282B165EBFF44D8D2593FEF1C5FFA5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A731ED18B67185613C72BBD36871AC9 /* Pods-EP QTc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-resources.sh"; sourceTree = "<group>"; };
+		8F036830E040B25DBBF9FF0CA4996105 /* EmailValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmailValidationPattern.swift; path = Validator/Sources/EmailValidationPattern.swift; sourceTree = "<group>"; };
+		8F93C03164F2B8F624AAA72CFB6F95A1 /* ValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationPattern.swift; path = Validator/Sources/ValidationPattern.swift; sourceTree = "<group>"; };
+		91F639CFE4A73D7450A62B0B5E5C1499 /* QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QTc-dummy.m"; sourceTree = "<group>"; };
+		9307142978C807ED01B460103752C02F /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QTc.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93EAF4A6DAA7123C8332D07EDD5DC3AB /* ValidationRuleComparison.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleComparison.swift; path = Validator/Sources/Rules/ValidationRuleComparison.swift; sourceTree = "<group>"; };
+		9814BE0C2033B7EBFFB21FC88D34E6CB /* README.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		9E3E302BD3D5FAFA9558A34DC2877CC5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3FB78833ED17C59AAABE6BF85E34D57 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A49EA110BD9F8ABE61929BA610A2EEFD /* UISlider+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UISlider+Validator.swift"; sourceTree = "<group>"; };
+		A742275E2A280535F8B9FD6EBC64700F /* Validator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Validator-dummy.m"; sourceTree = "<group>"; };
+		A93E9C5C5A6AB9A2A13E3C23FB836AFB /* QTc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QTc.h; path = CommonSource/QTc.h; sourceTree = "<group>"; };
+		AC4ECD0368FFAEC48C7CD04CBF33DDEA /* Pods-EP QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EP QTc.modulemap"; sourceTree = "<group>"; };
+		AFF56E0FCF084FB8320A699FDE4ACF39 /* QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-umbrella.h"; sourceTree = "<group>"; };
+		B274632438CC1B6DE4633E9A79A0FAAC /* ValidationRulePattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRulePattern.swift; path = Validator/Sources/Rules/ValidationRulePattern.swift; sourceTree = "<group>"; };
+		B35FF0EB87E29DE694D221B893950594 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B80D0A855D31FFF5A724BF5D893B3F04 /* Validator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validator.xcconfig; sourceTree = "<group>"; };
-		C095B1ACE7ECD16E0E6539CCF566DCDD /* Pods-EP QTc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-resources.sh"; sourceTree = "<group>"; };
-		C16D1B6E9D76A8B7C40CC9E1BF0EA957 /* ValidationRulePattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRulePattern.swift; path = Validator/Sources/Rules/ValidationRulePattern.swift; sourceTree = "<group>"; };
-		C2EE8966E7E804539F244B783D3BF754 /* Pods-EP QTcTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EP QTcTests.modulemap"; sourceTree = "<group>"; };
-		C7772334EACD4B63D0C60EEDA48A04DB /* ValidationResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationResult.swift; path = Validator/Sources/ValidationResult.swift; sourceTree = "<group>"; };
-		CAB414D274B278699D87D1E9850A6EE7 /* UITextField+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextField+Validator.swift"; sourceTree = "<group>"; };
-		CB5844BF3A4F9F8E51FFED8A2D82D49C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBC3DCC37388ACC793C8C22DA7C97D12 /* QTc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QTc.h; path = CommonSource/QTc.h; sourceTree = "<group>"; };
-		D24BD6CE33E32CB5AED73B3D1197EB1E /* QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-umbrella.h"; sourceTree = "<group>"; };
-		D323981A8B51B019AC18309B639C1E43 /* ValidationRuleLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleLength.swift; path = Validator/Sources/Rules/ValidationRuleLength.swift; sourceTree = "<group>"; };
-		D64B54D07FAC186A591B74DE35436DB8 /* Pods-EP QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTc-dummy.m"; sourceTree = "<group>"; };
+		B8C3044326FAE048159496E77F984BD4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0786F27B54384BC66EECDE11447BAC7 /* QTc.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = QTc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C45CBEAF8881E0A1F3C6C68C1A708080 /* ValidationResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationResult.swift; path = Validator/Sources/ValidationResult.swift; sourceTree = "<group>"; };
+		D593A642A64FA629DA399F82B36B440D /* ValidationRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRule.swift; path = Validator/Sources/ValidationRule.swift; sourceTree = "<group>"; };
+		D6F1BBBFCFE7D01645B9C03DFE223DB5 /* Pods-EP QTcTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTcTests-umbrella.h"; sourceTree = "<group>"; };
+		D7AFDCCCD55710DB4243CBB10E7F4107 /* Pods-EP QTcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.release.xcconfig"; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DA4129199DE0656BF102DE9846DFBDFD /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
-		E20059473E14E32E0CC2E5E4CD5BC692 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTcTests-dummy.m"; sourceTree = "<group>"; };
-		EDED30C2211B5509E28571FAE9D42BB7 /* Pods-EP QTcTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-frameworks.sh"; sourceTree = "<group>"; };
-		EE90A199FD116F15031FFA788869F690 /* Pods-EP QTc-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTc-acknowledgements.plist"; sourceTree = "<group>"; };
-		F1F282198957962B899A1B5D9BA462A5 /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = QTc.modulemap; sourceTree = "<group>"; };
-		F2E43A40FF6C79E239A5021961BB9EAA /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
-		F306369C828D1E971ED04DAAA19B84B3 /* ValidationRuleCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleCondition.swift; path = Validator/Sources/Rules/ValidationRuleCondition.swift; sourceTree = "<group>"; };
-		F4067D278A98AA729E39C03B90296573 /* Pods-EP QTcTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTcTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FC886226B08235801E67346C3E3C658D /* QTc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-prefix.pch"; sourceTree = "<group>"; };
-		FCA81E25875083B2475C570426026AD6 /* ValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationPattern.swift; path = Validator/Sources/ValidationPattern.swift; sourceTree = "<group>"; };
+		D936BC57A41001737037EFCB14CB0800 /* ValidationRuleRequired.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleRequired.swift; path = Validator/Sources/Rules/ValidationRuleRequired.swift; sourceTree = "<group>"; };
+		DC1FDE57B5D1292ADD4AAEE8EA0B5049 /* Pods-EP QTcTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-frameworks.sh"; sourceTree = "<group>"; };
+		DC345088C9BCB08A6E8434B8209799C3 /* Validator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Validator.modulemap; sourceTree = "<group>"; };
+		DCC522FB3F4721B2B1CC7BEACECD0977 /* ValidationRuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleURL.swift; path = Validator/Sources/Rules/ValidationRuleURL.swift; sourceTree = "<group>"; };
+		DFC41FC88FE2F369CF416B763D2250DB /* Pods-EP QTcTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EP QTcTests.modulemap"; sourceTree = "<group>"; };
+		E3AD888F796A9EFF8463C8F79A26F76B /* ValidationRuleEquality.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleEquality.swift; path = Validator/Sources/Rules/ValidationRuleEquality.swift; sourceTree = "<group>"; };
+		E3BFA554A38E6AB747077888BE703B47 /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
+		E8135A0AAF74A3D8A312B5B097CBD73E /* Pods-EP QTcTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-resources.sh"; sourceTree = "<group>"; };
+		E900E21D405ACCA677128A3BAF2B1C35 /* Validator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validator.xcconfig; sourceTree = "<group>"; };
+		F292B3181278D47F9BC08FB7E529E6B8 /* Pods-EP QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EP QTc-umbrella.h"; sourceTree = "<group>"; };
+		FDDF8330BE63D4EE886CD0F860EE6D3F /* Pods-EP QTcTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTcTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FFED8FB91E831A139C796308AFD6B4BC /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,61 +171,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F0599F8DCE88C4CC5E627D0B3B1ACFF /* Pods */ = {
+		2C2CCD9E1B7478849FC91BF0953ABD99 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA51AD7A0B60B4C9795018C267EDDC12 /* QTc */,
-				3383CD22D1F56A51BF02645F971B8A95 /* Validator */,
+				84282B165EBFF44D8D2593FEF1C5FFA5 /* Info.plist */,
+				DC345088C9BCB08A6E8434B8209799C3 /* Validator.modulemap */,
+				E900E21D405ACCA677128A3BAF2B1C35 /* Validator.xcconfig */,
+				A742275E2A280535F8B9FD6EBC64700F /* Validator-dummy.m */,
+				1F50F1DC2A85C49D4EF5398E5922060D /* Validator-prefix.pch */,
+				6D9681D954689DB49680FE0975D4F314 /* Validator-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Validator";
 			sourceTree = "<group>";
 		};
-		2006D2A77520666467D0D50FB76C5A4C /* Pods-EP QTc */ = {
+		3DD89A6BE9758875BD752A13AB8D712E /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				ABE2E55A1B0BE5C152223A19AA58B911 /* Info.plist */,
-				ABAB9532AA06A1F0AACB48FD69C97458 /* Pods-EP QTc.modulemap */,
-				998FA71D2D8B658DE8DC4C01A28FE973 /* Pods-EP QTc-acknowledgements.markdown */,
-				EE90A199FD116F15031FFA788869F690 /* Pods-EP QTc-acknowledgements.plist */,
-				D64B54D07FAC186A591B74DE35436DB8 /* Pods-EP QTc-dummy.m */,
-				A27CDFA20D40F98037FD35E480C07F70 /* Pods-EP QTc-frameworks.sh */,
-				C095B1ACE7ECD16E0E6539CCF566DCDD /* Pods-EP QTc-resources.sh */,
-				787464EEEC1B53C70E436F8149A4FE6D /* Pods-EP QTc-umbrella.h */,
-				26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */,
-				DA4129199DE0656BF102DE9846DFBDFD /* Pods-EP QTc.release.xcconfig */,
+				A3FB78833ED17C59AAABE6BF85E34D57 /* LICENSE */,
+				C0786F27B54384BC66EECDE11447BAC7 /* QTc.podspec */,
+				9814BE0C2033B7EBFFB21FC88D34E6CB /* README.markdown */,
 			);
-			name = "Pods-EP QTc";
-			path = "Target Support Files/Pods-EP QTc";
-			sourceTree = "<group>";
-		};
-		3383CD22D1F56A51BF02645F971B8A95 /* Validator */ = {
-			isa = PBXGroup;
-			children = (
-				468AA63AE47B7B56E895F8A3EC35B16C /* CaseValidationPattern.swift */,
-				24A12E2FE61B3FA7532A10433D711F8C /* ContainsNumberValidationPattern.swift */,
-				334F1B7646C9F8CBDB752FDB9F1F7EB4 /* EmailValidationPattern.swift */,
-				6286CA345C0D30E8058B20D1ACA281F7 /* UISlider+Validator.swift */,
-				CAB414D274B278699D87D1E9850A6EE7 /* UITextField+Validator.swift */,
-				360447D1EABB0AA44E8BA38F0FCEE296 /* UITextView+Validator.swift */,
-				65E5AEA37842EA7133E61FADC76C05F3 /* Validatable.swift */,
-				63041110837121EB8CE6CE8981C23C4C /* ValidatableInterfaceElement.swift */,
-				FCA81E25875083B2475C570426026AD6 /* ValidationPattern.swift */,
-				C7772334EACD4B63D0C60EEDA48A04DB /* ValidationResult.swift */,
-				006C3A37000176926A76417B454DBB3F /* ValidationRule.swift */,
-				4AA98C029A5CE30B381D524E93B1848A /* ValidationRuleComparison.swift */,
-				F306369C828D1E971ED04DAAA19B84B3 /* ValidationRuleCondition.swift */,
-				A5D05D429089B6491FF8511FBBEE6672 /* ValidationRuleContains.swift */,
-				36C65FA49D053D22301045DFD1A9ECE7 /* ValidationRuleEquality.swift */,
-				D323981A8B51B019AC18309B639C1E43 /* ValidationRuleLength.swift */,
-				C16D1B6E9D76A8B7C40CC9E1BF0EA957 /* ValidationRulePattern.swift */,
-				5FF256B43BFA230461166D12B5B4FA17 /* ValidationRulePaymentCard.swift */,
-				925B66AED37598F4A2A09EF15F3EAB3F /* ValidationRuleRequired.swift */,
-				B13BFDD39B8010DCFB11776EDAB14D82 /* ValidationRuleSet.swift */,
-				0A5081447564F97ED483100668C79B78 /* ValidationRuleURL.swift */,
-				8978A12D3D900D537FA47663D6BDAD5C /* Validator.swift */,
-				9C8D2B16A7766DF1A55D94C9607454B3 /* Support Files */,
-			);
-			path = Validator;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -242,11 +212,24 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		5539B4591CADD3329764EB047BA6F75A /* QTc */ = {
+			isa = PBXGroup;
+			children = (
+				E3BFA554A38E6AB747077888BE703B47 /* Formulas.swift */,
+				A93E9C5C5A6AB9A2A13E3C23FB836AFB /* QTc.h */,
+				FFED8FB91E831A139C796308AFD6B4BC /* QTc.swift */,
+				3DD89A6BE9758875BD752A13AB8D712E /* Pod */,
+				FA3FF3AEA4E23A98701D27C403921D4B /* Support Files */,
+			);
+			name = QTc;
+			path = /Users/mannd/dev/QTc;
+			sourceTree = "<absolute>";
+		};
 		66046339A0C76A5FF40AB9E57B2D0B99 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2006D2A77520666467D0D50FB76C5A4C /* Pods-EP QTc */,
-				9CBB8299F2C07C3D1E31E2436BB3CB99 /* Pods-EP QTcTests */,
+				DA0D351DF52C71A04A23541E26C8FB29 /* Pods-EP QTc */,
+				9A0FCE73C515AE36A664D7F57EC85E55 /* Pods-EP QTcTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -255,54 +238,35 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				A50724EBA82465462998D2CEBFD67F4A /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				0F0599F8DCE88C4CC5E627D0B3B1ACFF /* Pods */,
+				906C82496B75845E637C715B08F8420C /* Pods */,
 				A00581E9570268816093DCC982D8E81B /* Products */,
 				66046339A0C76A5FF40AB9E57B2D0B99 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F085B1D8BCF00BB19836B9056EE8843 /* Support Files */ = {
+		906C82496B75845E637C715B08F8420C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E20059473E14E32E0CC2E5E4CD5BC692 /* Info.plist */,
-				F1F282198957962B899A1B5D9BA462A5 /* QTc.modulemap */,
-				F2E43A40FF6C79E239A5021961BB9EAA /* QTc.xcconfig */,
-				08DED745921A9B354E33CDB0018F8344 /* QTc-dummy.m */,
-				FC886226B08235801E67346C3E3C658D /* QTc-prefix.pch */,
-				D24BD6CE33E32CB5AED73B3D1197EB1E /* QTc-umbrella.h */,
+				D9A666BEE7D40B6476B94E2B7ECF00A9 /* Validator */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/QTc";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		9C8D2B16A7766DF1A55D94C9607454B3 /* Support Files */ = {
+		9A0FCE73C515AE36A664D7F57EC85E55 /* Pods-EP QTcTests */ = {
 			isa = PBXGroup;
 			children = (
-				3624865A0EF97C4E3CB68D298D84C43D /* Info.plist */,
-				14E43FE6942AE3D715C2DFF389EF902E /* Validator.modulemap */,
-				B80D0A855D31FFF5A724BF5D893B3F04 /* Validator.xcconfig */,
-				ACFB8DD6CAC0D89F83287944ADC87E58 /* Validator-dummy.m */,
-				822EAF8C7A09911B53E5AF0B5D45E35C /* Validator-prefix.pch */,
-				5271628B966CB9235134624D893D69C1 /* Validator-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Validator";
-			sourceTree = "<group>";
-		};
-		9CBB8299F2C07C3D1E31E2436BB3CB99 /* Pods-EP QTcTests */ = {
-			isa = PBXGroup;
-			children = (
-				CB5844BF3A4F9F8E51FFED8A2D82D49C /* Info.plist */,
-				C2EE8966E7E804539F244B783D3BF754 /* Pods-EP QTcTests.modulemap */,
-				F4067D278A98AA729E39C03B90296573 /* Pods-EP QTcTests-acknowledgements.markdown */,
-				43364854E11C65E3867529BCBBEB07C1 /* Pods-EP QTcTests-acknowledgements.plist */,
-				E460A0458C352439DCE804D52B591DDE /* Pods-EP QTcTests-dummy.m */,
-				EDED30C2211B5509E28571FAE9D42BB7 /* Pods-EP QTcTests-frameworks.sh */,
-				B100F533170679BCBA0CA660262B2B2C /* Pods-EP QTcTests-resources.sh */,
-				AB3BF8EC204D8FD993AB0AA83A712702 /* Pods-EP QTcTests-umbrella.h */,
-				2EFA0FA9DECA1AE0D2C39CB10D638649 /* Pods-EP QTcTests.debug.xcconfig */,
-				0047C72FE53C5DEA68E77FDAD02B1625 /* Pods-EP QTcTests.release.xcconfig */,
+				3B7FF5CCB7A1B07275B9269B491DE69A /* Info.plist */,
+				DFC41FC88FE2F369CF416B763D2250DB /* Pods-EP QTcTests.modulemap */,
+				FDDF8330BE63D4EE886CD0F860EE6D3F /* Pods-EP QTcTests-acknowledgements.markdown */,
+				4CFC079A5E6A81DB05DBF3605810A31B /* Pods-EP QTcTests-acknowledgements.plist */,
+				7865B64FA8CC5D8A50CB76EF85D19BDD /* Pods-EP QTcTests-dummy.m */,
+				DC1FDE57B5D1292ADD4AAEE8EA0B5049 /* Pods-EP QTcTests-frameworks.sh */,
+				E8135A0AAF74A3D8A312B5B097CBD73E /* Pods-EP QTcTests-resources.sh */,
+				D6F1BBBFCFE7D01645B9C03DFE223DB5 /* Pods-EP QTcTests-umbrella.h */,
+				279F39C9737DE5BC354112E91546B308 /* Pods-EP QTcTests.debug.xcconfig */,
+				D7AFDCCCD55710DB4243CBB10E7F4107 /* Pods-EP QTcTests.release.xcconfig */,
 			);
 			name = "Pods-EP QTcTests";
 			path = "Target Support Files/Pods-EP QTcTests";
@@ -319,15 +283,75 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA51AD7A0B60B4C9795018C267EDDC12 /* QTc */ = {
+		A50724EBA82465462998D2CEBFD67F4A /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A4CA17B548EB8575DF4051D1075E87F /* Formulas.swift */,
-				CBC3DCC37388ACC793C8C22DA7C97D12 /* QTc.h */,
-				1B205E377F43BEEAB725165CA46B3876 /* QTc.swift */,
-				7F085B1D8BCF00BB19836B9056EE8843 /* Support Files */,
+				5539B4591CADD3329764EB047BA6F75A /* QTc */,
 			);
-			path = QTc;
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D9A666BEE7D40B6476B94E2B7ECF00A9 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				0B77413507BE815C40F8D650A3AA407E /* CaseValidationPattern.swift */,
+				29AE362B30DC98793E178D20C93DA287 /* ContainsNumberValidationPattern.swift */,
+				8F036830E040B25DBBF9FF0CA4996105 /* EmailValidationPattern.swift */,
+				A49EA110BD9F8ABE61929BA610A2EEFD /* UISlider+Validator.swift */,
+				7DC038AD92C8B85BCA9F7EEA06C907EB /* UITextField+Validator.swift */,
+				08384AEEA653B01CE35B006CA7D5FBA8 /* UITextView+Validator.swift */,
+				322C309DCB9320BE548B438B3D758CEF /* Validatable.swift */,
+				508151E08478C2B173313B0B7C422408 /* ValidatableInterfaceElement.swift */,
+				8F93C03164F2B8F624AAA72CFB6F95A1 /* ValidationPattern.swift */,
+				C45CBEAF8881E0A1F3C6C68C1A708080 /* ValidationResult.swift */,
+				D593A642A64FA629DA399F82B36B440D /* ValidationRule.swift */,
+				93EAF4A6DAA7123C8332D07EDD5DC3AB /* ValidationRuleComparison.swift */,
+				55607C3D744D8C9A5629D00223C3E156 /* ValidationRuleCondition.swift */,
+				2398F632012964213E9520E1977E089B /* ValidationRuleContains.swift */,
+				E3AD888F796A9EFF8463C8F79A26F76B /* ValidationRuleEquality.swift */,
+				4D23E227D259500CD90D167754976FC8 /* ValidationRuleLength.swift */,
+				B274632438CC1B6DE4633E9A79A0FAAC /* ValidationRulePattern.swift */,
+				21E73E063E8D66E9FB11554937418700 /* ValidationRulePaymentCard.swift */,
+				D936BC57A41001737037EFCB14CB0800 /* ValidationRuleRequired.swift */,
+				680907D79F734135AC619497C16F4472 /* ValidationRuleSet.swift */,
+				DCC522FB3F4721B2B1CC7BEACECD0977 /* ValidationRuleURL.swift */,
+				64155CBEFD71C95C41479D28FCEACB9B /* Validator.swift */,
+				2C2CCD9E1B7478849FC91BF0953ABD99 /* Support Files */,
+			);
+			name = Validator;
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		DA0D351DF52C71A04A23541E26C8FB29 /* Pods-EP QTc */ = {
+			isa = PBXGroup;
+			children = (
+				B8C3044326FAE048159496E77F984BD4 /* Info.plist */,
+				AC4ECD0368FFAEC48C7CD04CBF33DDEA /* Pods-EP QTc.modulemap */,
+				277DB90CE4DC59CCF4CD87BD7B4C8BE1 /* Pods-EP QTc-acknowledgements.markdown */,
+				0E03E30049216BFCAE73135A57115BEA /* Pods-EP QTc-acknowledgements.plist */,
+				80BC1BC71F7078F21F4622D87043EDA0 /* Pods-EP QTc-dummy.m */,
+				451FE82E5BF0784280B75BD2C580456F /* Pods-EP QTc-frameworks.sh */,
+				8A731ED18B67185613C72BBD36871AC9 /* Pods-EP QTc-resources.sh */,
+				F292B3181278D47F9BC08FB7E529E6B8 /* Pods-EP QTc-umbrella.h */,
+				B35FF0EB87E29DE694D221B893950594 /* Pods-EP QTc.debug.xcconfig */,
+				084A3F08ED18A11C45CFE129233B7096 /* Pods-EP QTc.release.xcconfig */,
+			);
+			name = "Pods-EP QTc";
+			path = "Target Support Files/Pods-EP QTc";
+			sourceTree = "<group>";
+		};
+		FA3FF3AEA4E23A98701D27C403921D4B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E3E302BD3D5FAFA9558A34DC2877CC5 /* Info.plist */,
+				9307142978C807ED01B460103752C02F /* QTc.modulemap */,
+				6597DE164BA567244BEB6B58DE3BE56C /* QTc.xcconfig */,
+				91F639CFE4A73D7450A62B0B5E5C1499 /* QTc-dummy.m */,
+				4EC690383B0190C7B2B4D5792DD2F689 /* QTc-prefix.pch */,
+				AFF56E0FCF084FB8320A699FDE4ACF39 /* QTc-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../EP QTc/Pods/Target Support Files/QTc";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,8 +469,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -543,10 +567,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		01E792CEA0AFE83AC880926E6FC7EDF0 /* Release */ = {
+		08B824D10D42754E136A167E5F4E854C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA4129199DE0656BF102DE9846DFBDFD /* Pods-EP QTc.release.xcconfig */;
+			baseConfigurationReference = 084A3F08ED18A11C45CFE129233B7096 /* Pods-EP QTc.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -577,7 +602,7 @@
 			};
 			name = Release;
 		};
-		1D23278938ADF334174C5BF2A4B6B1B8 /* Release */ = {
+		09A3DF62C6DA698D65EA36C3BE9FDCB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -587,10 +612,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -598,6 +625,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -628,109 +656,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		832133BA840C9DC9C0DAA50E9F2C7122 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B80D0A855D31FFF5A724BF5D893B3F04 /* Validator.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Validator/Validator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Validator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Validator/Validator.modulemap";
-				PRODUCT_NAME = Validator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		883CADE85AE4DEBEBBC6DF13DF3679FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2E43A40FF6C79E239A5021961BB9EAA /* QTc.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/QTc/QTc-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/QTc/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/QTc/QTc.modulemap";
-				PRODUCT_NAME = QTc;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		97DF63631B96843575D6A78AA2B8DC66 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0047C72FE53C5DEA68E77FDAD02B1625 /* Pods-EP QTcTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EP QTcTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_EP_QTcTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		995C3A53DEAA96B47E756185345E180D /* Debug */ = {
+		62FF89F00ED9838E2988AD30FA89E414 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -740,10 +670,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -751,6 +683,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -790,9 +723,43 @@
 			};
 			name = Debug;
 		};
-		A8D0899D9FA3C543BDA8C16A688A38CC /* Debug */ = {
+		65AF9A9A182FBAC23EF860FB291F537F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B80D0A855D31FFF5A724BF5D893B3F04 /* Validator.xcconfig */;
+			baseConfigurationReference = D7AFDCCCD55710DB4243CBB10E7F4107 /* Pods-EP QTcTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EP QTcTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EP_QTcTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		832133BA840C9DC9C0DAA50E9F2C7122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E900E21D405ACCA677128A3BAF2B1C35 /* Validator.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -813,18 +780,52 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		B3D787E5ECF4EC6B58B37A6E2D080599 /* Debug */ = {
+		883CADE85AE4DEBEBBC6DF13DF3679FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26A8C2A44F8C40AB72E68BFC7B42F5B3 /* Pods-EP QTc.debug.xcconfig */;
+			baseConfigurationReference = 6597DE164BA567244BEB6B58DE3BE56C /* QTc.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/QTc/QTc-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QTc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QTc/QTc.modulemap";
+				PRODUCT_NAME = QTc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8F8E597321812F2D6F25A0DF02CC7F95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B35FF0EB87E29DE694D221B893950594 /* Pods-EP QTc.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -855,10 +856,42 @@
 			};
 			name = Debug;
 		};
-		E245A15BEF251DA80F25A905EBEA6B97 /* Debug */ = {
+		A8D0899D9FA3C543BDA8C16A688A38CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EFA0FA9DECA1AE0D2C39CB10D638649 /* Pods-EP QTcTests.debug.xcconfig */;
+			baseConfigurationReference = E900E21D405ACCA677128A3BAF2B1C35 /* Validator.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Validator/Validator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Validator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Validator/Validator.modulemap";
+				PRODUCT_NAME = Validator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF94AAFE09231429AC19A29F944DC9EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279F39C9737DE5BC354112E91546B308 /* Pods-EP QTcTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -889,7 +922,7 @@
 		};
 		E90829A63E5E3FF4100BF5C0DB3A4165 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2E43A40FF6C79E239A5021961BB9EAA /* QTc.xcconfig */;
+			baseConfigurationReference = 6597DE164BA567244BEB6B58DE3BE56C /* QTc.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -924,8 +957,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				995C3A53DEAA96B47E756185345E180D /* Debug */,
-				1D23278938ADF334174C5BF2A4B6B1B8 /* Release */,
+				62FF89F00ED9838E2988AD30FA89E414 /* Debug */,
+				09A3DF62C6DA698D65EA36C3BE9FDCB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -942,8 +975,8 @@
 		61538403E6780A3878A52F7FC364D60C /* Build configuration list for PBXNativeTarget "Pods-EP QTcTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E245A15BEF251DA80F25A905EBEA6B97 /* Debug */,
-				97DF63631B96843575D6A78AA2B8DC66 /* Release */,
+				CF94AAFE09231429AC19A29F944DC9EF /* Debug */,
+				65AF9A9A182FBAC23EF860FB291F537F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -960,8 +993,8 @@
 		BBCBD762BD6F2A57E1180717F1A01A63 /* Build configuration list for PBXNativeTarget "Pods-EP QTc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B3D787E5ECF4EC6B58B37A6E2D080599 /* Debug */,
-				01E792CEA0AFE83AC880926E6FC7EDF0 /* Release */,
+				8F8E597321812F2D6F25A0DF02CC7F95 /* Debug */,
+				08B824D10D42754E136A167E5F4E854C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

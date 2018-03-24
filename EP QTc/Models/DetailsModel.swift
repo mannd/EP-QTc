@@ -50,7 +50,7 @@ class DetailsModel {
         ageParameter.value = qtMeasurement.ageString()
         parameters.append(ageParameter)
         // qtc result
-        result = formatType.formattedMeasurementWithUnits(measurement: qtMeasurement.calculateQTc(formula: formula), units: qtMeasurement.units, intervalRateType: .interval)
+        result = qtMeasurement.calculateQTcToString(formula: formula, formatType: formatType)
         // formula details
         let nameDetail = Detail()
         nameDetail.key = "Name"
@@ -68,6 +68,15 @@ class DetailsModel {
         classificationDetail.key = "Classification"
         classificationDetail.value = calculator.classificationName
         details.append(classificationDetail)
+        let numberOfSubjectsDetail = Detail()
+        numberOfSubjectsDetail.key = "Total number of subjects"
+        if let totalNumberOfSubjects = calculator.numberOfSubjects {
+            numberOfSubjectsDetail.value = String(totalNumberOfSubjects)
+        }
+        else {
+            numberOfSubjectsDetail.value = "not given"
+        }
+        details.append(numberOfSubjectsDetail)
         // TODO: add further details here
         equation = calculator.equation
         reference = calculator.reference

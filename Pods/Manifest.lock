@@ -3,29 +3,25 @@ PODS:
   - Validator (3.0)
 
 DEPENDENCIES:
-  - QTc (from `https://github.com/mannd/QTc.git`, branch `master`)
+  - QTc (from `~/dev/QTc`)
   - Validator (from `https://github.com/adamwaite/Validator.git`, branch `master`)
 
 EXTERNAL SOURCES:
   QTc:
-    :branch: master
-    :git: https://github.com/mannd/QTc.git
+    :path: ~/dev/QTc
   Validator:
     :branch: master
     :git: https://github.com/adamwaite/Validator.git
 
 CHECKOUT OPTIONS:
-  QTc:
-    :commit: 500dc785554c273061324e46a6ab87f88ed54ebf
-    :git: https://github.com/mannd/QTc.git
   Validator:
     :commit: ac1bff003705f37d795ca58aaeaceac932699a8d
     :git: https://github.com/adamwaite/Validator.git
 
 SPEC CHECKSUMS:
-  QTc: bb62a1395daf3149929ef410d8c309f4ca760f30
+  QTc: 61e56b42a33e0f1f58c5761e8db4c96a727e4e85
   Validator: 15e8c4fad6ba6c4b14ee7d006467108958592ff0
 
-PODFILE CHECKSUM: d8b872e2763e90814dec3ed0c1506d60e334ed6a
+PODFILE CHECKSUM: 0b79fec1cf15476037453561ecbe5a152c351852
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

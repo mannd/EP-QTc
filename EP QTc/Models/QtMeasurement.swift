@@ -11,27 +11,46 @@ import QTc
 
 extension QTcCalculator {
     func calculate(qt: Double, intervalRate: Double, intervalRateType: IntervalRateType,
-                   sex: Sex, age: Int, units: Units) -> Double? {
+                   sex: Sex, age: Age, units: Units) throws -> Double? {
         var result: Double?
         switch units {
         case .msec:
             if intervalRateType == .interval {
-                result = calculate(qtInMsec: qt, rrInMsec: intervalRate, sex: sex, age: age)
+                result = try calculate(qtInMsec: qt, rrInMsec: intervalRate, sex: sex, age: age)
             }
             else {
-                result = calculate(qtInMsec: qt, rate: intervalRate, sex: sex, age: age)
+                result = try calculate(qtInMsec: qt, rate: intervalRate, sex: sex, age: age)
             }
         case .sec:
             if intervalRateType == .interval {
-                result = calculate(qtInSec: qt, rrInSec: intervalRate, sex: sex, age: age)
+                result = try calculate(qtInSec: qt, rrInSec: intervalRate, sex: sex, age: age)
             }
             else {
-                result = calculate(qtInSec: qt, rate: intervalRate, sex: sex, age: age)
+                result = try calculate(qtInSec: qt, rate: intervalRate, sex: sex, age: age)
             }
         }
         return result
     }
 }
+
+//do {
+//    let qtc = try qtMeasurement.calculateQTc(formula: formula) ?? 0
+//    let formatString = formatType.formattedMeasurement(measurement: qtc, units: qtMeasurement.units, intervalRateType: .interval)
+//    let resultString = String.localizedStringWithFormat("\(formatString) %@", qtMeasurement.intervalUnits())
+//    return resultString
+//} catch CalculationError.ageRequired {
+//    return "must specify age"
+//} catch CalculationError.sexRequired {
+//    return "must specify sex"
+//} catch CalculationError.ageOutOfRange {
+//    return "age out of range"
+//} catch CalculationError.heartRateOutOfRange {
+//    return "heart rate out of range"
+//} catch CalculationError.wrongSex {
+//    return "wrong sex for formula"
+//} catch {
+//    return "error"
+//}
 
 public enum Units {
     case msec
@@ -131,13 +150,35 @@ public struct QtMeasurement {
     var sex: Sex
     var age: Double?
     
-    func calculateQTc(formula: QTcFormula) -> Double? {
+    func calculateQTc(formula: QTcFormula) throws -> Double? {
         let qtcCalculator = QTc.qtcCalculator(formula: formula)
-        var intAge = QTcCalculator.unspecified
+        // age is sliced to Int?
+        var intAge: Age = nil
         if let age = age {
             intAge = Int(age)
         }
-        return qtcCalculator.calculate(qt: qt, intervalRate: intervalRate, intervalRateType: intervalRateType, sex: sex, age: intAge, units: units)
+        return try qtcCalculator.calculate(qt: qt, intervalRate: intervalRate, intervalRateType: intervalRateType, sex: sex, age: intAge, units: units)
+    }
+    
+    func calculateQTcToString(formula: QTcFormula, formatType: FormatType) -> String {
+        do {
+            let qtc = try calculateQTc(formula: formula) ?? 0
+            let formatString = formatType.formattedMeasurement(measurement: qtc, units: units, intervalRateType: .interval)
+            let resultString = String.localizedStringWithFormat("\(formatString) %@", intervalUnits())
+            return resultString
+        } catch CalculationError.ageRequired {
+            return "must specify age"
+        } catch CalculationError.sexRequired {
+            return "must specify sex"
+        } catch CalculationError.ageOutOfRange {
+            return "age out of range"
+        } catch CalculationError.heartRateOutOfRange {
+            return "heart rate out of range"
+        } catch CalculationError.wrongSex {
+            return "wrong sex for formula"
+        } catch {
+            return "unexpected error"
+        }
     }
     
     func intervalUnits() -> String {

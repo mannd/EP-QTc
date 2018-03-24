@@ -23,11 +23,7 @@ class ResultViewModel: NSObject {
     
     func resultLabel() -> String {
         let formatType: FormatType = defaultFormatType
-        // TODO: deal with other rounding options, e.g. msec rounded to integer
-        let qtc = qtMeasurement.calculateQTc(formula: formula) ?? 0
-        let formatString = formatType.formattedMeasurement(measurement: qtc, units: qtMeasurement.units, intervalRateType: .interval)
-        let resultString = String.localizedStringWithFormat("\(formatString) %@", qtMeasurement.intervalUnits())
-        return resultString
+        return qtMeasurement.calculateQTcToString(formula: formula, formatType: formatType)
     }
     
     func longCalculatorName() -> String {
