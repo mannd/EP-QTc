@@ -1,12 +1,19 @@
 PODS:
+  - Charts (3.1.0):
+    - Charts/Core (= 3.1.0)
+  - Charts/Core (3.1.0)
   - QTc (2.1.0)
   - Validator (3.0)
 
 DEPENDENCIES:
+  - Charts (from `https://github.com/danielgindi/Charts`, branch `master`)
   - QTc (from `~/dev/QTc`)
   - Validator (from `https://github.com/adamwaite/Validator.git`, branch `master`)
 
 EXTERNAL SOURCES:
+  Charts:
+    :branch: master
+    :git: https://github.com/danielgindi/Charts
   QTc:
     :path: ~/dev/QTc
   Validator:
@@ -14,14 +21,18 @@ EXTERNAL SOURCES:
     :git: https://github.com/adamwaite/Validator.git
 
 CHECKOUT OPTIONS:
+  Charts:
+    :commit: 7c4c16e36bb897131b2fc1d72126620245ffbe52
+    :git: https://github.com/danielgindi/Charts
   Validator:
     :commit: ac1bff003705f37d795ca58aaeaceac932699a8d
     :git: https://github.com/adamwaite/Validator.git
 
 SPEC CHECKSUMS:
+  Charts: fa05b3e438fb85da7fda78de4ace5e16a2d11f79
   QTc: 61e56b42a33e0f1f58c5761e8db4c96a727e4e85
   Validator: 15e8c4fad6ba6c4b14ee7d006467108958592ff0
 
-PODFILE CHECKSUM: 0b79fec1cf15476037453561ecbe5a152c351852
+PODFILE CHECKSUM: 5371880d554b68688988679936bcf50829f1f82e
 
 COCOAPODS: 1.4.0
