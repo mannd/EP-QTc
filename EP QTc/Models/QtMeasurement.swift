@@ -33,25 +33,6 @@ extension QTcCalculator {
     }
 }
 
-//do {
-//    let qtc = try qtMeasurement.calculateQTc(formula: formula) ?? 0
-//    let formatString = formatType.formattedMeasurement(measurement: qtc, units: qtMeasurement.units, intervalRateType: .interval)
-//    let resultString = String.localizedStringWithFormat("\(formatString) %@", qtMeasurement.intervalUnits())
-//    return resultString
-//} catch CalculationError.ageRequired {
-//    return "must specify age"
-//} catch CalculationError.sexRequired {
-//    return "must specify sex"
-//} catch CalculationError.ageOutOfRange {
-//    return "age out of range"
-//} catch CalculationError.heartRateOutOfRange {
-//    return "heart rate out of range"
-//} catch CalculationError.wrongSex {
-//    return "wrong sex for formula"
-//} catch {
-//    return "error"
-//}
-
 public enum Units {
     case msec
     case sec

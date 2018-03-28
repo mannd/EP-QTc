@@ -6,7 +6,7 @@
 //  Copyright © 2018 EP Studios. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import QTc
 
 class DetailsModel {

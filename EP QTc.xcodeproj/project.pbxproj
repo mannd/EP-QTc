@@ -13,6 +13,10 @@
 		8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */; };
 		8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
+		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
+		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
+		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
+		8E5BA617206B1E6500B35B12 /* SimpleStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */; };
 		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
 		8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A41FD30B66004B1B2F /* Main.storyboard */; };
 		8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A71FD30B66004B1B2F /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtFormulas.swift; sourceTree = "<group>"; };
 		8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
+		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
+		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
+		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStatsCell.swift; sourceTree = "<group>"; };
 		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E6E55A51FD30B66004B1B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 				8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */,
 				8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */,
 				8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */,
+				8E506229206B099600BF9C3E /* StatsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -140,6 +149,7 @@
 				8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */,
 				8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */,
 				8E9674CA204917C500D49C05 /* DetailsModel.swift */,
+				8E50622B206B0A2800BF9C3E /* StatsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +170,7 @@
 				8EBE89D2205C3A2400A60296 /* DetailsCell.swift */,
 				8EBE89D4205C3CD900A60296 /* ReferenceCell.swift */,
 				8EBE89D6205C3CEA00A60296 /* NotesCell.swift */,
+				8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +224,7 @@
 			children = (
 				8E9674C52049032200D49C05 /* ResultViewModel.swift */,
 				8E9674C8204909A200D49C05 /* DetailsViewModel.swift */,
+				8E50622D206B123C00BF9C3E /* StatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -405,12 +417,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/QTc/QTc.framework",
+				"${BUILT_PRODUCTS_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework",
 				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QTc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SigmaSwiftStatistics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */,
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
 				8EBE89D1205C37F700A60296 /* EquationCell.swift in Sources */,
 				8EBE89D3205C3A2400A60296 /* DetailsCell.swift in Sources */,
@@ -451,12 +466,15 @@
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
 				8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */,
 				8EA5108F2050F3C100D77A77 /* ParameterCell.swift in Sources */,
+				8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */,
 				8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */,
 				8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */,
+				8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */,
 				8EA5108D20509EB600D77A77 /* FormulaNameCell.swift in Sources */,
 				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,
 				8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */,
+				8E5BA617206B1E6500B35B12 /* SimpleStatsCell.swift in Sources */,
 				8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */,
 				8E9674CB204917C500D49C05 /* DetailsModel.swift in Sources */,
 				8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */,

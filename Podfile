@@ -11,6 +11,7 @@ target 'EP QTc' do
   pod 'QTc', :path => '~/dev/QTc'
   pod 'Validator', :git => 'https://github.com/adamwaite/Validator.git', :branch => 'master'
   pod 'Charts', :git => 'https://github.com/danielgindi/Charts', :branch => 'master'
+  pod 'SigmaSwiftStatistics', :git => 'https://github.com/evgenyneu/SigmaSwiftStatistics', :branch => 'master'
   
   target 'EP QTcTests' do
     inherit! :search_paths

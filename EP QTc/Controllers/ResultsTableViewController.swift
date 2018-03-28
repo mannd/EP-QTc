@@ -12,6 +12,7 @@ import QTc
 class ResultsTableViewController: UITableViewController {
     var formulas: [QTcFormula]?
     var selectedFormula: QTcFormula?
+
     
     // these are passed via the segue
     var qtMeasurement: QtMeasurement?
@@ -51,11 +52,28 @@ class ResultsTableViewController: UITableViewController {
         case .bigFourFirstByName:
             formulas = qtFormulas.bigFourFirstSortedByName()
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setToolbarHidden(true, animated: animated)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func calculateStats(_ sender: Any) {
+    }
+    
+    @IBAction func showGraph(_ sender: Any) {
     }
     
     
@@ -139,6 +157,11 @@ class ResultsTableViewController: UITableViewController {
         if segue.identifier == "detailsTableSegue" {
             let vc = segue.destination as! DetailsTableViewController
             vc.formula = selectedFormula
+            vc.qtMeasurement = qtMeasurement
+        }
+        else if segue.identifier == "statsSegue" {
+            let vc = segue.destination as! StatsTableViewController
+            vc.formulas = formulas
             vc.qtMeasurement = qtMeasurement
         }
         
