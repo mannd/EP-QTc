@@ -8,6 +8,13 @@ This app is open source, and licensed under the
 ## Copyright
 Copyright © 2017 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
+## Acknowledgments
+Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas!
+
+This app uses [SigmaSwiftStatistics](https://github.com/evgenyneu/SigmaSwiftStatistics) for statistical analysis of the QT formulas.  This framework is copyright (c) 2015 Evgenii Neumerzhitckii and is licensed under the [MIT License](https://github.com/evgenyneu/SigmaSwiftStatistics/blob/master/LICENSE).
+
+The app also uses the [Charts](https://github.com/danielgindi/Charts) framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi & Philipp Jahoda, and is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). 
+
 ## Author
 David Mann, MD
 
