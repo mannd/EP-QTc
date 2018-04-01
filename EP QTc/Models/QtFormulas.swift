@@ -36,6 +36,7 @@ class QtFormulas {
         .qtcHdg,
         .qtcFrm,
         .qtcRtha,
+        .qtcRthb,
         .qtcMyd,
         .qtcArr,
         .qtcKwt,
