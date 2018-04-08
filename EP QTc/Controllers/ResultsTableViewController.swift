@@ -24,6 +24,8 @@ class ResultsTableViewController: UITableViewController {
         case bigFourFirstByDate
         case bigFourFirstByName
     }
+    // TODO: add sorting by number of subjects (high to low and vice versa)
+    // TODO: add sorting by formula type, with results table showing formula type section headers
     
     // Preferences
     // TODO: need mechanism to set preferences

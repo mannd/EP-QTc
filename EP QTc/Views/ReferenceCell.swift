@@ -10,6 +10,7 @@ import UIKit
 
 class ReferenceCell: UITableViewCell {
     static let identifier = "ReferenceCell"
+    let doiPattern = "doi:.*$"
 
     @IBOutlet var label: UILabel!
     
@@ -18,7 +19,18 @@ class ReferenceCell: UITableViewCell {
             guard let item = item as? DetailsViewModelReferenceItem else {
                 return
             }
-            label.text = item.reference
+            let underlinedString = NSMutableAttributedString(string: item.reference)
+            if let doiRegex = try? NSRegularExpression(pattern: doiPattern) {
+                let result = doiRegex.matches(in: item.reference, range: NSRange(item.reference.startIndex..., in: item.reference))
+                let doiString = result.map {String(item.reference[Range($0.range, in: item.reference)!])}
+                if doiString.count > 0 {
+                    let doiRange = (item.reference as NSString).range(of: doiString[0])
+                    let attributes: [NSAttributedStringKey: Any] = [.link: doiString[0],
+                                                                    .foregroundColor: UIColor.blue]
+                    underlinedString.addAttributes(attributes, range: doiRange)
+                }
+            }
+            label.attributedText = underlinedString
         }
     }
     

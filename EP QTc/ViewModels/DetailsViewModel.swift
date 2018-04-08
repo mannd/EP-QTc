@@ -9,6 +9,9 @@
 import UIKit
 import QTc
 
+// TODO: Add link field to QTc library and make reference cell clickable to open webview with link
+// TODO: Button to copy details to clipboard as text
+
 // This TableView code is based on this very useful Medium article:
 // https://medium.com/@stasost/ios-how-to-build-a-table-view-with-multiple-cell-types-2df91a206429
 

@@ -357,7 +357,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         case 2:
             sex = .female
         default:
-            sex = .unspecified
+            assertionFailure("Sex segmented control out of range.")
         }
         let age = stringToDouble(ageTextField.text)
         let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType, sex: sex, age: age)

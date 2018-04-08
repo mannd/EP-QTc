@@ -81,6 +81,7 @@ class DetailsModel {
         equation = calculator.equation
         reference = calculator.reference
         notes = calculator.notes
+                
     }
     
 }

@@ -9,6 +9,8 @@
 import UIKit
 import QTc
 
+// TODO: click on reference cell with link and open linked webview
+
 class DetailsTableViewController: UITableViewController {
     var formula: QTcFormula?
     var qtMeasurement: QtMeasurement?
