@@ -11,6 +11,7 @@ import UIKit
 class ReferenceCell: UITableViewCell {
     static let identifier = "ReferenceCell"
     let doiPattern = "doi:.*$"
+    var doiString: String = ""
 
     @IBOutlet var label: UILabel!
     
@@ -22,10 +23,11 @@ class ReferenceCell: UITableViewCell {
             let underlinedString = NSMutableAttributedString(string: item.reference)
             if let doiRegex = try? NSRegularExpression(pattern: doiPattern) {
                 let result = doiRegex.matches(in: item.reference, range: NSRange(item.reference.startIndex..., in: item.reference))
-                let doiString = result.map {String(item.reference[Range($0.range, in: item.reference)!])}
-                if doiString.count > 0 {
-                    let doiRange = (item.reference as NSString).range(of: doiString[0])
-                    let attributes: [NSAttributedStringKey: Any] = [.link: doiString[0],
+                let doiStrings = result.map {String(item.reference[Range($0.range, in: item.reference)!])}
+                if doiStrings.count > 0 {
+                    doiString = doiStrings[0]
+                    let doiRange = (item.reference as NSString).range(of: doiString)
+                    let attributes: [NSAttributedStringKey: Any] = [.link: doiString,
                                                                     .foregroundColor: UIColor.blue]
                     underlinedString.addAttributes(attributes, range: doiRange)
                 }
@@ -43,6 +45,16 @@ class ReferenceCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func resolvedDoiString() -> String {
+        if doiString.count < 4 {
+            return doiString
+        }
+        let strings = doiString.components(separatedBy: ":")
+        let prefix = strings[0]
+        let tail = strings[1]
+        return "https://doi.org/" + tail
     }
 
 }

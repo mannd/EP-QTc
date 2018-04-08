@@ -39,6 +39,8 @@ class ResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.title = "QTc"
        
 //        processParameters()
         let qtFormulas = QtFormulas()

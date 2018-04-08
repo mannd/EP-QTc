@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="887" y="-45"/>
         </scene>
-        <!--EP QTc-->
+        <!--Calculator-->
         <scene sceneID="rDC-A1-5RG">
             <objects>
                 <viewController id="noH-fe-75o" customClass="CalculatorViewController" customModule="EP_QTc" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,16 +219,18 @@
                                     <constraint firstAttribute="height" constant="44" id="SBQ-yR-G6t"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Calculate" id="iUa-84-lGK">
+                                    <barButtonItem title="QTc" id="iUa-84-lGK">
                                         <connections>
                                             <action selector="calculate:" destination="noH-fe-75o" id="tfS-i4-Rdw"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="QTp" id="xh9-8E-bBa"/>
                                     <barButtonItem title="Clear" id="hwE-dR-flQ">
                                         <connections>
                                             <action selector="clear:" destination="noH-fe-75o" id="clN-w8-QLN"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Prefs" id="3iz-y1-Q0t"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -245,7 +247,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gMy-CJ-DKC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="EP QTc" id="vHI-Sa-LtM"/>
+                    <navigationItem key="navigationItem" title="Calculator" id="vHI-Sa-LtM"/>
                     <connections>
                         <outlet property="ageLabel" destination="1mp-G2-MR3" id="pXm-GL-xac"/>
                         <outlet property="ageTextField" destination="d28-y2-f5u" id="3wf-0C-qUf"/>
@@ -534,11 +536,11 @@
                                     <outlet property="rightLabel" destination="c1z-nt-Dn8" id="t9Y-fm-f2D"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReferenceCell" id="SMI-g5-XnY" customClass="ReferenceCell" customModule="EP_QTc" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReferenceCell" id="SMI-g5-XnY" customClass="ReferenceCell" customModule="EP_QTc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="204" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SMI-g5-XnY" id="aah-GE-Ua6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-sl-GaE">

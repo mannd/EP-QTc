@@ -8,6 +8,7 @@
 
 import UIKit
 import QTc
+import SafariServices
 
 // TODO: Add link field to QTc library and make reference cell clickable to open webview with link
 // TODO: Button to copy details to clipboard as text
@@ -145,6 +146,7 @@ class DetailsViewModel: NSObject {
     let parameters: [Parameter]
     let details: [Detail]
     let shortName: String
+    weak var viewController: UITableViewController?
     
     init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
         let model = DetailsModel(qtMeasurement: qtMeasurement, formula: formula)
@@ -170,10 +172,11 @@ class DetailsViewModel: NSObject {
     }
     
     func title() -> String {
-        return String.localizedStringWithFormat("Details %@", shortName)
+        return String.localizedStringWithFormat("%@", shortName)
     }
 }
 
+// MARK: - Table view data source
 extension DetailsViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items[section].rowCount
@@ -224,4 +227,22 @@ extension DetailsViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return items[section].sectionTitle
     }
+}
+
+// MARK: - Table view delegate
+extension DetailsViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.section]
+        if item.type == .reference {
+            let selectedCell = tableView.cellForRow(at: indexPath) as? ReferenceCell
+            if let doi = selectedCell?.resolvedDoiString() {
+                if let url = URL(string: doi) {
+                    let svc = SFSafariViewController(url: url)
+                    viewController?.present(svc, animated: true, completion: nil)
+                }
+            }
+
+        }
+    }
+
 }
