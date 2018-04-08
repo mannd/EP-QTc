@@ -52,7 +52,7 @@ class ReferenceCell: UITableViewCell {
             return doiString
         }
         let strings = doiString.components(separatedBy: ":")
-        let prefix = strings[0]
+        let _ = strings[0]
         let tail = strings[1]
         return "https://doi.org/" + tail
     }

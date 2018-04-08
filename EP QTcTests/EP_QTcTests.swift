@@ -151,33 +151,33 @@ class EP_QTcTests: XCTestCase {
 
     }
     
-    func testFormulaSorting() {
-        let qtFormulas = QtFormulas()
-        let bigFour = qtFormulas.bigFourFormulas()
-        let trueBigFour: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm]
-        for idx in [0..<4] {
-            XCTAssertEqual(bigFour[idx], trueBigFour[idx])
-        }
-        let trueSortedByDate: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcMyd, .qtcAdm, .qtcHdg, .qtcKwt]
-        let sortedByDate = qtFormulas.sortedByDate()
-        for idx in [0..<6] {
-            XCTAssertEqual(sortedByDate[idx], trueSortedByDate[idx])
-        }
-        let trueSortedByName: [QTcFormula] = [.qtcAdm, .qtcArr, .qtcBzt, .qtcDmt, .qtcFrm, .qtcFrd]
-        let sortedByName = qtFormulas.sortedByName()
-        for idx in [0..<6] {
-            XCTAssertEqual(sortedByName[idx], trueSortedByName[idx])
-        }
-        let trueBigFourFirstByDate: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm, .qtcMyd, .qtcAdm]
-        let bigFourFirstByDate = qtFormulas.bigFourFirstSortedByDate()
-        for idx in [0..<6] {
-            XCTAssertEqual(bigFourFirstByDate[idx], trueBigFourFirstByDate[idx])
-        }
-        let trueBigFourFirstByName: [QTcFormula] = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg, .qtcAdm, .qtcArr]
-        let bigFourFirstByName = qtFormulas.bigFourFirstSortedByName()
-        for idx in [0..<6] {
-            XCTAssertEqual(bigFourFirstByName[idx], trueBigFourFirstByName[idx])
-        }
-    }
+//    func testFormulaSorting() {
+//        let qtFormulas = QtFormulas()
+//        let bigFour = qtFormulas.bigFourFormulas()
+//        let trueBigFour: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm]
+//        for idx in [0..<4] {
+//            XCTAssertEqual(bigFour[idx], trueBigFour[idx])
+//        }
+//        let trueSortedByDate: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcMyd, .qtcAdm, .qtcHdg, .qtcKwt]
+//        let sortedByDate = qtFormulas.sortedByDate()
+//        for idx in [0..<6] {
+//            XCTAssertEqual(sortedByDate[idx], trueSortedByDate[idx])
+//        }
+//        let trueSortedByName: [QTcFormula] = [.qtcAdm, .qtcArr, .qtcBzt, .qtcDmt, .qtcFrm, .qtcFrd]
+//        let sortedByName = qtFormulas.sortedByName()
+//        for idx in [0..<6] {
+//            XCTAssertEqual(sortedByName[idx], trueSortedByName[idx])
+//        }
+//        let trueBigFourFirstByDate: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm, .qtcMyd, .qtcAdm]
+//        let bigFourFirstByDate = qtFormulas.bigFourFirstSortedByDate()
+//        for idx in [0..<6] {
+//            XCTAssertEqual(bigFourFirstByDate[idx], trueBigFourFirstByDate[idx])
+//        }
+//        let trueBigFourFirstByName: [QTcFormula] = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg, .qtcAdm, .qtcArr]
+//        let bigFourFirstByName = qtFormulas.bigFourFirstSortedByName()
+//        for idx in [0..<6] {
+//            XCTAssertEqual(bigFourFirstByName[idx], trueBigFourFirstByName[idx])
+//        }
+//    }
 
 }

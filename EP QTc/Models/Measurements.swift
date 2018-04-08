@@ -1,5 +1,5 @@
 //
-//  QtMeasurement.swift
+//  Measurements.swift
 //  EP QTc
 //
 //  Created by David Mann on 12/2/17.
@@ -9,38 +9,22 @@
 import Foundation
 import QTc
 
-extension QTcCalculator {
-    func calculate(qt: Double, intervalRate: Double, intervalRateType: IntervalRateType,
-                   sex: Sex, age: Age, units: Units) throws -> Double? {
-        var result: Double?
-        switch units {
+fileprivate let bpmString = NSLocalizedString("bpm", comment: "abbreviation for beats per minute")
+fileprivate let msecString = NSLocalizedString("msec", comment: "abbreviation for milliseconds")
+fileprivate let secString = NSLocalizedString("sec", comment: "abbreviation for seconds")
+fileprivate let maleString = NSLocalizedString("male", comment: "")
+fileprivate let femaleString = NSLocalizedString("female", comment: "")
+fileprivate let unspecifiedString = NSLocalizedString("unspecified", comment: "for example 'unspecified sex'")
+
+extension Units {
+    var unitString: String { get {
+        switch self {
         case .msec:
-            if intervalRateType == .interval {
-                result = try calculate(qtInMsec: qt, rrInMsec: intervalRate, sex: sex, age: age)
-            }
-            else {
-                result = try calculate(qtInMsec: qt, rate: intervalRate, sex: sex, age: age)
-            }
+            return msecString
         case .sec:
-            if intervalRateType == .interval {
-                result = try calculate(qtInSec: qt, rrInSec: intervalRate, sex: sex, age: age)
-            }
-            else {
-                result = try calculate(qtInSec: qt, rate: intervalRate, sex: sex, age: age)
-            }
+            return secString
         }
-        return result
-    }
-}
-
-public enum Units {
-    case msec
-    case sec
-}
-
-public enum IntervalRateType {
-    case interval
-    case rate
+        }}
 }
 
 public enum FormatType {
@@ -82,7 +66,7 @@ public enum FormatType {
             return FormatType.errorMessage
         }
         if self == .roundFourFigures {
-           return formattedDouble(measurement)
+            return formattedDouble(measurement)
         }
         if units == .sec && intervalRateType != .rate && self != .raw {
             // ignore the actual FormatType
@@ -104,71 +88,16 @@ public enum FormatType {
             unitString = "bpm"
         }
         else {
-            if units == .msec {
-                unitString = "msec"
-            }
-            else {
-                unitString = "sec"
-            }
-            
+            unitString = units.unitString
         }
         return String.localizedStringWithFormat("%@ %@", result, unitString)
     }
 }
 
-public struct QtMeasurement {
-    let bpmString = NSLocalizedString("bpm", comment: "abbreviation for beats per minute")
-    let msecString = NSLocalizedString("msec", comment: "abbreviation for milliseconds")
-    let secString = NSLocalizedString("sec", comment: "abbreviation for seconds")
-    let maleString = NSLocalizedString("male", comment: "")
-    let femaleString = NSLocalizedString("female", comment: "")
-    let unspecifiedString = NSLocalizedString("unspecified", comment: "for example 'unspecified sex'")
-    
-    var qt: Double
-    var intervalRate: Double
-    var units: Units
-    var intervalRateType: IntervalRateType
-    var sex: Sex
-    var age: Double?
-    
-    func calculateQTc(formula: QTcFormula) throws -> Double? {
-        let qtcCalculator = QTc.qtcCalculator(formula: formula)
-        // age is sliced to Int?
-        var intAge: Age = nil
-        if let age = age {
-            intAge = Int(age)
-        }
-        return try qtcCalculator.calculate(qt: qt, intervalRate: intervalRate, intervalRateType: intervalRateType, sex: sex, age: intAge, units: units)
-    }
-    
-    func calculateQTcToString(formula: QTcFormula, formatType: FormatType) -> String {
-        do {
-            let qtc = try calculateQTc(formula: formula) ?? 0
-            let formatString = formatType.formattedMeasurement(measurement: qtc, units: units, intervalRateType: .interval)
-            let resultString = String.localizedStringWithFormat("\(formatString) %@", intervalUnits())
-            return resultString
-        } catch CalculationError.ageRequired {
-            return "must specify age"
-        } catch CalculationError.sexRequired {
-            return "must specify sex"
-        } catch CalculationError.ageOutOfRange {
-            return "age out of range"
-        } catch CalculationError.heartRateOutOfRange {
-            return "heart rate out of range"
-        } catch CalculationError.wrongSex {
-            return "wrong sex for formula"
-        } catch {
-            return "unexpected error"
-        }
-    }
-    
+
+extension QtMeasurement {
     func intervalUnits() -> String {
-        switch units {
-        case .msec:
-            return msecString
-        case .sec:
-            return secString
-        }
+        return units.unitString
     }
     
     func intervalRateUnits() -> String {
@@ -229,7 +158,5 @@ public struct QtMeasurement {
         }
         return String(Int(age))
     }
-    
 }
-
 

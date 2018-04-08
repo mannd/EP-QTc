@@ -12,7 +12,8 @@ import QTc
 // TODO: click on reference cell with link and open linked webview
 
 class DetailsTableViewController: UITableViewController {
-    var formula: QTcFormula?
+    var formulaType: FormulaType?
+    var calculator: BaseCalculator?
     var qtMeasurement: QtMeasurement?
     var detailsViewModel: DetailsViewModel?
 
@@ -27,8 +28,8 @@ class DetailsTableViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: nil)
         
-        if let formula = formula, let qtMeasurement = qtMeasurement {
-            detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, formula: formula)
+        if let qtMeasurement = qtMeasurement, let calculator = calculator, let formulaType = formulaType {
+            detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, calculator: calculator, formulaType: formulaType)
             tableView?.dataSource = detailsViewModel
             tableView?.delegate = detailsViewModel
             detailsViewModel?.viewController = self
@@ -47,10 +48,6 @@ class DetailsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "linkSegue" {
-            
-        }
-        
     }
     
     

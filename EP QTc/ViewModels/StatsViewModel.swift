@@ -49,14 +49,17 @@ class SimpleStatsItem: StatsViewModelItem {
 class StatsViewModel: NSObject {
     var items: [StatsViewModelItem] = []
     let simpleStats: [Stat]
+    let formulaType: FormulaType
     
-    init(formulas: [QTcFormula], qtMeasurement: QtMeasurement) {
+    init(formulas: [Formula], qtMeasurement: QtMeasurement, formulaType: FormulaType) {
+        self.formulaType = formulaType
         var results: [Double] = []
         for formula in formulas {
-            if let qtc = try? qtMeasurement.calculateQTc(formula: formula) {
-                results.append(qtc!)
+            let calculator = QTc.calculator(formula: formula, formulaType: formulaType)
+            if let result = try? calculator.calculate(qtMeasurement: qtMeasurement) {
+                    results.append(result!)
             }
-          }
+        }
         let model = StatsModel(results: results, units: qtMeasurement.units)
         simpleStats = model.simpleStats
         let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats)

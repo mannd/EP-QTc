@@ -18,10 +18,14 @@ class ResultTableViewCell: UITableViewCell {
     
     var resultViewModel: ResultViewModel!
     
-    var formula: QTcFormula!
+    var calculator: BaseCalculator!
     var qtMeasurement: QtMeasurement! {
         didSet {
-            resultViewModel = ResultViewModel(formula: formula, qtMeasurement: qtMeasurement)
+            guard calculator != nil else {
+                assertionFailure("Programming error: cell.calculator must be set before setting qtMeasurement!")
+                return
+            }
+            resultViewModel = ResultViewModel(calculator: calculator, qtMeasurement: qtMeasurement)
             resultLabel.text = resultViewModel.resultLabel()
             calculatorNameLabel.text = resultViewModel.longCalculatorName()
             shortNameLabel.text = resultViewModel.shortCalculatorName()

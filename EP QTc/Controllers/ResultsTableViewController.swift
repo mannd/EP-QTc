@@ -10,12 +10,12 @@ import UIKit
 import QTc
 
 class ResultsTableViewController: UITableViewController {
-    var formulas: [QTcFormula]?
-    var selectedFormula: QTcFormula?
-
+    var formulas: [Formula] = []
+    var selectedFormula: Formula?
     
     // these are passed via the segue
     var qtMeasurement: QtMeasurement?
+    var formulaType: FormulaType?
     
     enum FormulaSorting {
         case none
@@ -23,38 +23,53 @@ class ResultsTableViewController: UITableViewController {
         case byName
         case bigFourFirstByDate
         case bigFourFirstByName
+        // TODO: implement these
+        case byNumberOfSubjects
+        case bigFourByNumberOfSubjects
+        case byFormulaType
+        
+        // FIXME: might reduce number of cases by implementing bigFourFirst boolean
+        // var bigFourFirst: Bool
     }
-    // TODO: add sorting by number of subjects (high to low and vice versa)
-    // TODO: add sorting by formula type, with results table showing formula type section headers
     
     // Preferences
     // TODO: need mechanism to set preferences
-    var sortingPreference: FormulaSorting = .bigFourFirstByDate
+    var sortingPreference: FormulaSorting = .byDate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.title = "QTc"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: nil)
+
+        
+        guard let formulaType = formulaType, qtMeasurement != nil else {
+            assertionFailure("Error: formulaType and/or qtMeasurement can't be nil!")
+            return
+        }
+
+        self.title = formulaType.name
        
 //        processParameters()
+        
         let qtFormulas = QtFormulas()
+        guard let rawFormulas = qtFormulas.formulas[formulaType] else {
+            assertionFailure("Formula type not found!")
+            return
+        }
         switch sortingPreference {
         case .none:
-            formulas = qtFormulas.formulas
+            formulas = rawFormulas
         case .byDate:
-            formulas = qtFormulas.sortedByDate()
+            formulas = qtFormulas.sortedByDate(formulas: rawFormulas, formulaType: formulaType)
         case .byName:
-            formulas = qtFormulas.sortedByName()
-        case .bigFourFirstByDate:
-            formulas = qtFormulas.bigFourFirstSortedByDate()
-        case .bigFourFirstByName:
-            formulas = qtFormulas.bigFourFirstSortedByName()
+            formulas = qtFormulas.sortedByName(formulas: rawFormulas, formulaType: formulaType)
+        // FIXME: next two have to account for formulaType
+//        case .bigFourFirstByDate:
+//            formulas = qtFormulas.bigFourFirstSortedByDate()
+//        case .bigFourFirstByName:
+//            formulas = qtFormulas.bigFourFirstSortedByName()
+        default:
+            assertionFailure("Sorting preference not implemented.")
         }
         
     }
@@ -74,13 +89,6 @@ class ResultsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func calculateStats(_ sender: Any) {
-    }
-    
-    @IBAction func showGraph(_ sender: Any) {
-    }
-    
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,31 +96,32 @@ class ResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return formulas?.count ?? 0
+        return formulas.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let formulaType = formulaType else {
+            return UITableViewCell()
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
 
         // Configure the cell...
         let row = indexPath.row
-        let qtcFormula = formulas?[row]
-        if let qtcFormula = qtcFormula {
-            cell.formula = qtcFormula
-            cell.qtMeasurement = qtMeasurement
-        }
+        cell.calculator = QTc.calculator(formula: formulas[row], formulaType: formulaType)
+        // must set calculator before qtMeasurement
+        cell.qtMeasurement = qtMeasurement
+
         return cell
     }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        selectedFormula = formulas?[row]
+        selectedFormula = formulas[row]
         performSegue(withIdentifier: "detailsTableSegue", sender: self)
     }
 
@@ -158,15 +167,19 @@ class ResultsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        guard let formulaType = formulaType else { return }
         if segue.identifier == "detailsTableSegue" {
-            let vc = segue.destination as! DetailsTableViewController
-            vc.formula = selectedFormula
+            guard let selectedFormula = selectedFormula else { return }
+           let vc = segue.destination as! DetailsTableViewController
             vc.qtMeasurement = qtMeasurement
+            vc.formulaType = formulaType
+            vc.calculator = QTc.calculator(formula: selectedFormula, formulaType: formulaType)
         }
         else if segue.identifier == "statsSegue" {
             let vc = segue.destination as! StatsTableViewController
             vc.formulas = formulas
             vc.qtMeasurement = qtMeasurement
+            vc.formulaType = formulaType
         }
         
     }

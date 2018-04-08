@@ -8,6 +8,7 @@
 
 import UIKit
 import SigmaSwiftStatistics
+import QTc
 
 class StatsModel {
     let defaultFormatType: FormatType = .roundOnePlace

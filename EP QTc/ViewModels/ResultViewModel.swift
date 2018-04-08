@@ -10,28 +10,28 @@ import UIKit
 import QTc
 
 class ResultViewModel: NSObject {
-    let formula: QTcFormula
     let qtMeasurement: QtMeasurement
+    let calculator: BaseCalculator
     
     // parameter to be eventually set in Settings
     let defaultFormatType: FormatType = .roundOnePlace
     
-    init(formula: QTcFormula, qtMeasurement: QtMeasurement) {
-        self.formula = formula
+    init(calculator: BaseCalculator, qtMeasurement: QtMeasurement) {
+        self.calculator = calculator
         self.qtMeasurement = qtMeasurement
     }
     
     func resultLabel() -> String {
         let formatType: FormatType = defaultFormatType
-        return qtMeasurement.calculateQTcToString(formula: formula, formatType: formatType)
+        return calculator.calculateToString(qtMeasurement: qtMeasurement, formatType: formatType)
     }
     
     func longCalculatorName() -> String {
-        return formula.calculatorName()
+        return calculator.longName
     }
     
     func shortCalculatorName() -> String {
-        return formula.calculatorShortName()
+        return calculator.shortName
     }
         
 }

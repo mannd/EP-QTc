@@ -28,7 +28,18 @@ extension UIViewController {
     }
 }
 
-
+extension FormulaType {
+    var name: String {
+        get {
+            switch self {
+            case .qtc:
+                return "QTc"
+            case .qtp:
+                return "QTp"
+            }
+        }
+    }
+}
 
 class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
@@ -66,6 +77,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     private var errorMessage = ""
     private var units: Units = .msec
     private var intervalRateType: IntervalRateType = .interval
+    private var formulaType: FormulaType?
     
     enum EntryErrorCode {
         case invalidEntry
@@ -228,7 +240,17 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction func calculate(_ sender: Any) {
+    @IBAction func calculateQTc(_ sender: Any) {
+        formulaType = .qtc
+        prepareCalculation()
+    }
+    
+    @IBAction func calculateQTp(_ sender: Any) {
+        formulaType = .qtp
+        prepareCalculation()
+    }
+    
+    private func prepareCalculation() {
         let validationCode = fieldsValidationResult()
         var message = ""
         var error = true
@@ -251,6 +273,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         }
         performSegue(withIdentifier: "resultsTableSegue", sender: self)
     }
+    
     
     private func fieldsValidationResult() -> EntryErrorCode {
         // Empty qt and interval fields will be considered invalid
@@ -360,8 +383,14 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
             assertionFailure("Sex segmented control out of range.")
         }
         let age = stringToDouble(ageTextField.text)
-        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType, sex: sex, age: age)
+        var intAge: Int?
+        if let age = age {
+            intAge = Int(age)
+        }
+        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType,
+                                          sex: sex, age: intAge)
         vc.qtMeasurement = qtMeasurement
+        vc.formulaType = formulaType
     }
     
     

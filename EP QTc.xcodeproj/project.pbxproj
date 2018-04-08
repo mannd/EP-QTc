@@ -23,7 +23,7 @@
 		8E6E55AB1FD30B66004B1B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A91FD30B66004B1B2F /* LaunchScreen.storyboard */; };
 		8E6E55B61FD30B66004B1B2F /* EP_QTcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */; };
 		8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */; };
-		8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */; };
+		8E6E55C31FD32643004B1B2F /* Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C21FD32643004B1B2F /* Measurements.swift */; };
 		8E8C22941FECA6AE000A1C9A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */; };
 		8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9674C52049032200D49C05 /* ResultViewModel.swift */; };
 		8E9674C9204909A200D49C05 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9674C8204909A200D49C05 /* DetailsViewModel.swift */; };
@@ -34,6 +34,7 @@
 		8EBE89D3205C3A2400A60296 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE89D2205C3A2400A60296 /* DetailsCell.swift */; };
 		8EBE89D5205C3CD900A60296 /* ReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE89D4205C3CD900A60296 /* ReferenceCell.swift */; };
 		8EBE89D7205C3CEA00A60296 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE89D6205C3CEA00A60296 /* NotesCell.swift */; };
+		8ECE0CED207E691800135717 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE0CEC207E691800135717 /* Calculator.swift */; };
 		8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB08422059EAC7008123D9 /* ResultCell.swift */; };
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
@@ -74,7 +75,7 @@
 		8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EP_QTcTests.swift; sourceTree = "<group>"; };
 		8E6E55B71FD30B66004B1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
-		8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtMeasurement.swift; sourceTree = "<group>"; };
+		8E6E55C21FD32643004B1B2F /* Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurements.swift; sourceTree = "<group>"; };
 		8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		8E9674C52049032200D49C05 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8E9674C8204909A200D49C05 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		8EBE89D2205C3A2400A60296 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		8EBE89D4205C3CD900A60296 /* ReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceCell.swift; sourceTree = "<group>"; };
 		8EBE89D6205C3CEA00A60296 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
+		8ECE0CEC207E691800135717 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		8EDB08422059EAC7008123D9 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
@@ -146,10 +148,11 @@
 		8E30F0111FDDC04B0072E5A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E6E55C21FD32643004B1B2F /* QtMeasurement.swift */,
+				8E6E55C21FD32643004B1B2F /* Measurements.swift */,
 				8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */,
 				8E9674CA204917C500D49C05 /* DetailsModel.swift */,
 				8E50622B206B0A2800BF9C3E /* StatsModel.swift */,
+				8ECE0CEC207E691800135717 /* Calculator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,7 +255,6 @@
 				8E6E559A1FD30B66004B1B2F /* Frameworks */,
 				8E6E559B1FD30B66004B1B2F /* Resources */,
 				AB4061BF1192D5F95A6FE542 /* [CP] Embed Pods Frameworks */,
-				61915E97722716A4AD110CC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,8 +273,6 @@
 				8E6E55AD1FD30B66004B1B2F /* Sources */,
 				8E6E55AE1FD30B66004B1B2F /* Frameworks */,
 				8E6E55AF1FD30B66004B1B2F /* Resources */,
-				5642397A4FF0D0C29BB91408 /* [CP] Embed Pods Frameworks */,
-				90DA8A08DB149B3058C066A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,36 +345,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5642397A4FF0D0C29BB91408 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		61915E97722716A4AD110CC7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTc/Pods-EP QTc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6DD53B036390C19285BC01C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,21 +361,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		90DA8A08DB149B3058C066A2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB4061BF1192D5F95A6FE542 /* [CP] Embed Pods Frameworks */ = {
@@ -462,6 +417,7 @@
 				8EBE89D1205C37F700A60296 /* EquationCell.swift in Sources */,
 				8EBE89D3205C3A2400A60296 /* DetailsCell.swift in Sources */,
 				8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */,
+				8ECE0CED207E691800135717 /* Calculator.swift in Sources */,
 				8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */,
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
 				8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */,
@@ -475,7 +431,7 @@
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,
 				8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */,
 				8E5BA617206B1E6500B35B12 /* SimpleStatsCell.swift in Sources */,
-				8E6E55C31FD32643004B1B2F /* QtMeasurement.swift in Sources */,
+				8E6E55C31FD32643004B1B2F /* Measurements.swift in Sources */,
 				8E9674CB204917C500D49C05 /* DetailsModel.swift in Sources */,
 				8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */,
 				8E8C22941FECA6AE000A1C9A /* ResultTableViewCell.swift in Sources */,

@@ -221,10 +221,14 @@
                                 <items>
                                     <barButtonItem title="QTc" id="iUa-84-lGK">
                                         <connections>
-                                            <action selector="calculate:" destination="noH-fe-75o" id="tfS-i4-Rdw"/>
+                                            <action selector="calculateQTc:" destination="noH-fe-75o" id="tfS-i4-Rdw"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="QTp" id="xh9-8E-bBa"/>
+                                    <barButtonItem title="QTp" id="xh9-8E-bBa">
+                                        <connections>
+                                            <action selector="calculateQTp:" destination="noH-fe-75o" id="pM1-mf-yMm"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Clear" id="hwE-dR-flQ">
                                         <connections>
                                             <action selector="clear:" destination="noH-fe-75o" id="clN-w8-QLN"/>
@@ -251,7 +255,6 @@
                     <connections>
                         <outlet property="ageLabel" destination="1mp-G2-MR3" id="pXm-GL-xac"/>
                         <outlet property="ageTextField" destination="d28-y2-f5u" id="3wf-0C-qUf"/>
-                        <outlet property="calculateButton" destination="iUa-84-lGK" id="WUW-dm-w58"/>
                         <outlet property="intervalRateSegmentedControl" destination="CUN-oG-nbc" id="SH1-wa-LpZ"/>
                         <outlet property="intervalRateTextField" destination="F35-8C-Ots" id="4wn-bK-p8O"/>
                         <outlet property="intervalRateUnitsLabel" destination="8Jj-cC-L0A" id="slg-5Z-oYM"/>

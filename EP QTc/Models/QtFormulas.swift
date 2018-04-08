@@ -9,73 +9,76 @@
 import Foundation
 import QTc
 
-extension QTcFormula {
-    func calculatorName() -> String {
-        return QTc.qtcCalculator(formula: self).longName
+//protocol SortableFormula {
+//    func publicationDate(formulaType: FormulaType) -> String
+//    func calculatorName(formulaType: FormulaType) -> String
+//    func calculatorShortName(formulaType: FormulaType) -> String
+//    func classificationName(formulaType: FormulaType) -> String
+//}
+
+extension Formula {
+    func longName(formulaType: FormulaType) -> String {
+        return QTc.calculator(formula: self, formulaType: formulaType).longName
     }
     
-    func calculatorShortName() -> String {
-        return QTc.qtcCalculator(formula: self).shortName
+    func shortName(formulaType: FormulaType) -> String {
+        return QTc.calculator(formula: self, formulaType: formulaType).shortName
     }
     
-    func classificationName() -> String {
-        return QTc.qtcCalculator(formula: self).classificationName
+    func classificationName(formulaType: FormulaType) -> String {
+        return QTc.calculator(formula: self, formulaType: formulaType).classificationName
     }
     
-    var publicationDate: String {
-        guard let date = QTc.qtcCalculator(formula: self).publicationDate else { return "date unspecified" }
+    func publicationDate(formulaType: FormulaType) -> String {
+        guard let date = QTc.calculator(formula: self, formulaType: formulaType).publicationDate else {
+            return "date unspecified"
+        }
         return date
     }
-    
 }
 
 class QtFormulas {
-    public let formulas: [QTcFormula] = [
-        .qtcBzt,
-        .qtcFrd,
-        .qtcHdg,
-        .qtcFrm,
-        .qtcRtha,
-        .qtcRthb,
-        .qtcMyd,
-        .qtcArr,
-        .qtcKwt,
-        .qtcDmt,
-        .qtcYos,
-        .qtcAdm,
+    let formulas: [FormulaType: [Formula]] =
+        [.qtc: [
+            .qtcBzt,
+            .qtcFrd,
+            .qtcHdg,
+            .qtcFrm,
+            .qtcRtha,
+            .qtcRthb,
+            .qtcMyd,
+            .qtcArr,
+            .qtcKwt,
+            .qtcDmt,
+            .qtcYos,
+            .qtcAdm,],
+         .qtp: [
+            .qtpBzt,
+            .qtpFrd,
+            .qtpArr,
+            .qtpBdl,
+            .qtpAsh,
+            .qtpHdg,]
     ]
-    
-    func bigFourFormulas() -> [QTcFormula] {
+
+    func bigFourFormulas() -> [Formula] {
         // These are in ascending date order.
         return [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm]
     }
     
     // note sorting functions throw Bool; must be handled by calling function
-    func sortedByDate() -> [QTcFormula] {
-        return formulas.sorted(by: {$1.publicationDate > $0.publicationDate})
+ 
+    func sortedByDate(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
+        return formulas.sorted(by: {$1.publicationDate(formulaType: formulaType) > $0.publicationDate(formulaType: formulaType)})
     }
     
-    func sortedByName() -> [QTcFormula] {
-        return formulas.sorted(by: {$1.calculatorName() > $0.calculatorName()})
+    func sortedByName(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
+        return formulas.sorted(by: {$1.longName(formulaType: formulaType) > $0.longName(formulaType: formulaType)})
     }
     
-    private func formulasWithoutBigFour() -> ArraySlice<QTcFormula> {
-        let formulasMinusBigFour = formulas[4..<formulas.count]
+    private func formulasWithoutBigFour() -> ArraySlice<Formula> {
+        let formulasMinusBigFour = formulas[.qtc]![4..<(formulas[.qtc]!.count)]
         return formulasMinusBigFour
     }
-    
-    func bigFourFirstSortedByDate() -> [QTcFormula] {
-        let sortedFormulasMinusBigFour = formulasWithoutBigFour().sorted(by: { $1.publicationDate > $0.publicationDate})
-        // bigFourFormulas already sorted by date
-        return bigFourFormulas() + sortedFormulasMinusBigFour
-    }
-    
-    func bigFourFirstSortedByName() -> [QTcFormula] {
-        let sortedFormulasMinusFour = formulasWithoutBigFour().sorted(by: { $1.calculatorName() > $0.calculatorName()})
-        // hand sort big four by name
-        let sortedByNameBigFour: [QTcFormula] = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg]
-        return sortedByNameBigFour + sortedFormulasMinusFour
-    }
-    
     
 }

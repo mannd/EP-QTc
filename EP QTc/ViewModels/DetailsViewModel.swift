@@ -63,13 +63,15 @@ class DetailsViewModelResultItem: DetailsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Calculated QTc"
+        return "Calculated \(formulaType.name)"
     }
     
     var result: String
+    var formulaType: FormulaType
     
-    init(result: String) {
+    init(result: String, formulaType: FormulaType) {
         self.result = result
+        self.formulaType = formulaType
     }
 }
 
@@ -148,12 +150,12 @@ class DetailsViewModel: NSObject {
     let shortName: String
     weak var viewController: UITableViewController?
     
-    init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
-        let model = DetailsModel(qtMeasurement: qtMeasurement, formula: formula)
+    init(qtMeasurement: QtMeasurement, calculator: BaseCalculator, formulaType: FormulaType) {
+        let model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator)
         parameters = model.parameters
         let parametersItem = DetailsViewModelParametersItem(parameters: model.parameters)
         items.append(parametersItem)
-        let resultItem = DetailsViewModelResultItem(result: model.result)
+        let resultItem = DetailsViewModelResultItem(result: model.result, formulaType: formulaType)
         items.append(resultItem)
         details = model.details
         let detailsItem = DetailsViewModelDetailsItem(details: model.details)

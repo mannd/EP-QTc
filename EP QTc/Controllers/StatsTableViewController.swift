@@ -11,11 +11,12 @@ import QTc
 
 class StatsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
-    var formulas: [QTcFormula]?
+    var formulas: [Formula]?
+    var formulaType: FormulaType?
     var results: [Double]?
     var units: Units?
     var viewModel: StatsViewModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +25,8 @@ class StatsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        if let formulas = formulas, let qtMeasurement = qtMeasurement {
-            viewModel = StatsViewModel(formulas: formulas, qtMeasurement: qtMeasurement)
+        if let formulas = formulas, let qtMeasurement = qtMeasurement, let formulaType = formulaType {
+            viewModel = StatsViewModel(formulas: formulas, qtMeasurement: qtMeasurement, formulaType: formulaType)
             tableView?.dataSource = viewModel
         }
         self.title = "Statistics"

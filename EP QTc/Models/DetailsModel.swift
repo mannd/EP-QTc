@@ -22,8 +22,7 @@ class DetailsModel {
     var reference: String
     var notes: String
 
-    init(qtMeasurement: QtMeasurement, formula: QTcFormula) {
-        let calculator = QTc.qtcCalculator(formula: formula)
+    init(qtMeasurement: QtMeasurement, calculator: BaseCalculator) {
         let formatType: FormatType = defaultFormatType
         // names
         formulaName = calculator.longName
@@ -50,7 +49,7 @@ class DetailsModel {
         ageParameter.value = qtMeasurement.ageString()
         parameters.append(ageParameter)
         // qtc result
-        result = qtMeasurement.calculateQTcToString(formula: formula, formatType: formatType)
+        result = calculator.calculateToString(qtMeasurement: qtMeasurement, formatType: formatType)
         // formula details
         let nameDetail = Detail()
         nameDetail.key = "Name"
