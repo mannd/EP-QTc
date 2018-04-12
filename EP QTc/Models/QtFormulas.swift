@@ -18,19 +18,19 @@ import QTc
 
 extension Formula {
     func longName(formulaType: FormulaType) -> String {
-        return QTc.calculator(formula: self, formulaType: formulaType).longName
+        return QTc.calculator(formula: self).longName
     }
     
     func shortName(formulaType: FormulaType) -> String {
-        return QTc.calculator(formula: self, formulaType: formulaType).shortName
+        return QTc.calculator(formula: self).shortName
     }
     
     func classificationName(formulaType: FormulaType) -> String {
-        return QTc.calculator(formula: self, formulaType: formulaType).classificationName
+        return QTc.calculator(formula: self).classificationName
     }
     
     func publicationDate(formulaType: FormulaType) -> String {
-        guard let date = QTc.calculator(formula: self, formulaType: formulaType).publicationDate else {
+        guard let date = QTc.calculator(formula: self).publicationDate else {
             return "date unspecified"
         }
         return date

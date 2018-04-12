@@ -104,14 +104,11 @@ class ResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let formulaType = formulaType else {
-            return UITableViewCell()
-        }
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
 
         // Configure the cell...
         let row = indexPath.row
-        cell.calculator = QTc.calculator(formula: formulas[row], formulaType: formulaType)
+        cell.calculator = QTc.calculator(formula: formulas[row])
         // must set calculator before qtMeasurement
         cell.qtMeasurement = qtMeasurement
 
@@ -173,7 +170,7 @@ class ResultsTableViewController: UITableViewController {
            let vc = segue.destination as! DetailsTableViewController
             vc.qtMeasurement = qtMeasurement
             vc.formulaType = formulaType
-            vc.calculator = QTc.calculator(formula: selectedFormula, formulaType: formulaType)
+            vc.calculator = QTc.calculator(formula: selectedFormula)
         }
         else if segue.identifier == "statsSegue" {
             let vc = segue.destination as! StatsTableViewController

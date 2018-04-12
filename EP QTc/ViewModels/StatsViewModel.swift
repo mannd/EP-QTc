@@ -32,7 +32,7 @@ class SimpleStatsItem: StatsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Pooled QTc Statistics"
+        return "Pooled \(formulaType.name) Formulas Statistics"
     }
     
     var rowCount: Int {
@@ -40,9 +40,11 @@ class SimpleStatsItem: StatsViewModelItem {
     }
     
     var simpleStats: [Stat]
+    let formulaType: FormulaType
     
-    init(simpleStats: [Stat]) {
+    init(simpleStats: [Stat], formulaType: FormulaType) {
         self.simpleStats = simpleStats
+        self.formulaType = formulaType
     }
 }
 
@@ -55,14 +57,14 @@ class StatsViewModel: NSObject {
         self.formulaType = formulaType
         var results: [Double] = []
         for formula in formulas {
-            let calculator = QTc.calculator(formula: formula, formulaType: formulaType)
+            let calculator = QTc.calculator(formula: formula)
             if let result = try? calculator.calculate(qtMeasurement: qtMeasurement) {
                     results.append(result!)
             }
         }
         let model = StatsModel(results: results, units: qtMeasurement.units)
         simpleStats = model.simpleStats
-        let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats)
+        let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats, formulaType: formulaType)
         items.append(simpleStatsItem)
     }
 }
