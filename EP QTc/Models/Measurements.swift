@@ -27,12 +27,13 @@ extension Units {
         }}
 }
 
-public enum FormatType {
-    case raw
-    case roundOnePlace
-    case roundFourPlaces
-    case roundToInteger
-    case roundFourFigures
+// Using String raw values here for serialization in UserDefaults
+public enum Precision: String {
+    case raw = "raw"
+    case roundOnePlace = "one"
+    case roundFourPlaces = "four"
+    case roundToInteger = "integer"
+    case roundFourFigures = "fourFigures"
     
     static let rawFormatString = "%.8f"
     static let onePlaceFormatString = "%.1f"
@@ -45,15 +46,15 @@ public enum FormatType {
         var formatString: String
         switch self {
         case .raw:
-            formatString = FormatType.rawFormatString
+            formatString = Precision.rawFormatString
         case .roundOnePlace:
-            formatString = FormatType.onePlaceFormatString
+            formatString = Precision.onePlaceFormatString
         case .roundFourPlaces:
-            formatString = FormatType.fourPlacesFormatString
+            formatString = Precision.fourPlacesFormatString
         case .roundToInteger:
-            formatString = FormatType.roundToIntegerFormatString
+            formatString = Precision.roundToIntegerFormatString
         case .roundFourFigures:
-            formatString = FormatType.fourFiguresFormatString
+            formatString = Precision.fourFiguresFormatString
         }
         return String.localizedStringWithFormat(formatString, double)
     }
@@ -63,14 +64,14 @@ public enum FormatType {
     // Otherwise too much precision is lost.  Otherwise intervals and rates respect the FormatType.
     func formattedMeasurement(measurement: Double?, units: Units, intervalRateType: IntervalRateType) -> String {
         guard let measurement = measurement else {
-            return FormatType.errorMessage
+            return Precision.errorMessage
         }
         if self == .roundFourFigures {
             return formattedDouble(measurement)
         }
         if units == .sec && intervalRateType != .rate && self != .raw {
             // ignore the actual FormatType
-            let formatString = FormatType.fourPlacesFormatString
+            let formatString = Precision.fourPlacesFormatString
             return String.localizedStringWithFormat(formatString, measurement)
         }
         else {
@@ -80,7 +81,7 @@ public enum FormatType {
     
     func formattedMeasurementWithUnits(measurement: Double?, units: Units, intervalRateType: IntervalRateType) -> String {
         guard let measurement = measurement else {
-            return FormatType.errorMessage
+            return Precision.errorMessage
         }
         let result = formattedMeasurement(measurement: measurement, units: units, intervalRateType: intervalRateType)
         var unitString: String

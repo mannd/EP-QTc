@@ -9,13 +9,6 @@
 import Foundation
 import QTc
 
-//protocol SortableFormula {
-//    func publicationDate(formulaType: FormulaType) -> String
-//    func calculatorName(formulaType: FormulaType) -> String
-//    func calculatorShortName(formulaType: FormulaType) -> String
-//    func classificationName(formulaType: FormulaType) -> String
-//}
-
 extension Formula {
     func longName(formulaType: FormulaType) -> String {
         return QTc.calculator(formula: self).longName
@@ -26,7 +19,7 @@ extension Formula {
     }
     
     func classificationName(formulaType: FormulaType) -> String {
-        return QTc.calculator(formula: self).classificationName
+        return QTc.calculator(formula: self).classification.label
     }
     
     func publicationDate(formulaType: FormulaType) -> String {
@@ -35,6 +28,38 @@ extension Formula {
         }
         return date
     }
+}
+
+extension FormulaClassification {
+    var label: String {
+        switch self {
+        case .linear:
+            return "linear"
+        case .rational:
+            return "rational"
+        case .power:
+            return "power"
+        case .logarithmic:
+            return "logarithmic"
+        case .exponential:
+            return "exponential"
+        case .other:
+            return "other"
+        }
+    }
+}
+
+// Using String raw values here for serialization in UserDefaults
+enum SortOrder: String {
+    case none = "none"
+    case byDate = "byDate"
+    case byName = "byName"
+    case bigFourFirstByDate = "bigFourFirstByDate"
+    case bigFourFirstByName = "bigFourFirstByName"
+    // TODO: implement these
+    case byNumberOfSubjects = "byNumberOfSubjects"
+    case bigFourByNumberOfSubjects = "bigFourByNumberOfSubjects"
+    case byFormulaType = "byFormulaType"
 }
 
 class QtFormulas {

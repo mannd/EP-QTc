@@ -357,7 +357,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        // First, final sanity check!
+        
+        if segue.identifier == "preferencesSegue" {
+            return
+        }
+        
+        // Final sanity check!
         if !finalValueCheck() {
             showErrorMessage(invalidFieldsMessage)
             return

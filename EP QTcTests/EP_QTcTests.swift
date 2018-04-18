@@ -42,87 +42,87 @@ class EP_QTcTests: XCTestCase {
         var qtMeasurement = QtMeasurement(qt: 500, intervalRate: 600, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
         XCTAssert(qtMeasurement.intervalUnits() == "msec")
         XCTAssert(qtMeasurement.intervalRateUnits() == "msec")
-        qtMeasurement.intervalRateType = .rate
+        qtMeasurement = QtMeasurement(qt: 500, intervalRate: 600, units: .msec, intervalRateType: .rate, sex: .unspecified, age: nil)
         XCTAssert(qtMeasurement.intervalRateUnits() == "bpm")
-        qtMeasurement.units = .sec
+        qtMeasurement = QtMeasurement(qt: 500, intervalRate: 600, units: .sec, intervalRateType: .rate, sex: .unspecified, age: nil)
         XCTAssert(qtMeasurement.intervalUnits() == "sec")
         XCTAssert(qtMeasurement.intervalRateUnits() == "bpm")
-        qtMeasurement.intervalRateType = .interval
+        qtMeasurement = QtMeasurement(qt: 500, intervalRate: 600, units: .sec, intervalRateType: .interval, sex: .unspecified, age: nil)
         XCTAssert(qtMeasurement.intervalRateUnits() == "sec")
         XCTAssert(qtMeasurement.heartRateUnits() == "bpm")
     }
     
     func testFormatString() {
         var double: Double = 1.0 / 3.0
-        var formatType: FormatType = .raw
-        XCTAssertEqual(formatType.formattedDouble(double), "0.33333333")
-        formatType = .roundFourPlaces
-        XCTAssertEqual(formatType.formattedDouble(double), "0.3333")
-        formatType = .roundOnePlace
-        XCTAssertEqual(formatType.formattedDouble(double), "0.3")
-        formatType = .roundToInteger
-        XCTAssertEqual(formatType.formattedDouble(double), "0")
+        var precision: Precision = .raw
+        XCTAssertEqual(precision.formattedDouble(double), "0.33333333")
+        precision = .roundFourPlaces
+        XCTAssertEqual(precision.formattedDouble(double), "0.3333")
+        precision = .roundOnePlace
+        XCTAssertEqual(precision.formattedDouble(double), "0.3")
+        precision = .roundToInteger
+        XCTAssertEqual(precision.formattedDouble(double), "0")
         double = 3.3
-        XCTAssertEqual(formatType.formattedDouble(double), "3")
+        XCTAssertEqual(precision.formattedDouble(double), "3")
         double = 3.6
-        XCTAssertEqual(formatType.formattedDouble(double), "4")
+        XCTAssertEqual(precision.formattedDouble(double), "4")
         double = 3.555
-        formatType = .roundOnePlace
-        XCTAssertEqual(formatType.formattedDouble(double), "3.6")
+        precision = .roundOnePlace
+        XCTAssertEqual(precision.formattedDouble(double), "3.6")
         double = 3.4999
-        XCTAssertEqual(formatType.formattedDouble(double), "3.5")
-        formatType = .roundFourPlaces
-        XCTAssertEqual(formatType.formattedDouble(double), "3.4999")
+        XCTAssertEqual(precision.formattedDouble(double), "3.5")
+        precision = .roundFourPlaces
+        XCTAssertEqual(precision.formattedDouble(double), "3.4999")
         double = 3.49999
-        XCTAssertEqual(formatType.formattedDouble(double), "3.5000")
+        XCTAssertEqual(precision.formattedDouble(double), "3.5000")
         double = 3.49995
-        XCTAssertEqual(formatType.formattedDouble(double), "3.5000")
+        XCTAssertEqual(precision.formattedDouble(double), "3.5000")
         double = 3.499945
-        XCTAssertEqual(formatType.formattedDouble(double), "3.4999")
+        XCTAssertEqual(precision.formattedDouble(double), "3.4999")
         double = 3.4999001
-        XCTAssertEqual(formatType.formattedDouble(double), "3.4999")
+        XCTAssertEqual(precision.formattedDouble(double), "3.4999")
         double = 3.49986
-        XCTAssertEqual(formatType.formattedDouble(double), "3.4999")
+        XCTAssertEqual(precision.formattedDouble(double), "3.4999")
         double = 3.5
-        formatType = .roundToInteger
-        XCTAssertEqual(formatType.formattedDouble(double), "4")
+        precision = .roundToInteger
+        XCTAssertEqual(precision.formattedDouble(double), "4")
         double = 3.49999999999
-        XCTAssertEqual(formatType.formattedDouble(double), "3")
-        formatType = .roundFourFigures
-        XCTAssertEqual(formatType.formattedDouble(double), "3.5")
+        XCTAssertEqual(precision.formattedDouble(double), "3")
+        precision = .roundFourFigures
+        XCTAssertEqual(precision.formattedDouble(double), "3.5")
         double = 3.4333333
-        XCTAssertEqual(formatType.formattedDouble(double), "3.433")
+        XCTAssertEqual(precision.formattedDouble(double), "3.433")
         double = 455.16
-        XCTAssertEqual(formatType.formattedDouble(double), "455.2")
+        XCTAssertEqual(precision.formattedDouble(double), "455.2")
 
 
         // test formattedMeasurement() which takes into account units and rate/interval in formatting
         double = 3.49999999999
-        formatType = .roundToInteger
-        var formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
+        precision = .roundToInteger
+        var formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "3.5000")
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "3")
-        formatType = .roundOnePlace
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
+        precision = .roundOnePlace
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "3.5")
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .rate)
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .rate)
         XCTAssertEqual(formattedMeasurement, "3.5")
         double = 431.67
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "431.7")
         double = 431.66666
-        formatType = .roundFourPlaces
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
+        precision = .roundFourPlaces
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "431.6667")
-        formatType = .raw
+        precision = .raw
         double = 431.77777777
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .msec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "431.77777777")
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "431.77777777")
-        formatType = .roundFourFigures
-        formattedMeasurement = formatType.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
+        precision = .roundFourFigures
+        formattedMeasurement = precision.formattedMeasurement(measurement: double, units: .sec, intervalRateType: .interval)
         XCTAssertEqual(formattedMeasurement, "431.8")
 
         
@@ -130,25 +130,35 @@ class EP_QTcTests: XCTestCase {
     
     func testFormattedMeasurement() {
         var qtMeasurement = QtMeasurement(qt: 333, intervalRate: 444, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
-        var formatType: FormatType = .roundToInteger
-        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: .msec, intervalRateType: .interval), "333 msec")
-        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: .msec, intervalRateType: .rate), "333 bpm")
-        qtMeasurement.qt = 3.333
-        qtMeasurement.units = .sec
-        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "3.3330 sec")
-        formatType = .roundFourFigures
-        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "3.333 sec")
-        qtMeasurement.qt = 440.12
-        qtMeasurement.units = .msec
-        XCTAssertEqual(formatType.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "440.1 msec")
+        var precision: Precision = .roundToInteger
+        XCTAssertEqual(precision.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: .msec, intervalRateType: .interval), "333 msec")
+        XCTAssertEqual(precision.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: .msec, intervalRateType: .rate), "333 bpm")
+        qtMeasurement = QtMeasurement(qt: 3.333, intervalRate: 444, units: .sec, intervalRateType: .interval, sex: .unspecified, age: nil)
+        XCTAssertEqual(precision.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "3.3330 sec")
+        precision = .roundFourFigures
+        XCTAssertEqual(precision.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "3.333 sec")
+        qtMeasurement = QtMeasurement(qt: 440.12, intervalRate: 444, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
+        XCTAssertEqual(precision.formattedMeasurementWithUnits(measurement:qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: qtMeasurement.intervalRateType), "440.1 msec")
     }
     
     func testAgeString() {
         var qtMeasurement = QtMeasurement(qt: 333, intervalRate: 444, units: .msec, intervalRateType: .interval, sex: .unspecified, age: nil)
         XCTAssertEqual(qtMeasurement.ageString(), "unspecified")
-        qtMeasurement.age = 33.3
+        qtMeasurement = QtMeasurement(qt: 333, intervalRate: 444, units: .msec, intervalRateType: .interval, sex: .unspecified, age: 33)
         XCTAssertEqual(qtMeasurement.ageString(), "33")
 
+    }
+    
+    func testPreferences() {
+        let preferences = Preferences()
+        preferences.precision = Precision.roundFourPlaces
+        preferences.sortOrder = SortOrder.byDate
+        preferences.save()
+        preferences.load()
+        let precision = preferences.precision
+        let sortOrder = preferences.sortOrder
+        XCTAssertEqual(precision, Precision.roundFourPlaces)
+        XCTAssertEqual(sortOrder, SortOrder.byDate)
     }
     
 //    func testFormulaSorting() {

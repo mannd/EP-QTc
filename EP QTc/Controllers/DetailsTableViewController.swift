@@ -13,7 +13,7 @@ import QTc
 
 class DetailsTableViewController: UITableViewController {
     var formulaType: FormulaType?
-    var calculator: BaseCalculator?
+    var calculator: Calculator?
     var qtMeasurement: QtMeasurement?
     var detailsViewModel: DetailsViewModel?
 

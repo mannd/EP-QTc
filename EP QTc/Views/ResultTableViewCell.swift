@@ -18,7 +18,7 @@ class ResultTableViewCell: UITableViewCell {
     
     var resultViewModel: ResultViewModel!
     
-    var calculator: BaseCalculator!
+    var calculator: Calculator!
     var qtMeasurement: QtMeasurement! {
         didSet {
             guard calculator != nil else {

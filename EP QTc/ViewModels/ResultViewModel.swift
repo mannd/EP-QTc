@@ -11,19 +11,22 @@ import QTc
 
 class ResultViewModel: NSObject {
     let qtMeasurement: QtMeasurement
-    let calculator: BaseCalculator
+    let calculator: Calculator
+    let precision: Precision
     
     // parameter to be eventually set in Settings
-    let defaultFormatType: FormatType = .roundOnePlace
+    let defaultFormatType: Precision = .roundOnePlace
     
-    init(calculator: BaseCalculator, qtMeasurement: QtMeasurement) {
+    init(calculator: Calculator, qtMeasurement: QtMeasurement) {
         self.calculator = calculator
         self.qtMeasurement = qtMeasurement
+        let preferences = Preferences()
+        preferences.load()
+        self.precision = preferences.precision ?? Preferences.defaultPrecision
     }
     
     func resultLabel() -> String {
-        let formatType: FormatType = defaultFormatType
-        return calculator.calculateToString(qtMeasurement: qtMeasurement, formatType: formatType)
+        return calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
     }
     
     func longCalculatorName() -> String {

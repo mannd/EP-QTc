@@ -13,8 +13,6 @@ class StatsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
     var formulas: [Formula]?
     var formulaType: FormulaType?
-    var results: [Double]?
-    var units: Units?
     var viewModel: StatsViewModel?
     
     override func viewDidLoad() {

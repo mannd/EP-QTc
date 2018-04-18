@@ -10,16 +10,16 @@ import Foundation
 import QTc
 
 
-extension BaseCalculator {
-    func calculateToString(qtMeasurement: QtMeasurement, formatType: FormatType) -> String {
+extension Calculator {
+    func calculateToString(qtMeasurement: QtMeasurement, precision: Precision) -> String {
         return tryCalculationCatch(block: { () -> String in
         let result = try calculate(qtMeasurement: qtMeasurement) ?? 0
-        return formattedIntervalMeasurement(measurement: result, units: qtMeasurement.units, formatType: formatType)
+        return formattedIntervalMeasurement(measurement: result, units: qtMeasurement.units, precision: precision)
         })
     }
     
-    private func formattedIntervalMeasurement(measurement: Double?, units: Units, formatType: FormatType) -> String {
-        let formatString = formatType.formattedMeasurement(measurement: measurement, units: units, intervalRateType: .interval)
+    private func formattedIntervalMeasurement(measurement: Double?, units: Units, precision: Precision) -> String {
+        let formatString = precision.formattedMeasurement(measurement: measurement, units: units, intervalRateType: .interval)
         return String.localizedStringWithFormat("\(formatString) %@", units.unitString)
     }
     

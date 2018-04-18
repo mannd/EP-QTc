@@ -13,6 +13,8 @@
 		8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */; };
 		8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
+		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
+		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
 		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
 		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
 		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
@@ -24,6 +26,7 @@
 		8E6E55B61FD30B66004B1B2F /* EP_QTcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55B51FD30B66004B1B2F /* EP_QTcTests.swift */; };
 		8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */; };
 		8E6E55C31FD32643004B1B2F /* Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55C21FD32643004B1B2F /* Measurements.swift */; };
+		8E7E241D2080FFE400A1BE89 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E241C2080FFE400A1BE89 /* GraphViewController.swift */; };
 		8E8C22941FECA6AE000A1C9A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */; };
 		8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9674C52049032200D49C05 /* ResultViewModel.swift */; };
 		8E9674C9204909A200D49C05 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9674C8204909A200D49C05 /* DetailsViewModel.swift */; };
@@ -61,6 +64,8 @@
 		8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtFormulas.swift; sourceTree = "<group>"; };
 		8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
+		8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
+		8E47B1D1208F8FF10042C5F9 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 		8E6E55B71FD30B66004B1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E6E55C01FD31D3A004B1B2F /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		8E6E55C21FD32643004B1B2F /* Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurements.swift; sourceTree = "<group>"; };
+		8E7E241C2080FFE400A1BE89 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		8E8C22931FECA6AE000A1C9A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		8E9674C52049032200D49C05 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8E9674C8204909A200D49C05 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 				8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */,
 				8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */,
 				8E506229206B099600BF9C3E /* StatsTableViewController.swift */,
+				8E7E241C2080FFE400A1BE89 /* GraphViewController.swift */,
+				8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 				8E9674CA204917C500D49C05 /* DetailsModel.swift */,
 				8E50622B206B0A2800BF9C3E /* StatsModel.swift */,
 				8ECE0CEC207E691800135717 /* Calculator.swift */,
+				8E47B1D1208F8FF10042C5F9 /* Preferences.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +423,7 @@
 			files = (
 				8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */,
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
+				8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */,
 				8EBE89D1205C37F700A60296 /* EquationCell.swift in Sources */,
 				8EBE89D3205C3A2400A60296 /* DetailsCell.swift in Sources */,
 				8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */,
@@ -421,12 +431,14 @@
 				8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */,
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
 				8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */,
+				8E7E241D2080FFE400A1BE89 /* GraphViewController.swift in Sources */,
 				8EA5108F2050F3C100D77A77 /* ParameterCell.swift in Sources */,
 				8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */,
 				8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */,
 				8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */,
 				8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */,
 				8EA5108D20509EB600D77A77 /* FormulaNameCell.swift in Sources */,
+				8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */,
 				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,
 				8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */,

@@ -16,25 +16,6 @@ class ResultsTableViewController: UITableViewController {
     // these are passed via the segue
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
-    
-    enum FormulaSorting {
-        case none
-        case byDate
-        case byName
-        case bigFourFirstByDate
-        case bigFourFirstByName
-        // TODO: implement these
-        case byNumberOfSubjects
-        case bigFourByNumberOfSubjects
-        case byFormulaType
-        
-        // FIXME: might reduce number of cases by implementing bigFourFirst boolean
-        // var bigFourFirst: Bool
-    }
-    
-    // Preferences
-    // TODO: need mechanism to set preferences
-    var sortingPreference: FormulaSorting = .byDate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,14 +29,16 @@ class ResultsTableViewController: UITableViewController {
         }
 
         self.title = formulaType.name
-       
-//        processParameters()
-        
+               
         let qtFormulas = QtFormulas()
         guard let rawFormulas = qtFormulas.formulas[formulaType] else {
             assertionFailure("Formula type not found!")
             return
         }
+        
+        let preferences = Preferences()
+        preferences.load()
+        let sortingPreference = preferences.sortOrder ?? Preferences.defaultSortOrder
         switch sortingPreference {
         case .none:
             formulas = rawFormulas
@@ -75,6 +58,7 @@ class ResultsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated);
         self.navigationController?.setToolbarHidden(false, animated: animated)
     }

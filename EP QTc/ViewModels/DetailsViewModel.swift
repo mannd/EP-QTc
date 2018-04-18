@@ -150,7 +150,7 @@ class DetailsViewModel: NSObject {
     let shortName: String
     weak var viewController: UITableViewController?
     
-    init(qtMeasurement: QtMeasurement, calculator: BaseCalculator, formulaType: FormulaType) {
+    init(qtMeasurement: QtMeasurement, calculator: Calculator, formulaType: FormulaType) {
         let model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator)
         parameters = model.parameters
         let parametersItem = DetailsViewModelParametersItem(parameters: model.parameters)

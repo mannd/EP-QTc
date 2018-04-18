@@ -11,11 +11,11 @@ import SigmaSwiftStatistics
 import QTc
 
 class StatsModel {
-    let defaultFormatType: FormatType = .roundOnePlace
+    let defaultFormatType: Precision = .roundOnePlace
 
     let units: Units
     let results: [Double]
-    let formatType: FormatType
+    let precision: Precision
     
     let mean: Double?
     let median: Double?
@@ -27,7 +27,7 @@ class StatsModel {
     var simpleStats: [Stat] = []
     
     init(results: [Double], units: Units) {
-        self.formatType = defaultFormatType
+        self.precision = defaultFormatType
         self.units = units
         self.results = results
         
@@ -71,7 +71,7 @@ class StatsModel {
     
     private func formattedValue(_ value: Double?) -> String {
         guard let value = value else { return "Error" }
-        return formatType.formattedMeasurementWithUnits(measurement: value, units: units, intervalRateType: .interval)
+        return precision.formattedMeasurementWithUnits(measurement: value, units: units, intervalRateType: .interval)
     }
 
 }

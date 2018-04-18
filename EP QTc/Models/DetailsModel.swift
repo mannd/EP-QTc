@@ -11,7 +11,7 @@ import QTc
 
 class DetailsModel {
     // TODO: change this to a setting
-    let defaultFormatType: FormatType = .roundOnePlace
+    let defaultPrecision: Precision = .roundOnePlace
     
     var formulaName: String
     var shortFormulaName: String
@@ -22,23 +22,23 @@ class DetailsModel {
     var reference: String
     var notes: String
 
-    init(qtMeasurement: QtMeasurement, calculator: BaseCalculator) {
-        let formatType: FormatType = defaultFormatType
+    init(qtMeasurement: QtMeasurement, calculator: Calculator) {
+        let precision: Precision = defaultPrecision
         // names
         formulaName = calculator.longName
         shortFormulaName = calculator.shortName
         // parameters
         let qtParameter = Parameter()
         qtParameter.key = "QT"
-        qtParameter.value = formatType.formattedMeasurementWithUnits(measurement: qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: .interval)
+        qtParameter.value = precision.formattedMeasurementWithUnits(measurement: qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: .interval)
         parameters.append(qtParameter)
         let rrParameter = Parameter()
         rrParameter.key = "RR interval"
-        rrParameter.value = formatType.formattedMeasurementWithUnits(measurement: qtMeasurement.rrInterval(), units: qtMeasurement.units, intervalRateType: .interval)
+        rrParameter.value = precision.formattedMeasurementWithUnits(measurement: qtMeasurement.rrInterval(), units: qtMeasurement.units, intervalRateType: .interval)
         parameters.append(rrParameter)
         let hrParameter = Parameter()
         hrParameter.key = "Heart rate"
-        hrParameter.value = formatType.formattedMeasurementWithUnits(measurement: qtMeasurement.heartRate(), units: qtMeasurement.units, intervalRateType: .rate)
+        hrParameter.value = precision.formattedMeasurementWithUnits(measurement: qtMeasurement.heartRate(), units: qtMeasurement.units, intervalRateType: .rate)
         parameters.append(hrParameter)
         let sexParameter = Parameter()
         sexParameter.key = "Sex"
@@ -49,7 +49,7 @@ class DetailsModel {
         ageParameter.value = qtMeasurement.ageString()
         parameters.append(ageParameter)
         // qtc result
-        result = calculator.calculateToString(qtMeasurement: qtMeasurement, formatType: formatType)
+        result = calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
         // formula details
         let nameDetail = Detail()
         nameDetail.key = "Name"
@@ -65,7 +65,7 @@ class DetailsModel {
         details.append(dateDetail)
         let classificationDetail = Detail()
         classificationDetail.key = "Classification"
-        classificationDetail.value = calculator.classificationName
+        classificationDetail.value = calculator.classification.label
         details.append(classificationDetail)
         let numberOfSubjectsDetail = Detail()
         numberOfSubjectsDetail.key = "Total number of subjects"
