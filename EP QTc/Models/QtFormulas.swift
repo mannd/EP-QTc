@@ -28,6 +28,12 @@ extension Formula {
         }
         return date
     }
+    
+    // This func assumes if numberOfSubjects is missing, they are 0.
+    // This shouldn't happen when all the QTc/p formulas are completed
+    func numberOfSubjects(formulaType: FormulaType) -> Int {
+        return QTc.calculator(formula: self).numberOfSubjects ?? 0
+    }
 }
 
 extension FormulaClassification {
@@ -101,9 +107,36 @@ class QtFormulas {
         return formulas.sorted(by: {$1.longName(formulaType: formulaType) > $0.longName(formulaType: formulaType)})
     }
     
+    func sortedByNumberOfSubjects(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
+        return formulas.sorted(by: {$1.numberOfSubjects(formulaType: formulaType) > $0.numberOfSubjects(formulaType: formulaType)})
+    }
+    
     private func formulasWithoutBigFour() -> ArraySlice<Formula> {
         let formulasMinusBigFour = formulas[.qtc]![4..<(formulas[.qtc]!.count)]
         return formulasMinusBigFour
+    }
+    
+    // All the Big Four functions ignore QTp formulas, i.e., only appy to QTc
+    func bigFourFirstSortedByDate(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
+        if formulaType == .qtp {
+            return sortedByDate(formulas: formulas, formulaType: formulaType)
+        }
+        else {
+            var sortedFormulas = sortedByDate(formulas: Array(formulasWithoutBigFour()), formulaType: .qtc)
+            sortedFormulas = bigFourFormulas() + sortedFormulas
+            return sortedFormulas
+        }
+    }
+    
+    func bigFourFirstSortedByName(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
+        if formulaType == .qtp {
+            return sortedByName(formulas: formulas, formulaType: formulaType)
+        }
+        else {
+            var sortedFormulas = sortedByName(formulas: Array(formulasWithoutBigFour()), formulaType: .qtc)
+            sortedFormulas = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg] + sortedFormulas
+            return sortedFormulas
+        }
     }
     
 }

@@ -47,10 +47,12 @@ class ResultsTableViewController: UITableViewController {
         case .byName:
             formulas = qtFormulas.sortedByName(formulas: rawFormulas, formulaType: formulaType)
         // FIXME: next two have to account for formulaType
-//        case .bigFourFirstByDate:
-//            formulas = qtFormulas.bigFourFirstSortedByDate()
-//        case .bigFourFirstByName:
-//            formulas = qtFormulas.bigFourFirstSortedByName()
+        case .bigFourFirstByDate:
+            formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
+        case .bigFourFirstByName:
+            formulas = qtFormulas.bigFourFirstSortedByName(formulas: rawFormulas, formulaType: formulaType)
+        case .byNumberOfSubjects:
+            formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas, formulaType: formulaType)
         default:
             assertionFailure("Sorting preference not implemented.")
         }

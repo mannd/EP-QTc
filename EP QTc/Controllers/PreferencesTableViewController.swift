@@ -60,8 +60,8 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         precisionLabels = ["Full", "Integer", "1 place", "4 places"]
         precisionOptions = [.raw, .roundToInteger, .roundOnePlace, .roundFourPlaces]
 
-        sortOrderLabels = ["Date", "Name", "Date big 4 first", "Name big 4 first", "Subjects", "Subjects big 4 first", "Formula type"]
-        sortOrderOptions = [.byDate, .byName, .bigFourFirstByDate, .bigFourFirstByName, .byNumberOfSubjects, .bigFourByNumberOfSubjects, .byFormulaType]
+        sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first", "Subjects big 4 first", "Formula type"]
+        sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName, .bigFourByNumberOfSubjects, .byFormulaType]
     }
     
     override func viewWillAppear(_ animated: Bool) {
