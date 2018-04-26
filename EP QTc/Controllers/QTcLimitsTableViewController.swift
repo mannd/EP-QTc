@@ -13,6 +13,8 @@ class QTcLimitsTableViewController: UITableViewController {
 
         
     var qtcLimits: [Criterion] = []
+    var selectedQTcLimits: Set<Criterion> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +24,20 @@ class QTcLimitsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         qtcLimits = [.schwartz1985, .fda2005, .esc2005, .aha2009]
+        let preferences = Preferences()
+        preferences.load()
+        selectedQTcLimits = preferences.qtcLimits ?? []
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        for element in selectedQTcLimits {
+            print(element)  
+        }
+        let preferences = Preferences()
+        preferences.qtcLimits = selectedQTcLimits
+        preferences.save()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,9 +63,36 @@ class QTcLimitsTableViewController: UITableViewController {
         let abnormalQTc = AbnormalQTc.qtcLimits(criterion: qtcLimits[indexPath.row])
         cell.textLabel?.text = abnormalQTc?.name
         cell.detailTextLabel?.text = abnormalQTc?.description
+        
+        for criterion in selectedQTcLimits {
+            if let row = qtcLimits.index(of: criterion) {
+                if row == indexPath.row {
+                    cell.accessoryType = .checkmark
+                }
+            }
+        }
 
         return cell
     }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        // toggle checkmark
+        if cell?.accessoryType == .checkmark {
+            cell?.accessoryType = .none
+            selectedQTcLimits.remove(qtcLimits[indexPath.row])
+        }
+        else {
+            cell?.accessoryType = .checkmark
+            selectedQTcLimits.insert(qtcLimits[indexPath.row])
+        }
+        cell?.setSelected(false, animated: true)
+        
+        
+    }
+
     
 
     /*

@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let defaults = UserDefaults.standard
         defaults.register(defaults: [Preferences.precisionKey: Preferences.defaultPrecision.rawValue,
-                                     Preferences.sortOrderKey: Preferences.defaultSortOrder.rawValue])
+                                     Preferences.sortOrderKey: Preferences.defaultSortOrder.rawValue,
+                                     Preferences.qtcLimitsKey: Preferences.defaultQTcLimitsArray])
         return true
     }
 

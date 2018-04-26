@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QTc
 
 class PreferencesTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -72,10 +73,6 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         precisionPickerVisible = false
         sortingPickerVisible = false
         
-        qtcLimitsCell.detailTextLabel?.text = "This is a test.\nThis is a test."
-        
-        
-        
         // must run this async, to allow for loading of data into pickers
         DispatchQueue.main.async {
             let preferences = Preferences()
@@ -93,17 +90,33 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
             
             self.precisionCell.detailTextLabel?.text = self.precisionLabels[preferenceRow]
             self.sortingCell.detailTextLabel?.text = self.sortOrderLabels[sortRow]
+            self.qtcLimitsCell.detailTextLabel?.text = self.qtcLimitsString(preferences.qtcLimits)
 
         }
         
         super.viewWillAppear(animated)
     }
     
+    private func qtcLimitsString(_ limits: Set<Criterion>?) -> String {
+        guard let limits = limits, limits.count > 0 else {
+            return "None"
+        }
+        var string = ""
+        for limit in limits {
+            if let abnormalQTc = AbnormalQTc.qtcLimits(criterion: limit) {
+                string.append(abnormalQTc.name + "\n")
+            }
+        }
+        return string
+    }
+    
+    // FIXME: this also called when segueing to QTcLimitsViewController
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let precisionRow = precisionPicker.selectedRow(inComponent: 0)
         let sortRow = sortingPicker.selectedRow(inComponent: 0)
         let preferences = Preferences()
+        preferences.load()
         preferences.precision = precisionOptions[precisionRow]
         preferences.sortOrder = sortOrderOptions[sortRow]
         preferences.save()
@@ -210,9 +223,9 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         if indexPath.row == sortingPickerViewRowNumber {
             height = sortingPickerVisible ? pickerViewHeight : 0
         }
-//        if indexPath.row == qtcLimitsRowNumber {
-//            height = qtcLimitsRowHeight
-//        }
+        if indexPath.row == qtcLimitsRowNumber {
+            height = qtcLimitsRowHeight
+        }
         return height;
     }
     
@@ -289,14 +302,17 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "qtcLimitsSegue" {
+//            let vc = segue.destination as? QTcLimitsTableViewController
+//            let criteria: Set<Criterion> = [.schwartz1985]
+//            vc?.selectedQTcLimits = criteria
+//
+//        }
+//    }
 
 }
