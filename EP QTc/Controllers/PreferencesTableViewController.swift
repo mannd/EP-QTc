@@ -72,7 +72,7 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         precisionPickerVisible = false
         sortingPickerVisible = false
         
-        qtcLimitsCell.detailTextLabel?.text = "This is a test."
+        qtcLimitsCell.detailTextLabel?.text = "This is a test.\nThis is a test."
         
         
         
@@ -210,9 +210,9 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         if indexPath.row == sortingPickerViewRowNumber {
             height = sortingPickerVisible ? pickerViewHeight : 0
         }
-        if indexPath.row == qtcLimitsRowNumber {
-            height = qtcLimitsRowHeight
-        }
+//        if indexPath.row == qtcLimitsRowNumber {
+//            height = qtcLimitsRowHeight
+//        }
         return height;
     }
     

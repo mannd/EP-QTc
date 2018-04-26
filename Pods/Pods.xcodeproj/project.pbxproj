@@ -22,7 +22,6 @@
 		1187478F2296E43A9C1A31E314A850E5 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A077FB204CFC63F01742D3FA6463A /* ValidationResult.swift */; };
 		121E3CFD495BA608A6C85E9835F39FDB /* BubbleChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E9311EA04502CE423EE88DC6A88F02 /* BubbleChartRenderer.swift */; };
 		13138040C1441CFA3E307F16C6F91E0B /* HorizontalBarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7698B821FB582259AFC345E5D2AC88F /* HorizontalBarChartRenderer.swift */; };
-		1569E91E0F0F55B9E1D8839373506819 /* QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A38EA56F1748D58F5025575463183B9 /* QTc-dummy.m */; };
 		1B113CB9C36746050ADC93F2D5AA40B2 /* BarLineScatterCandleBubbleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DE8C1B685A56E3A331FEBA70EBCA9 /* BarLineScatterCandleBubbleChartDataSet.swift */; };
 		1B198192F81535F244FF5AE07D8D4B9D /* SigmaSwiftStatistics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F75B2A87DBEF85BE0A9BAB94BD471A00 /* SigmaSwiftStatistics-dummy.m */; };
 		1FD8EAFC2571F4A03673DDABC559F6EE /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AF77E11E7EF3EEECB3C086CFB1AF39 /* Validatable.swift */; };
@@ -71,6 +70,7 @@
 		5857B07B67A8752924C22368C45E436C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EE119B0D47F2719C858E5D99194F18 /* Renderer.swift */; };
 		5B682543CDE035E55DE313B4CD2F7650 /* Quantiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C8F19ABD8E29291DC40AB6B764958 /* Quantiles.swift */; };
 		5B83D8B608FB5A46E3EFBD7069877FEE /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9A9E7D9F079CB1A21415235964B1D0 /* ValidationRule.swift */; };
+		5BE6CE0548E93FA2204F0165F20DAC96 /* AbnormalQTc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD22C166466755BF014CC4496D0CB14 /* AbnormalQTc.swift */; };
 		5C66D4BED1B4572FB65745EE045961DA /* CircleShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34E50BFEF78451E041B99DE658AD1E /* CircleShapeRenderer.swift */; };
 		5CF666D94A00EB9897A2A75EBA0A1A77 /* LineScatterCandleRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F4ADB80F808BE07B4CE7D9B79A1A1 /* LineScatterCandleRadarChartDataSet.swift */; };
 		5D1756710EA899736AEA98FB3721E7A0 /* IFillFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC85C11140ABAB8F867F74C449BBF89 /* IFillFormatter.swift */; };
@@ -83,12 +83,12 @@
 		656D24B598864391F4AAD997DA78A973 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BEA06528C498EF0EC7BBF7610C872 /* Highlight.swift */; };
 		65E5841CA2E4A38A951119CE2915DD67 /* ValidationRuleEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED5EAE7DEB01577F3F877C0746AFE7 /* ValidationRuleEquality.swift */; };
 		66E7265532304E90A9D5E6DBFABD4517 /* LegendEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C65B3209C580D7029C3802B97CF70 /* LegendEntry.swift */; };
+		6745C6C7A8FF3146E59E6DD9E38D32A4 /* Formulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0615B35060A0AF856B2618326EE9DC /* Formulas.swift */; };
 		679A922E58AD36EA0CD2FF1F194A49F8 /* ChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE78A39936C21B13B1B3AC1E28DE0FF3 /* ChartDataProvider.swift */; };
 		6825F987487EDF06F4D24299C38983E4 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9045D3FA56D0A59E350B69BE43D6BB8 /* Transformer.swift */; };
 		69E81189486A414318D77B812FE5BD11 /* DefaultAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8797A5CE70DD516BA7F53E698FE4A /* DefaultAxisValueFormatter.swift */; };
 		6C679C3A31EDFD86CA769C0213F0266D /* XAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A6448224CEBF54569E1BF04070E9E /* XAxisRenderer.swift */; };
 		6D5E2ED5B416494604DF184CA6203D13 /* ValidationRuleComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6255E5719AD2EBCBCF13A2E0924234 /* ValidationRuleComparison.swift */; };
-		6EC24B10F5BB0139946443115F7349B1 /* QTc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1845F98B1580FC59446FDE260740FD8D /* QTc.swift */; };
 		6F171FB7BE427E6E8A78A2BFFE7DAD47 /* Variance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CB3C3D28E1D2765C2C0A6C5322AF9 /* Variance.swift */; };
 		6FC5B0E0F56612457D2A08E5372B2265 /* BarLineScatterCandleBubbleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7F1074E706F1F9BA71570FE263EFA /* BarLineScatterCandleBubbleChartData.swift */; };
 		70036726754F944E38B2D82FB4423C57 /* UITextField+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FBF31FED3D6595F713572503D0BC82 /* UITextField+Validator.swift */; };
@@ -115,14 +115,15 @@
 		86492D003584407BF5EA438D0A5F489C /* ViewPortJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553795C1CDFBADB321CB0E680F9C5462 /* ViewPortJob.swift */; };
 		871D84128C6D63A17D0012F05489D71F /* Pods-EP QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BC1BC71F7078F21F4622D87043EDA0 /* Pods-EP QTc-dummy.m */; };
 		8992239AF1272804CEE86F780052CF62 /* DataApproximator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76C044CCB08DE4AFF882215408D962 /* DataApproximator.swift */; };
-		89B2E9209DF333398627FF6BC37BA0ED /* QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B76DF5734F062E51E7C9B929343BBFC3 /* QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89B2E9209DF333398627FF6BC37BA0ED /* QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F25ED369A758AF42B3EB7A4C0A92C3 /* QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AE0DD6EE280F4AB589B4BDAC244D6DF /* Pods-EP QTc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F292B3181278D47F9BC08FB7E529E6B8 /* Pods-EP QTc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C8FB298E817329B3775E7E12BE7CC92 /* IValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798920D8E17936AA55071D69ECC843A2 /* IValueFormatter.swift */; };
-		8C9783CD2DCA3DDB05E2114FB5C476A5 /* QTc.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BB842B78952DD69375EF6F5B2EEBE4 /* QTc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C9783CD2DCA3DDB05E2114FB5C476A5 /* QTc.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8B61C3D4C930E7DDA91DAC108907F0 /* QTc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D4DDB21B8B72A5104CFF24DA8590CAA /* ILineScatterCandleRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD44AFD710C085D724E9E84D1C1258 /* ILineScatterCandleRadarChartDataSet.swift */; };
 		8F7444EE525DDAC487E9638AD212345A /* PieChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82384B800BA0E97A8856A31A3E9CE8 /* PieChartDataEntry.swift */; };
 		9053E198DE4959D70159A21A8F90BB63 /* IBubbleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B10E094A828657095D25656B5B859 /* IBubbleChartDataSet.swift */; };
 		90C91B4DB090622DEF0801547D1035E8 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED62111E63059E5F80350CBA8588CF3F /* BarChartView.swift */; };
+		90D7D598FF012044D3AFA81786265130 /* QTc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A431442845C9F977A4E6AB30D7FCA5 /* QTc.swift */; };
 		92F3ABF814C451C5B68BC008649E8FE7 /* PieChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D96B771EA3C95087977F5E0BBC0F2 /* PieChartRenderer.swift */; };
 		940C50A9F197CA2D0ED6CB073893A764 /* LineChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780CDA179256A06AE181646B71B1C608 /* LineChartRenderer.swift */; };
 		9512FC6084B2BD1AC845BE76B3F2540C /* ComponentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8348FE253772AB39A146CA0D0E253553 /* ComponentBase.swift */; };
@@ -143,11 +144,11 @@
 		AAC1301C67D3D946E1FB70A3F31A1E8A /* CaseValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E4D4F12EE26998D0FE18B7B791D80 /* CaseValidationPattern.swift */; };
 		AC87C9266ACAA0FA87CEF8E83C0569A6 /* CombinedChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F76127AC8994A4A0B280C0954FB36 /* CombinedChartRenderer.swift */; };
 		ADD0A7D4873694805EAD32848441AFAD /* ChartDataEntryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F600BD833EED420F2308C7C2A0F8F75 /* ChartDataEntryBase.swift */; };
+		B0690E8486F153BD4FA56888A3A28515 /* QtMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8596B2F4E7BB618AC03D68393CF3B2FB /* QtMeasurement.swift */; };
 		B1CE55556C25C93106BED8F5083FEF60 /* Covariance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BF644634A7CF89F51D931B3833CE7 /* Covariance.swift */; };
 		B5C06A9E2E9333E2CE5ADCFCFBE195E9 /* BarLineScatterCandleBubbleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4526404F7E7C4EDCA146B26C5030594 /* BarLineScatterCandleBubbleRenderer.swift */; };
 		B7251BCC063F1B5D357B31DDA9D3911F /* PieRadarChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B157F6ACFFB8F726A9CD66E642F69C /* PieRadarChartViewBase.swift */; };
 		B7DC6E94BC73C82B95E64BA057899BC4 /* SigmaSwiftStatistics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08306037D50F683B28442CC5DCE73902 /* SigmaSwiftStatistics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B955A8A1C22C73929782838BFC7E874F /* Formulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DD4DABD8CACE03CAB82CE7092EA81 /* Formulas.swift */; };
 		B9E2A3DF455414E2BE8C54E50FF87A50 /* YAxisRendererHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC25337438715BFE53B7542A2485566B /* YAxisRendererHorizontalBarChart.swift */; };
 		BA6BAC2D3D2890CB12B5D0546BB7F1DB /* Sigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353FD36B77CCE6CA1C57B31C887278C8 /* Sigma.swift */; };
 		BBC5DF13B0556466C9FC06D9A620EFE9 /* BubbleChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953C845651B40911CCA65378172B832 /* BubbleChartDataEntry.swift */; };
@@ -184,6 +185,7 @@
 		E5B1F1D3579641AA5FF8C031950F56F7 /* BubbleChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA366947CFA69CE91DFA07FC53EECCBF /* BubbleChartView.swift */; };
 		E6FC09D485B3A310B30A04CDA03AA9CB /* IPieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F389FF5272392A6938A630A9224C34B1 /* IPieChartDataSet.swift */; };
 		E79525D2BB5EFBA1170DDF31EFE69E1B /* BubbleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD250CA9662EBBB1F90CD5CF3660544 /* BubbleChartData.swift */; };
+		E898522C3B8C4DC8B74362FB5859A077 /* QTc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A14B1E0A5DBDA29639E0EEBA75F3E9A2 /* QTc-dummy.m */; };
 		E8C175E10975D91CB20B198D56FABDBD /* UITextView+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17632B61F4926A9A5A6020C3E35E5431 /* UITextView+Validator.swift */; };
 		EAFE66969B8288438DB654702FE920CF /* LineRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D7471B9276884B436F75F42ACF35A /* LineRadarChartDataSet.swift */; };
 		EBB934BB890FB3C473596A5323F3EFC3 /* Kurtosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8451C57F38799FC99B8825DF2B3C2A /* Kurtosis.swift */; };
@@ -195,7 +197,6 @@
 		F3164A48C4BD14B24589513631E76289 /* RadarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE0CE26BC06E8428FA6315D7F42F0C8 /* RadarChartData.swift */; };
 		F34138A7B6DA112CD721402546A83E4C /* CandleStickChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A7D7E8681FD5B2F12A2B9AE77B565 /* CandleStickChartRenderer.swift */; };
 		F702AFB1E0BFA66D014B01726FCDEB55 /* EmailValidationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFEDBC70B7EA0399D05E02517DABE78 /* EmailValidationPattern.swift */; };
-		F84A0F81B868D60466AF9C2CD2D96A81 /* QtMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433236B774E222980CBB2EFE75FD0D69 /* QtMeasurement.swift */; };
 		FA235C475565E40FB2EC81D8C07AEB1D /* YAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53FFDC6A8F43A9C37F291A0F951BCB3 /* YAxisRenderer.swift */; };
 		FB0545D14B1E4861481C33CBAA0C0E38 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93ACF9BC599BB188B5020ACD985609A /* Description.swift */; };
 		FBE3E2442ACE2FBA04F7AB0C162C4D89 /* RadarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E882368FB187854616E829B7C8D25A /* RadarChartRenderer.swift */; };
@@ -261,8 +262,6 @@
 		13B6C4CF88067FCABB53EF983892F5F7 /* BarLineChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineChartViewBase.swift; path = Source/Charts/Charts/BarLineChartViewBase.swift; sourceTree = "<group>"; };
 		171C8F19ABD8E29291DC40AB6B764958 /* Quantiles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Quantiles.swift; path = SigmaSwiftStatistics/Quantiles.swift; sourceTree = "<group>"; };
 		17632B61F4926A9A5A6020C3E35E5431 /* UITextView+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextView+Validator.swift"; sourceTree = "<group>"; };
-		1845F98B1580FC59446FDE260740FD8D /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
-		1A38EA56F1748D58F5025575463183B9 /* QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QTc-dummy.m"; sourceTree = "<group>"; };
 		1A5BFE1005C18072CA8E01E192C574F0 /* Platform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Source/Charts/Utils/Platform.swift; sourceTree = "<group>"; };
 		1AEBDDE1225BA15A0DE5503F5E9C1077 /* CandleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataProvider.swift; path = Source/Charts/Interfaces/CandleChartDataProvider.swift; sourceTree = "<group>"; };
 		1C08AB00BC454D1A25423B9F70DE7957 /* SigmaSwiftStatistics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SigmaSwiftStatistics.modulemap; sourceTree = "<group>"; };
@@ -276,6 +275,7 @@
 		2303DC887C850533881A1BD02AB7E2AE /* PieChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartData.swift; path = Source/Charts/Data/Implementations/Standard/PieChartData.swift; sourceTree = "<group>"; };
 		234AFB5DCC3B7C9D5A119132C425425D /* BarLineScatterCandleBubbleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataProvider.swift; path = Source/Charts/Interfaces/BarLineScatterCandleBubbleChartDataProvider.swift; sourceTree = "<group>"; };
 		2407923BE6F9759627F205260E27913F /* CandleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartDataSet.swift; sourceTree = "<group>"; };
+		25030A4EFAFD37359416676BA131DC51 /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
 		2514FFC1C7982B84880105CCD9DACA09 /* ValidationRuleSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleSet.swift; path = Validator/Sources/ValidationRuleSet.swift; sourceTree = "<group>"; };
 		258F712BB868F68B4D34555A91748410 /* IBarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
 		2614ED58392744381931D4A22E6E1D7C /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Validator.framework; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +287,8 @@
 		2EB4803B6847101DE950505FCD1807F3 /* CoefficientVariation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoefficientVariation.swift; path = SigmaSwiftStatistics/CoefficientVariation.swift; sourceTree = "<group>"; };
 		2F82384B800BA0E97A8856A31A3E9CE8 /* PieChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/PieChartDataEntry.swift; sourceTree = "<group>"; };
 		30134AC511D7254924DF668BE6B13C3B /* CombinedChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartView.swift; path = Source/Charts/Charts/CombinedChartView.swift; sourceTree = "<group>"; };
+		326B72105B7865C389A7BEAABDE52BA1 /* README.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		337F817D34AE2357F7378F6F2A297503 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		353FD36B77CCE6CA1C57B31C887278C8 /* Sigma.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sigma.swift; path = SigmaSwiftStatistics/Sigma.swift; sourceTree = "<group>"; };
 		35A0BAD3C3D434F0090A34DEE606E855 /* XAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/XAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
 		3932458A7E84CE8E78E257081B38CCAD /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedZoomViewJob.swift; path = Source/Charts/Jobs/AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
@@ -294,18 +296,18 @@
 		3A213F4C6E5CA8EB78E2C75A49CD745D /* Median.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Median.swift; path = SigmaSwiftStatistics/Median.swift; sourceTree = "<group>"; };
 		3B7FF5CCB7A1B07275B9269B491DE69A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B8676E67B31749FE454115DF5A2D608 /* Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fill.swift; path = Source/Charts/Utils/Fill.swift; sourceTree = "<group>"; };
+		3BCD5BB9481A71450FEE4131A8A369CC /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QTc.modulemap; sourceTree = "<group>"; };
 		3EFEDBC70B7EA0399D05E02517DABE78 /* EmailValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmailValidationPattern.swift; path = Validator/Sources/EmailValidationPattern.swift; sourceTree = "<group>"; };
+		3F0615B35060A0AF856B2618326EE9DC /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
 		40A54B311948AE1CA0A2A69F9876F8CF /* Rank.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rank.swift; path = SigmaSwiftStatistics/Rank.swift; sourceTree = "<group>"; };
 		418F0F0FCF79766FA600723F3067F294 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4256F27D931485B9B70D4E8D5B508C71 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		433236B774E222980CBB2EFE75FD0D69 /* QtMeasurement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QtMeasurement.swift; path = CommonSource/QtMeasurement.swift; sourceTree = "<group>"; };
 		435CB85D5DAD5AF08C72C3EB6372CD72 /* ChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = Source/Charts/Data/Implementations/Standard/ChartData.swift; sourceTree = "<group>"; };
-		447B92ACC60B977E4E7E134395BF753D /* QTc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-prefix.pch"; sourceTree = "<group>"; };
 		451FE82E5BF0784280B75BD2C580456F /* Pods-EP QTc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-frameworks.sh"; sourceTree = "<group>"; };
 		47E338F1605696F1797B0BB6C7C63AB7 /* YAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxis.swift; path = Source/Charts/Components/YAxis.swift; sourceTree = "<group>"; };
 		487EE83A55A36CF19376AE42D2A6132E /* SigmaSwiftStatistics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SigmaSwiftStatistics-prefix.pch"; sourceTree = "<group>"; };
 		48DA746E952C1ADBEF2616EE3EFDDE9E /* RadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift; sourceTree = "<group>"; };
 		49B157F6ACFFB8F726A9CD66E642F69C /* PieRadarChartViewBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieRadarChartViewBase.swift; path = Source/Charts/Charts/PieRadarChartViewBase.swift; sourceTree = "<group>"; };
+		4ADCA631A08EE8A817DF675157D89490 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8DB902A043DA6989A897B20A2E8BD9 /* IMarker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IMarker.swift; path = Source/Charts/Components/IMarker.swift; sourceTree = "<group>"; };
 		4CFC079A5E6A81DB05DBF3605810A31B /* Pods-EP QTcTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EP QTcTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4D676A662E17EFD17D987717DFFBD13E /* HorizontalBarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarHighlighter.swift; path = Source/Charts/Highlight/HorizontalBarHighlighter.swift; sourceTree = "<group>"; };
@@ -347,8 +349,9 @@
 		80E882368FB187854616E829B7C8D25A /* RadarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartRenderer.swift; path = Source/Charts/Renderers/RadarChartRenderer.swift; sourceTree = "<group>"; };
 		833BF8417874C544ABA7D02B7FCBA220 /* IndexAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndexAxisValueFormatter.swift; path = Source/Charts/Formatters/IndexAxisValueFormatter.swift; sourceTree = "<group>"; };
 		8348FE253772AB39A146CA0D0E253553 /* ComponentBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComponentBase.swift; path = Source/Charts/Components/ComponentBase.swift; sourceTree = "<group>"; };
+		8596B2F4E7BB618AC03D68393CF3B2FB /* QtMeasurement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QtMeasurement.swift; path = CommonSource/QtMeasurement.swift; sourceTree = "<group>"; };
 		88664DD815FE4468DD9C2350192FEC05 /* PieHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieHighlighter.swift; path = Source/Charts/Highlight/PieHighlighter.swift; sourceTree = "<group>"; };
-		89827A9CB94D2ADA35C0C8C9B1AE3DB2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89A431442845C9F977A4E6AB30D7FCA5 /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
 		8A731ED18B67185613C72BBD36871AC9 /* Pods-EP QTc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTc-resources.sh"; sourceTree = "<group>"; };
 		8B87F794BE0B46A41AB7D75F32B86742 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTcTests.framework; path = "Pods-EP QTcTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCD904A9C1B2C634BD3FE9F5A75210E /* CombinedChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartDataProvider.swift; path = Source/Charts/Interfaces/CombinedChartDataProvider.swift; sourceTree = "<group>"; };
@@ -362,7 +365,6 @@
 		921FA3652CC810A43AD17EC21012A152 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColorTemplates.swift; path = Source/Charts/Utils/ChartColorTemplates.swift; sourceTree = "<group>"; };
 		922F7656A3022D630F63BA36706E9463 /* ChartLimitLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartLimitLine.swift; path = Source/Charts/Components/ChartLimitLine.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95C4202047D365031AEAF402F67B233C /* QTc.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = QTc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9763E8A00B57897A9AD7A2BE8DDC98C6 /* ILineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineRadarChartDataSet.swift; sourceTree = "<group>"; };
 		9A05637B5CF40BD171162896F8111D3E /* PieChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Source/Charts/Charts/PieChartView.swift; sourceTree = "<group>"; };
 		9C32922DCEC553A0392563C5F13A970D /* AxisBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisBase.swift; path = Source/Charts/Components/AxisBase.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 		9E4AF45E9257678195FDA871D999E857 /* Legend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Legend.swift; path = Source/Charts/Components/Legend.swift; sourceTree = "<group>"; };
 		9F68BAC0CCD82385DFCD9D8FB649961C /* Skewness.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Skewness.swift; path = SigmaSwiftStatistics/Skewness.swift; sourceTree = "<group>"; };
 		A04943E789EA9B273F0A0EF719164885 /* ValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationPattern.swift; path = Validator/Sources/ValidationPattern.swift; sourceTree = "<group>"; };
+		A14B1E0A5DBDA29639E0EEBA75F3E9A2 /* QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QTc-dummy.m"; sourceTree = "<group>"; };
 		A1BC10A4DA3BD51539717CEB2E5610F1 /* ChartDataRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataRendererBase.swift; path = Source/Charts/Renderers/ChartDataRendererBase.swift; sourceTree = "<group>"; };
 		A1EDE77B5D6BE2D3F6E5A8915F7512C1 /* BarChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartData.swift; path = Source/Charts/Data/Implementations/Standard/BarChartData.swift; sourceTree = "<group>"; };
 		A43A1285F70327C7020D876CC2B58332 /* RadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarHighlighter.swift; path = Source/Charts/Highlight/RadarHighlighter.swift; sourceTree = "<group>"; };
@@ -382,9 +385,8 @@
 		AC4ECD0368FFAEC48C7CD04CBF33DDEA /* Pods-EP QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EP QTc.modulemap"; sourceTree = "<group>"; };
 		AC737B79AB188D3D22D2E32A7A8665D3 /* IChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IChartDataSet.swift; path = Source/Charts/Data/Interfaces/IChartDataSet.swift; sourceTree = "<group>"; };
 		ACB09C3B2A91C1EDACE1F426AABAB5D7 /* BarChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/BarChartDataEntry.swift; sourceTree = "<group>"; };
-		ACE3167FC62DAF28FEC6B935E7C50F77 /* QTc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QTc.modulemap; sourceTree = "<group>"; };
-		ADEC53CA800F15DEEE7460205AFF7F6B /* README.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AE47B554212CECC66BF7AE35147A794A /* PieChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/PieChartDataSet.swift; sourceTree = "<group>"; };
+		B028E84A7B9259B3C41F6D7338207DE0 /* QTc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-prefix.pch"; sourceTree = "<group>"; };
 		B162DAFDE0A94D67276D0CE458A24EB4 /* Validator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-prefix.pch"; sourceTree = "<group>"; };
 		B18F4ADB80F808BE07B4CE7D9B79A1A1 /* LineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
 		B1B82F673F11D8AB8194ECF71A69E08C /* TransformerHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformerHorizontalBarChart.swift; path = Source/Charts/Utils/TransformerHorizontalBarChart.swift; sourceTree = "<group>"; };
@@ -393,7 +395,6 @@
 		B6B4FBD52CF2BB55CD67918F58D5CFF0 /* SquareShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SquareShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift; sourceTree = "<group>"; };
 		B6DF110D1520FF62648E339EF00D752D /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Source/Charts/Animation/Animator.swift; sourceTree = "<group>"; };
 		B7698B821FB582259AFC345E5D2AC88F /* HorizontalBarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarChartRenderer.swift; path = Source/Charts/Renderers/HorizontalBarChartRenderer.swift; sourceTree = "<group>"; };
-		B76DF5734F062E51E7C9B929343BBFC3 /* QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-umbrella.h"; sourceTree = "<group>"; };
 		B8C3044326FAE048159496E77F984BD4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9CEF7A4EBC5880316EBCA7E62289AC1 /* BarChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataProvider.swift; path = Source/Charts/Interfaces/BarChartDataProvider.swift; sourceTree = "<group>"; };
 		BB5B1DAAB923B92F687993217F0AE812 /* Normal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Normal.swift; path = SigmaSwiftStatistics/Normal.swift; sourceTree = "<group>"; };
@@ -408,15 +409,16 @@
 		BF2B914D47C173F9DECAF54762A2C2AE /* Charts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Charts-prefix.pch"; sourceTree = "<group>"; };
 		C14A1C2A10E7D5D9B33052200815996C /* ScatterChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartRenderer.swift; path = Source/Charts/Renderers/ScatterChartRenderer.swift; sourceTree = "<group>"; };
 		C25694BC87317C9608683386DEB6E4C1 /* ContainsNumberValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainsNumberValidationPattern.swift; path = Validator/Sources/ContainsNumberValidationPattern.swift; sourceTree = "<group>"; };
-		C4BB842B78952DD69375EF6F5B2EEBE4 /* QTc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QTc.h; path = CommonSource/QTc.h; sourceTree = "<group>"; };
 		C53FFDC6A8F43A9C37F291A0F951BCB3 /* YAxisRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRenderer.swift; path = Source/Charts/Renderers/YAxisRenderer.swift; sourceTree = "<group>"; };
 		C727C9D104C118E0732E93F84BBED129 /* ScatterChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartView.swift; path = Source/Charts/Charts/ScatterChartView.swift; sourceTree = "<group>"; };
 		C80DE8A2AB1105E1EF2BC0BECEBCA872 /* ScatterChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartDataSet.swift; sourceTree = "<group>"; };
 		CA180228DB741029ABDBF2218DB2A15D /* BarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartRenderer.swift; path = Source/Charts/Renderers/BarChartRenderer.swift; sourceTree = "<group>"; };
+		CC986588074CE3F4F65879408D3FC718 /* QTc.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = QTc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CD5CB3C3D28E1D2765C2C0A6C5322AF9 /* Variance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Variance.swift; path = SigmaSwiftStatistics/Variance.swift; sourceTree = "<group>"; };
 		CDDD8CAB78E71ED83A491170971A739C /* ValidationRuleCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleCondition.swift; path = Validator/Sources/Rules/ValidationRuleCondition.swift; sourceTree = "<group>"; };
 		CF4E5EE5E21407E98A72DAB325FDEA9D /* XShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/XShapeRenderer.swift; sourceTree = "<group>"; };
 		CF895C1D9E1554CA35AD3ED7CE9CA2F3 /* CandleChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartDataEntry.swift; sourceTree = "<group>"; };
+		CF8B61C3D4C930E7DDA91DAC108907F0 /* QTc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QTc.h; path = CommonSource/QTc.h; sourceTree = "<group>"; };
 		D26F8CD31E7ADA71D89141C7ADB1B056 /* CandleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartData.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartData.swift; sourceTree = "<group>"; };
 		D2E7EFE9254B090C55937586031A0A4C /* ValidationRuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleURL.swift; path = Validator/Sources/Rules/ValidationRuleURL.swift; sourceTree = "<group>"; };
 		D3FBF31FED3D6595F713572503D0BC82 /* UITextField+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextField+Validator.swift"; sourceTree = "<group>"; };
@@ -432,8 +434,8 @@
 		D81E4D4F12EE26998D0FE18B7B791D80 /* CaseValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaseValidationPattern.swift; path = Validator/Sources/CaseValidationPattern.swift; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D9D4E25B7E33E0913EDF0CD327973486 /* StandardErrorOfTheMean.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StandardErrorOfTheMean.swift; path = SigmaSwiftStatistics/StandardErrorOfTheMean.swift; sourceTree = "<group>"; };
+		D9F25ED369A758AF42B3EB7A4C0A92C3 /* QTc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-umbrella.h"; sourceTree = "<group>"; };
 		DA458E74C5C5975DA8B2411999A109A3 /* AxisRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisRendererBase.swift; path = Source/Charts/Renderers/AxisRendererBase.swift; sourceTree = "<group>"; };
-		DB9DD4DABD8CACE03CAB82CE7092EA81 /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
 		DC1FDE57B5D1292ADD4AAEE8EA0B5049 /* Pods-EP QTcTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EP QTcTests-frameworks.sh"; sourceTree = "<group>"; };
 		DC25337438715BFE53B7542A2485566B /* YAxisRendererHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererHorizontalBarChart.swift; path = Source/Charts/Renderers/YAxisRendererHorizontalBarChart.swift; sourceTree = "<group>"; };
 		DE68D89042D725D5ADB98D7BE1EE172C /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartAnimationEasing.swift; path = Source/Charts/Animation/ChartAnimationEasing.swift; sourceTree = "<group>"; };
@@ -470,9 +472,9 @@
 		FA6792A9DB331CDC052FE4407371FF69 /* DefaultValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValueFormatter.swift; path = Source/Charts/Formatters/DefaultValueFormatter.swift; sourceTree = "<group>"; };
 		FB0F21A50148457644EA101BAA9C4942 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTc.framework; path = "Pods-EP QTc.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8451C57F38799FC99B8825DF2B3C2A /* Kurtosis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kurtosis.swift; path = SigmaSwiftStatistics/Kurtosis.swift; sourceTree = "<group>"; };
-		FB9CD1A5C09C95AF59A3E3C974E2054A /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
 		FC1296FB380F316CB51ED34F16413258 /* ScatterChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartData.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartData.swift; sourceTree = "<group>"; };
 		FDBD6D309006BDAD327B3C1A532F103A /* SigmaSwiftStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SigmaSwiftStatistics.framework; path = SigmaSwiftStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDD22C166466755BF014CC4496D0CB14 /* AbnormalQTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AbnormalQTc.swift; path = CommonSource/AbnormalQTc.swift; sourceTree = "<group>"; };
 		FDDF8330BE63D4EE886CD0F860EE6D3F /* Pods-EP QTcTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EP QTcTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FE78A39936C21B13B1B3AC1E28DE0FF3 /* ChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataProvider.swift; path = Source/Charts/Interfaces/ChartDataProvider.swift; sourceTree = "<group>"; };
 		FEA943225F51A8F9F96F3CB6B2758738 /* ChartBaseDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartBaseDataSet.swift; path = Source/Charts/Data/Implementations/ChartBaseDataSet.swift; sourceTree = "<group>"; };
@@ -534,16 +536,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1573EE31F51CCC71E398401CA8D880B2 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4256F27D931485B9B70D4E8D5B508C71 /* LICENSE */,
-				95C4202047D365031AEAF402F67B233C /* QTc.podspec */,
-				ADEC53CA800F15DEEE7460205AFF7F6B /* README.markdown */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		18B9E038EAB8D2589B537FFA04E638E1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,18 +678,12 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		1F9DC46FEAC284E4359A6E37731AD454 /* Support Files */ = {
+		205D81BD3909D5FDBAC6775693D3D4E8 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				89827A9CB94D2ADA35C0C8C9B1AE3DB2 /* Info.plist */,
-				ACE3167FC62DAF28FEC6B935E7C50F77 /* QTc.modulemap */,
-				FB9CD1A5C09C95AF59A3E3C974E2054A /* QTc.xcconfig */,
-				1A38EA56F1748D58F5025575463183B9 /* QTc-dummy.m */,
-				447B92ACC60B977E4E7E134395BF753D /* QTc-prefix.pch */,
-				B76DF5734F062E51E7C9B929343BBFC3 /* QTc-umbrella.h */,
+				DC943EF7386807B0CC3714F5CFE13C1E /* QTc */,
 			);
-			name = "Support Files";
-			path = "../EP QTc/Pods/Target Support Files/QTc";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		2C2DD30BB555B0BA872CFB8369BA33D1 /* Validator */ = {
@@ -788,20 +774,12 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				81234CF8EE8C5F897813E64524CA19C1 /* Development Pods */,
+				205D81BD3909D5FDBAC6775693D3D4E8 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				8D4061476EDEB8D7A16D0C01770C3C63 /* Pods */,
 				7C4F5CC533B62703289FE05524094660 /* Products */,
 				66046339A0C76A5FF40AB9E57B2D0B99 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		81234CF8EE8C5F897813E64524CA19C1 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D4CE1AC51E83D884C48164AAC292614F /* QTc */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		83F05C678AA2E8C9C33782A8AE03B2AE /* Support Files */ = {
@@ -846,6 +824,20 @@
 			path = "Target Support Files/Pods-EP QTcTests";
 			sourceTree = "<group>";
 		};
+		9A4DB9E550ACC48794953FA5F2C4FF9D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ADCA631A08EE8A817DF675157D89490 /* Info.plist */,
+				3BCD5BB9481A71450FEE4131A8A369CC /* QTc.modulemap */,
+				25030A4EFAFD37359416676BA131DC51 /* QTc.xcconfig */,
+				A14B1E0A5DBDA29639E0EEBA75F3E9A2 /* QTc-dummy.m */,
+				B028E84A7B9259B3C41F6D7338207DE0 /* QTc-prefix.pch */,
+				D9F25ED369A758AF42B3EB7A4C0A92C3 /* QTc-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../EP QTc/Pods/Target Support Files/QTc";
+			sourceTree = "<group>";
+		};
 		A903E843B8625279A8CD0C436F7D10E6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,19 +852,15 @@
 			path = "../Target Support Files/Validator";
 			sourceTree = "<group>";
 		};
-		D4CE1AC51E83D884C48164AAC292614F /* QTc */ = {
+		B36C730C3353D210E89C199DE69651B3 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				DB9DD4DABD8CACE03CAB82CE7092EA81 /* Formulas.swift */,
-				C4BB842B78952DD69375EF6F5B2EEBE4 /* QTc.h */,
-				1845F98B1580FC59446FDE260740FD8D /* QTc.swift */,
-				433236B774E222980CBB2EFE75FD0D69 /* QtMeasurement.swift */,
-				1573EE31F51CCC71E398401CA8D880B2 /* Pod */,
-				1F9DC46FEAC284E4359A6E37731AD454 /* Support Files */,
+				337F817D34AE2357F7378F6F2A297503 /* LICENSE */,
+				CC986588074CE3F4F65879408D3FC718 /* QTc.podspec */,
+				326B72105B7865C389A7BEAABDE52BA1 /* README.markdown */,
 			);
-			name = QTc;
-			path = /Users/mannd/dev/QTc;
-			sourceTree = "<absolute>";
+			name = Pod;
+			sourceTree = "<group>";
 		};
 		DA0D351DF52C71A04A23541E26C8FB29 /* Pods-EP QTc */ = {
 			isa = PBXGroup;
@@ -891,6 +879,21 @@
 			name = "Pods-EP QTc";
 			path = "Target Support Files/Pods-EP QTc";
 			sourceTree = "<group>";
+		};
+		DC943EF7386807B0CC3714F5CFE13C1E /* QTc */ = {
+			isa = PBXGroup;
+			children = (
+				FDD22C166466755BF014CC4496D0CB14 /* AbnormalQTc.swift */,
+				3F0615B35060A0AF856B2618326EE9DC /* Formulas.swift */,
+				CF8B61C3D4C930E7DDA91DAC108907F0 /* QTc.h */,
+				89A431442845C9F977A4E6AB30D7FCA5 /* QTc.swift */,
+				8596B2F4E7BB618AC03D68393CF3B2FB /* QtMeasurement.swift */,
+				B36C730C3353D210E89C199DE69651B3 /* Pod */,
+				9A4DB9E550ACC48794953FA5F2C4FF9D /* Support Files */,
+			);
+			name = QTc;
+			path = /Users/mannd/dev/QTc;
+			sourceTree = "<absolute>";
 		};
 		DD49A67B77C9DFEF738E65633A003C33 /* Charts */ = {
 			isa = PBXGroup;
@@ -1077,7 +1080,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 696403088EF4B667D62FBA037ACE8870 /* Build configuration list for PBXNativeTarget "QTc" */;
 			buildPhases = (
-				D67F65536560A1E9C69ABB479093F418 /* Sources */,
+				7B969E81FDB0441873E0088D402E39E3 /* Sources */,
 				7D75363FDD2809B82D7DEA327B4BE073 /* Frameworks */,
 				2A60A624AEBED9F08ADD21A572942FA7 /* Headers */,
 			);
@@ -1311,6 +1314,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B969E81FDB0441873E0088D402E39E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE6CE0548E93FA2204F0165F20DAC96 /* AbnormalQTc.swift in Sources */,
+				6745C6C7A8FF3146E59E6DD9E38D32A4 /* Formulas.swift in Sources */,
+				E898522C3B8C4DC8B74362FB5859A077 /* QTc-dummy.m in Sources */,
+				90D7D598FF012044D3AFA81786265130 /* QTc.swift in Sources */,
+				B0690E8486F153BD4FA56888A3A28515 /* QtMeasurement.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9D9852CD08C967BC3106B1ACC0CF892 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1333,17 +1348,6 @@
 				2E4A7E82F9BD1B24F3BF8D8C5AD740D7 /* StandardErrorOfTheMean.swift in Sources */,
 				78DF556896BC41CA276267B1352D135B /* UniqueValues.swift in Sources */,
 				6F171FB7BE427E6E8A78A2BFFE7DAD47 /* Variance.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D67F65536560A1E9C69ABB479093F418 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B955A8A1C22C73929782838BFC7E874F /* Formulas.swift in Sources */,
-				1569E91E0F0F55B9E1D8839373506819 /* QTc-dummy.m in Sources */,
-				6EC24B10F5BB0139946443115F7349B1 /* QTc.swift in Sources */,
-				F84A0F81B868D60466AF9C2CD2D96A81 /* QtMeasurement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1547,7 +1551,7 @@
 		};
 		27AF7282BFB8537F6F3C1EB1319CC83E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9CD1A5C09C95AF59A3E3C974E2054A /* QTc.xcconfig */;
+			baseConfigurationReference = 25030A4EFAFD37359416676BA131DC51 /* QTc.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1648,7 +1652,7 @@
 		};
 		AEB25069917D9E2A246DE552BB832197 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9CD1A5C09C95AF59A3E3C974E2054A /* QTc.xcconfig */;
+			baseConfigurationReference = 25030A4EFAFD37359416676BA131DC51 /* QTc.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

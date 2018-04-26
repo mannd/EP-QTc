@@ -15,6 +15,7 @@
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
 		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
+		8E47B1D52091543E0042C5F9 /* QTcLimitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D42091543E0042C5F9 /* QTcLimitsTableViewController.swift */; };
 		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
 		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
 		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
@@ -66,6 +67,7 @@
 		8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
 		8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
 		8E47B1D1208F8FF10042C5F9 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		8E47B1D42091543E0042C5F9 /* QTcLimitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTcLimitsTableViewController.swift; sourceTree = "<group>"; };
 		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				8E506229206B099600BF9C3E /* StatsTableViewController.swift */,
 				8E7E241C2080FFE400A1BE89 /* GraphViewController.swift */,
 				8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */,
+				8E47B1D42091543E0042C5F9 /* QTcLimitsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			files = (
 				8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */,
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
+				8E47B1D52091543E0042C5F9 /* QTcLimitsTableViewController.swift in Sources */,
 				8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */,
 				8EBE89D1205C37F700A60296 /* EquationCell.swift in Sources */,
 				8EBE89D3205C3A2400A60296 /* DetailsCell.swift in Sources */,
