@@ -40,6 +40,34 @@ extension Calculator {
             return "unexpected error"
         }
     }
+    
+    func resultSeverity(qtMeasurement: QtMeasurement) -> Severity {
+        do {
+            let result = try calculate(qtMeasurement: qtMeasurement)
+            // calculated QTp is normal by definition, unless there is an error
+            if formula?.formulaType() == .qtp {
+                return Severity.normal
+            }
+            var severityArray: [Int] = []
+            if let result = result {
+                let qtcMeasurement = QTcMeasurement(qtc: result, units: qtMeasurement.units, sex: qtMeasurement.sex, age: qtMeasurement.age)
+                let preferences = Preferences()
+                preferences.load()
+                if let criteria = preferences.qtcLimits {
+                    for criterion in criteria {
+                        let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+                        let severity = testSuite?.severity(measurement: qtcMeasurement)
+                        severityArray.append(severity?.rawValue ?? 0)
+                    }
+                }
+            }
+            return Severity(rawValue: severityArray.max() ?? 0)
+        }
+        catch {
+            return Severity.error
+        }
+     }
+    
 }
 
 

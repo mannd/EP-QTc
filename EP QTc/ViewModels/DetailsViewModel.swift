@@ -19,6 +19,7 @@ import SafariServices
 enum DetailsViewModelItemType {
     case parameters
     case result
+    case interpretation
     case formulaDetails
     case equation
     case reference
@@ -72,6 +73,22 @@ class DetailsViewModelResultItem: DetailsViewModelItem {
     init(result: String, formulaType: FormulaType) {
         self.result = result
         self.formulaType = formulaType
+    }
+}
+
+class DetailsViewModelInterpretationItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .interpretation
+    }
+    
+    var sectionTitle: String {
+        return "Interpretation"
+    }
+    
+    var interpetation: String
+    
+    init(interpretation: String) {
+        self.interpetation = interpretation
     }
 }
 
@@ -157,6 +174,8 @@ class DetailsViewModel: NSObject {
         items.append(parametersItem)
         let resultItem = DetailsViewModelResultItem(result: model.result, formulaType: formulaType)
         items.append(resultItem)
+        let interpretationItem = DetailsViewModelInterpretationItem(interpretation: model.interpretation)
+        items.append(interpretationItem)
         details = model.details
         let detailsItem = DetailsViewModelDetailsItem(details: model.details)
         items.append(detailsItem)
@@ -194,6 +213,11 @@ extension DetailsViewModel: UITableViewDataSource {
             }
         case .result:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ResultCell.identifier, for: indexPath) as? ResultCell {
+                cell.item = item
+                return cell
+            }
+        case .interpretation:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: InterpretationCell.identifier, for: indexPath) as? InterpretationCell {
                 cell.item = item
                 return cell
             }

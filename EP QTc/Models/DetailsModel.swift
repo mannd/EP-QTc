@@ -16,6 +16,7 @@ class DetailsModel {
     var formulaName: String
     var shortFormulaName: String
     var result: String
+    var interpretation: String
     var parameters: [Parameter] = []
     var details: [Detail] = []
     var equation: String
@@ -23,7 +24,9 @@ class DetailsModel {
     var notes: String
 
     init(qtMeasurement: QtMeasurement, calculator: Calculator) {
-        let precision: Precision = defaultPrecision
+        let preferences = Preferences()
+        preferences.load()
+        let precision: Precision = preferences.precision ?? Preferences.defaultPrecision
         // names
         formulaName = calculator.longName
         shortFormulaName = calculator.shortName
@@ -50,6 +53,8 @@ class DetailsModel {
         parameters.append(ageParameter)
         // qtc result
         result = calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
+        // interpretation
+        interpretation = interpretResult(calculator: calculator, qtMeasurement: qtMeasurement)
         // formula details
         let nameDetail = Detail()
         nameDetail.key = "Name"
@@ -82,7 +87,35 @@ class DetailsModel {
         notes = calculator.notes
                 
     }
-    
+}
+
+private func interpretResult(calculator: Calculator, qtMeasurement: QtMeasurement) -> String {
+    var interpretation: String = ""
+    let severity = calculator.resultSeverity(qtMeasurement: qtMeasurement)
+    if calculator.formula?.formulaType() == .qtp && severity != .error {
+        interpretation = "Not applicable"
+    }
+    else {
+        switch severity {
+        case .normal:
+            interpretation = "Normal"
+        case .borderline:
+            interpretation = "Borderline prolongation"
+        case .abnormal:
+            interpretation = "Abnormal"
+        case .mild:
+            interpretation = "Mild prolongation"
+        case .moderate:
+            interpretation = "Moderate prolongation"
+        case .severe:
+            interpretation = "Severe prolongation"
+        case .error:
+            fallthrough
+        default:
+            interpretation = "Error"
+        }
+    }
+    return interpretation
 }
 
 class Parameter {

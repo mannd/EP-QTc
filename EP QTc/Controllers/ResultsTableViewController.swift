@@ -95,16 +95,10 @@ class ResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
 
-        // Configure the cell...
         let row = indexPath.row
-        // FIXME: color doesn't belong here!
-        // actually the color will be handled by the ResultViewModel
         cell.calculator = QTc.calculator(formula: formulas[row])
         // must set calculator before qtMeasurement
         cell.qtMeasurement = qtMeasurement
-        // FIXME: color doesn't belong here!
-        // actually the color will be handled by the ResultViewModel
-
         return cell
     }
     

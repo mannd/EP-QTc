@@ -39,33 +39,7 @@ class ResultModel {
     }
     
     func resultSeverity() -> Severity {
-        do {
-            let result = try calculator.calculate(qtMeasurement: measurement)
-            // calculated QTp is normal by definition, unless there is an error
-            if calculator.formula?.formulaType() == .qtp {
-                return Severity.normal
-            }
-            var severityArray: [Int] = []
-            if let result = result {
-                let qtcMeasurement = QTcMeasurement(qtc: result, units: measurement.units, sex: measurement.sex, age: measurement.age)
-                if let criteria = preferences.qtcLimits {
-                    for criterion in criteria {
-                        let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
-                        let severity = testSuite?.severity(measurement: qtcMeasurement)
-                        severityArray.append(severity?.rawValue ?? 0)
-                    }
-                }
-            }
-            return Severity(rawValue: severityArray.max() ?? 0)
-        }
-        catch {
-            return Severity.error
-        }
-        
-        
+        return calculator.resultSeverity(qtMeasurement: measurement)
     }
-    
-
-    
     
 }

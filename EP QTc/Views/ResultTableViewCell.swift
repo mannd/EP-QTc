@@ -31,7 +31,7 @@ class ResultTableViewCell: UITableViewCell {
             resultLabel.textColor = resultViewModel.severityColor()
             calculatorNameLabel.text = resultViewModel.longCalculatorName()
             shortNameLabel.text = resultViewModel.shortCalculatorName()
-            
+            resultLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: resultViewModel.severityFontWeight())
         }
     }
     
@@ -39,7 +39,7 @@ class ResultTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        resultLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: .bold)
+        //resultLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: .bold)
         accessoryType = .disclosureIndicator
     }
 
