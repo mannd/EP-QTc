@@ -18,6 +18,7 @@ class ResultTableViewCell: UITableViewCell {
     
     var resultViewModel: ResultViewModel!
     
+    
     var calculator: Calculator!
     var qtMeasurement: QtMeasurement! {
         didSet {
@@ -27,8 +28,10 @@ class ResultTableViewCell: UITableViewCell {
             }
             resultViewModel = ResultViewModel(calculator: calculator, qtMeasurement: qtMeasurement)
             resultLabel.text = resultViewModel.resultLabel()
+            resultLabel.textColor = resultViewModel.severityColor()
             calculatorNameLabel.text = resultViewModel.longCalculatorName()
             shortNameLabel.text = resultViewModel.shortCalculatorName()
+            
         }
     }
     

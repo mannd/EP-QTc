@@ -10,31 +10,42 @@ import UIKit
 import QTc
 
 class ResultViewModel: NSObject {
-    let qtMeasurement: QtMeasurement
-    let calculator: Calculator
-    let precision: Precision
+    let resultModel: ResultModel
     
-    // parameter to be eventually set in Settings
-    let defaultFormatType: Precision = .roundOnePlace
+    let errorColor = UIColor.blue
+    let normalColor = UIColor.green
+    let abnormalColor = UIColor.red
+    let defaultColor = UIColor.black
     
     init(calculator: Calculator, qtMeasurement: QtMeasurement) {
-        self.calculator = calculator
-        self.qtMeasurement = qtMeasurement
-        let preferences = Preferences()
-        preferences.load()
-        self.precision = preferences.precision ?? Preferences.defaultPrecision
+        self.resultModel = ResultModel(calculator: calculator, measurement: qtMeasurement)
     }
     
     func resultLabel() -> String {
-        return calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
+        return resultModel.result()
     }
     
     func longCalculatorName() -> String {
-        return calculator.longName
+        return resultModel.name
     }
     
     func shortCalculatorName() -> String {
-        return calculator.shortName
+        return resultModel.shortName
+    }
+    
+    func severityColor() -> UIColor {
+        let severity = resultModel.resultSeverity()
+        switch severity {
+        case .error:
+            return errorColor
+        case .normal:
+            return normalColor
+        case .abnormal:
+            return abnormalColor
+        default:
+            return defaultColor
+        }
+        
     }
         
 }

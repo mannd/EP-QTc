@@ -43,12 +43,6 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
-        
         precisionPicker.delegate = self
         precisionPicker.dataSource = self
         precisionPicker.tag = precisionPickerViewTag
@@ -57,11 +51,11 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         sortingPicker.tag = sortingPickerViewTag
         
         // The elements of both pairs of arrays must match!
-        precisionLabels = ["Full", "Integer", "1 place", "4 places"]
-        precisionOptions = [.raw, .roundToInteger, .roundOnePlace, .roundFourPlaces]
+        precisionLabels = ["Full", "Integer", "1 place", "4 places", "4 figures"]
+        precisionOptions = [.raw, .roundToInteger, .roundOnePlace, .roundFourPlaces, .roundFourFigures]
 
-        sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first", "Subjects big 4 first", "Formula type"]
-        sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName, .bigFourByNumberOfSubjects, .byFormulaType]
+        sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first"]
+        sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName]
     }
     
     override func viewWillAppear(_ animated: Bool) {

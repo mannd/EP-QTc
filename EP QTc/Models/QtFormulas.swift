@@ -57,15 +57,14 @@ extension FormulaClassification {
 
 // Using String raw values here for serialization in UserDefaults
 enum SortOrder: String {
-    case none = "none"
+    case none = "none"  // just used for testing
     case byDate = "byDate"
     case byName = "byName"
+    case byNumberOfSubjects = "byNumberOfSubjects"
+    // "Big Four" are the most common formulas: QTcBZT, QTcFrd, QTcHdg, & QTcFrm.
+    // The sort orders below keep them first in the list, and only apply to QTc formulas.
     case bigFourFirstByDate = "bigFourFirstByDate"
     case bigFourFirstByName = "bigFourFirstByName"
-    // TODO: implement these
-    case byNumberOfSubjects = "byNumberOfSubjects"
-    case bigFourByNumberOfSubjects = "bigFourByNumberOfSubjects"
-    case byFormulaType = "byFormulaType"
 }
 
 class QtFormulas {

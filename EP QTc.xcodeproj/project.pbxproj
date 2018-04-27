@@ -16,6 +16,7 @@
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
 		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
 		8E47B1D52091543E0042C5F9 /* QTcLimitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D42091543E0042C5F9 /* QTcLimitsTableViewController.swift */; };
+		8E47B1D72092AFEE0042C5F9 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D62092AFEE0042C5F9 /* ResultModel.swift */; };
 		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
 		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
 		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
@@ -68,6 +69,7 @@
 		8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
 		8E47B1D1208F8FF10042C5F9 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		8E47B1D42091543E0042C5F9 /* QTcLimitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTcLimitsTableViewController.swift; sourceTree = "<group>"; };
+		8E47B1D62092AFEE0042C5F9 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				8E50622B206B0A2800BF9C3E /* StatsModel.swift */,
 				8ECE0CEC207E691800135717 /* Calculator.swift */,
 				8E47B1D1208F8FF10042C5F9 /* Preferences.swift */,
+				8E47B1D62092AFEE0042C5F9 /* ResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */,
 				8E8C22941FECA6AE000A1C9A /* ResultTableViewCell.swift in Sources */,
 				8E097EEE1FDE1489003F380A /* AgeTextField.swift in Sources */,
+				8E47B1D72092AFEE0042C5F9 /* ResultModel.swift in Sources */,
 				8EBE89D5205C3CD900A60296 /* ReferenceCell.swift in Sources */,
 				8E9674C9204909A200D49C05 /* DetailsViewModel.swift in Sources */,
 				8EBE89D7205C3CEA00A60296 /* NotesCell.swift in Sources */,

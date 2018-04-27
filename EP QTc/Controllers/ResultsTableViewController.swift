@@ -10,12 +10,18 @@ import UIKit
 import QTc
 
 class ResultsTableViewController: UITableViewController {
+    let unknownColor = UIColor.blue
+    let normalColor = UIColor.green
+    
+    
     var formulas: [Formula] = []
     var selectedFormula: Formula?
     
     // these are passed via the segue
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +52,12 @@ class ResultsTableViewController: UITableViewController {
             formulas = qtFormulas.sortedByDate(formulas: rawFormulas, formulaType: formulaType)
         case .byName:
             formulas = qtFormulas.sortedByName(formulas: rawFormulas, formulaType: formulaType)
-        // FIXME: next two have to account for formulaType
         case .bigFourFirstByDate:
             formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
         case .bigFourFirstByName:
             formulas = qtFormulas.bigFourFirstSortedByName(formulas: rawFormulas, formulaType: formulaType)
         case .byNumberOfSubjects:
             formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas, formulaType: formulaType)
-        default:
-            assertionFailure("Sorting preference not implemented.")
         }
         
     }
@@ -94,9 +97,13 @@ class ResultsTableViewController: UITableViewController {
 
         // Configure the cell...
         let row = indexPath.row
+        // FIXME: color doesn't belong here!
+        // actually the color will be handled by the ResultViewModel
         cell.calculator = QTc.calculator(formula: formulas[row])
         // must set calculator before qtMeasurement
         cell.qtMeasurement = qtMeasurement
+        // FIXME: color doesn't belong here!
+        // actually the color will be handled by the ResultViewModel
 
         return cell
     }
