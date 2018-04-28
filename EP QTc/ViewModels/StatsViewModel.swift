@@ -59,7 +59,9 @@ class StatsViewModel: NSObject {
         for formula in formulas {
             let calculator = QTc.calculator(formula: formula)
             if let result = try? calculator.calculate(qtMeasurement: qtMeasurement) {
-                    results.append(result!)
+                if let result = result {
+                    results.append(result)
+                }
             }
         }
         let model = StatsModel(results: results, units: qtMeasurement.units)

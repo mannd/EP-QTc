@@ -158,6 +158,8 @@ class ResultsTableViewController: UITableViewController {
             vc.qtMeasurement = qtMeasurement
             vc.formulaType = formulaType
             vc.calculator = QTc.calculator(formula: selectedFormula)
+            // we pass formulas to see if QT outside of max/min QTp range
+            vc.formulas = formulas
         }
         else if segue.identifier == "statsSegue" {
             let vc = segue.destination as! StatsTableViewController

@@ -22,8 +22,15 @@ class DetailsModel {
     var equation: String
     var reference: String
     var notes: String
+    
+    let formulas: [Formula]?
+    let calculator: Calculator
+    let qtMeasurement: QtMeasurement
 
-    init(qtMeasurement: QtMeasurement, calculator: Calculator) {
+    init(qtMeasurement: QtMeasurement, calculator: Calculator, formulas: [Formula]?) {
+        self.qtMeasurement = qtMeasurement
+        self.calculator = calculator
+        self.formulas = formulas
         let preferences = Preferences()
         preferences.load()
         let precision: Precision = preferences.precision ?? Preferences.defaultPrecision
@@ -54,7 +61,7 @@ class DetailsModel {
         // qtc result
         result = calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
         // interpretation
-        interpretation = interpretResult(calculator: calculator, qtMeasurement: qtMeasurement)
+        interpretation = interpretResult(calculator: calculator, qtMeasurement: qtMeasurement, formulas: formulas)
         // formula details
         let nameDetail = Detail()
         nameDetail.key = "Name"
@@ -87,36 +94,79 @@ class DetailsModel {
         notes = calculator.notes
                 
     }
+    
+ 
 }
 
-private func interpretResult(calculator: Calculator, qtMeasurement: QtMeasurement) -> String {
-    var interpretation: String = ""
-    let severity = calculator.resultSeverity(qtMeasurement: qtMeasurement)
-    if calculator.formula?.formulaType() == .qtp && severity != .error {
-        interpretation = "Not applicable"
-    }
-    else {
-        switch severity {
-        case .normal:
-            interpretation = "Normal"
-        case .borderline:
-            interpretation = "Borderline prolongation"
-        case .abnormal:
-            interpretation = "Abnormal"
-        case .mild:
-            interpretation = "Mild prolongation"
-        case .moderate:
-            interpretation = "Moderate prolongation"
-        case .severe:
-            interpretation = "Severe prolongation"
-        case .error:
-            fallthrough
-        default:
-            interpretation = "Error"
+fileprivate func maxMinQTp(calculator: Calculator, qtMeasurement: QtMeasurement, formulas: [Formula]?) -> (max: Double, min: Double) {
+    guard let formulas = formulas, calculator.formula?.formulaType() == .qtp else { return (0,0)}
+    var qtp: [Double] = []
+    for formula in formulas {
+        let calculator = QTc.calculator(formula: formula)
+        if let result = try? calculator.calculate(qtMeasurement: qtMeasurement) {
+            if let result = result {
+                qtp.append(result)
+            }
         }
     }
-    return interpretation
+    let max = qtp.max() ?? 0
+    let min = qtp.min() ?? 0
+    return (max, min)
+    
 }
+
+// TODO: Possible QTp interpretation:
+// QT inside or outside of range of all calculated QTp values
+// will need min and max of all QTps calculated, then compare QT
+fileprivate func interpretResult(calculator:Calculator, qtMeasurement: QtMeasurement, formulas: [Formula]?) -> String {
+    var interpretation: String = ""
+    var severity = calculator.resultSeverity(qtMeasurement: qtMeasurement)
+    if calculator.formula?.formulaType() == .qtp && severity != .error {
+        let maxMin = maxMinQTp(calculator: calculator, qtMeasurement: qtMeasurement, formulas: formulas)
+        if maxMin == (0,0) {
+            severity = .error
+        }
+        let max = maxMin.max
+        let min = maxMin.min
+        if let qt = qtMeasurement.qt {
+            if qt > max || qt < min {
+                severity = .abnormal
+            }
+            else {
+                severity = .normal
+            }
+        }
+        else {
+            return "Not applicable"
+        }
+    }
+    switch severity {
+    case .normal:
+        interpretation = "Normal"
+    case .borderline:
+        interpretation = "Borderline prolongation"
+    case .abnormal:
+        interpretation = "Abnormal"
+    case .mild:
+        interpretation = "Mildly prolonged"
+    case .moderate:
+        interpretation = "Moderately prolonged"
+    case .severe:
+        interpretation = "Severely prolonged"
+    case .error:
+        fallthrough
+    default:
+        return "Error"
+    }
+    if calculator.formula?.formulaType() == .qtp {
+        return interpretation + " QT"
+    }
+    else {
+        return interpretation + " QTc"
+    }
+}
+
+
 
 class Parameter {
     var key: String?
