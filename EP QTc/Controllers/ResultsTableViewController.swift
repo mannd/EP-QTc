@@ -157,18 +157,27 @@ class ResultsTableViewController: UITableViewController {
         guard let formulaType = formulaType else { return }
         if segue.identifier == "detailsTableSegue" {
             guard let selectedFormula = selectedFormula else { return }
-           let vc = segue.destination as! DetailsTableViewController
-            vc.qtMeasurement = qtMeasurement
-            vc.formulaType = formulaType
-            vc.calculator = QTc.calculator(formula: selectedFormula)
-            // we pass the results array to see if QT outside of max/min QTp range
-            vc.results = results
+            if let vc = segue.destination as? DetailsTableViewController {
+                vc.qtMeasurement = qtMeasurement
+                vc.formulaType = formulaType
+                vc.calculator = QTc.calculator(formula: selectedFormula)
+                // we pass the results array to see if QT outside of max/min QTp range
+                vc.results = results
+            }
         }
         else if segue.identifier == "statsSegue" {
-            let vc = segue.destination as! StatsTableViewController
-            vc.qtMeasurement = qtMeasurement
-            vc.formulaType = formulaType
-            vc.results = results
+            if let vc = segue.destination as? StatsTableViewController {
+                vc.qtMeasurement = qtMeasurement
+                vc.formulaType = formulaType
+                vc.results = results
+            }
+        }
+        else if segue.identifier == "graphSegue" {
+            if let vc = segue.destination as? GraphViewController {
+                vc.qtMeasurement = qtMeasurement
+                vc.formulaType = formulaType
+                vc.results = results
+            }
         }
         
     }
