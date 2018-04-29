@@ -27,6 +27,7 @@ class StatsModel {
     
     var measurements: [Stat] = []
     
+    // TODO: consider adding number and % of abnormal QTcs
     
     init(results: [Double], qtMeasurement: QtMeasurement) {
         let preferences = Preferences()
