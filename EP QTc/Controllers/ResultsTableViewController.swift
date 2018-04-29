@@ -22,6 +22,7 @@ class ResultsTableViewController: UITableViewController {
     var formulaType: FormulaType?
     
     var results: [Double] = []
+    var calculators: [Calculator] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +63,8 @@ class ResultsTableViewController: UITableViewController {
         
         // Even though every formula is calculated twice, this seems the easiest way to get this array
         let resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
-        results = (resultsModel.allResults())
-        
+        results = resultsModel.allResults()
+        calculators = resultsModel.allCalculators()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,10 +99,8 @@ class ResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
-
-        let row = indexPath.row
         // must set calculator before qtMeasurement
-        cell.calculator = QTc.calculator(formula: formulas[row])
+        cell.calculator = calculators[indexPath.row]
         cell.qtMeasurement = qtMeasurement
         return cell
     }

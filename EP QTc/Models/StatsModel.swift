@@ -26,11 +26,14 @@ class StatsModel {
     let count: Int
     var simpleStats: [Stat] = []
     
-    init(results: [Double], units: Units) {
+    var measurements: [Stat] = []
+    
+    
+    init(results: [Double], qtMeasurement: QtMeasurement) {
         // FIXME: Should Stats used different precision from results?
         // Otherwise, need to set this according to preferences.  Or set up new preference for stats.
         self.precision = defaultFormatType
-        self.units = units
+        self.units = qtMeasurement.units
         self.results = results
         
         count = results.count
@@ -69,6 +72,17 @@ class StatsModel {
         varianceStat.value = formattedValue(variance)
         simpleStats.append(varianceStat)
         // TODO: etc.
+        
+        // A few measurements to compare stats to
+        let measuredQT = Stat()
+        measuredQT.key = "QT"
+        measuredQT.value = formattedValue(qtMeasurement.qt)
+        measurements.append(measuredQT)
+        let measuredRR = Stat()
+        measuredRR.key = "RR"
+        measuredRR.value = formattedValue(qtMeasurement.rrInterval())
+        measurements.append(measuredRR)
+        
     }
     
     private func formattedValue(_ value: Double?) -> String {

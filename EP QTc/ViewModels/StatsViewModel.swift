@@ -11,6 +11,7 @@ import QTc
 
 // Stats are a flat table, all with same cell type
 enum StatsViewModelItemType {
+    case measurements
     case simpleStats
 }
 
@@ -48,17 +49,45 @@ class SimpleStatsItem: StatsViewModelItem {
     }
 }
 
+class MeasurementsItem: StatsViewModelItem {
+    var type: StatsViewModelItemType {
+        return .measurements
+    }
+    
+    var sectionTitle: String {
+        return "Measured intervals"
+    }
+    
+    var rowCount: Int {
+        return measurements.count
+    }
+    
+    var measurements: [Stat]
+    let formulaType: FormulaType
+    
+    init(measurements: [Stat], formulaType: FormulaType) {
+        self.measurements = measurements
+        self.formulaType = formulaType
+    }
+}
+
 class StatsViewModel: NSObject {
     var items: [StatsViewModelItem] = []
     let simpleStats: [Stat]
+    let measurements: [Stat]
     let formulaType: FormulaType
     
     init(qtMeasurement: QtMeasurement, formulaType: FormulaType, results: [Double]) {
         self.formulaType = formulaType
-        let model = StatsModel(results: results, units: qtMeasurement.units)
+        
+        let model = StatsModel(results: results, qtMeasurement: qtMeasurement)
+        measurements = model.measurements
+        let measuredQtItem = MeasurementsItem(measurements: measurements, formulaType: formulaType)
+        items.append(measuredQtItem)
         simpleStats = model.simpleStats
         let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats, formulaType: formulaType)
         items.append(simpleStatsItem)
+        
     }
 }
 
@@ -73,6 +102,11 @@ extension StatsViewModel: UITableViewDataSource {
         case .simpleStats:
             if let cell = tableView.dequeueReusableCell(withIdentifier: SimpleStatsCell.identifier, for: indexPath) as? SimpleStatsCell {
                 cell.item = simpleStats[indexPath.row]
+                return cell
+            }
+        case .measurements:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SimpleStatsCell.identifier, for: indexPath) as? SimpleStatsCell {
+                cell.item = measurements[indexPath.row]
                 return cell
             }
         }
