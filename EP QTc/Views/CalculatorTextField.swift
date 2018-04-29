@@ -41,7 +41,7 @@ class CalculatorTextField: UITextField {
     override func awakeFromNib() {
         super.awakeFromNib()
         validateOnInputChange(enabled: true)
-        validationHandler = { result in self.updateValidationState(result: result) }
+        validationHandler = { [weak self] result in self?.updateValidationState(result: result) }
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 import QTc
 
 class ResultsModel {
-    var results: [Double] = []
+    var results: [Double]  = []
     var calculators: [Calculator] = []
     
     init(formulas: [Formula], qtMeasurement: QtMeasurement) {

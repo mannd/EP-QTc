@@ -31,12 +31,14 @@ extension Units {
 public enum Precision: String {
     case raw = "raw"
     case roundOnePlace = "one"
+    case roundTwoPlaces = "two"
     case roundFourPlaces = "four"
     case roundToInteger = "integer"
     case roundFourFigures = "fourFigures"
     
     static let rawFormatString = "%.8f"
     static let onePlaceFormatString = "%.1f"
+    static let twoPlaceFormatString = "%.2f"
     static let fourPlacesFormatString = "%.4f"
     static let roundToIntegerFormatString = "%.f"
     static let fourFiguresFormatString = "%.4g"
@@ -49,6 +51,8 @@ public enum Precision: String {
             formatString = Precision.rawFormatString
         case .roundOnePlace:
             formatString = Precision.onePlaceFormatString
+        case .roundTwoPlaces:
+            formatString = Precision.twoPlaceFormatString
         case .roundFourPlaces:
             formatString = Precision.fourPlacesFormatString
         case .roundToInteger:
@@ -93,6 +97,25 @@ public enum Precision: String {
         }
         return String.localizedStringWithFormat("%@ %@", result, unitString)
     }
+    
+    // Generally returns one step higher precision, used for statistics.  For example,
+    // if precision is set at integer, stats on groups of integers can be precise to one decimal place.
+    func morePrecise() -> Precision {
+        switch self {
+        case .raw:
+            fallthrough
+        case .roundFourPlaces:
+            fallthrough
+        case .roundFourFigures:
+            return self
+        case .roundToInteger:
+            return .roundOnePlace
+        case .roundOnePlace:
+            return .roundTwoPlaces
+        case .roundTwoPlaces:
+            return .roundFourPlaces
+        }
+     }
 }
 
 

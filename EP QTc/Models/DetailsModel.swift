@@ -60,7 +60,6 @@ class DetailsModel {
         parameters.append(ageParameter)
         // qtc result
         result = calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
-        
         // formula details
         let nameDetail = Detail()
         nameDetail.key = "Name"

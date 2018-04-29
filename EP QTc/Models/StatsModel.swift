@@ -11,7 +11,6 @@ import SigmaSwiftStatistics
 import QTc
 
 class StatsModel {
-    let defaultFormatType: Precision = .roundOnePlace
 
     let units: Units
     let results: [Double]
@@ -30,9 +29,10 @@ class StatsModel {
     
     
     init(results: [Double], qtMeasurement: QtMeasurement) {
-        // FIXME: Should Stats used different precision from results?
-        // Otherwise, need to set this according to preferences.  Or set up new preference for stats.
-        self.precision = defaultFormatType
+        let preferences = Preferences()
+        preferences.load()
+        let morePrecise = preferences.precision?.morePrecise()
+        self.precision = morePrecise ?? .roundOnePlace
         self.units = qtMeasurement.units
         self.results = results
         

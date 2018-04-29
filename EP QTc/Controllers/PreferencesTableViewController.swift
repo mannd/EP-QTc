@@ -51,8 +51,8 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
         sortingPicker.tag = sortingPickerViewTag
         
         // The elements of both pairs of arrays must match!
-        precisionLabels = ["Full", "Integer", "1 place", "4 places", "4 figures"]
-        precisionOptions = [.raw, .roundToInteger, .roundOnePlace, .roundFourPlaces, .roundFourFigures]
+        precisionLabels = ["Full", "Integer", "1 place", "2 places", "4 places", "4 figures"]
+        precisionOptions = [.raw, .roundToInteger, .roundOnePlace, .roundTwoPlaces, .roundFourPlaces, .roundFourFigures]
 
         sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first"]
         sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName]
