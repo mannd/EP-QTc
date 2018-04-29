@@ -27,6 +27,8 @@ class StatsModel {
     var simpleStats: [Stat] = []
     
     init(results: [Double], units: Units) {
+        // FIXME: Should Stats used different precision from results?
+        // Otherwise, need to set this according to preferences.  Or set up new preference for stats.
         self.precision = defaultFormatType
         self.units = units
         self.results = results

@@ -21,12 +21,13 @@ class ResultViewModel: NSObject {
     let abnormalColor = UIColor.red
     let defaultColor = UIColor.black
     
+    
     init(calculator: Calculator, qtMeasurement: QtMeasurement) {
         self.resultModel = ResultModel(calculator: calculator, measurement: qtMeasurement)
     }
     
     func resultLabel() -> String {
-        return resultModel.result()
+        return resultModel.resultText()
     }
     
     func longCalculatorName() -> String {

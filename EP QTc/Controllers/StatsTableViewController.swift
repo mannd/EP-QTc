@@ -11,9 +11,9 @@ import QTc
 
 class StatsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
-    var formulas: [Formula]?
     var formulaType: FormulaType?
     var viewModel: StatsViewModel?
+    var results: [Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ class StatsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        if let formulas = formulas, let qtMeasurement = qtMeasurement, let formulaType = formulaType {
-            viewModel = StatsViewModel(formulas: formulas, qtMeasurement: qtMeasurement, formulaType: formulaType)
+        if let qtMeasurement = qtMeasurement, let formulaType = formulaType {
+            viewModel = StatsViewModel(qtMeasurement: qtMeasurement, formulaType: formulaType, results: results)
             tableView?.dataSource = viewModel
         }
         self.title = "Statistics"
@@ -36,16 +36,16 @@ class StatsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

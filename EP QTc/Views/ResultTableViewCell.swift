@@ -17,8 +17,6 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet var shortNameLabel: UILabel!
     
     var resultViewModel: ResultViewModel!
-    
-    
     var calculator: Calculator!
     var qtMeasurement: QtMeasurement! {
         didSet {
@@ -35,19 +33,8 @@ class ResultTableViewCell: UITableViewCell {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        //resultLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: .bold)
         accessoryType = .disclosureIndicator
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    
-    }
-
 }

@@ -21,7 +21,7 @@ class ResultsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
     
-    
+    var results: [Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class ResultsTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: nil)
 
         
-        guard let formulaType = formulaType, qtMeasurement != nil else {
+        guard let formulaType = formulaType, let qtMeasurement = qtMeasurement else {
             assertionFailure("Error: formulaType and/or qtMeasurement can't be nil!")
             return
         }
@@ -59,6 +59,10 @@ class ResultsTableViewController: UITableViewController {
         case .byNumberOfSubjects:
             formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas, formulaType: formulaType)
         }
+        
+        // Even though every formula is calculated twice, this seems the easiest way to get this array
+        let resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
+        results = (resultsModel.allResults())
         
     }
     
@@ -96,8 +100,8 @@ class ResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
 
         let row = indexPath.row
-        cell.calculator = QTc.calculator(formula: formulas[row])
         // must set calculator before qtMeasurement
+        cell.calculator = QTc.calculator(formula: formulas[row])
         cell.qtMeasurement = qtMeasurement
         return cell
     }
@@ -158,14 +162,14 @@ class ResultsTableViewController: UITableViewController {
             vc.qtMeasurement = qtMeasurement
             vc.formulaType = formulaType
             vc.calculator = QTc.calculator(formula: selectedFormula)
-            // we pass formulas to see if QT outside of max/min QTp range
-            vc.formulas = formulas
+            // we pass the results array to see if QT outside of max/min QTp range
+            vc.results = results
         }
         else if segue.identifier == "statsSegue" {
             let vc = segue.destination as! StatsTableViewController
-            vc.formulas = formulas
             vc.qtMeasurement = qtMeasurement
             vc.formulaType = formulaType
+            vc.results = results
         }
         
     }

@@ -17,6 +17,7 @@ class DetailsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
     var detailsViewModel: DetailsViewModel?
     var formulas: [Formula]?
+    var results: [Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class DetailsTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: nil)
         
         if let qtMeasurement = qtMeasurement, let calculator = calculator, let formulaType = formulaType {
-            detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, calculator: calculator, formulaType: formulaType, formulas: formulas)
+            detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, calculator: calculator, formulaType: formulaType, results: results)
             tableView?.dataSource = detailsViewModel
             tableView?.delegate = detailsViewModel
             detailsViewModel?.viewController = self

@@ -33,7 +33,12 @@ class ResultModel {
         preferences.load()
     }
     
-    func result() -> String {
+//    func result() -> (text: String, number: Double?) {
+//        let precision = preferences.precision ?? Preferences.defaultPrecision
+//        return calculator.calculateTextAndNumber(qtMeasurement: measurement, precision: precision)
+//    }
+//    
+    func resultText() -> String {
         let precision = preferences.precision ?? Preferences.defaultPrecision
         return calculator.calculateToString(qtMeasurement: measurement, precision: precision)
     }
@@ -41,5 +46,7 @@ class ResultModel {
     func resultSeverity() -> Severity {
         return calculator.resultSeverity(qtMeasurement: measurement)
     }
+    
+
     
 }

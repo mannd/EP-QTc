@@ -165,11 +165,11 @@ class DetailsViewModel: NSObject {
     let parameters: [Parameter]
     let details: [Detail]
     let shortName: String
-    var formulas: [Formula]?
+    
     weak var viewController: UITableViewController?
     
-    init(qtMeasurement: QtMeasurement, calculator: Calculator, formulaType: FormulaType, formulas: [Formula]?) {
-        let model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator, formulas: formulas)
+    init(qtMeasurement: QtMeasurement, calculator: Calculator, formulaType: FormulaType, results: [Double]) {
+        let model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator, results: results)
         parameters = model.parameters
         let parametersItem = DetailsViewModelParametersItem(parameters: model.parameters)
         items.append(parametersItem)

@@ -12,33 +12,31 @@ import QTc
 
 extension Calculator {
     func calculateToString(qtMeasurement: QtMeasurement, precision: Precision) -> String {
-        return tryCalculationCatch(block: { () -> String in
-        let result = try calculate(qtMeasurement: qtMeasurement) ?? 0
-        return formattedIntervalMeasurement(measurement: result, units: qtMeasurement.units, precision: precision)
-        })
+        return calculateTextAndNumber(qtMeasurement: qtMeasurement, precision: precision).text
+    }
+    
+    func calculateTextAndNumber(qtMeasurement: QtMeasurement, precision: Precision) -> (text: String, number: Double?) {
+        do {
+            let result = try calculate(qtMeasurement: qtMeasurement)
+            return(formattedIntervalMeasurement(measurement: result, units: qtMeasurement.units, precision: precision), result)
+        } catch CalculationError.ageRequired {
+            return ("must specify age", nil)
+        } catch CalculationError.sexRequired {
+            return ("must specify sex", nil)
+        } catch CalculationError.ageOutOfRange {
+            return ("age out of range", nil)
+        } catch CalculationError.heartRateOutOfRange {
+            return ("heart rate out of range", nil)
+        } catch CalculationError.wrongSex {
+            return ("wrong sex for formula", nil)
+        } catch {
+            return ("unexpected error", nil)
+        }
     }
     
     private func formattedIntervalMeasurement(measurement: Double?, units: Units, precision: Precision) -> String {
         let formatString = precision.formattedMeasurement(measurement: measurement, units: units, intervalRateType: .interval)
         return String.localizedStringWithFormat("\(formatString) %@", units.unitString)
-    }
-    
-    func tryCalculationCatch(block: () throws -> String) -> String {
-        do {
-            return try block()
-        } catch CalculationError.ageRequired {
-            return "must specify age"
-        } catch CalculationError.sexRequired {
-            return "must specify sex"
-        } catch CalculationError.ageOutOfRange {
-            return "age out of range"
-        } catch CalculationError.heartRateOutOfRange {
-            return "heart rate out of range"
-        } catch CalculationError.wrongSex {
-            return "wrong sex for formula"
-        } catch {
-            return "unexpected error"
-        }
     }
     
     func resultSeverity(qtMeasurement: QtMeasurement) -> Severity {
@@ -49,18 +47,17 @@ extension Calculator {
                 return Severity.normal
             }
             var severityArray: [Int] = []
-            if let result = result {
-                let qtcMeasurement = QTcMeasurement(qtc: result, units: qtMeasurement.units, sex: qtMeasurement.sex, age: qtMeasurement.age)
-                let preferences = Preferences()
-                preferences.load()
-                if let criteria = preferences.qtcLimits {
-                    for criterion in criteria {
-                        let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
-                        let severity = testSuite?.severity(measurement: qtcMeasurement)
-                        severityArray.append(severity?.rawValue ?? 0)
-                    }
+            let qtcMeasurement = QTcMeasurement(qtc: result, units: qtMeasurement.units, sex: qtMeasurement.sex, age: qtMeasurement.age)
+            let preferences = Preferences()
+            preferences.load()
+            if let criteria = preferences.qtcLimits {
+                for criterion in criteria {
+                    let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+                    let severity = testSuite?.severity(measurement: qtcMeasurement)
+                    severityArray.append(severity?.rawValue ?? 0)
                 }
             }
+            
             return Severity(rawValue: severityArray.max() ?? 0)
         }
         catch {
