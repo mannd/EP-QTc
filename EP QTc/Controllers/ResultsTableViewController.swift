@@ -21,8 +21,10 @@ class ResultsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
     
-    var results: [Double] = []
-    var calculators: [Calculator] = []
+    var resultsModel: ResultsModel?
+    
+//    var results: [Double] = []
+//    var calculators: [Calculator] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,9 +64,9 @@ class ResultsTableViewController: UITableViewController {
         }
         
         // Even though every formula is calculated twice, this seems the easiest way to get this array
-        let resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
-        results = resultsModel.allResults()
-        calculators = resultsModel.allCalculators()
+        resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
+//        results = resultsModel.allResults()
+//        calculators = resultsModel.allCalculators()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +102,7 @@ class ResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
         // must set calculator before qtMeasurement
-        cell.calculator = calculators[indexPath.row]
+        cell.calculator = resultsModel?.allCalculators()[indexPath.row]
         cell.qtMeasurement = qtMeasurement
         return cell
     }
@@ -162,21 +164,22 @@ class ResultsTableViewController: UITableViewController {
                 vc.formulaType = formulaType
                 vc.calculator = QTc.calculator(formula: selectedFormula)
                 // we pass the results array to see if QT outside of max/min QTp range
-                vc.results = results
+                vc.results = resultsModel?.allResults() ?? []
             }
         }
         else if segue.identifier == "statsSegue" {
             if let vc = segue.destination as? StatsTableViewController {
                 vc.qtMeasurement = qtMeasurement
                 vc.formulaType = formulaType
-                vc.results = results
+                vc.results = resultsModel?.allResults() ?? []
             }
         }
         else if segue.identifier == "graphSegue" {
             if let vc = segue.destination as? GraphViewController {
                 vc.qtMeasurement = qtMeasurement
                 vc.formulaType = formulaType
-                vc.results = results
+                vc.results = resultsModel?.allResults() ?? []
+                vc.formulas = resultsModel?.allFormulas() ?? []
             }
         }
         

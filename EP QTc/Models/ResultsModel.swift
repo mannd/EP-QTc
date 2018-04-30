@@ -10,7 +10,11 @@ import Foundation
 import QTc
 
 class ResultsModel {
+    // Only calculation results and that are not errors
     var results: [Double]  = []
+    // Formulas that correspond to above results
+    var resultFormulas: [Formula] = []
+    // All calculators (including those giving errors)
     var calculators: [Calculator] = []
     
     init(formulas: [Formula], qtMeasurement: QtMeasurement) {
@@ -19,6 +23,7 @@ class ResultsModel {
             calculators.append(calculator)
             if let result = try? calculator.calculate(qtMeasurement: qtMeasurement) {
                 results.append(result)
+                resultFormulas.append(calculator.formula)
             }
         }
     }
@@ -29,5 +34,9 @@ class ResultsModel {
     
     func allCalculators() -> [Calculator] {
         return calculators
+    }
+    
+    func allFormulas() -> [Formula] {
+        return resultFormulas
     }
 }

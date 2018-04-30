@@ -102,7 +102,7 @@ class DetailsModel {
     func interpretResult() -> String {
         var interpretation: String = ""
         var severity = calculator.resultSeverity(qtMeasurement: qtMeasurement)
-        if calculator.formula?.formulaType() == .qtp && severity != .error {
+        if calculator.formula.formulaType() == .qtp && severity != .error {
             let maxMin = maxMinResult()
             if maxMin == (0,0) {
                 severity = .error
@@ -139,7 +139,7 @@ class DetailsModel {
         default:
             return "Error"
         }
-        if calculator.formula?.formulaType() == .qtp {
+        if calculator.formula.formulaType() == .qtp {
             return interpretation + " QT"
         }
         else {

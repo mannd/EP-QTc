@@ -42,7 +42,7 @@ extension Calculator {
     func resultSeverity(qtMeasurement: QtMeasurement) -> Severity {
         do {
             let result = try calculate(qtMeasurement: qtMeasurement)
-            return Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: formula?.formulaType())
+            return Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: formula.formulaType())
         }
         catch {
             return Severity.error

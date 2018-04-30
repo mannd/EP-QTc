@@ -19,7 +19,9 @@ import QTc
 // TODO: Color code QTc values by whether normal or not.
 // E.g. when looping through values, keep x position but add value to normalresult vs abnormalresult entries.
 
-class GraphViewController: UIViewController, ChartViewDelegate {
+// TODO: click on bar and show the shortName of the QTc/p
+
+class GraphViewController: UIViewController {
     let normalColor = UIColor.green
     let abnormalColor = UIColor.red
     let meanColor = UIColor.blue
@@ -27,6 +29,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
     var results: [Double]?
+    var formulas: [Formula]?
 
     @IBOutlet var barChartView: BarChartView!
     
@@ -35,7 +38,6 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         guard let qtMeasurement = qtMeasurement, let formulaType = formulaType, let results = results else {
             fatalError("qtMeasurement, formulaType, and results can't be nil.")
         }
-        barChartView.delegate = self
         self.title = String(format: "%@ Graph", formulaType.name)
         var values: [BarChartDataEntry] = []
         var abnormalValues: [BarChartDataEntry] = []
@@ -79,9 +81,18 @@ class GraphViewController: UIViewController, ChartViewDelegate {
             data = BarChartData(dataSets: [normalValuesSet, abnormalValuesSet, meanValuesSet])
         }
         barChartView.data = data
+        let marker = QtMarkerView(color: UIColor.black, font: UIFont.boldSystemFont(ofSize: 12.0), textColor: UIColor.white, insets: UIEdgeInsets(top: 20, left: 10, bottom: 40, right: 30))
+        marker.formulas = formulas
+        barChartView.marker = marker
+        barChartView.chartDescription?.enabled = false
+        // FIXME: Is this useful?
+        barChartView.pinchZoomEnabled = true
+        
+        
         // FIXME: this is just an example of manual Y axis
-        barChartView.leftAxis.axisMinimum = 250
-        barChartView.leftAxis.axisMaximum = 550
+//        barChartView.leftAxis.axisMinimum = 250
+//        barChartView.leftAxis.axisMaximum = 550
+        
         barChartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         // no need to call barChartView.setNeedsDisplay() when using animation
     }
@@ -91,7 +102,29 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-  
-
+public class QtMarkerView: BalloonMarker {
+//    public var xAxisValueFormatter: IAxisValueFormatter
+//    fileprivate var yFormatter = NumberFormatter()
+    var formulas: [Formula]?
+    
+    public override init(color: UIColor, font: UIFont, textColor: UIColor, insets: UIEdgeInsets) {
+//        self.xAxisValueFormatter = xAxisValueFormatter
+//        yFormatter.minimumFractionDigits = 1
+//        yFormatter.maximumFractionDigits = 1
+        super.init(color: color, font: font, textColor: textColor, insets: insets)
+    }
+    
+    public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
+//        let string = "x: "
+//            + xAxisValueFormatter.stringForValue(entry.x, axis: XAxis())
+//            + ", y: "
+//            + yFormatter.string(from: NSNumber(floatLiteral: entry.y))!
+//        // for test
+        setLabel(formulas![Int(entry.x)].shortName(formulaType: .qtc))
+        
+        //setLabel(string)
+    }
+    
 }
