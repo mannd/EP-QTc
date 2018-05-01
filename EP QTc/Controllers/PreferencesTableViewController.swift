@@ -9,7 +9,7 @@
 import UIKit
 import QTc
 
-class PreferencesTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+final class PreferencesTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet var precisionCell: UITableViewCell!
     @IBOutlet var precisionPicker: UIPickerView!
@@ -84,26 +84,12 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
             
             self.precisionCell.detailTextLabel?.text = self.precisionLabels[preferenceRow]
             self.sortingCell.detailTextLabel?.text = self.sortOrderLabels[sortRow]
-            self.qtcLimitsCell.detailTextLabel?.text = self.qtcLimitsString(preferences.qtcLimits)
-
+            self.qtcLimitsCell.detailTextLabel?.text = preferences.qtcLimitsString()
         }
         
         super.viewWillAppear(animated)
     }
-    
-    private func qtcLimitsString(_ limits: Set<Criterion>?) -> String {
-        guard let limits = limits, limits.count > 0 else {
-            return "None"
-        }
-        var string = ""
-        for limit in limits {
-            if let abnormalQTc = AbnormalQTc.qtcLimits(criterion: limit) {
-                string.append(abnormalQTc.name + "\n")
-            }
-        }
-        return string
-    }
-    
+ 
     // FIXME: this also called when segueing to QTcLimitsViewController
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -205,7 +191,6 @@ class PreferencesTableViewController: UITableViewController, UIPickerViewDelegat
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 5
     }
     

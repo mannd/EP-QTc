@@ -19,15 +19,18 @@ class ResultTableViewCell: UITableViewCell {
     // FIXME: can potentially just use the value from the results array in ResultTableViewController,
     // and format it through ResultModel, rather than recalculating the value, to avoid doing the same
     // work twice.
+    
+    var preferences: Preferences!
     var resultViewModel: ResultViewModel!
     var calculator: Calculator!
+    
     var qtMeasurement: QtMeasurement! {
         didSet {
-            guard calculator != nil else {
-                assertionFailure("Programming error: cell.calculator must be set before setting qtMeasurement!")
+            guard calculator != nil, preferences != nil else {
+                assertionFailure("Programming error: cell.calculator and preferences must be set before setting qtMeasurement!")
                 return
             }
-            resultViewModel = ResultViewModel(calculator: calculator, qtMeasurement: qtMeasurement)
+            resultViewModel = ResultViewModel(calculator: calculator, qtMeasurement: qtMeasurement, preferences: preferences)
             resultLabel.text = resultViewModel.resultLabel()
             resultLabel.textColor = resultViewModel.severityColor()
             calculatorNameLabel.text = resultViewModel.longCalculatorName()

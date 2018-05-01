@@ -9,7 +9,7 @@
 import UIKit
 import QTc
 
-class QTcLimitsTableViewController: UITableViewController {
+final class QTcLimitsTableViewController: UITableViewController {
 
         
     var qtcLimits: [Criterion] = []

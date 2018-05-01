@@ -9,22 +9,17 @@
 import UIKit
 import QTc
 
-class ResultsTableViewController: UITableViewController {
+final class ResultsTableViewController: UITableViewController {
     let unknownColor = UIColor.blue
     let normalColor = UIColor.green
     
-    
+    let preferences = Preferences()
+
     var formulas: [Formula] = []
     var selectedFormula: Formula?
-    
-    // these are passed via the segue
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
-    
     var resultsModel: ResultsModel?
-    
-//    var results: [Double] = []
-//    var calculators: [Calculator] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +40,6 @@ class ResultsTableViewController: UITableViewController {
             return
         }
         
-        let preferences = Preferences()
         preferences.load()
         let sortingPreference = preferences.sortOrder ?? Preferences.defaultSortOrder
         switch sortingPreference {
@@ -63,10 +57,7 @@ class ResultsTableViewController: UITableViewController {
             formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas, formulaType: formulaType)
         }
         
-        // Even though every formula is calculated twice, this seems the easiest way to get this array
         resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
-//        results = resultsModel.allResults()
-//        calculators = resultsModel.allCalculators()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,7 +92,9 @@ class ResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
-        // must set calculator before qtMeasurement
+        // Must set calculator and preferences before qtMeasurement.
+        // Passing preloaded preferences, rather than have each cell load preferences.
+        cell.preferences = preferences
         cell.calculator = resultsModel?.allCalculators()[indexPath.row]
         cell.qtMeasurement = qtMeasurement
         return cell
@@ -112,50 +105,12 @@ class ResultsTableViewController: UITableViewController {
         let row = indexPath.row
         selectedFormula = formulas[row]
         performSegue(withIdentifier: "detailsTableSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         guard let formulaType = formulaType else { return }
         if segue.identifier == "detailsTableSegue" {
             guard let selectedFormula = selectedFormula else { return }
@@ -182,8 +137,5 @@ class ResultsTableViewController: UITableViewController {
                 vc.formulas = resultsModel?.allFormulas() ?? []
             }
         }
-        
     }
-
-
 }

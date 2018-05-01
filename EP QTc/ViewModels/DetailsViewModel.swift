@@ -24,6 +24,8 @@ enum DetailsViewModelItemType {
     case equation
     case reference
     case notes
+    case limits
+    case limitsReference
 }
 
 protocol DetailsViewModelItem {
@@ -160,11 +162,48 @@ class DetailsViewModelNotesItem: DetailsViewModelItem {
     }
 }
 
+class DetailsViewModelLimitsItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .limits
+    }
+    
+    var sectionTitle: String {
+        return "QTc limits"
+    }
+    
+    var limits: String
+    
+    init(limits: String) {
+        self.limits = limits
+    }
+}
+
+class DetailsViewModelLimitsReferenceItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .limitsReference
+    }
+    
+    var sectionTitle: String {
+        return "QTc limits references"
+    }
+    
+    var references: [String]
+    
+    var rowCount: Int {
+        return references.count
+    }
+    
+    init(references: [String]) {
+        self.references = references
+    }
+}
+
 class DetailsViewModel: NSObject {
     var items: [DetailsViewModelItem] = []
     let parameters: [Parameter]
     let details: [Detail]
     let shortName: String
+    var limitsReferences: [String] = []
     
     weak var viewController: UITableViewController?
     
@@ -189,7 +228,13 @@ class DetailsViewModel: NSObject {
         if !notesItem.notes.isEmpty {
             items.append(notesItem)
         }
-        
+        if formulaType == .qtc {
+            let limitsItem = DetailsViewModelLimitsItem(limits: model.limits)
+            items.append(limitsItem)
+            limitsReferences = model.limitsReferences
+            let limitsReferencesItem = DetailsViewModelLimitsReferenceItem(references: limitsReferences)
+            items.append(limitsReferencesItem)
+        }
         shortName = model.shortFormulaName
     }
     
@@ -242,6 +287,16 @@ extension DetailsViewModel: UITableViewDataSource {
                 cell.item = item
                 return cell
             }
+        case .limits:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: LimitsCell.identifier, for: indexPath) as? LimitsCell {
+                cell.item = item
+                return cell
+            }
+        case .limitsReference:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: LimitsReferenceCell.identifier, for: indexPath) as? LimitsReferenceCell {
+                cell.item = limitsReferences[indexPath.row]
+                return cell
+            }
         }
         return UITableViewCell()
 
@@ -268,8 +323,17 @@ extension DetailsViewModel: UITableViewDelegate {
                     viewController?.present(svc, animated: true, completion: nil)
                 }
             }
-
         }
+        if item.type == .limitsReference {
+            let selectedCell = tableView.cellForRow(at: indexPath) as? LimitsReferenceCell
+            if let doi = selectedCell?.resolvedDoiString() {
+                if let url = URL(string: doi) {
+                    let svc = SFSafariViewController(url: url)
+                    viewController?.present(svc, animated: true, completion: nil)
+                }
+            }
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

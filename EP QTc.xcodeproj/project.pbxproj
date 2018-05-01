@@ -20,9 +20,11 @@
 		8E47B1D920937C000042C5F9 /* InterpretationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D820937C000042C5F9 /* InterpretationCell.swift */; };
 		8E47B1DB209571840042C5F9 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1DA209571840042C5F9 /* ResultsModel.swift */; };
 		8E47B1E12096DE1E0042C5F9 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1E02096DE1E0042C5F9 /* BalloonMarker.swift */; };
+		8E47B1E42097F9CE0042C5F9 /* LimitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1E32097F9CE0042C5F9 /* LimitsCell.swift */; };
 		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
 		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
 		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
+		8E5B0E412097FF4700F7AA9C /* LimitsReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */; };
 		8E5BA617206B1E6500B35B12 /* SimpleStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */; };
 		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
 		8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E55A41FD30B66004B1B2F /* Main.storyboard */; };
@@ -76,9 +78,11 @@
 		8E47B1D820937C000042C5F9 /* InterpretationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretationCell.swift; sourceTree = "<group>"; };
 		8E47B1DA209571840042C5F9 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		8E47B1E02096DE1E0042C5F9 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		8E47B1E32097F9CE0042C5F9 /* LimitsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsCell.swift; sourceTree = "<group>"; };
 		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsReferenceCell.swift; sourceTree = "<group>"; };
 		8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStatsCell.swift; sourceTree = "<group>"; };
 		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				8EBE89D6205C3CEA00A60296 /* NotesCell.swift */,
 				8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */,
 				8E47B1D820937C000042C5F9 /* InterpretationCell.swift */,
+				8E47B1E32097F9CE0042C5F9 /* LimitsCell.swift */,
+				8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */,
+				8E47B1E42097F9CE0042C5F9 /* LimitsCell.swift in Sources */,
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
 				8E47B1D52091543E0042C5F9 /* QTcLimitsTableViewController.swift in Sources */,
 				8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */,
@@ -453,6 +460,7 @@
 				8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */,
 				8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */,
 				8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */,
+				8E5B0E412097FF4700F7AA9C /* LimitsReferenceCell.swift in Sources */,
 				8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */,
 				8EA5108D20509EB600D77A77 /* FormulaNameCell.swift in Sources */,
 				8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */,

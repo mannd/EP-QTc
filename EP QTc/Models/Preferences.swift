@@ -24,6 +24,19 @@ class Preferences {
     var sortOrder: SortOrder?
     var qtcLimits: Set<Criterion>? = [.schwartz1985]
     
+    func qtcLimitsString() -> String {
+        guard let limits = qtcLimits, limits.count > 0 else {
+            return "None"
+        }
+        var string = ""
+        for limit in limits {
+            if let abnormalQTc = AbnormalQTc.qtcLimits(criterion: limit) {
+                string.append(abnormalQTc.name + "\n")
+            }
+        }
+        return string
+    }
+    
     private func convertCriteriaSet(criteria: Set<Criterion>?) -> [String] {
         guard let criteria = criteria else { return [] }
         var array: [String] = []

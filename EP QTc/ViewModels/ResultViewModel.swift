@@ -9,7 +9,7 @@
 import UIKit
 import QTc
 
-class ResultViewModel: NSObject {
+class ResultViewModel {
     let resultModel: ResultModel
     
     let errorColor = UIColor.blue
@@ -22,8 +22,8 @@ class ResultViewModel: NSObject {
     let defaultColor = UIColor.black
     
     
-    init(calculator: Calculator, qtMeasurement: QtMeasurement) {
-        self.resultModel = ResultModel(calculator: calculator, measurement: qtMeasurement)
+    init(calculator: Calculator, qtMeasurement: QtMeasurement, preferences: Preferences) {
+        self.resultModel = ResultModel(calculator: calculator, measurement: qtMeasurement, preferences: preferences)
     }
     
     func resultLabel() -> String {

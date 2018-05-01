@@ -11,17 +11,7 @@ import Charts
 import SigmaSwiftStatistics
 import QTc
 
-// TODO: create full QTp rate vs QTp graph, with superimposed QT measurement at rate
-
-// TODO: pretty up the Y axis, e.g. go from reasonable ranges of QT interval (250 to 600 msec,
-// 0.250 to .6 sec) unless a value is out of the range, in which case use automatic axes
-
-// TODO: Color code QTc values by whether normal or not.
-// E.g. when looping through values, keep x position but add value to normalresult vs abnormalresult entries.
-
-// TODO: click on bar and show the shortName of the QTc/p
-
-class GraphViewController: UIViewController {
+final class GraphViewController: UIViewController {
     let normalColor = UIColor.green
     let abnormalColor = UIColor.red
     let meanColor = UIColor.blue
@@ -33,6 +23,7 @@ class GraphViewController: UIViewController {
 
     @IBOutlet var barChartView: BarChartView!
     
+    // TODO: Add further abnormal colors to correspond with .borderline, etc.
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let qtMeasurement = qtMeasurement, let formulaType = formulaType, let results = results else {
@@ -48,6 +39,7 @@ class GraphViewController: UIViewController {
             i += 1
             if (Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: formulaType).isAbnormal()) {
                 abnormalValues.append(entry)
+                // TODO: add Severity to array here, to allow for more colors depending on Severity
             }
             else {
                 values.append(entry)
@@ -81,19 +73,19 @@ class GraphViewController: UIViewController {
             data = BarChartData(dataSets: [normalValuesSet, abnormalValuesSet, meanValuesSet])
         }
         barChartView.data = data
-        let marker = QtMarkerView(color: UIColor.black, font: UIFont.boldSystemFont(ofSize: 12.0), textColor: UIColor.white, insets: UIEdgeInsets(top: 20, left: 10, bottom: 40, right: 30))
+        let marker = QtMarkerView(color: UIColor(white: 180/250, alpha: 1), font: UIFont.boldSystemFont(ofSize: 12.0), textColor: UIColor.white, insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
         marker.formulas = formulas
+        marker.formulaTypeName = formulaType.name
         barChartView.marker = marker
         barChartView.chartDescription?.enabled = false
         // FIXME: Is this useful?
         barChartView.pinchZoomEnabled = true
         
-        
         // FIXME: this is just an example of manual Y axis
 //        barChartView.leftAxis.axisMinimum = 250
 //        barChartView.leftAxis.axisMaximum = 550
         
-        barChartView.animate(xAxisDuration: 2, yAxisDuration: 2)
+        barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
         // no need to call barChartView.setNeedsDisplay() when using animation
     }
 
@@ -101,30 +93,27 @@ class GraphViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
 public class QtMarkerView: BalloonMarker {
-//    public var xAxisValueFormatter: IAxisValueFormatter
-//    fileprivate var yFormatter = NumberFormatter()
     var formulas: [Formula]?
-    
-    public override init(color: UIColor, font: UIFont, textColor: UIColor, insets: UIEdgeInsets) {
-//        self.xAxisValueFormatter = xAxisValueFormatter
-//        yFormatter.minimumFractionDigits = 1
-//        yFormatter.maximumFractionDigits = 1
-        super.init(color: color, font: font, textColor: textColor, insets: insets)
-    }
+    var formulaTypeName: String?
     
     public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
-//        let string = "x: "
-//            + xAxisValueFormatter.stringForValue(entry.x, axis: XAxis())
-//            + ", y: "
-//            + yFormatter.string(from: NSNumber(floatLiteral: entry.y))!
-//        // for test
-        setLabel(formulas![Int(entry.x)].shortName(formulaType: .qtc))
-        
-        //setLabel(string)
+        if let formulas = formulas {
+            let index = Int(entry.x)
+            if index < formulas.count {
+                setLabel(formulas[index].shortName(formulaType: .qtc))
+            }
+            else if index == formulas.count {
+                setLabel("Mean \(formulaTypeName ?? "value")")
+            }
+            else if index == formulas.count + 1 {
+                setLabel("Measured QT")  // only displayed with QTp graph
+            }
+            else {
+                setLabel("???")
+            }
+        }
     }
-    
 }

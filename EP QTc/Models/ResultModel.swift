@@ -26,11 +26,10 @@ class ResultModel {
         }
     }
     
-    init(calculator: Calculator, measurement: QtMeasurement) {
+    init(calculator: Calculator, measurement: QtMeasurement, preferences: Preferences) {
         self.calculator = calculator
         self.measurement = measurement
-        self.preferences = Preferences()
-        preferences.load()
+        self.preferences = preferences
     }
     
 //    func result() -> (text: String, number: Double?) {

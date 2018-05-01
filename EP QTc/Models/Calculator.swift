@@ -58,14 +58,16 @@ extension Calculator {
         let qtcMeasurement = QTcMeasurement(qtc: result, units: qtMeasurement.units, sex: qtMeasurement.sex, age: qtMeasurement.age)
         let preferences = Preferences()
         preferences.load()
-        if let criteria = preferences.qtcLimits {
-            for criterion in criteria {
-                let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
-                let severity = testSuite?.severity(measurement: qtcMeasurement)
-                severityArray.append(severity?.rawValue ?? 0)
-            }
+        let criteria = preferences.qtcLimits ?? []
+        if criteria.count < 1 {
+            return Severity.normal  // No qtcLimits defined, so all values normal by definition.
         }
-        return Severity(rawValue: severityArray.max() ?? 0)
+        for criterion in criteria {
+            let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+            let severity = testSuite?.severity(measurement: qtcMeasurement)
+            severityArray.append(severity?.rawValue ?? 0)
+        }
+        return Severity(rawValue: severityArray.max() ?? Severity.error.rawValue)
     }
     
 }

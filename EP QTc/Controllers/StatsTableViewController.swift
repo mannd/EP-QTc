@@ -9,7 +9,7 @@
 import UIKit
 import QTc
 
-class StatsTableViewController: UITableViewController {
+final class StatsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
     var viewModel: StatsViewModel?
