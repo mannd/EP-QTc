@@ -78,16 +78,28 @@ final class GraphViewController: UIViewController {
         marker.formulaTypeName = formulaType.name
         barChartView.marker = marker
         barChartView.chartDescription?.enabled = false
-        // FIXME: Is this useful?
         barChartView.pinchZoomEnabled = true
-        
-        // Y axis
+        barChartView.xAxis.enabled = false
+        // FIXME: Implement appropriate limit line(s):
+        // (need upper and lower limits, separate M/F limits, also max and min QTp lines)
+        // Maybe make average QTc different color if abnormal,
+        // Maybe add value to markers besides just formula short name
+        let limitLine = ChartLimitLine(limit: 440, label: "Upper limit")
+        limitLine.lineColor = UIColor.black
+        barChartView.leftAxis.addLimitLine(limitLine)
         let preferences = Preferences()
         preferences.load()
-        if let autoYAxis = preferences.automaticYAxis, let yAxisMax = preferences.yAxisMaximum, let yAxisMin = preferences.yAxisMinimum {
+        if let autoYAxis = preferences.automaticYAxis, var yAxisMax = preferences.yAxisMaximum, var yAxisMin = preferences.yAxisMinimum {
             if !autoYAxis {
+                // In preferences, Y axis values are given as msec.
+                if qtMeasurement.units == .sec {
+                    yAxisMax = QTc.msecToSec(yAxisMax)
+                    yAxisMin = QTc.msecToSec(yAxisMin)
+                }
                 barChartView.leftAxis.axisMaximum = yAxisMax
+                barChartView.rightAxis.axisMaximum = yAxisMax
                 barChartView.leftAxis.axisMinimum = yAxisMin
+                barChartView.rightAxis.axisMinimum = yAxisMin
             }
         }
  

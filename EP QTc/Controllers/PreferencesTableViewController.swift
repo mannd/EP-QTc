@@ -86,9 +86,6 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         precisionPickerVisible = false
         sortingPickerVisible = false
         
-        hideKeyboard()
-        view.becomeFirstResponder()
-        
         // must run this async, to allow for loading of data into pickers
         DispatchQueue.main.async { [weak self] in
             let preferences = Preferences()
