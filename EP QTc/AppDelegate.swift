@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         defaults.register(defaults: [Preferences.precisionKey: Preferences.defaultPrecision.rawValue,
                                      Preferences.sortOrderKey: Preferences.defaultSortOrder.rawValue,
-                                     Preferences.qtcLimitsKey: Preferences.defaultQTcLimitsArray])
+                                     Preferences.qtcLimitsKey: Preferences.defaultQTcLimitsArray,
+                                     Preferences.automaticYAxisKey: Preferences.defaultAutomaticYAxis,
+                                     Preferences.yAxisMaximumKey: Preferences.yAxisMaximumKey,
+                                     Preferences.yAxisMinimumKey: Preferences.yAxisMinimumKey])
         return true
     }
 

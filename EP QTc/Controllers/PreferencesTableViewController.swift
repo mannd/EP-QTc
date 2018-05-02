@@ -8,14 +8,22 @@
 
 import UIKit
 import QTc
+import Validator
 
-final class PreferencesTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+final class PreferencesTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet var precisionCell: UITableViewCell!
     @IBOutlet var precisionPicker: UIPickerView!
     @IBOutlet var sortingCell: UITableViewCell!
     @IBOutlet var sortingPicker: UIPickerView!
     @IBOutlet var qtcLimitsCell: UITableViewCell!
+    @IBOutlet var automaticYAxisSwitch: UISwitch!
+    @IBOutlet var yAxisMaximumCell: UITableViewCell!
+    @IBOutlet var yAxisMinimumCell: UITableViewCell!
+    @IBOutlet var yAxisMaximumTextField: CalculatorTextField!
+    @IBOutlet var yAxisMinimumTextField: CalculatorTextField!
+    
+    let errorResult: (Double?, Double?) = (nil, nil)
     
     let pickerViewHeight: CGFloat = 216.0
     let qtcLimitsRowHeight: CGFloat = 100.0
@@ -49,6 +57,8 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         sortingPicker.delegate = self
         sortingPicker.dataSource = self
         sortingPicker.tag = sortingPickerViewTag
+        yAxisMaximumTextField.delegate = self
+        yAxisMinimumTextField.delegate = self
         
         // The elements of both pairs of arrays must match!
         precisionLabels = ["Full", "Integer", "1 place", "2 places", "4 places", "4 figures"]
@@ -56,6 +66,15 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
 
         sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first"]
         sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName]
+        
+        let separator = NSLocale.current.decimalSeparator ?? "."
+        // regex allows zero and positive decimal numbers
+        let localizedPattern = String(format:"^(?:\\d+|\\d*\\%@\\d+)$", separator, separator)
+        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "Invalid number"))
+        var rules = ValidationRuleSet<String>()
+        rules.add(rule: isNumberRule)
+        yAxisMinimumTextField.validationRules = rules
+        yAxisMaximumTextField.validationRules = rules
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,38 +86,55 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         precisionPickerVisible = false
         sortingPickerVisible = false
         
+        hideKeyboard()
+        view.becomeFirstResponder()
+        
         // must run this async, to allow for loading of data into pickers
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             let preferences = Preferences()
             preferences.load()
             var preferenceRow = 0
             if let precisionPreference = preferences.precision {
-                preferenceRow = self.precisionOptions.index(of: precisionPreference) ?? 0
+                preferenceRow = self?.precisionOptions.index(of: precisionPreference) ?? 0
             }
             var sortRow = 0
             if let sortPreference = preferences.sortOrder {
-                sortRow = self.sortOrderOptions.index(of: sortPreference) ?? 0
+                sortRow = self?.sortOrderOptions.index(of: sortPreference) ?? 0
             }
-            self.precisionPicker.selectRow(preferenceRow, inComponent: 0, animated: false)
-            self.sortingPicker.selectRow(sortRow, inComponent: 0, animated: false)
+            self?.precisionPicker.selectRow(preferenceRow, inComponent: 0, animated: false)
+            self?.sortingPicker.selectRow(sortRow, inComponent: 0, animated: false)
             
-            self.precisionCell.detailTextLabel?.text = self.precisionLabels[preferenceRow]
-            self.sortingCell.detailTextLabel?.text = self.sortOrderLabels[sortRow]
-            self.qtcLimitsCell.detailTextLabel?.text = preferences.qtcLimitsString()
+            self?.precisionCell.detailTextLabel?.text = self?.precisionLabels[preferenceRow]
+            self?.sortingCell.detailTextLabel?.text = self?.sortOrderLabels[sortRow]
+            self?.qtcLimitsCell.detailTextLabel?.text = preferences.qtcLimitsString()
+            let automaticYAxisSwiftIsOn = preferences.automaticYAxis ?? Preferences.defaultAutomaticYAxis
+            self?.automaticYAxisSwitch.isOn = automaticYAxisSwiftIsOn
+            self?.yAxisMaximumTextField.text = String(format: "%.f", preferences.yAxisMaximum ?? Preferences.defaultYAxisMaximum)
+            self?.yAxisMinimumTextField.text = String(format: "%.f", preferences.yAxisMinimum ?? Preferences.defaultYAxisMinimum)
+            self?.hideManualYAxisFields(hide: automaticYAxisSwiftIsOn)
         }
+        
         
         super.viewWillAppear(animated)
     }
+    
  
     // FIXME: this also called when segueing to QTcLimitsViewController
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
         let precisionRow = precisionPicker.selectedRow(inComponent: 0)
         let sortRow = sortingPicker.selectedRow(inComponent: 0)
+        let yAxisFields = validatedYAxisFields()
         let preferences = Preferences()
         preferences.load()
         preferences.precision = precisionOptions[precisionRow]
         preferences.sortOrder = sortOrderOptions[sortRow]
+        preferences.automaticYAxis = automaticYAxisSwitch.isOn
+        if !automaticYAxisSwitch.isOn && yAxisFields != errorResult {
+            preferences.yAxisMaximum = yAxisFields.yAxisMax
+            preferences.yAxisMinimum = yAxisFields.yAxisMin
+        }
         preferences.save()
     }
 
@@ -107,6 +143,30 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         // Dispose of any resources that can be recreated.
     }
     
+    func validatedYAxisFields() -> (yAxisMax: Double?, yAxisMin: Double?) {
+        if !yAxisMaximumTextField.validate().isValid || !yAxisMinimumTextField.validate().isValid {
+            return errorResult
+        }
+        let yAxisMax = yAxisMaximumTextField.text?.stringToDouble()
+        let yAxisMin = yAxisMinimumTextField.text?.stringToDouble()
+        if let yAxisMax = yAxisMax, let yAxisMin = yAxisMin {
+            if yAxisMax > yAxisMin {
+                return (yAxisMax, yAxisMin)
+            }
+        }
+        return errorResult
+    }
+    
+
+    // This is needed for Validation rule, but will not be called.
+    struct ValidationError: Error {
+        public let message: String
+        
+        public init(message m: String) {
+            message = m
+        }
+    }
+
     func showPickerView(_ picker: UIPickerView) {
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
@@ -147,6 +207,17 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         hidePickerView(sortingPicker)
     }
     
+    func hideManualYAxisFields(hide: Bool) {
+        yAxisMaximumCell.isHidden = hide
+        yAxisMinimumCell.isHidden = hide
+    }
+    
+    @IBAction func automaticYAxisValueChanged(_ sender: Any) {
+        hideManualYAxisFields(hide: automaticYAxisSwitch.isOn)
+    }
+    
+    
+    
     // MARK: Picker view delegate and data source
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -184,6 +255,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         }
     }
     
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -191,11 +263,11 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 8
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height = self.tableView.rowHeight;
+        var height: CGFloat = 44.0
         if indexPath.row == precisionPickerViewRowNumber {
             height = precisionPickerVisible ? pickerViewHeight : 0
         }
@@ -235,7 +307,13 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    // MARK: - Text field delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(false)
+        return true
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

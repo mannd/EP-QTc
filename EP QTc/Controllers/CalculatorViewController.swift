@@ -26,6 +26,22 @@ extension UIViewController {
     {
         view.endEditing(true)
     }
+    
+    func stringToDouble(_ string: String?) -> Double? {
+        guard let string = string else { return nil }
+        return string.stringToDouble()
+    }
+}
+
+// This version of stringToDouble respects locale
+// (i.e. 140.4 OK in US, 140,4 OK in France
+extension String {
+    func stringToDouble() -> Double? {
+        let nf = NumberFormatter()
+        guard let number = nf.number(from: self) else { return nil }
+        return number.doubleValue
+    }
+    
 }
 
 extension FormulaType {
@@ -165,6 +181,14 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         let about = About()
         about.show(viewController: self)
     }
+    
+    struct ValidationError: Error {
+        public let message: String
+        
+        public init(message m: String) {
+            message = m
+        }
+    }
 
     @IBAction func unitsChanged(_ sender: Any) {
         switch unitsSegmentedControl.selectedSegmentIndex {
@@ -230,14 +254,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     private func updateOptionalInformationLabel() {
         optionalInformationLabel.isEnabled = sexLabel.isEnabled || ageLabel.isEnabled
-    }
-
-    struct ValidationError: Error {
-        public let message: String
-
-        public init(message m: String) {
-            message = m
-        }
     }
 
     @IBAction func calculateQTc(_ sender: Any) {
@@ -328,16 +344,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         for textField in textFields {
             textField.resetFieldBorder()
         }
-    }
-    
-    
-    // This version of stringToDouble respects locale
-    // (i.e. 140.4 OK in US, 140,4 OK in France
-    func stringToDouble(_ string: String?) -> Double? {
-        guard let string = string else { return nil }
-        let nf = NumberFormatter()
-        guard let number = nf.number(from: string) else { return nil }
-        return number.doubleValue
     }
     
     private func clearFields() {

@@ -81,10 +81,16 @@ final class GraphViewController: UIViewController {
         // FIXME: Is this useful?
         barChartView.pinchZoomEnabled = true
         
-        // FIXME: this is just an example of manual Y axis
-//        barChartView.leftAxis.axisMinimum = 250
-//        barChartView.leftAxis.axisMaximum = 550
-        
+        // Y axis
+        let preferences = Preferences()
+        preferences.load()
+        if let autoYAxis = preferences.automaticYAxis, let yAxisMax = preferences.yAxisMaximum, let yAxisMin = preferences.yAxisMinimum {
+            if !autoYAxis {
+                barChartView.leftAxis.axisMaximum = yAxisMax
+                barChartView.leftAxis.axisMinimum = yAxisMin
+            }
+        }
+ 
         barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
         // no need to call barChartView.setNeedsDisplay() when using animation
     }
