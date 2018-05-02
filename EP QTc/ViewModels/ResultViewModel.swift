@@ -20,6 +20,7 @@ class ResultViewModel {
     let severeColor = UIColor.purple
     let abnormalColor = UIColor.red
     let defaultColor = UIColor.black
+    let undefinedColor = UIColor.gray
     
     
     init(calculator: Calculator, qtMeasurement: QtMeasurement, preferences: Preferences) {
@@ -55,6 +56,8 @@ class ResultViewModel {
             return severeColor
         case .abnormal:
             return abnormalColor
+        case .undefined:
+            return undefinedColor
         default:
             // above should be exhaustive, but compiler can't check this
             assertionFailure("Unknown severity.")

@@ -86,29 +86,31 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         precisionPickerVisible = false
         sortingPickerVisible = false
         
-        // must run this async, to allow for loading of data into pickers
-        DispatchQueue.main.async { [weak self] in
+        // must run this async, to allow for loading of data into pickers.
+        // self can be strongly captured in a DispatchQueue, since self holds no reference to the
+        // DispatchQueue.
+        DispatchQueue.main.async {
             let preferences = Preferences()
             preferences.load()
             var preferenceRow = 0
             if let precisionPreference = preferences.precision {
-                preferenceRow = self?.precisionOptions.index(of: precisionPreference) ?? 0
+                preferenceRow = self.precisionOptions.index(of: precisionPreference) ?? 0
             }
             var sortRow = 0
             if let sortPreference = preferences.sortOrder {
-                sortRow = self?.sortOrderOptions.index(of: sortPreference) ?? 0
+                sortRow = self.sortOrderOptions.index(of: sortPreference) ?? 0
             }
-            self?.precisionPicker.selectRow(preferenceRow, inComponent: 0, animated: false)
-            self?.sortingPicker.selectRow(sortRow, inComponent: 0, animated: false)
+            self.precisionPicker.selectRow(preferenceRow, inComponent: 0, animated: false)
+            self.sortingPicker.selectRow(sortRow, inComponent: 0, animated: false)
             
-            self?.precisionCell.detailTextLabel?.text = self?.precisionLabels[preferenceRow]
-            self?.sortingCell.detailTextLabel?.text = self?.sortOrderLabels[sortRow]
-            self?.qtcLimitsCell.detailTextLabel?.text = preferences.qtcLimitsString()
+            self.precisionCell.detailTextLabel?.text = self.precisionLabels[preferenceRow]
+            self.sortingCell.detailTextLabel?.text = self.sortOrderLabels[sortRow]
+            self.qtcLimitsCell.detailTextLabel?.text = preferences.qtcLimitsString()
             let automaticYAxisSwiftIsOn = preferences.automaticYAxis ?? Preferences.defaultAutomaticYAxis
-            self?.automaticYAxisSwitch.isOn = automaticYAxisSwiftIsOn
-            self?.yAxisMaximumTextField.text = String(format: "%.f", preferences.yAxisMaximum ?? Preferences.defaultYAxisMaximum)
-            self?.yAxisMinimumTextField.text = String(format: "%.f", preferences.yAxisMinimum ?? Preferences.defaultYAxisMinimum)
-            self?.hideManualYAxisFields(hide: automaticYAxisSwiftIsOn)
+            self.automaticYAxisSwitch.isOn = automaticYAxisSwiftIsOn
+            self.yAxisMaximumTextField.text = String(format: "%.f", preferences.yAxisMaximum ?? Preferences.defaultYAxisMaximum)
+            self.yAxisMinimumTextField.text = String(format: "%.f", preferences.yAxisMinimum ?? Preferences.defaultYAxisMinimum)
+            self.hideManualYAxisFields(hide: automaticYAxisSwiftIsOn)
         }
         
         

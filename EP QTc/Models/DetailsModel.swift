@@ -147,6 +147,8 @@ class DetailsModel {
             interpretation = "Moderately prolonged"
         case .severe:
             interpretation = "Severely prolonged"
+        case .undefined:
+            interpretation = "Undefined"
         case .error:
             fallthrough
         default:

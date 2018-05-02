@@ -60,7 +60,7 @@ extension Calculator {
         preferences.load()
         let criteria = preferences.qtcLimits ?? []
         if criteria.count < 1 {
-            return Severity.normal  // No qtcLimits defined, so all values normal by definition.
+            return Severity.undefined
         }
         for criterion in criteria {
             let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
