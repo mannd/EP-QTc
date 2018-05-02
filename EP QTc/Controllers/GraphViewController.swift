@@ -12,9 +12,15 @@ import SigmaSwiftStatistics
 import QTc
 
 final class GraphViewController: UIViewController {
+    let undefinedColor = UIColor.lightGray
     let normalColor = UIColor.green
     let abnormalColor = UIColor.red
-    let meanColor = UIColor.blue
+    let meanColor = UIColor.black
+    let abnormalMeanColor = UIColor.blue
+    let borderlineColor = UIColor.orange
+    let mildColor = UIColor.orange
+    let moderateColor = UIColor.red
+    let severeColor = UIColor.purple
     
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
@@ -30,49 +36,84 @@ final class GraphViewController: UIViewController {
             fatalError("qtMeasurement, formulaType, and results can't be nil.")
         }
         self.title = String(format: "%@ Graph", formulaType.name)
-        var values: [BarChartDataEntry] = []
+        var undefinedValues: [BarChartDataEntry] = []
+        var normalValues: [BarChartDataEntry] = []
         var abnormalValues: [BarChartDataEntry] = []
+        var borderlineValues: [BarChartDataEntry] = []
+        var mildValues: [BarChartDataEntry] = []
+        var moderateValues: [BarChartDataEntry] = []
+        var severeValues: [BarChartDataEntry] = []
         var meanValues: [BarChartDataEntry] = []
         var i: Double = 0
         for result in results {
             let entry = BarChartDataEntry(x: i, y: result)
             i += 1
-            if (Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: formulaType).isAbnormal()) {
+            let severity = Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement,
+                                                     formulaType: formulaType)
+            switch severity {
+            case .undefined:
+                undefinedValues.append(entry)
+            case .normal:
+                normalValues.append(entry)
+            case .borderline:
+                borderlineValues.append(entry)
+            case .mild:
+                mildValues.append(entry)
+            case .moderate:
+                moderateValues.append(entry)
+            case .severe:
+                severeValues.append(entry)
+            case .abnormal:
+                fallthrough
+            default:
                 abnormalValues.append(entry)
-                // TODO: add Severity to array here, to allow for more colors depending on Severity
-            }
-            else {
-                values.append(entry)
             }
         }
         if let mean = Sigma.average(results) {
             meanValues.append(BarChartDataEntry(x: Double(results.count), y: mean))
         }
-        var data: BarChartData
+        
         let baseLabel = formulaType.name
+        // Note that QTp intervals can only be normal by definition
         let normalLabel = (formulaType == .qtp ? "QTp" : "Normal QTc")
-        let normalValuesSet = BarChartDataSet(values: values, label: normalLabel)
+        let normalValuesSet = BarChartDataSet(values: normalValues, label: normalLabel)
+        normalValuesSet.setColor(normalColor)
+        let undefinedValuesSet = BarChartDataSet(values: undefinedValues, label: "Uninterpreted QTc")
+        let borderlineValuesSet = BarChartDataSet(values: borderlineValues, label: "Borderline QTc")
+        borderlineValuesSet.setColor(borderlineColor)
+        let mildValuesSet = BarChartDataSet(values: mildValues, label: "Mildly prolonged QTc")
+        mildValuesSet.setColor(mildColor)
+        let moderateValuesSet = BarChartDataSet(values: moderateValues, label: "Moderatedly prolonged QTc")
+        moderateValuesSet.setColor(moderateColor)
+        let severeValuesSet = BarChartDataSet(values: severeValues, label: "Severely prolonged QTc")
+        severeValuesSet.setColor(severeColor)
         let abnormalValuesSet = BarChartDataSet(values: abnormalValues, label: "Abnormal \(baseLabel)")
         abnormalValuesSet.setColor(abnormalColor)
+        
         // get mean QTc/p
         let meanValuesSet = BarChartDataSet(values: meanValues, label: "Mean \(baseLabel)")
-        meanValuesSet.setColor(meanColor)
+        if Calculator.resultSeverity(result: meanValues[0].y, qtMeasurement: qtMeasurement, formulaType: formulaType).isAbnormal() {
+            meanValuesSet.setColor(abnormalMeanColor)
+        }
+        else {
+            meanValuesSet.setColor(meanColor)
+        }
         // Show measured QT in QTp graph
+        var qtValuesSet = BarChartDataSet()
         if let qt = qtMeasurement.qt, formulaType == .qtp {
             let qtValue = BarChartDataEntry(x: Double(results.count + 1), y: qt)
-            let qtValuesSet = BarChartDataSet(values: [qtValue], label: "QT")
+            qtValuesSet = BarChartDataSet(values: [qtValue], label: "QT")
             if let max = results.max(), let min = results.min(), qt > max || qt < min {
                 qtValuesSet.setColor(abnormalColor)
             }
             else {
                 qtValuesSet.setColor(normalColor)
             }
-            data = BarChartData(dataSets: [normalValuesSet, abnormalValuesSet, meanValuesSet, qtValuesSet])
         }
-        else {
-            data = BarChartData(dataSets: [normalValuesSet, abnormalValuesSet, meanValuesSet])
-        }
-        barChartView.data = data
+        barChartView.data = BarChartData(dataSets: [undefinedValuesSet, normalValuesSet, borderlineValuesSet,
+                                                    mildValuesSet, moderateValuesSet,
+                                                    severeValuesSet, abnormalValuesSet,
+                                                    meanValuesSet, qtValuesSet])
         let marker = QtMarkerView(color: UIColor(white: 180/250, alpha: 1), font: UIFont.boldSystemFont(ofSize: 12.0), textColor: UIColor.white, insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
         marker.formulas = formulas
         marker.formulaTypeName = formulaType.name
@@ -84,11 +125,29 @@ final class GraphViewController: UIViewController {
         // (need upper and lower limits, separate M/F limits, also max and min QTp lines)
         // Maybe make average QTc different color if abnormal,
         // Maybe add value to markers besides just formula short name
-        let limitLine = ChartLimitLine(limit: 440, label: "Upper limit")
-        limitLine.lineColor = UIColor.black
-        barChartView.leftAxis.addLimitLine(limitLine)
+        if formulaType == .qtp {
+            if let max = results.max() {
+                let maxQTpLimitLine = ChartLimitLine(limit: max)
+                barChartView.leftAxis.addLimitLine(maxQTpLimitLine)
+            }
+            if let min = results.min() {
+                let minQTpLimitLine = ChartLimitLine(limit: min)
+                barChartView.leftAxis.addLimitLine(minQTpLimitLine)
+            }
+        }
         let preferences = Preferences()
         preferences.load()
+        if let criteria = preferences.qtcLimits, formulaType == .qtc {
+            for criterion in criteria {
+                let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+                if let cutoffs = testSuite?.cutoffs() {
+                    for cutoff in cutoffs {
+                        let limitLine = ChartLimitLine(limit: cutoff.value)
+                        barChartView.leftAxis.addLimitLine(limitLine)
+                    }
+                }
+            }
+        }
         if let autoYAxis = preferences.automaticYAxis, var yAxisMax = preferences.yAxisMaximum, var yAxisMin = preferences.yAxisMinimum {
             if !autoYAxis {
                 // In preferences, Y axis values are given as msec.
