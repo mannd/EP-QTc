@@ -43,7 +43,7 @@ class ResultModel {
     }
     
     func resultSeverity() -> Severity {
-        return calculator.resultSeverity(qtMeasurement: measurement)
+        return calculator.resultSeverity(qtMeasurement: measurement, qtcLimits: preferences.qtcLimits)
     }
     
 

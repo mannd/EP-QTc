@@ -28,12 +28,12 @@ class DetailsModel {
     let results: [Double]
     let calculator: Calculator
     let qtMeasurement: QtMeasurement
+    let preferences = Preferences()
 
     init(qtMeasurement: QtMeasurement, calculator: Calculator, results: [Double]) {
         self.results = results
         self.qtMeasurement = qtMeasurement
         self.calculator = calculator
-        let preferences = Preferences()
         preferences.load()
         let precision: Precision = preferences.precision ?? Preferences.defaultPrecision
         // names
@@ -114,7 +114,7 @@ class DetailsModel {
     
     func interpretResult() -> String {
         var interpretation: String = ""
-        var severity = calculator.resultSeverity(qtMeasurement: qtMeasurement)
+        var severity = calculator.resultSeverity(qtMeasurement: qtMeasurement, qtcLimits: preferences.qtcLimits)
         if calculator.formula.formulaType() == .qtp && severity != .error {
             let maxMin = maxMinResult()
             if maxMin == (0,0) {

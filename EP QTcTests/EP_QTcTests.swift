@@ -161,33 +161,73 @@ class EP_QTcTests: XCTestCase {
         XCTAssertEqual(sortOrder, SortOrder.byDate)
     }
     
-//    func testFormulaSorting() {
-//        let qtFormulas = QtFormulas()
-//        let bigFour = qtFormulas.bigFourFormulas()
-//        let trueBigFour: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm]
-//        for idx in [0..<4] {
-//            XCTAssertEqual(bigFour[idx], trueBigFour[idx])
-//        }
-//        let trueSortedByDate: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcMyd, .qtcAdm, .qtcHdg, .qtcKwt]
-//        let sortedByDate = qtFormulas.sortedByDate()
-//        for idx in [0..<6] {
-//            XCTAssertEqual(sortedByDate[idx], trueSortedByDate[idx])
-//        }
-//        let trueSortedByName: [QTcFormula] = [.qtcAdm, .qtcArr, .qtcBzt, .qtcDmt, .qtcFrm, .qtcFrd]
-//        let sortedByName = qtFormulas.sortedByName()
-//        for idx in [0..<6] {
-//            XCTAssertEqual(sortedByName[idx], trueSortedByName[idx])
-//        }
-//        let trueBigFourFirstByDate: [QTcFormula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm, .qtcMyd, .qtcAdm]
-//        let bigFourFirstByDate = qtFormulas.bigFourFirstSortedByDate()
-//        for idx in [0..<6] {
-//            XCTAssertEqual(bigFourFirstByDate[idx], trueBigFourFirstByDate[idx])
-//        }
-//        let trueBigFourFirstByName: [QTcFormula] = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg, .qtcAdm, .qtcArr]
-//        let bigFourFirstByName = qtFormulas.bigFourFirstSortedByName()
-//        for idx in [0..<6] {
-//            XCTAssertEqual(bigFourFirstByName[idx], trueBigFourFirstByName[idx])
-//        }
-//    }
+    func testFormulaSorting() {
+        let qtFormulas = QtFormulas()
+        let bigFour = qtFormulas.bigFourFormulas()
+        let trueBigFour: [Formula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm]
+        for idx in [0..<4] {
+            XCTAssertEqual(bigFour[idx], trueBigFour[idx])
+        }
+        let trueSortedByDate: [Formula] = [.qtcBzt, .qtcFrd, .qtcMyd, .qtcAdm, .qtcHdg, .qtcKwt]
+        let sortedByDate = qtFormulas.sortedByDate(formulas: trueSortedByDate, formulaType: .qtc)
+        for idx in [0..<6] {
+            XCTAssertEqual(sortedByDate[idx], trueSortedByDate[idx])
+        }
+        let trueSortedByName: [Formula] = [.qtcAdm, .qtcArr, .qtcBzt, .qtcDmt, .qtcFrm, .qtcFrd]
+        let sortedByName = qtFormulas.sortedByName(formulas: trueSortedByName, formulaType: .qtc)
+        for idx in [0..<6] {
+            XCTAssertEqual(sortedByName[idx], trueSortedByName[idx])
+        }
+        let trueBigFourFirstByDate: [Formula] = [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm, .qtcMyd, .qtcAdm]
+        let bigFourFirstByDate = qtFormulas.bigFourFirstSortedByDate(formulas: trueBigFourFirstByDate, formulaType: .qtc)
+        for idx in [0..<6] {
+            XCTAssertEqual(bigFourFirstByDate[idx], trueBigFourFirstByDate[idx])
+        }
+        let trueBigFourFirstByName: [Formula] = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg, .qtcAdm, .qtcArr]
+        let bigFourFirstByName = qtFormulas.bigFourFirstSortedByName(formulas: trueBigFourFirstByName, formulaType: .qtc)
+        for idx in [0..<6] {
+            XCTAssertEqual(bigFourFirstByName[idx], trueBigFourFirstByName[idx])
+        }
+    }
+    
+    func testAbnormalQTc() {
+        var qtMeasurement = QtMeasurement(qt: nil, intervalRate: 400, units: .msec, intervalRateType: .interval)
+        var severity = Calculator.resultSeverity(result: 450, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985])
+        XCTAssertEqual(severity, .abnormal)
+        severity = Calculator.resultSeverity(result: 450, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.aha2009]) // requires sex M or F
+        XCTAssertEqual(severity, .undefined)
+        // now make sure two test suites together work ok
+        severity = Calculator.resultSeverity(result: 450, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985, .aha2009])
+        XCTAssertEqual(severity, .abnormal)
+        severity = Calculator.resultSeverity(result: 430, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985, .aha2009])
+        XCTAssertEqual(severity, .normal)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 400, units: .msec, intervalRateType: .interval, sex: .male)
+        severity = Calculator.resultSeverity(result: 480, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.aha2009])
+        XCTAssertEqual(severity, .abnormal)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 400, units: .msec, intervalRateType: .interval, sex: .unspecified)
+        severity = Calculator.resultSeverity(result: 480, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.aha2009])
+        XCTAssertEqual(severity, .undefined)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 400, units: .msec, intervalRateType: .interval, sex: .unspecified)
+        severity = Calculator.resultSeverity(result: 485, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.fda2005])
+        XCTAssertEqual(severity, .moderate)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 0.400, units: .sec, intervalRateType: .interval, sex: .unspecified)
+        severity = Calculator.resultSeverity(result: 0.485, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.fda2005])
+        XCTAssertEqual(severity, .moderate)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 0.400, units: .sec, intervalRateType: .interval, sex: .unspecified)
+        severity = Calculator.resultSeverity(result: 0.445, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985, .fda2005])
+        XCTAssertEqual(severity, .abnormal)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 0.500, units: .sec, intervalRateType: .interval, sex: .unspecified)
+        severity = Calculator.resultSeverity(result: 0.500, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985, .fda2005])
+        XCTAssertEqual(severity, .moderate)
+        qtMeasurement = QtMeasurement(qt: nil, intervalRate: 0.500, units: .sec, intervalRateType: .interval, sex: .unspecified)
+        severity = Calculator.resultSeverity(result: 0.501, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985, .fda2005])
+        XCTAssertEqual(severity, .severe)
+        
+
+
+
+
+
+    }
 
 }

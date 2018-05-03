@@ -35,6 +35,8 @@ final class GraphViewController: UIViewController {
         guard let qtMeasurement = qtMeasurement, let formulaType = formulaType, let results = results else {
             fatalError("qtMeasurement, formulaType, and results can't be nil.")
         }
+        let preferences = Preferences()
+        preferences.load()
         self.title = String(format: "%@ Graph", formulaType.name)
         var undefinedValues: [BarChartDataEntry] = []
         var normalValues: [BarChartDataEntry] = []
@@ -49,7 +51,7 @@ final class GraphViewController: UIViewController {
             let entry = BarChartDataEntry(x: i, y: result)
             i += 1
             let severity = Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement,
-                                                     formulaType: formulaType)
+                                                     formulaType: formulaType, qtcLimits: preferences.qtcLimits)
             switch severity {
             case .undefined:
                 undefinedValues.append(entry)
@@ -92,7 +94,7 @@ final class GraphViewController: UIViewController {
         
         // get mean QTc/p
         let meanValuesSet = BarChartDataSet(values: meanValues, label: "Mean \(baseLabel)")
-        if Calculator.resultSeverity(result: meanValues[0].y, qtMeasurement: qtMeasurement, formulaType: formulaType).isAbnormal() {
+        if Calculator.resultSeverity(result: meanValues[0].y, qtMeasurement: qtMeasurement, formulaType: formulaType, qtcLimits: preferences.qtcLimits).isAbnormal() {
             meanValuesSet.setColor(abnormalMeanColor)
         }
         else {
@@ -135,8 +137,6 @@ final class GraphViewController: UIViewController {
                 barChartView.leftAxis.addLimitLine(minQTpLimitLine)
             }
         }
-        let preferences = Preferences()
-        preferences.load()
         if let criteria = preferences.qtcLimits, formulaType == .qtc {
             for criterion in criteria {
                 let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)

@@ -39,10 +39,10 @@ extension Calculator {
         return String.localizedStringWithFormat("\(formatString) %@", units.unitString)
     }
     
-    func resultSeverity(qtMeasurement: QtMeasurement) -> Severity {
+    func resultSeverity(qtMeasurement: QtMeasurement, qtcLimits: Set<Criterion>?) -> Severity {
         do {
             let result = try calculate(qtMeasurement: qtMeasurement)
-            return Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: formula.formulaType())
+            return Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: formula.formulaType(), qtcLimits: qtcLimits)
         }
         catch {
             return Severity.error
@@ -50,15 +50,14 @@ extension Calculator {
      }
     
     // Tests whether a result is abnormal and returns Severity
-    static func resultSeverity(result: Double, qtMeasurement: QtMeasurement, formulaType: FormulaType?) -> Severity {
+    static func resultSeverity(result: Double, qtMeasurement: QtMeasurement, formulaType: FormulaType?,
+                               qtcLimits: Set<Criterion>?) -> Severity {
         if formulaType == .qtp {
             return Severity.normal
         }
         var severityArray: [Int] = []
-        let qtcMeasurement = QTcMeasurement(qtc: result, units: qtMeasurement.units, sex: qtMeasurement.sex, age: qtMeasurement.age)
-        let preferences = Preferences()
-        preferences.load()
-        let criteria = preferences.qtcLimits ?? []
+        let qtcMeasurement = QTcMeasurement(qtc: result, qtMeasurement: qtMeasurement)
+        let criteria = qtcLimits ?? []
         if criteria.count < 1 {
             return Severity.undefined
         }
