@@ -45,6 +45,7 @@
 		8EBE89D5205C3CD900A60296 /* ReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE89D4205C3CD900A60296 /* ReferenceCell.swift */; };
 		8EBE89D7205C3CEA00A60296 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE89D6205C3CEA00A60296 /* NotesCell.swift */; };
 		8ECE0CED207E691800135717 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE0CEC207E691800135717 /* Calculator.swift */; };
+		8ED6619C209CC83F000513B1 /* LimitsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */; };
 		8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB08422059EAC7008123D9 /* ResultCell.swift */; };
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
@@ -107,6 +108,7 @@
 		8EBE89D4205C3CD900A60296 /* ReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceCell.swift; sourceTree = "<group>"; };
 		8EBE89D6205C3CEA00A60296 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
 		8ECE0CEC207E691800135717 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsDescriptionCell.swift; sourceTree = "<group>"; };
 		8EDB08422059EAC7008123D9 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				8E47B1D820937C000042C5F9 /* InterpretationCell.swift */,
 				8E47B1E32097F9CE0042C5F9 /* LimitsCell.swift */,
 				8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */,
+				8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */,
 				8E6E55C11FD31D3A004B1B2F /* CalculatorViewController.swift in Sources */,
 				8E9674C62049032200D49C05 /* ResultViewModel.swift in Sources */,
+				8ED6619C209CC83F000513B1 /* LimitsDescriptionCell.swift in Sources */,
 				8E7E241D2080FFE400A1BE89 /* GraphViewController.swift in Sources */,
 				8EA5108F2050F3C100D77A77 /* ParameterCell.swift in Sources */,
 				8E47B1D920937C000042C5F9 /* InterpretationCell.swift in Sources */,

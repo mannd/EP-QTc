@@ -24,6 +24,8 @@ class DetailsModel {
     var notes: String
     var limits: String
     var limitsReferences: [String] = []
+    var limitsDescriptions: [String] = []
+    
     
     let results: [Double]
     let calculator: Calculator
@@ -100,6 +102,9 @@ class DetailsModel {
                 let qtcTestSuite = AbnormalQTc.qtcLimits(criterion: criterion)
                 if let reference = qtcTestSuite?.reference {
                     limitsReferences.append(reference)
+                }
+                if let description = qtcTestSuite?.description {
+                    limitsDescriptions.append(description)
                 }
             }
         }

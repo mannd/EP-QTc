@@ -26,6 +26,7 @@ enum DetailsViewModelItemType {
     case notes
     case limits
     case limitsReference
+    case limitsDescription
 }
 
 protocol DetailsViewModelItem {
@@ -184,7 +185,7 @@ class DetailsViewModelLimitsReferenceItem: DetailsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "QTc limits references"
+        return String(format: "QTc limits reference%@", references.count > 1 ? "s" : "")
     }
     
     var references: [String]
@@ -198,12 +199,34 @@ class DetailsViewModelLimitsReferenceItem: DetailsViewModelItem {
     }
 }
 
+class DetailsViewModelLimitsDescriptionItem: DetailsViewModelItem {
+    var type: DetailsViewModelItemType {
+        return .limitsDescription
+    }
+    
+    var sectionTitle: String {
+        return String(format: "QTc limits details")
+    }
+    
+    var descriptions: [String]
+    
+    var rowCount: Int {
+        return descriptions.count
+    }
+    
+    init(descriptions: [String]) {
+        self.descriptions = descriptions
+    }
+    
+}
+
 class DetailsViewModel: NSObject {
     var items: [DetailsViewModelItem] = []
     let parameters: [Parameter]
     let details: [Detail]
     let shortName: String
     var limitsReferences: [String] = []
+    var limitsDescriptions: [String] = []
     
     weak var viewController: UITableViewController?
     
@@ -231,6 +254,9 @@ class DetailsViewModel: NSObject {
         if formulaType == .qtc {
             let limitsItem = DetailsViewModelLimitsItem(limits: model.limits)
             items.append(limitsItem)
+            limitsDescriptions = model.limitsDescriptions
+            let limitsDescriptionsItem = DetailsViewModelLimitsDescriptionItem(descriptions: limitsDescriptions)
+            items.append(limitsDescriptionsItem)
             limitsReferences = model.limitsReferences
             let limitsReferencesItem = DetailsViewModelLimitsReferenceItem(references: limitsReferences)
             items.append(limitsReferencesItem)
@@ -295,6 +321,11 @@ extension DetailsViewModel: UITableViewDataSource {
         case .limitsReference:
             if let cell = tableView.dequeueReusableCell(withIdentifier: LimitsReferenceCell.identifier, for: indexPath) as? LimitsReferenceCell {
                 cell.item = limitsReferences[indexPath.row]
+                return cell
+            }
+        case .limitsDescription:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: LimitsDescriptionCell.identifier, for: indexPath) as? LimitsDescriptionCell {
+                cell.item = limitsDescriptions[indexPath.row]
                 return cell
             }
         }
