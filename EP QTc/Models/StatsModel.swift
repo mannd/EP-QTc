@@ -15,6 +15,8 @@ class StatsModel {
     let units: Units
     let results: [Double]
     let precision: Precision
+    let preferences: Preferences
+    let qtMeasurement: QtMeasurement
     
     let mean: Double?
     let median: Double?
@@ -24,18 +26,18 @@ class StatsModel {
     let variance: Double?
     let count: Int
     var simpleStats: [Stat] = []
-    
     var measurements: [Stat] = []
+    var interpretations: [Stat] = []
     
     // TODO: consider adding number and % of abnormal QTcs
     
-    init(results: [Double], qtMeasurement: QtMeasurement) {
-        let preferences = Preferences()
-        preferences.load()
+    init(results: [Double], qtMeasurement: QtMeasurement, formulaType: FormulaType) {
+        preferences = Preferences.retrieve()
         let morePrecise = preferences.precision?.morePrecise()
         self.precision = morePrecise ?? .roundOnePlace
         self.units = qtMeasurement.units
         self.results = results
+        self.qtMeasurement = qtMeasurement
         
         count = results.count
         mean = Sigma.average(results)
@@ -56,14 +58,14 @@ class StatsModel {
         medianStat.key = "Median"
         medianStat.value = formattedValue(median)
         simpleStats.append(medianStat)
-        let minStat = Stat()
-        minStat.key = "Minimum value"
-        minStat.value = formattedValue(minimum)
-        simpleStats.append(minStat)
         let maxStat = Stat()
         maxStat.key = "Maximum value"
         maxStat.value = formattedValue(maximum)
         simpleStats.append(maxStat)
+        let minStat = Stat()
+        minStat.key = "Minimum value"
+        minStat.value = formattedValue(minimum)
+        simpleStats.append(minStat)
         let sdStat = Stat()
         sdStat.key = "Standard deviation"
         sdStat.value = formattedValue(sd)
@@ -73,7 +75,7 @@ class StatsModel {
         varianceStat.value = formattedValue(variance)
         simpleStats.append(varianceStat)
         // TODO: etc.
-        
+
         // A few measurements to compare stats to
         let measuredQT = Stat()
         measuredQT.key = "QT"
@@ -84,6 +86,73 @@ class StatsModel {
         measuredRR.value = formattedValue(qtMeasurement.rrInterval())
         measurements.append(measuredRR)
         
+        // See if mean is abnormal
+        if let mean = mean, formulaType == .qtc {
+            let meanSeverity = Calculator.resultSeverity(result: mean, qtMeasurement: qtMeasurement, formulaType: formulaType, qtcLimits: preferences.qtcLimits)
+            let meanSeverityStat = Stat()
+            meanSeverityStat.key = "Mean QTc"
+            meanSeverityStat.value = meanSeverity.string
+            interpretations.append(meanSeverityStat)
+            let abnormalCountStat = Stat()
+            abnormalCountStat.key = "Number abnormal QTc"
+            abnormalCountStat.value = abnormalResultsCountString()
+            interpretations.append(abnormalCountStat)
+            let abnormalResultsPercentStat = Stat()
+            abnormalResultsPercentStat.key = "Percent abnormal QTc"
+            abnormalResultsPercentStat.value = abnormalResultsPercentString()
+            interpretations.append(abnormalResultsPercentStat)
+        }
+        else if let qt = qtMeasurement.qt, let minQTp = minimum, let maxQTp = maximum, formulaType == .qtp {
+            let meanSeverityStat = Stat()
+            meanSeverityStat.key = "QT vs QTp"
+            let qtIsAbnormal = qt < minQTp || qt > maxQTp
+            if qtIsAbnormal {
+                meanSeverityStat.value = Severity.abnormal.string
+            }
+            else {
+                meanSeverityStat.value = Severity.normal.string
+            }
+            interpretations.append(meanSeverityStat)
+            if qtIsAbnormal {
+                let deltaQTpStat = Stat()
+                if qt > maxQTp {
+                    deltaQTpStat.key = "Δ(QT-QTpMax)"
+                    deltaQTpStat.value = deltaString(qt: qt, qtp: maxQTp)
+                }
+                else {  // must be less than minQTp, since already know isAbnormal
+                    deltaQTpStat.key = "Δ(QT-QTpMin)"
+                    deltaQTpStat.value = deltaString(qt: qt, qtp: minQTp)
+                }
+            interpretations.append(deltaQTpStat)
+            }
+        }
+    }
+    
+    func deltaString(qt: Double, qtp: Double) -> String {
+        return String(format: "%.f", qt - qtp)
+    }
+    
+    func abnormalResultsPercentage() -> Double {
+        return Double(abnormalResultsCount() * 100 / results.count)
+    }
+    
+    func abnormalResultsCount() -> Int {
+        var count = 0
+        for result in results {
+            let isAbnormal = Calculator.resultSeverity(result: result, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: preferences.qtcLimits).isAbnormal()
+            if isAbnormal {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func abnormalResultsCountString() -> String {
+        return String(format: "%d/%d", abnormalResultsCount(), count)
+    }
+    
+    func abnormalResultsPercentString() -> String {
+        return String(format: "%.f%%", abnormalResultsPercentage())
     }
     
     private func formattedValue(_ value: Double?) -> String {

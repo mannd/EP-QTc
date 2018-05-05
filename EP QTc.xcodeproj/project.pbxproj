@@ -46,6 +46,7 @@
 		8EBE89D7205C3CEA00A60296 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE89D6205C3CEA00A60296 /* NotesCell.swift */; };
 		8ECE0CED207E691800135717 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE0CEC207E691800135717 /* Calculator.swift */; };
 		8ED6619C209CC83F000513B1 /* LimitsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */; };
+		8ED6619E209CD5AE000513B1 /* Severity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6619D209CD5AE000513B1 /* Severity.swift */; };
 		8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB08422059EAC7008123D9 /* ResultCell.swift */; };
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
@@ -109,6 +110,7 @@
 		8EBE89D6205C3CEA00A60296 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
 		8ECE0CEC207E691800135717 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsDescriptionCell.swift; sourceTree = "<group>"; };
+		8ED6619D209CD5AE000513B1 /* Severity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Severity.swift; sourceTree = "<group>"; };
 		8EDB08422059EAC7008123D9 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				8E47B1D1208F8FF10042C5F9 /* Preferences.swift */,
 				8E47B1D62092AFEE0042C5F9 /* ResultModel.swift */,
 				8E47B1DA209571840042C5F9 /* ResultsModel.swift */,
+				8ED6619D209CD5AE000513B1 /* Severity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */,
+				8ED6619E209CD5AE000513B1 /* Severity.swift in Sources */,
 				8E47B1E42097F9CE0042C5F9 /* LimitsCell.swift in Sources */,
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
 				8E47B1D52091543E0042C5F9 /* QTcLimitsTableViewController.swift in Sources */,

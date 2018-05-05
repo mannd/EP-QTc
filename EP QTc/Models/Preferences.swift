@@ -33,6 +33,13 @@ class Preferences {
     var yAxisMaximum: Double? = Preferences.defaultYAxisMaximum
     var yAxisMinimum: Double? = Preferences.defaultYAxisMinimum
     
+    /// Returns updated set of preferences.
+    static func retrieve() -> Preferences {
+        let preferences = Preferences()
+        preferences.load()
+        return preferences
+    }
+    
     func qtcLimitsString() -> String {
         guard let limits = qtcLimits, limits.count > 0 else {
             return "None"
@@ -48,10 +55,7 @@ class Preferences {
     
     private func convertCriteriaSet(criteria: Set<Criterion>?) -> [String] {
         guard let criteria = criteria else { return [] }
-        var array: [String] = []
-        for criterion in criteria {
-            array.append(criterion.rawValue)
-        }
+        let array = criteria.map{$0.rawValue}
         return array
     }
     

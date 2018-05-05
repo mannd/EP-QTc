@@ -90,8 +90,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         // self can be strongly captured in a DispatchQueue, since self holds no reference to the
         // DispatchQueue.
         DispatchQueue.main.async {
-            let preferences = Preferences()
-            preferences.load()
+            let preferences = Preferences.retrieve()
             var preferenceRow = 0
             if let precisionPreference = preferences.precision {
                 preferenceRow = self.precisionOptions.index(of: precisionPreference) ?? 0
@@ -125,8 +124,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         let precisionRow = precisionPicker.selectedRow(inComponent: 0)
         let sortRow = sortingPicker.selectedRow(inComponent: 0)
         let yAxisFields = validatedYAxisFields()
-        let preferences = Preferences()
-        preferences.load()
+        let preferences = Preferences.retrieve()
         preferences.precision = precisionOptions[precisionRow]
         preferences.sortOrder = sortOrderOptions[sortRow]
         preferences.automaticYAxis = automaticYAxisSwitch.isOn

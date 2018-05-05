@@ -35,8 +35,7 @@ final class GraphViewController: UIViewController {
         guard let qtMeasurement = qtMeasurement, let formulaType = formulaType, let results = results else {
             fatalError("qtMeasurement, formulaType, and results can't be nil.")
         }
-        let preferences = Preferences()
-        preferences.load()
+        let preferences = Preferences.retrieve()
         self.title = String(format: "%@ Graph", formulaType.name)
         var undefinedValues: [BarChartDataEntry] = []
         var normalValues: [BarChartDataEntry] = []

@@ -13,6 +13,7 @@ import QTc
 enum StatsViewModelItemType {
     case measurements
     case simpleStats
+    case interpretations
 }
 
 protocol StatsViewModelItem {
@@ -33,7 +34,7 @@ class SimpleStatsItem: StatsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Pooled \(formulaType.name) Formulas Statistics"
+        return "\(formulaType.name) statistics"
     }
     
     var rowCount: Int {
@@ -71,23 +72,46 @@ class MeasurementsItem: StatsViewModelItem {
     }
 }
 
+class InterpretationItem: StatsViewModelItem {
+    var type: StatsViewModelItemType {
+        return .interpretations
+    }
+    
+    var sectionTitle: String {
+        return "Interpretation"
+    }
+    
+    var rowCount: Int {
+        return interpretations.count
+    }
+    
+    var interpretations: [Stat]
+    
+    init(interpretations: [Stat]) {
+        self.interpretations = interpretations
+    }
+}
+
 class StatsViewModel: NSObject {
     var items: [StatsViewModelItem] = []
     let simpleStats: [Stat]
     let measurements: [Stat]
+    let interpretations: [Stat]
     let formulaType: FormulaType
     
-    init(qtMeasurement: QtMeasurement, formulaType: FormulaType, results: [Double]) {
+    init(results: [Double], qtMeasurement: QtMeasurement, formulaType: FormulaType) {
         self.formulaType = formulaType
         
-        let model = StatsModel(results: results, qtMeasurement: qtMeasurement)
+        let model = StatsModel(results: results, qtMeasurement: qtMeasurement, formulaType: formulaType)
         measurements = model.measurements
         let measuredQtItem = MeasurementsItem(measurements: measurements, formulaType: formulaType)
         items.append(measuredQtItem)
         simpleStats = model.simpleStats
         let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats, formulaType: formulaType)
         items.append(simpleStatsItem)
-        
+        interpretations = model.interpretations
+        let interpretationsItem = InterpretationItem(interpretations: interpretations)
+        items.append(interpretationsItem)
     }
 }
 
@@ -107,6 +131,11 @@ extension StatsViewModel: UITableViewDataSource {
         case .measurements:
             if let cell = tableView.dequeueReusableCell(withIdentifier: SimpleStatsCell.identifier, for: indexPath) as? SimpleStatsCell {
                 cell.item = measurements[indexPath.row]
+                return cell
+            }
+        case .interpretations:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SimpleStatsCell.identifier, for: indexPath) as? SimpleStatsCell {
+                cell.item = interpretations[indexPath.row]
                 return cell
             }
         }

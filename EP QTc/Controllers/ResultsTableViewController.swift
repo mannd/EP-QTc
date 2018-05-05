@@ -13,7 +13,7 @@ final class ResultsTableViewController: UITableViewController {
     let unknownColor = UIColor.blue
     let normalColor = UIColor.green
     
-    let preferences = Preferences()
+    let preferences = Preferences.retrieve()
 
     var formulas: [Formula] = []
     var selectedFormula: Formula?
@@ -40,7 +40,6 @@ final class ResultsTableViewController: UITableViewController {
             return
         }
         
-        preferences.load()
         let sortingPreference = preferences.sortOrder ?? Preferences.defaultSortOrder
         switch sortingPreference {
         case .none:

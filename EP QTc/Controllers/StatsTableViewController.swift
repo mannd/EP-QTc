@@ -14,7 +14,7 @@ final class StatsTableViewController: UITableViewController {
     var formulaType: FormulaType?
     var viewModel: StatsViewModel?
     var results: [Double] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +24,7 @@ final class StatsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         if let qtMeasurement = qtMeasurement, let formulaType = formulaType {
-            viewModel = StatsViewModel(qtMeasurement: qtMeasurement, formulaType: formulaType, results: results)
+            viewModel = StatsViewModel(results: results, qtMeasurement: qtMeasurement, formulaType: formulaType)
             tableView?.dataSource = viewModel
         }
         self.title = "Statistics"

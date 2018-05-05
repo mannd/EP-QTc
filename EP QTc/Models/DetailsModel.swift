@@ -30,13 +30,12 @@ class DetailsModel {
     let results: [Double]
     let calculator: Calculator
     let qtMeasurement: QtMeasurement
-    let preferences = Preferences()
+    let preferences = Preferences.retrieve()
 
     init(qtMeasurement: QtMeasurement, calculator: Calculator, results: [Double]) {
         self.results = results
         self.qtMeasurement = qtMeasurement
         self.calculator = calculator
-        preferences.load()
         let precision: Precision = preferences.precision ?? Preferences.defaultPrecision
         // names
         formulaName = calculator.longName
@@ -118,7 +117,6 @@ class DetailsModel {
     }
     
     func interpretResult() -> String {
-        var interpretation: String = ""
         var severity = calculator.resultSeverity(qtMeasurement: qtMeasurement, qtcLimits: preferences.qtcLimits)
         if calculator.formula.formulaType() == .qtp && severity != .error {
             let maxMin = maxMinResult()
@@ -139,32 +137,7 @@ class DetailsModel {
                 return "Not applicable"
             }
         }
-        switch severity {
-        case .normal:
-            interpretation = "Normal"
-        case .borderline:
-            interpretation = "Borderline prolongation"
-        case .abnormal:
-            interpretation = "Abnormal"
-        case .mild:
-            interpretation = "Mildly prolonged"
-        case .moderate:
-            interpretation = "Moderately prolonged"
-        case .severe:
-            interpretation = "Severely prolonged"
-        case .undefined:
-            interpretation = "Undefined"
-        case .error:
-            fallthrough
-        default:
-            return "Error"
-        }
-        if calculator.formula.formulaType() == .qtp {
-            return interpretation + " QT"
-        }
-        else {
-            return interpretation + " QTc"
-        }
+        return severity.interpretation(formulaType: calculator.formula.formulaType())
     }
 }
 

@@ -19,10 +19,8 @@ final class QTcLimitsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         qtcLimits = [.schwartz1985, .fda2005, .esc2005, .aha2009]
-        let preferences = Preferences()
-        preferences.load()
+        let preferences = Preferences.retrieve()
         selectedQTcLimits = preferences.qtcLimits ?? []
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
