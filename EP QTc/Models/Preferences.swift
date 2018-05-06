@@ -56,6 +56,19 @@ class Preferences {
         return string
     }
     
+//    func qtcLimitsString(delimiter: String)  -> String? {
+//        guard let limits = qtcLimits, limits.count > 0 else {
+//            return nil
+//        }
+//        var string = ""
+//        for limit in limits {
+//            if let abnormalQTc = AbnormalQTc.qtcLimits(criterion: limit) {
+//                string.append(abnormalQTc.name + "\n")
+//            }
+//        }
+//        return string
+//    }
+    
     private func convertCriteriaSet(criteria: Set<Criterion>?) -> [String] {
         guard let criteria = criteria else { return [] }
         let array = criteria.map{$0.rawValue}

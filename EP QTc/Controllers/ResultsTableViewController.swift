@@ -75,11 +75,11 @@ final class ResultsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func oopyToClipboard() {
-        print("Copy results to clipboard")
+    @objc private func oopyToClipboard() {
         if let text = resultsModel?.resultsSummary(preferences: preferences) {
-            print(text)
+            //print(text)
             UIPasteboard.general.string = text
+            showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)
         }
     }
     

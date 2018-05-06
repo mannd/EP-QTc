@@ -31,6 +31,13 @@ extension UIViewController {
         guard let string = string else { return nil }
         return string.stringToDouble()
     }
+    
+    func showCopyToClipboardDialog(inCSVFormat: Bool = false) {
+        let message = String(format: "The data on this screen has been copied in %@ format to the system clipboard.  You can switch to another application and paste it for further analysis.", inCSVFormat ? "CSV" : "text")
+        let dialog = UIAlertController(title: "Data copied to clipboard", message: message, preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(dialog, animated: true)
+    }
 }
 
 // This version of stringToDouble respects locale

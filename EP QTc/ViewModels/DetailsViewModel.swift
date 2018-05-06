@@ -104,9 +104,9 @@ class DetailsViewModelDetailsItem: DetailsViewModelItem {
         return "Formula details"
     }
     
-    var details: [Detail]
+    var details: [Parameter]
     
-    init(details: [Detail]) {
+    init(details: [Parameter]) {
         self.details = details
     }
     
@@ -223,15 +223,18 @@ class DetailsViewModelLimitsDescriptionItem: DetailsViewModelItem {
 class DetailsViewModel: NSObject {
     var items: [DetailsViewModelItem] = []
     let parameters: [Parameter]
-    let details: [Detail]
+    let details: [Parameter]
     let shortName: String
     var limitsReferences: [String] = []
     var limitsDescriptions: [String] = []
+    let model: DetailsModel
+    let formulaType: FormulaType
     
     weak var viewController: UITableViewController?
     
     init(qtMeasurement: QtMeasurement, calculator: Calculator, formulaType: FormulaType, results: [Double]) {
-        let model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator, results: results)
+        self.formulaType = formulaType
+        model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator, results: results)
         parameters = model.parameters
         let parametersItem = DetailsViewModelParametersItem(parameters: model.parameters)
         items.append(parametersItem)
@@ -266,6 +269,48 @@ class DetailsViewModel: NSObject {
     
     func title() -> String {
         return String.localizedStringWithFormat("%@", shortName)
+    }
+    
+    func resultsSummary(preferences: Preferences) -> String {
+        let copyToCSV = preferences.copyToCSV ?? Preferences.defaultCopyToCSV
+        let delimiter = copyToCSV ? "," : " "
+        let quoteString = copyToCSV
+        let shortNameParameter = Parameter(key: "Formula", value: shortName)
+        let resultParameter = Parameter(key: formulaType == .qtc ? "QTc" : "QTp", value: model.result)
+        let interpretationParameter = Parameter(key: "Interpretation", value: model.interpretation)
+        let equationParameter = Parameter(key: "Equation", value: model.equation)
+        let referenceParameter = Parameter(key: "Reference", value: model.reference)
+        let notesParameter = Parameter(key: "Notes", value: model.notes)
+        var limitNamesParameters: [Parameter] = []
+        var limitReferencesParameters: [Parameter] = []
+        var limitDetailsParameters: [Parameter] = []
+        if let limits = preferences.qtcLimits {
+            let qtcTests = limits.compactMap{ AbnormalQTc.qtcLimits(criterion: $0) }
+            for test in qtcTests {
+                let limitNameParameter = Parameter(key: "Limit", value: test.name)
+                let limitReferenceParameter = Parameter(key: "Limit reference", value: test.reference)
+                let limitDetailParameter = Parameter(key: "Limit details", value: test.description)
+                limitNamesParameters.append(limitNameParameter)
+                limitReferencesParameters.append(limitReferenceParameter)
+                limitDetailsParameters.append(limitDetailParameter)
+            }
+        }
+        var allDetails = [[shortNameParameter], parameters, [resultParameter],
+                          [interpretationParameter], details, [equationParameter],
+                          [referenceParameter],
+                          [notesParameter]].flatMap{ $0 }
+        if formulaType == .qtc {
+            allDetails = [allDetails, limitNamesParameters,
+                          limitDetailsParameters,
+                          limitReferencesParameters].flatMap{ $0 }
+        }
+        var result: String = ""
+        for detail in allDetails {
+            if let key = detail.key, let value = detail.value {
+                result += String.getSummaryLine(values: (key, value), quoteString: quoteString, delimiter: delimiter)
+            }
+        }
+        return result
     }
 }
 

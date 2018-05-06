@@ -14,7 +14,7 @@ class DetailsCell: UITableViewCell {
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
     
-    var item: Detail? {
+    var item: Parameter? {
         didSet {
             guard let item = item else {
                 return

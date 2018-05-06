@@ -21,7 +21,7 @@ final class StatsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
         
         if let qtMeasurement = qtMeasurement, let formulaType = formulaType {
             viewModel = StatsViewModel(results: results, qtMeasurement: qtMeasurement, formulaType: formulaType)
@@ -34,6 +34,17 @@ final class StatsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc private func oopyToClipboard() {
+        let preferences = Preferences.retrieve()
+        if let text = viewModel?.resultsSummary(preferences: preferences) {
+            //print(text)
+            UIPasteboard.general.string = text
+            showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)
+        }
+    }
+    
+    
 
     // MARK: - Table view data source
 //

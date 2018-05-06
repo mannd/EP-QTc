@@ -18,7 +18,7 @@ class DetailsModel {
     var result: String
     var interpretation: String = ""
     var parameters: [Parameter] = []
-    var details: [Detail] = []
+    var details: [Parameter] = []
     var equation: String
     var reference: String
     var notes: String
@@ -64,23 +64,23 @@ class DetailsModel {
         // qtc result
         result = calculator.calculateToString(qtMeasurement: qtMeasurement, precision: precision)
         // formula details
-        let nameDetail = Detail()
+        let nameDetail = Parameter()
         nameDetail.key = "Name"
         nameDetail.value = formulaName
         details.append(nameDetail)
-        let shortNameDetail = Detail()
+        let shortNameDetail = Parameter()
         shortNameDetail.key = "Short name"
         shortNameDetail.value = shortFormulaName
         details.append(shortNameDetail)
-        let dateDetail = Detail()
+        let dateDetail = Parameter()
         dateDetail.key = "Publication date"
         dateDetail.value = calculator.publicationDate
         details.append(dateDetail)
-        let classificationDetail = Detail()
+        let classificationDetail = Parameter()
         classificationDetail.key = "Classification"
         classificationDetail.value = calculator.classification.label
         details.append(classificationDetail)
-        let numberOfSubjectsDetail = Detail()
+        let numberOfSubjectsDetail = Parameter()
         numberOfSubjectsDetail.key = "Total number of subjects"
         if let totalNumberOfSubjects = calculator.numberOfSubjects {
             numberOfSubjectsDetail.value = String(totalNumberOfSubjects)
@@ -144,9 +144,13 @@ class DetailsModel {
 class Parameter {
     var key: String?
     var value: String?
-}
-
-class Detail {
-    var key: String?
-    var value: String?
+    
+    convenience init() {
+        self.init(key: nil, value: nil)
+    }
+    
+    init(key: String?, value: String?) {
+        self.key = key
+        self.value = value
+    }
 }

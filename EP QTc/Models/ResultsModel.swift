@@ -53,27 +53,26 @@ class ResultsModel {
         var text: String = ""
         let calculators = allCalculators()
             let precision = preferences.precision ?? Preferences.defaultPrecision
-            text += getSummaryLine(values: ("QT", qtMeasurement.qtString(precision: precision)), quoteString: quoteStrings, delimiter: delimiter)
-            text += getSummaryLine(values: ("RR", qtMeasurement.rrString(precision: precision)), quoteString: quoteStrings, delimiter: delimiter)
-            text += getSummaryLine(values: ("HR", qtMeasurement.heartRateString(precision: precision)), quoteString: quoteStrings, delimiter: delimiter)
-            text += getSummaryLine(values: ("Sex", qtMeasurement.sexString()), quoteString: quoteStrings, delimiter: delimiter)
-            text += getSummaryLine(values: ("Age", qtMeasurement.ageString()), quoteString: quoteStrings, delimiter: delimiter)
+            text += String.getSummaryLine(values: ("QT", qtMeasurement.qtString(precision: precision)), quoteString: quoteStrings, delimiter: delimiter)
+            text += String.getSummaryLine(values: ("RR", qtMeasurement.rrString(precision: precision)), quoteString: quoteStrings, delimiter: delimiter)
+            text += String.getSummaryLine(values: ("HR", qtMeasurement.heartRateString(precision: precision)), quoteString: quoteStrings, delimiter: delimiter)
+            text += String.getSummaryLine(values: ("Sex", qtMeasurement.sexString()), quoteString: quoteStrings, delimiter: delimiter)
+            text += String.getSummaryLine(values: ("Age", qtMeasurement.ageString()), quoteString: quoteStrings, delimiter: delimiter)
             for calculator in calculators {
                 let resultModel = ResultModel(calculator: calculator, measurement: qtMeasurement, preferences: preferences)
-                text += getSummaryLine(values: (resultModel.shortName, resultModel.resultText()), quoteString: quoteStrings, delimiter: delimiter)
+                text += String.getSummaryLine(values: (resultModel.shortName, resultModel.resultText()), quoteString: quoteStrings, delimiter: delimiter)
         }
         return text
     }
+}
 
-    private func getSummaryLine(values: (v1: String, v2: String), quoteString: Bool, delimiter: String) -> String {
-        let LF = "\n"
-        return addQuotes(values.v1, quoteString) + delimiter + addQuotes(values.v2, quoteString) + LF
+extension String {
+    func addQuotes(_ add: Bool) -> String {
+        return add ? "\"\(self)\"" : self
     }
     
-    private func addQuotes (_ s: String, _ add: Bool) -> String {
-        if add {
-            return "\"\(s)\""
-        }
-        return s
+    static func getSummaryLine(values: (v1: String, v2: String), quoteString: Bool, delimiter: String) -> String {
+        let LF = "\n"
+        return values.v1.addQuotes(quoteString) + delimiter + values.v2.addQuotes(quoteString) + LF
     }
 }

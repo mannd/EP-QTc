@@ -113,6 +113,20 @@ class StatsViewModel: NSObject {
         let interpretationsItem = InterpretationItem(interpretations: interpretations)
         items.append(interpretationsItem)
     }
+    
+    func resultsSummary(preferences: Preferences) -> String {
+        let copyToCSV = preferences.copyToCSV ?? Preferences.defaultCopyToCSV
+        let delimiter = copyToCSV ? "," : " "
+        let quoteString = copyToCSV
+        let allStats = [measurements, simpleStats, interpretations].flatMap{ $0 }
+        var result: String = ""
+        for stat in allStats {
+            if let key = stat.key, let value = stat.value {
+                result += String.getSummaryLine(values: (key, value), quoteString: quoteString, delimiter: delimiter)
+            }
+        }
+        return result
+    }
 }
 
 extension StatsViewModel: UITableViewDataSource {
