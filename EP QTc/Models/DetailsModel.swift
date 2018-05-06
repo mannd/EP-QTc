@@ -43,15 +43,15 @@ class DetailsModel {
         // parameters
         let qtParameter = Parameter()
         qtParameter.key = "QT"
-        qtParameter.value = precision.formattedMeasurementWithUnits(measurement: qtMeasurement.qt, units: qtMeasurement.units, intervalRateType: .interval)
+        qtParameter.value = qtMeasurement.qtString(precision: precision)
         parameters.append(qtParameter)
         let rrParameter = Parameter()
         rrParameter.key = "RR interval"
-        rrParameter.value = precision.formattedMeasurementWithUnits(measurement: qtMeasurement.rrInterval(), units: qtMeasurement.units, intervalRateType: .interval)
+        rrParameter.value = qtMeasurement.rrString(precision: precision)
         parameters.append(rrParameter)
         let hrParameter = Parameter()
         hrParameter.key = "Heart rate"
-        hrParameter.value = precision.formattedMeasurementWithUnits(measurement: qtMeasurement.heartRate(), units: qtMeasurement.units, intervalRateType: .rate)
+        hrParameter.value = qtMeasurement.heartRateString(precision: precision)
         parameters.append(hrParameter)
         let sexParameter = Parameter()
         sexParameter.key = "Sex"

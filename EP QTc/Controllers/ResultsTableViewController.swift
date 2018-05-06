@@ -24,7 +24,7 @@ final class ResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
 
         
         guard let formulaType = formulaType, let qtMeasurement = qtMeasurement else {
@@ -73,6 +73,14 @@ final class ResultsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func oopyToClipboard() {
+        print("Copy results to clipboard")
+        if let text = resultsModel?.resultsSummary(preferences: preferences) {
+            print(text)
+            UIPasteboard.general.string = text
+        }
     }
     
     // MARK: - Table view data source

@@ -17,6 +17,7 @@ class Preferences {
     static let automaticYAxisKey = "AutomaticYAxisKey"
     static let yAxisMaximumKey = "YAxisMaximumKey"
     static let yAxisMinimumKey = "YAxisMinimumKey"
+    static let copyToCSVKey = "CopyToCSVKey"
     
     static let defaultPrecision = Precision.roundToInteger
     static let defaultSortOrder = SortOrder.bigFourFirstByDate
@@ -25,6 +26,7 @@ class Preferences {
     static let defaultAutomaticYAxis = true
     static let defaultYAxisMaximum: Double = 600
     static let defaultYAxisMinimum: Double = 300
+    static let defaultCopyToCSV: Bool = false
     
     var precision: Precision? = Preferences.defaultPrecision
     var sortOrder: SortOrder? = Preferences.defaultSortOrder
@@ -32,6 +34,7 @@ class Preferences {
     var automaticYAxis: Bool? = Preferences.defaultAutomaticYAxis
     var yAxisMaximum: Double? = Preferences.defaultYAxisMaximum
     var yAxisMinimum: Double? = Preferences.defaultYAxisMinimum
+    var copyToCSV: Bool? = Preferences.defaultCopyToCSV
     
     /// Returns updated set of preferences.
     static func retrieve() -> Preferences {
@@ -78,6 +81,7 @@ class Preferences {
         defaults.set(automaticYAxis, forKey: Preferences.automaticYAxisKey)
         defaults.set(yAxisMaximum, forKey: Preferences.yAxisMaximumKey)
         defaults.set(yAxisMinimum, forKey: Preferences.yAxisMinimumKey)
+        defaults.set(copyToCSV, forKey: Preferences.copyToCSVKey)
     }
     
     func load() {
@@ -88,6 +92,7 @@ class Preferences {
         automaticYAxis = defaults.bool(forKey: Preferences.automaticYAxisKey)
         yAxisMaximum = defaults.double(forKey: Preferences.yAxisMaximumKey)
         yAxisMinimum = defaults.double(forKey: Preferences.yAxisMinimumKey)
+        copyToCSV = defaults.bool(forKey: Preferences.copyToCSVKey)
     }
     
     

@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                      Preferences.qtcLimitsKey: Preferences.defaultQTcLimitsArray,
                                      Preferences.automaticYAxisKey: Preferences.defaultAutomaticYAxis,
                                      Preferences.yAxisMaximumKey: Preferences.yAxisMaximumKey,
-                                     Preferences.yAxisMinimumKey: Preferences.yAxisMinimumKey])
+                                     Preferences.yAxisMinimumKey: Preferences.yAxisMinimumKey,
+                                     Preferences.copyToCSVKey: Preferences.defaultCopyToCSV])
         return true
     }
 

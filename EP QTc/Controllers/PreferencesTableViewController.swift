@@ -22,6 +22,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     @IBOutlet var yAxisMinimumCell: UITableViewCell!
     @IBOutlet var yAxisMaximumTextField: CalculatorTextField!
     @IBOutlet var yAxisMinimumTextField: CalculatorTextField!
+    @IBOutlet var copyToCsvSwitch: UISwitch!
     
     let errorResult: (Double?, Double?) = (nil, nil)
     
@@ -107,12 +108,11 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
             self.qtcLimitsCell.detailTextLabel?.text = preferences.qtcLimitsString()
             let automaticYAxisSwiftIsOn = preferences.automaticYAxis ?? Preferences.defaultAutomaticYAxis
             self.automaticYAxisSwitch.isOn = automaticYAxisSwiftIsOn
+            self.copyToCsvSwitch.isOn = preferences.copyToCSV ?? Preferences.defaultCopyToCSV
             self.yAxisMaximumTextField.text = String(format: "%.f", preferences.yAxisMaximum ?? Preferences.defaultYAxisMaximum)
             self.yAxisMinimumTextField.text = String(format: "%.f", preferences.yAxisMinimum ?? Preferences.defaultYAxisMinimum)
             self.hideManualYAxisFields(hide: automaticYAxisSwiftIsOn)
         }
-        
-        
         super.viewWillAppear(animated)
     }
     
@@ -132,6 +132,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
             preferences.yAxisMaximum = yAxisFields.yAxisMax
             preferences.yAxisMinimum = yAxisFields.yAxisMin
         }
+        preferences.copyToCSV = copyToCsvSwitch.isOn
         preferences.save()
     }
 
@@ -260,7 +261,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

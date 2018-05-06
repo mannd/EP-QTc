@@ -182,5 +182,17 @@ extension QtMeasurement {
         }
         return String(Int(age))
     }
+
+    func qtString(precision: Precision) -> String {
+       return precision.formattedMeasurementWithUnits(measurement: qt, units: units, intervalRateType: .interval)
+    }
+    
+    func rrString(precision: Precision) -> String {
+       return precision.formattedMeasurementWithUnits(measurement: rrInterval(), units: units, intervalRateType: .interval)
+    }
+    
+    func heartRateString(precision: Precision) -> String {
+        return precision.formattedMeasurementWithUnits(measurement: heartRate(), units: units, intervalRateType: .rate)
+    }
 }
 
