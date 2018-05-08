@@ -32,11 +32,12 @@ class ResultModel {
         self.preferences = preferences
     }
     
-//    func result() -> (text: String, number: Double?) {
-//        let precision = preferences.precision ?? Preferences.defaultPrecision
-//        return calculator.calculateTextAndNumber(qtMeasurement: measurement, precision: precision)
-//    }
-//    
+    /// Returns calculated QTc/p in tuple as formatted string and double
+    func result() -> (text: String, number: Double?) {
+        let precision = preferences.precision ?? Preferences.defaultPrecision
+        return calculator.calculateTextAndNumber(qtMeasurement: measurement, precision: precision)
+    }
+    
     func resultText() -> String {
         let precision = preferences.precision ?? Preferences.defaultPrecision
         return calculator.calculateToString(qtMeasurement: measurement, precision: precision)

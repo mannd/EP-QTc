@@ -23,7 +23,7 @@ class StatsModel {
     let minimum: Double?
     let maximum: Double?
     let sd: Double?
-    let variance: Double?
+//    let variance: Double?
     let count: Int
     var simpleStats: [Stat] = []
     var measurements: [Stat] = []
@@ -45,9 +45,9 @@ class StatsModel {
         minimum = Sigma.min(results)
         maximum = Sigma.max(results)
         sd = Sigma.standardDeviationPopulation(results)
-        variance = Sigma.variancePopulation(results)
+//        variance = Sigma.variancePopulation(results)
         let countStat = Stat()
-        countStat.key = "N"
+        countStat.key = "Number of formulas"
         countStat.value = String(count)
         simpleStats.append(countStat)
         let meanStat = Stat()
@@ -70,10 +70,11 @@ class StatsModel {
         sdStat.key = "Standard deviation"
         sdStat.value = formattedValue(sd)
         simpleStats.append(sdStat)
-        let varianceStat = Stat()
-        varianceStat.key = "Variance"
-        varianceStat.value = formattedValue(variance)
-        simpleStats.append(varianceStat)
+        // Variance probably not needed, also variance units are msec^2 or sec^2
+//        let varianceStat = Stat()
+//        varianceStat.key = "Variance"
+//        varianceStat.value = formattedValue(variance)
+//        simpleStats.append(varianceStat)
         // TODO: etc.
 
         // A few measurements to compare stats to
@@ -87,12 +88,17 @@ class StatsModel {
         measurements.append(measuredRR)
         
         // See if mean is abnormal
-        if let mean = mean, formulaType == .qtc {
+        if let mean = mean, let median = median, formulaType == .qtc {
             let meanSeverity = Calculator.resultSeverity(result: mean, qtMeasurement: qtMeasurement, formulaType: formulaType, qtcLimits: preferences.qtcLimits)
+            let medianSeverity = Calculator.resultSeverity(result: median, qtMeasurement: qtMeasurement, formulaType: formulaType, qtcLimits: preferences.qtcLimits)
             let meanSeverityStat = Stat()
             meanSeverityStat.key = "Mean QTc"
             meanSeverityStat.value = meanSeverity.string
             interpretations.append(meanSeverityStat)
+            let medianSeverityStat = Stat()
+            medianSeverityStat.key = "Median QTc"
+            medianSeverityStat.value = medianSeverity.string
+            interpretations.append(medianSeverityStat)
             let abnormalCountStat = Stat()
             abnormalCountStat.key = "Number abnormal QTc"
             abnormalCountStat.value = abnormalResultsCountString()
@@ -157,7 +163,7 @@ class StatsModel {
     
     private func formattedValue(_ value: Double?) -> String {
         guard let value = value else { return "Error" }
-        return precision.formattedMeasurementWithUnits(measurement: value, units: units, intervalRateType: .interval)
+        return precision.formattedMeasurement(measurement: value, units: units, intervalRateType: .interval)
     }
 
 }

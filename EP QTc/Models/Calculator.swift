@@ -18,7 +18,7 @@ extension Calculator {
     func calculateTextAndNumber(qtMeasurement: QtMeasurement, precision: Precision) -> (text: String, number: Double?) {
         do {
             let result = try calculate(qtMeasurement: qtMeasurement)
-            return(formattedIntervalMeasurement(measurement: result, units: qtMeasurement.units, precision: precision), result)
+            return (precision.formattedMeasurement(measurement: result, units: qtMeasurement.units, intervalRateType: .interval), result)
         } catch CalculationError.ageRequired {
             return ("must specify age", nil)
         } catch CalculationError.sexRequired {
@@ -32,11 +32,6 @@ extension Calculator {
         } catch {
             return ("unexpected error", nil)
         }
-    }
-    
-    private func formattedIntervalMeasurement(measurement: Double?, units: Units, precision: Precision) -> String {
-        let formatString = precision.formattedMeasurement(measurement: measurement, units: units, intervalRateType: .interval)
-        return String.localizedStringWithFormat("\(formatString) %@", units.unitString)
     }
     
     func resultSeverity(qtMeasurement: QtMeasurement, qtcLimits: Set<Criterion>?) -> Severity {

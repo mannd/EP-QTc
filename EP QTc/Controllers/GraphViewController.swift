@@ -37,6 +37,7 @@ final class GraphViewController: UIViewController {
         }
         let preferences = Preferences.retrieve()
         self.title = String(format: "%@ Graph", formulaType.name)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveToCameraRoll))
         var undefinedValues: [BarChartDataEntry] = []
         var normalValues: [BarChartDataEntry] = []
         var abnormalValues: [BarChartDataEntry] = []
@@ -168,6 +169,10 @@ final class GraphViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc private func saveToCameraRoll() {
+        UIImageWriteToSavedPhotosAlbum(barChartView.getChartImage(transparent: false)!, nil, nil, nil)
     }
 }
 

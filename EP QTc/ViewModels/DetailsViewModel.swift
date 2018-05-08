@@ -67,15 +67,20 @@ class DetailsViewModelResultItem: DetailsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Calculated \(formulaType.name)"
+        return "Calculated \(formulaType.name) (\(units))"
     }
     
     var result: String
     var formulaType: FormulaType
+    var units: String
+    var severity: Severity
     
-    init(result: String, formulaType: FormulaType) {
+    init(result: String, formulaType: FormulaType, units: String, severity: Severity) {
         self.result = result
         self.formulaType = formulaType
+        self.units = units
+        self.severity = severity
+        
     }
 }
 
@@ -229,16 +234,18 @@ class DetailsViewModel: NSObject {
     var limitsDescriptions: [String] = []
     let model: DetailsModel
     let formulaType: FormulaType
+    let qtMeasurement: QtMeasurement
     
     weak var viewController: UITableViewController?
     
     init(qtMeasurement: QtMeasurement, calculator: Calculator, formulaType: FormulaType, results: [Double]) {
         self.formulaType = formulaType
+        self.qtMeasurement = qtMeasurement
         model = DetailsModel(qtMeasurement: qtMeasurement, calculator: calculator, results: results)
         parameters = model.parameters
         let parametersItem = DetailsViewModelParametersItem(parameters: model.parameters)
         items.append(parametersItem)
-        let resultItem = DetailsViewModelResultItem(result: model.result, formulaType: formulaType)
+        let resultItem = DetailsViewModelResultItem(result: model.result, formulaType: formulaType, units: qtMeasurement.units.string, severity: model.severity)
         items.append(resultItem)
         let interpretationItem = DetailsViewModelInterpretationItem(interpretation: model.interpretation)
         items.append(interpretationItem)
@@ -276,7 +283,8 @@ class DetailsViewModel: NSObject {
         let delimiter = copyToCSV ? "," : " "
         let quoteString = copyToCSV
         let shortNameParameter = Parameter(key: "Formula", value: shortName)
-        let resultParameter = Parameter(key: formulaType == .qtc ? "QTc" : "QTp", value: model.result)
+        let resultParameter = Parameter(key: (formulaType == .qtc ? "QTc" : "QTp")
+            + " (\(qtMeasurement.units.string))", value: model.result)
         let interpretationParameter = Parameter(key: "Interpretation", value: model.interpretation)
         let equationParameter = Parameter(key: "Equation", value: model.equation)
         let referenceParameter = Parameter(key: "Reference", value: model.reference)

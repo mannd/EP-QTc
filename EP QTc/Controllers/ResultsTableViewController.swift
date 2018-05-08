@@ -32,7 +32,7 @@ final class ResultsTableViewController: UITableViewController {
             return
         }
 
-        self.title = formulaType.name
+        self.title = formulaType.name + " (\(qtMeasurement.units.string))"
                
         let qtFormulas = QtFormulas()
         guard let rawFormulas = qtFormulas.formulas[formulaType] else {
@@ -77,7 +77,7 @@ final class ResultsTableViewController: UITableViewController {
     
     @objc private func oopyToClipboard() {
         if let text = resultsModel?.resultsSummary(preferences: preferences) {
-            //print(text)
+            print(text)
             UIPasteboard.general.string = text
             showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)
         }
@@ -88,7 +88,7 @@ final class ResultsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return formulas.count
     }
@@ -142,6 +142,11 @@ final class ResultsTableViewController: UITableViewController {
                 vc.formulaType = formulaType
                 vc.results = resultsModel?.allResults() ?? []
                 vc.formulas = resultsModel?.allFormulas() ?? []
+            }
+        }
+        else if segue.identifier == "QTpvRRSegue" {
+            if let vc = segue.destination as? QTpRRViewController {
+                vc.qtMeasurement = qtMeasurement
             }
         }
     }

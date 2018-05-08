@@ -25,6 +25,7 @@ class DetailsModel {
     var limits: String
     var limitsReferences: [String] = []
     var limitsDescriptions: [String] = []
+    var severity: Severity
     
     
     let results: [Double]
@@ -36,21 +37,22 @@ class DetailsModel {
         self.results = results
         self.qtMeasurement = qtMeasurement
         self.calculator = calculator
+        let units = qtMeasurement.units.string
         let precision: Precision = preferences.precision ?? Preferences.defaultPrecision
         // names
         formulaName = calculator.longName
         shortFormulaName = calculator.shortName
         // parameters
         let qtParameter = Parameter()
-        qtParameter.key = "QT"
+        qtParameter.key = "QT (\(units))"
         qtParameter.value = qtMeasurement.qtString(precision: precision)
         parameters.append(qtParameter)
         let rrParameter = Parameter()
-        rrParameter.key = "RR interval"
+        rrParameter.key = "RR (\(units))"
         rrParameter.value = qtMeasurement.rrString(precision: precision)
         parameters.append(rrParameter)
         let hrParameter = Parameter()
-        hrParameter.key = "Heart rate"
+        hrParameter.key = "Heart rate (bpm)"
         hrParameter.value = qtMeasurement.heartRateString(precision: precision)
         parameters.append(hrParameter)
         let sexParameter = Parameter()
@@ -58,7 +60,7 @@ class DetailsModel {
         sexParameter.value = qtMeasurement.sexString()
         parameters.append(sexParameter)
         let ageParameter = Parameter()
-        ageParameter.key = "Age"
+        ageParameter.key = "Age (y)"
         ageParameter.value = qtMeasurement.ageString()
         parameters.append(ageParameter)
         // qtc result
@@ -107,8 +109,10 @@ class DetailsModel {
                 }
             }
         }
+        severity = calculator.resultSeverity(qtMeasurement: qtMeasurement, qtcLimits: preferences.qtcLimits)
         // interpretation
         interpretation = interpretResult()
+
     }
     
     //

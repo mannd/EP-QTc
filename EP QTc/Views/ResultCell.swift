@@ -18,6 +18,8 @@ class ResultCell: UITableViewCell {
                 return
             }
             label.text = item.result
+            label.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: item.severity.fontWeight())
+            label.textColor = item.severity.color()
         }
     }
 

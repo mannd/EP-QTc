@@ -45,7 +45,7 @@ final class DetailsTableViewController: UITableViewController {
     @objc private func oopyToClipboard() {
         let preferences = Preferences.retrieve()
         if let text = detailsViewModel?.resultsSummary(preferences: preferences) {
-            //print(text)
+            print(text)
             UIPasteboard.general.string = text
             showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)
         }

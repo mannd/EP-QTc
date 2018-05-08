@@ -347,6 +347,11 @@
                                 <segue destination="QcK-eC-D98" kind="show" identifier="graphSegue" id="xSd-7F-pO0"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="QTp vs HR" id="GkK-VZ-aDy">
+                            <connections>
+                                <segue destination="SLC-b1-l2u" kind="show" identifier="QTpvRRSegue" id="MKd-zC-QAm"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -669,6 +674,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYH-iF-pc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1610.625" y="1381.6901408450703"/>
+        </scene>
+        <!--QTpRR View Controller-->
+        <scene sceneID="t6r-Wi-1Is">
+            <objects>
+                <viewController id="SLC-b1-l2u" userLabel="QTpRR View Controller" customClass="QTpRRViewController" customModule="EP_QTc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQS-cb-Ol7">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3O-LT-5S5" customClass="ScatterChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="768" height="916"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gdr-Ff-Kjf" firstAttribute="bottom" secondItem="I3O-LT-5S5" secondAttribute="bottom" id="Gpj-vP-Vdi"/>
+                            <constraint firstItem="I3O-LT-5S5" firstAttribute="top" secondItem="gdr-Ff-Kjf" secondAttribute="top" id="jiF-ep-D9i"/>
+                            <constraint firstItem="gdr-Ff-Kjf" firstAttribute="trailing" secondItem="I3O-LT-5S5" secondAttribute="trailing" id="tyX-TS-qhd"/>
+                            <constraint firstItem="I3O-LT-5S5" firstAttribute="leading" secondItem="gdr-Ff-Kjf" secondAttribute="leading" id="vxY-Fi-HAd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gdr-Ff-Kjf"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="I3O-LT-5S5" id="DfN-KK-Hfb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vr8-tq-PVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2963" y="1382"/>
         </scene>
         <!--Stats Table View Controller-->
         <scene sceneID="Yeb-C1-vO0">

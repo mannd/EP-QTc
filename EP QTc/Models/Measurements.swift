@@ -17,7 +17,7 @@ fileprivate let femaleString = NSLocalizedString("female", comment: "")
 fileprivate let unspecifiedString = NSLocalizedString("unspecified", comment: "for example 'unspecified sex'")
 
 extension Units {
-    var unitString: String { get {
+    var string: String { get {
         switch self {
         case .msec:
             return msecString
@@ -93,7 +93,7 @@ public enum Precision: String {
             unitString = "bpm"
         }
         else {
-            unitString = units.unitString
+            unitString = units.string
         }
         return String.localizedStringWithFormat("%@ %@", result, unitString)
     }
@@ -121,7 +121,7 @@ public enum Precision: String {
 
 extension QtMeasurement {
     func intervalUnits() -> String {
-        return units.unitString
+        return units.string
     }
     
     func intervalRateUnits() -> String {
@@ -184,15 +184,15 @@ extension QtMeasurement {
     }
 
     func qtString(precision: Precision) -> String {
-       return precision.formattedMeasurementWithUnits(measurement: qt, units: units, intervalRateType: .interval)
+       return precision.formattedMeasurement(measurement: qt, units: units, intervalRateType: .interval)
     }
     
     func rrString(precision: Precision) -> String {
-       return precision.formattedMeasurementWithUnits(measurement: rrInterval(), units: units, intervalRateType: .interval)
+       return precision.formattedMeasurement(measurement: rrInterval(), units: units, intervalRateType: .interval)
     }
     
     func heartRateString(precision: Precision) -> String {
-        return precision.formattedMeasurementWithUnits(measurement: heartRate(), units: units, intervalRateType: .rate)
+        return precision.formattedMeasurement(measurement: heartRate(), units: units, intervalRateType: .rate)
     }
 }
 

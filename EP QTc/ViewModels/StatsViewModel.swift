@@ -34,7 +34,7 @@ class SimpleStatsItem: StatsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "\(formulaType.name) statistics"
+        return "\(formulaType.name) statistics (\(units))"
     }
     
     var rowCount: Int {
@@ -43,10 +43,12 @@ class SimpleStatsItem: StatsViewModelItem {
     
     var simpleStats: [Stat]
     let formulaType: FormulaType
+    var units: String
     
-    init(simpleStats: [Stat], formulaType: FormulaType) {
+    init(simpleStats: [Stat], formulaType: FormulaType, units: String) {
         self.simpleStats = simpleStats
         self.formulaType = formulaType
+        self.units = units
     }
 }
 
@@ -56,7 +58,7 @@ class MeasurementsItem: StatsViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Measured intervals"
+        return "Measured intervals (\(units))"
     }
     
     var rowCount: Int {
@@ -65,10 +67,12 @@ class MeasurementsItem: StatsViewModelItem {
     
     var measurements: [Stat]
     let formulaType: FormulaType
+    var units: String
     
-    init(measurements: [Stat], formulaType: FormulaType) {
+    init(measurements: [Stat], formulaType: FormulaType, units: String) {
         self.measurements = measurements
         self.formulaType = formulaType
+        self.units = units
     }
 }
 
@@ -101,13 +105,13 @@ class StatsViewModel: NSObject {
     
     init(results: [Double], qtMeasurement: QtMeasurement, formulaType: FormulaType) {
         self.formulaType = formulaType
-        
+        let units = qtMeasurement.units.string
         let model = StatsModel(results: results, qtMeasurement: qtMeasurement, formulaType: formulaType)
         measurements = model.measurements
-        let measuredQtItem = MeasurementsItem(measurements: measurements, formulaType: formulaType)
+        let measuredQtItem = MeasurementsItem(measurements: measurements, formulaType: formulaType, units: units)
         items.append(measuredQtItem)
         simpleStats = model.simpleStats
-        let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats, formulaType: formulaType)
+        let simpleStatsItem = SimpleStatsItem(simpleStats: simpleStats, formulaType: formulaType, units: units)
         items.append(simpleStatsItem)
         interpretations = model.interpretations
         let interpretationsItem = InterpretationItem(interpretations: interpretations)

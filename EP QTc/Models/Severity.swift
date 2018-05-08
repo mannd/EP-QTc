@@ -45,4 +45,47 @@ extension Severity {
             return string + " QTc"
         }
     }
+    
+    func fontWeight() -> UIFont.Weight {
+        if self.isAbnormal() {
+            return UIFont.Weight.bold
+        }
+        else {
+            return UIFont.Weight.light
+        }
+    }
+    
+    func color() -> UIColor {
+        let errorColor = UIColor.blue
+        let normalColor = UIColor.black // green doesn't look good
+        let borderlineColor = UIColor.orange
+        let mildColor = UIColor.orange
+        let moderateColor = UIColor.red
+        let severeColor = UIColor.purple
+        let abnormalColor = UIColor.red
+        let defaultColor = UIColor.black
+        let undefinedColor = UIColor.gray
+        switch self {
+        case .error:
+            return errorColor
+        case .normal:
+            return normalColor
+        case .borderline:
+            return borderlineColor
+        case .mild:
+            return mildColor
+        case .moderate:
+            return moderateColor
+        case .severe:
+            return severeColor
+        case .abnormal:
+            return abnormalColor
+        case .undefined:
+            return undefinedColor
+        default:
+            // above should be exhaustive, but compiler can't check this
+            assertionFailure("Unknown severity.")
+            return defaultColor
+        }
+    }
 }
