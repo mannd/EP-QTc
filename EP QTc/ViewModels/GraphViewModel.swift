@@ -85,11 +85,11 @@ class GraphViewModel {
         let undefinedValuesSet = BarChartDataSet(values: undefinedValues, label: "Uninterpreted QTc")
         let borderlineValuesSet = BarChartDataSet(values: borderlineValues, label: "Borderline QTc")
         borderlineValuesSet.setColor(borderlineColor)
-        let mildValuesSet = BarChartDataSet(values: mildValues, label: "Mildly prolonged QTc")
+        let mildValuesSet = BarChartDataSet(values: mildValues, label: "Mildly abnormal QTc")
         mildValuesSet.setColor(mildColor)
-        let moderateValuesSet = BarChartDataSet(values: moderateValues, label: "Moderatedly prolonged QTc")
+        let moderateValuesSet = BarChartDataSet(values: moderateValues, label: "Moderatedly abnormal QTc")
         moderateValuesSet.setColor(moderateColor)
-        let severeValuesSet = BarChartDataSet(values: severeValues, label: "Severely prolonged QTc")
+        let severeValuesSet = BarChartDataSet(values: severeValues, label: "Severely abnormal QTc")
         severeValuesSet.setColor(severeColor)
         let abnormalValuesSet = BarChartDataSet(values: abnormalValues, label: "Abnormal \(baseLabel)")
         abnormalValuesSet.setColor(abnormalColor)
@@ -161,7 +161,6 @@ class GraphViewModel {
                 barChartView.rightAxis.axisMinimum = yAxisMin
             }
         }
-        
         barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
         // no need to call barChartView.setNeedsDisplay() when using animation
     }

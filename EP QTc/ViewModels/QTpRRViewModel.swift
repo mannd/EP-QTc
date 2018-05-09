@@ -23,7 +23,7 @@ class QTpRRViewModel {
     func drawGraph() {
         chartView.rightAxis.enabled = false
         chartView.xAxis.labelPosition = .bottom
-        chartView.chartDescription?.text = "QTp vs Heart Rate"
+        chartView.chartDescription?.text = "QTp, QT (\(qtMeasurement.units.string)) vs Heart Rate (bpm)"
         var qtpValues: [ChartDataEntry] = []
         var qtValues: [ChartDataEntry] = []
         guard let qtpFormulas = QtFormulas().formulas[.qtp] else {

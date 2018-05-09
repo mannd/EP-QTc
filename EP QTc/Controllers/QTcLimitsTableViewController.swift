@@ -18,7 +18,8 @@ final class QTcLimitsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        qtcLimits = [.schwartz1985, .fda2005, .esc2005, .aha2009]
+        qtcLimits = [.schwartz1985, .schwartz1993, .fda2005, .esc2005,
+                     .goldenberg2006, .aha2009, .gollob2011, .mazzanti2014]
         let preferences = Preferences.retrieve()
         selectedQTcLimits = preferences.qtcLimits ?? []
     }
@@ -28,7 +29,7 @@ final class QTcLimitsTableViewController: UITableViewController {
         for element in selectedQTcLimits {
             print(element)  
         }
-        let preferences = Preferences()
+        let preferences = Preferences.retrieve()
         preferences.qtcLimits = selectedQTcLimits
         preferences.save()
     }

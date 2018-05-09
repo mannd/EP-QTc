@@ -16,15 +16,15 @@ extension Severity {
         case .normal:
             return "Normal"
         case .borderline:
-            return "Borderline prolongation"
+            return "Borderline"
         case .abnormal:
             return "Abnormal"
         case .mild:
-            return "Mildly prolonged"
+            return "Mildly abnormal"
         case .moderate:
-            return "Moderately prolonged"
+            return "Moderately abnormal"
         case .severe:
-            return "Severely prolonged"
+            return "Severely abnormal"
         case .undefined:
             return "Undefined"
         case .error:
