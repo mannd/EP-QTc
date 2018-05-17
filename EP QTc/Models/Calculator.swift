@@ -57,7 +57,7 @@ extension Calculator {
             return Severity.undefined
         }
         for criterion in criteria {
-            let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+            let testSuite = AbnormalQTc.qtcTestSuite(criterion: criterion)
             let severity = testSuite?.severity(measurement: qtcMeasurement)
             severityArray.append(severity?.rawValue ?? 0)
         }

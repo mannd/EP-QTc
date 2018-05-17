@@ -16,10 +16,6 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet var resultLabel: UILabel!
     @IBOutlet var shortNameLabel: UILabel!
     
-    // FIXME: can potentially just use the value from the results array in ResultTableViewController,
-    // and format it through ResultModel, rather than recalculating the value, to avoid doing the same
-    // work twice.
-    
     var preferences: Preferences!
     var resultViewModel: ResultViewModel!
     var calculator: Calculator!

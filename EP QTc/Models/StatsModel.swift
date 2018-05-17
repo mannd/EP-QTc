@@ -29,8 +29,6 @@ class StatsModel {
     var measurements: [Stat] = []
     var interpretations: [Stat] = []
     
-    // TODO: consider adding number and % of abnormal QTcs
-    
     init(results: [Double], qtMeasurement: QtMeasurement, formulaType: FormulaType) {
         preferences = Preferences.retrieve()
         let morePrecise = preferences.precision?.morePrecise()
@@ -70,13 +68,6 @@ class StatsModel {
         sdStat.key = "Standard deviation"
         sdStat.value = formattedValue(sd)
         simpleStats.append(sdStat)
-        // Variance probably not needed, also variance units are msec^2 or sec^2
-//        let varianceStat = Stat()
-//        varianceStat.key = "Variance"
-//        varianceStat.value = formattedValue(variance)
-//        simpleStats.append(varianceStat)
-        // TODO: etc.
-
         // A few measurements to compare stats to
         let measuredQT = Stat()
         measuredQT.key = "QT"

@@ -21,9 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                      Preferences.sortOrderKey: Preferences.defaultSortOrder.rawValue,
                                      Preferences.qtcLimitsKey: Preferences.defaultQTcLimitsArray,
                                      Preferences.automaticYAxisKey: Preferences.defaultAutomaticYAxis,
-                                     Preferences.yAxisMaximumKey: Preferences.yAxisMaximumKey,
-                                     Preferences.yAxisMinimumKey: Preferences.yAxisMinimumKey,
-                                     Preferences.copyToCSVKey: Preferences.defaultCopyToCSV])
+                                     Preferences.yAxisMaximumKey: Preferences.defaultYAxisMaximum,
+                                     Preferences.yAxisMinimumKey: Preferences.defaultYAxisMinimum,
+                                     Preferences.copyToCSVKey: Preferences.defaultCopyToCSV,
+                                     Preferences.unitsKey: Preferences.defaultUnitsMsec,
+                                     Preferences.heartRateKey: Preferences.defaultHeartRateAsInterval])
         return true
     }
 

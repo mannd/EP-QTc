@@ -135,6 +135,17 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         intervalRateTextField.validationRules = rules
         ageTextField.validationRules = rules
         
+        // set up default units/intervalRate preferences when app starts
+        let preferences = Preferences.retrieve()
+        if let unitsMsec = preferences.unitsMsec, !unitsMsec {
+            unitsSegmentedControl.selectedSegmentIndex = 1
+            unitsChanged(self)
+        }
+        if let heartRateAsInterval = preferences.heartRateAsInterval, !heartRateAsInterval {
+            intervalRateSegmentedControl.selectedSegmentIndex = 1
+            intervalRateChanged(self)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -14,6 +14,7 @@ import Charts
 class GraphViewModel {
     let undefinedColor = UIColor.lightGray
     let normalColor = UIColor.green
+    let normalQTColor = UIColor.cyan
     let abnormalColor = UIColor.red
     let meanColor = UIColor.black
     let abnormalMeanColor = UIColor.blue
@@ -111,7 +112,7 @@ class GraphViewModel {
                 qtValuesSet.setColor(abnormalColor)
             }
             else {
-                qtValuesSet.setColor(normalColor)
+                qtValuesSet.setColor(normalQTColor)
             }
         }
         barChartView.data = BarChartData(dataSets: [undefinedValuesSet, normalValuesSet, borderlineValuesSet,
@@ -138,7 +139,7 @@ class GraphViewModel {
         }
         if let criteria = preferences.qtcLimits, formulaType == .qtc {
             for criterion in criteria {
-                let testSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+                let testSuite = AbnormalQTc.qtcTestSuite(criterion: criterion)
                 if let cutoffs = testSuite?.cutoffs() {
                     for cutoff in cutoffs {
                         let limitLine = ChartLimitLine(limit: cutoff.value)

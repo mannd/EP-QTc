@@ -10,9 +10,6 @@ import Foundation
 import QTc
 
 class DetailsModel {
-    // TODO: change this to a setting
-    let defaultPrecision: Precision = .roundOnePlace
-    
     var formulaName: String
     var shortFormulaName: String
     var result: String
@@ -91,7 +88,6 @@ class DetailsModel {
             numberOfSubjectsDetail.value = "not given"
         }
         details.append(numberOfSubjectsDetail)
-        // TODO: add further details here
         equation = calculator.equation
         reference = calculator.reference
         notes = calculator.notes
@@ -100,7 +96,7 @@ class DetailsModel {
         // QTc limits references
         if let qtcLimits = preferences.qtcLimits {
             for criterion in qtcLimits {
-                let qtcTestSuite = AbnormalQTc.qtcLimits(criterion: criterion)
+                let qtcTestSuite = AbnormalQTc.qtcTestSuite(criterion: criterion)
                 if let reference = qtcTestSuite?.reference {
                     limitsReferences.append(reference)
                 }

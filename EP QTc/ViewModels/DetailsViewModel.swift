@@ -10,9 +10,6 @@ import UIKit
 import QTc
 import SafariServices
 
-// TODO: Add link field to QTc library and make reference cell clickable to open webview with link
-// TODO: Button to copy details to clipboard as text
-
 // This TableView code is based on this very useful Medium article:
 // https://medium.com/@stasost/ios-how-to-build-a-table-view-with-multiple-cell-types-2df91a206429
 
@@ -293,7 +290,7 @@ class DetailsViewModel: NSObject {
         var limitReferencesParameters: [Parameter] = []
         var limitDetailsParameters: [Parameter] = []
         if let limits = preferences.qtcLimits {
-            let qtcTests = limits.compactMap{ AbnormalQTc.qtcLimits(criterion: $0) }
+            let qtcTests = limits.compactMap{ AbnormalQTc.qtcTestSuite(criterion: $0) }
             for test in qtcTests {
                 let limitNameParameter = Parameter(key: "Limit", value: test.name)
                 let limitReferenceParameter = Parameter(key: "Limit reference", value: test.reference)

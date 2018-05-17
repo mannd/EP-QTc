@@ -54,7 +54,7 @@ final class QTcLimitsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QTcLimitsCell", for: indexPath)
-        let abnormalQTc = AbnormalQTc.qtcLimits(criterion: qtcLimits[indexPath.row])
+        let abnormalQTc = AbnormalQTc.qtcTestSuite(criterion: qtcLimits[indexPath.row])
         cell.textLabel?.text = abnormalQTc?.name
         cell.detailTextLabel?.text = abnormalQTc?.description
         

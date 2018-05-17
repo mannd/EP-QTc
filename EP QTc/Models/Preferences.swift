@@ -9,7 +9,6 @@
 import Foundation
 import QTc
 
-// TODO: new preference defaults must be registered in AppDelegate
 class Preferences {
     static let precisionKey = "PrecisionKey"
     static let sortOrderKey = "SortOrderKey"
@@ -18,6 +17,8 @@ class Preferences {
     static let yAxisMaximumKey = "YAxisMaximumKey"
     static let yAxisMinimumKey = "YAxisMinimumKey"
     static let copyToCSVKey = "CopyToCSVKey"
+    static let unitsKey = "UnitsKey"
+    static let heartRateKey = "HeartRateKey"
     
     static let defaultPrecision = Precision.roundToInteger
     static let defaultSortOrder = SortOrder.bigFourFirstByDate
@@ -27,6 +28,8 @@ class Preferences {
     static let defaultYAxisMaximum: Double = 600
     static let defaultYAxisMinimum: Double = 300
     static let defaultCopyToCSV: Bool = false
+    static let defaultUnitsMsec: Bool = true
+    static let defaultHeartRateAsInterval: Bool = true
     
     var precision: Precision? = Preferences.defaultPrecision
     var sortOrder: SortOrder? = Preferences.defaultSortOrder
@@ -35,6 +38,8 @@ class Preferences {
     var yAxisMaximum: Double? = Preferences.defaultYAxisMaximum
     var yAxisMinimum: Double? = Preferences.defaultYAxisMinimum
     var copyToCSV: Bool? = Preferences.defaultCopyToCSV
+    var unitsMsec: Bool? = Preferences.defaultUnitsMsec
+    var heartRateAsInterval: Bool? = Preferences.defaultHeartRateAsInterval
     
     /// Returns updated set of preferences.
     static func retrieve() -> Preferences {
@@ -49,7 +54,7 @@ class Preferences {
         }
         var string = ""
         for limit in limits {
-            if let abnormalQTc = AbnormalQTc.qtcLimits(criterion: limit) {
+            if let abnormalQTc = AbnormalQTc.qtcTestSuite(criterion: limit) {
                 string.append(abnormalQTc.name + "\n")
             }
         }
@@ -82,6 +87,9 @@ class Preferences {
         defaults.set(yAxisMaximum, forKey: Preferences.yAxisMaximumKey)
         defaults.set(yAxisMinimum, forKey: Preferences.yAxisMinimumKey)
         defaults.set(copyToCSV, forKey: Preferences.copyToCSVKey)
+        // sinces units and heart rate are binary values, will store as Bool
+        defaults.set(unitsMsec, forKey: Preferences.unitsKey)
+        defaults.set(heartRateAsInterval, forKey: Preferences.heartRateKey)
     }
     
     func load() {
@@ -93,6 +101,8 @@ class Preferences {
         yAxisMaximum = defaults.double(forKey: Preferences.yAxisMaximumKey)
         yAxisMinimum = defaults.double(forKey: Preferences.yAxisMinimumKey)
         copyToCSV = defaults.bool(forKey: Preferences.copyToCSVKey)
+        unitsMsec = defaults.bool(forKey: Preferences.unitsKey)
+        heartRateAsInterval = defaults.bool(forKey: Preferences.heartRateKey)
     }
     
     

@@ -9,8 +9,6 @@
 import UIKit
 import QTc
 
-// TODO: click on reference cell with link and open linked webview
-
 final class DetailsTableViewController: UITableViewController {
     var formulaType: FormulaType?
     var calculator: Calculator?

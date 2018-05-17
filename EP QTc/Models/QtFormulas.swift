@@ -88,7 +88,8 @@ class QtFormulas {
             .qtpArr,
             .qtpBdl,
             .qtpAsh,
-            .qtpHdg,]
+            .qtpHdg,
+            .qtpMyd,]
     ]
 
     func bigFourFormulas() -> [Formula] {
