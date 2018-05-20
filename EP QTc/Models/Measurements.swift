@@ -165,6 +165,16 @@ extension QtMeasurement {
         }
     }
     
+    func qtInSec() -> Double? {
+        guard let qt = qt else { return nil }
+        switch units {
+        case .sec:
+            return qt
+        case .msec:
+            return QTc.msecToSec(qt)
+        }
+    }
+    
     func sexString() -> String {
         switch sex {
         case .female:

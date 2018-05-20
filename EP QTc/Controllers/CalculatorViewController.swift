@@ -416,12 +416,35 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         if let age = age {
             intAge = Int(age)
         }
-        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType,
-                                          sex: sex, age: intAge)
+        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType, sex: sex, age: intAge)
+        if valuesOutOfRange(qtMeasurement: qtMeasurement) {
+            showErrorMessage("Heart rate or QT interval out of range.\nAllowed heart rates 20-250 bpm.\nAllowed QT intervals 200-800 msec.")
+            return
+        }
         vc.qtMeasurement = qtMeasurement
         vc.formulaType = formulaType
     }
     
+    // assumes no null or negative fields
+    func valuesOutOfRange(qtMeasurement: QtMeasurement) -> Bool {
+        let minQT = 0.2
+        let maxQT = 0.8
+        let minRate = 20.0
+        let maxRate = 250.0
+        var outOfRange = false
+        if qtMeasurement.heartRate() < minRate || qtMeasurement.heartRate() > maxRate {
+            outOfRange = true
+        }
+        if let qt = qtMeasurement.qtInSec() {
+            if qt < minQT || qt > maxQT {
+                outOfRange = true
+            }
+        }
+        else {
+            outOfRange = true
+        }
+        return outOfRange
+    }
     
     func finalValueCheck() -> Bool {
         // Don't ever send any nils, zeros or negative numbers to the poor calculators!

@@ -36,13 +36,13 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     let sortingRowNumber = 2
     let sortingPickerViewRowNumber = 3
     let qtcLimitsRowNumber = 4
-    
+
     let precisionPickerViewTag = 0
     let sortingPickerViewTag = 1
     
     var precisionPickerVisible = false
     var sortingPickerVisible = false
-    
+
     var precisionLabels: [String] = []
     var sortOrderLabels: [String] = []
     var precisionOptions: [Precision] = []

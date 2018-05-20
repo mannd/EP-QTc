@@ -42,9 +42,9 @@ extension FormulaClassification {
         case .linear:
             return "linear"
         case .rational:
-            return "rational"
+            return "rational (hyperbolic)"
         case .power:
-            return "power"
+            return "power (parabolic)"
         case .logarithmic:
             return "logarithmic"
         case .exponential:
@@ -89,7 +89,10 @@ class QtFormulas {
             .qtpBdl,
             .qtpAsh,
             .qtpHdg,
-            .qtpMyd,]
+            .qtpMyd,
+            .qtpKrj,
+            .qtpSch,
+            .qtpAdm,]
     ]
 
     func bigFourFormulas() -> [Formula] {
