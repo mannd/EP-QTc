@@ -356,6 +356,7 @@ extension DetailsViewModel: UITableViewDataSource {
         case .reference:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReferenceCell.identifier, for: indexPath) as? ReferenceCell {
                 cell.item = item
+                cell.accessoryType = cell.hasDoi ? .disclosureIndicator : .none
                 return cell
             }
         case .notes:
@@ -371,6 +372,7 @@ extension DetailsViewModel: UITableViewDataSource {
         case .limitsReference:
             if let cell = tableView.dequeueReusableCell(withIdentifier: LimitsReferenceCell.identifier, for: indexPath) as? LimitsReferenceCell {
                 cell.item = limitsReferences[indexPath.row]
+                cell.accessoryType = cell.hasDoi ? .disclosureIndicator : .none
                 return cell
             }
         case .limitsDescription:

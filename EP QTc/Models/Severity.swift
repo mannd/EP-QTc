@@ -49,8 +49,7 @@ extension Severity {
     func fontWeight() -> UIFont.Weight {
         if self.isAbnormal() {
             return UIFont.Weight.bold
-        }
-        else {
+        } else {
             return UIFont.Weight.light
         }
     }

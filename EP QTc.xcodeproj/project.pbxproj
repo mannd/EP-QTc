@@ -51,6 +51,8 @@
 		8ED6619C209CC83F000513B1 /* LimitsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */; };
 		8ED6619E209CD5AE000513B1 /* Severity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6619D209CD5AE000513B1 /* Severity.swift */; };
 		8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB08422059EAC7008123D9 /* ResultCell.swift */; };
+		8EE53A3C20BB124E00F7D1FF /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE53A3B20BB124E00F7D1FF /* HelpViewController.swift */; };
+		8EE53A3E20BB12DD00F7D1FF /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 8EE53A3D20BB12DC00F7D1FF /* help.html */; };
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
 		8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */; };
@@ -118,6 +120,8 @@
 		8ED6619B209CC83F000513B1 /* LimitsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsDescriptionCell.swift; sourceTree = "<group>"; };
 		8ED6619D209CD5AE000513B1 /* Severity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Severity.swift; sourceTree = "<group>"; };
 		8EDB08422059EAC7008123D9 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		8EE53A3B20BB124E00F7D1FF /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		8EE53A3D20BB12DC00F7D1FF /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = docs/help.html; sourceTree = SOURCE_ROOT; };
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
 		8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelCell.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */,
 				8E47B1D42091543E0042C5F9 /* QTcLimitsTableViewController.swift */,
 				8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */,
+				8EE53A3B20BB124E00F7D1FF /* HelpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 		8E6E559F1FD30B66004B1B2F /* EP QTc */ = {
 			isa = PBXGroup;
 			children = (
+				8EE53A3D20BB12DC00F7D1FF /* help.html */,
 				8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */,
 				8E30F00F1FDDBFC60072E5A8 /* Storyboards */,
 				8E30F0111FDDC04B0072E5A8 /* Models */,
@@ -375,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E6E55AB1FD30B66004B1B2F /* LaunchScreen.storyboard in Resources */,
+				8EE53A3E20BB12DD00F7D1FF /* help.html in Resources */,
 				8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */,
 				8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */,
 			);
@@ -461,6 +468,7 @@
 				8ED6619E209CD5AE000513B1 /* Severity.swift in Sources */,
 				8E47B1E42097F9CE0042C5F9 /* LimitsCell.swift in Sources */,
 				8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */,
+				8EE53A3C20BB124E00F7D1FF /* HelpViewController.swift in Sources */,
 				8E47B1D52091543E0042C5F9 /* QTcLimitsTableViewController.swift in Sources */,
 				8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */,
 				8EBE89D1205C37F700A60296 /* EquationCell.swift in Sources */,

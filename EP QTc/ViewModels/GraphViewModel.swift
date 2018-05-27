@@ -162,8 +162,12 @@ class GraphViewModel {
                 barChartView.rightAxis.axisMinimum = yAxisMin
             }
         }
-        barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
-        // no need to call barChartView.setNeedsDisplay() when using animation
+        if let animateGraphs = preferences.animateGraphs, animateGraphs {
+            barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
+        }
+        else {
+            barChartView.setNeedsDisplay()
+        }
     }
     
     func saveToCameraRoll() {

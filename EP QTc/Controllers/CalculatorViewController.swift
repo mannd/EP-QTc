@@ -9,6 +9,7 @@
 import UIKit
 import Validator
 import QTc
+import SafariServices
 
 // Best way to dismiss keyboard on tap on view.
 // See https://stackoverflow.com/questions/32281651/how-to-dismiss-keyboard-when-touching-anywhere-outside-uitextfield-in-swift
@@ -64,7 +65,7 @@ extension FormulaType {
     }
 }
 
-class CalculatorViewController: UIViewController, UITextFieldDelegate {
+class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate {
     
     // All the controls on the calculator form
     @IBOutlet var scrollView: UIScrollView!
@@ -80,6 +81,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var intervalRateUnitsLabel: UILabel!
     @IBOutlet var calculateButton: UIBarButtonItem!
     @IBOutlet var optionalInformationLabel: UILabel!
+    
+    weak var viewController: UITableViewController?
     
     private let msecText = "msec"
     private let secText = "sec"
@@ -382,7 +385,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "preferencesSegue" {
+        if segue.identifier == "preferencesSegue" || segue.identifier == "helpSegue" {
             return
         }
         

@@ -12,6 +12,7 @@ class ReferenceCell: UITableViewCell {
     static let identifier = "ReferenceCell"
     let doiPattern = "doi:.*$"
     var doiString: String = ""
+    var hasDoi : Bool = false
 
     @IBOutlet var label: UILabel!
     
@@ -25,6 +26,7 @@ class ReferenceCell: UITableViewCell {
                 let result = doiRegex.matches(in: item.reference, range: NSRange(item.reference.startIndex..., in: item.reference))
                 let doiStrings = result.map {String(item.reference[Range($0.range, in: item.reference)!])}
                 if doiStrings.count > 0 {
+                    hasDoi = true
                     doiString = doiStrings[0]
                     let doiRange = (item.reference as NSString).range(of: doiString)
                     let attributes: [NSAttributedStringKey: Any] = [.link: doiString,
@@ -35,7 +37,7 @@ class ReferenceCell: UITableViewCell {
             label.attributedText = underlinedString
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

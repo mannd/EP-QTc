@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                      Preferences.yAxisMinimumKey: Preferences.defaultYAxisMinimum,
                                      Preferences.copyToCSVKey: Preferences.defaultCopyToCSV,
                                      Preferences.unitsKey: Preferences.defaultUnitsMsec,
-                                     Preferences.heartRateKey: Preferences.defaultHeartRateAsInterval])
+                                     Preferences.heartRateKey: Preferences.defaultHeartRateAsInterval,
+                                     Preferences.animateGraphsKey: Preferences.defaultAnimateGraphs])
         return true
     }
 

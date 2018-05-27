@@ -11,7 +11,8 @@ import UIKit
 class LimitsReferenceCell: UITableViewCell {
     static let identifier = "LimitsReferenceCell"
     let doiPattern = "doi:.*$"
-    var doiString: String = ""
+    var doiString = ""
+    var hasDoi = false
     
     @IBOutlet var label: UILabel!
     var item: String? {
@@ -24,6 +25,7 @@ class LimitsReferenceCell: UITableViewCell {
                 let result = doiRegex.matches(in: item, range: NSRange(item.startIndex..., in: item))
                 let doiStrings = result.map {String(item[Range($0.range, in: item)!])}
                 if doiStrings.count > 0 {
+                    hasDoi = true
                     doiString = doiStrings[0]
                     let doiRange = (item as NSString).range(of: doiString)
                     let attributes: [NSAttributedStringKey: Any] = [.link: doiString,

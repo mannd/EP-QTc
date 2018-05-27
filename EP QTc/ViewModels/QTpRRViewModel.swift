@@ -14,10 +14,12 @@ import SigmaSwiftStatistics
 class QTpRRViewModel {
     var chartView: ScatterChartView
     var qtMeasurement: QtMeasurement
-
+    let preferences: Preferences
+    
     init(chartView: ScatterChartView, qtMeasurement: QtMeasurement) {
         self.chartView = chartView
         self.qtMeasurement = qtMeasurement
+        self.preferences = Preferences.retrieve()
     }
     
     func drawGraph() {
@@ -33,7 +35,7 @@ class QTpRRViewModel {
         let sex = qtMeasurement.sex
         let age = qtMeasurement.age
         var results: [Double] = []
-        let calculators = qtpFormulas.map{QTc.qtpCalculator(formula: $0)}
+        let calculators = qtpFormulas.map {QTc.qtpCalculator(formula: $0)}
         for calculator in calculators {
             for rate in stride(from: 40.0, to: 130.0, by: 10.0) {
                 if let qtp = try? calculator.calculate(rate: rate, sex: sex, age: age) {
@@ -60,10 +62,13 @@ class QTpRRViewModel {
         qtpSet.setColor(UIColor.green)
         qtpSet.setScatterShape(.circle)
         let data = ScatterChartData(dataSets: [qtpSet, qtSet])
-        //data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-        
         chartView.data = data
-        chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
+        if let animateGraphs = preferences.animateGraphs, animateGraphs {
+            chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
+        }
+        else {
+            chartView.setNeedsDisplay()
+        }
     }
     
     func saveToCameraRoll() {

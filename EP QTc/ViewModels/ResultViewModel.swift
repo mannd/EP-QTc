@@ -23,7 +23,7 @@ class ResultViewModel {
     func longCalculatorName() -> String {
         return resultModel.name
     }
-    
+
     func shortCalculatorName() -> String {
         return resultModel.shortName
     }
@@ -37,5 +37,5 @@ class ResultViewModel {
         let severity = resultModel.resultSeverity()
         return severity.fontWeight()
     }
-        
+
 }

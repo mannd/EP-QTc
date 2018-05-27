@@ -19,6 +19,7 @@ class Preferences {
     static let copyToCSVKey = "CopyToCSVKey"
     static let unitsKey = "UnitsKey"
     static let heartRateKey = "HeartRateKey"
+    static let animateGraphsKey = "AnimateGraphsKey"
     
     static let defaultPrecision = Precision.roundToInteger
     static let defaultSortOrder = SortOrder.bigFourFirstByDate
@@ -27,9 +28,10 @@ class Preferences {
     static let defaultAutomaticYAxis = true
     static let defaultYAxisMaximum: Double = 600
     static let defaultYAxisMinimum: Double = 300
-    static let defaultCopyToCSV: Bool = false
-    static let defaultUnitsMsec: Bool = true
-    static let defaultHeartRateAsInterval: Bool = true
+    static let defaultCopyToCSV = false
+    static let defaultUnitsMsec = true
+    static let defaultHeartRateAsInterval = true
+    static let defaultAnimateGraphs = true
     
     var precision: Precision? = Preferences.defaultPrecision
     var sortOrder: SortOrder? = Preferences.defaultSortOrder
@@ -40,6 +42,7 @@ class Preferences {
     var copyToCSV: Bool? = Preferences.defaultCopyToCSV
     var unitsMsec: Bool? = Preferences.defaultUnitsMsec
     var heartRateAsInterval: Bool? = Preferences.defaultHeartRateAsInterval
+    var animateGraphs: Bool? = Preferences.defaultAnimateGraphs
     
     /// Returns updated set of preferences.
     static func retrieve() -> Preferences {
@@ -90,6 +93,7 @@ class Preferences {
         // sinces units and heart rate are binary values, will store as Bool
         defaults.set(unitsMsec, forKey: Preferences.unitsKey)
         defaults.set(heartRateAsInterval, forKey: Preferences.heartRateKey)
+        defaults.set(animateGraphs, forKey: Preferences.animateGraphsKey)
     }
     
     func load() {
@@ -103,6 +107,7 @@ class Preferences {
         copyToCSV = defaults.bool(forKey: Preferences.copyToCSVKey)
         unitsMsec = defaults.bool(forKey: Preferences.unitsKey)
         heartRateAsInterval = defaults.bool(forKey: Preferences.heartRateKey)
+        animateGraphs = defaults.bool(forKey: Preferences.animateGraphsKey)
     }
     
     

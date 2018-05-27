@@ -81,7 +81,8 @@ class QtFormulas {
             .qtcKwt,
             .qtcDmt,
             .qtcYos,
-            .qtcAdm,],
+            .qtcAdm,
+            ],
          .qtp: [
             .qtpBzt,
             .qtpFrd,
@@ -96,7 +97,8 @@ class QtFormulas {
             .qtpSmn,
             .qtpKwt,
             .qtpScl,
-            .qtpMrr,]
+            .qtpMrr,
+            ]
     ]
 
     func bigFourFormulas() -> [Formula] {
