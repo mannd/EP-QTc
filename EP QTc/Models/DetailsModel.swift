@@ -80,7 +80,7 @@ class DetailsModel {
         classificationDetail.value = calculator.classification.label
         details.append(classificationDetail)
         let numberOfSubjectsDetail = Parameter()
-        numberOfSubjectsDetail.key = "Total number of subjects"
+        numberOfSubjectsDetail.key = "Number of subjects"
         if let totalNumberOfSubjects = calculator.numberOfSubjects {
             numberOfSubjectsDetail.value = String(totalNumberOfSubjects)
         }
