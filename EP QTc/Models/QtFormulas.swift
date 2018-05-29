@@ -80,8 +80,8 @@ class QtFormulas {
             .qtcArr,
             .qtcKwt,
             .qtcDmt,
-            .qtcYos,
             .qtcAdm,
+            .qtcGot,
             ],
          .qtp: [
             .qtpBzt,
@@ -98,6 +98,13 @@ class QtFormulas {
             .qtpKwt,
             .qtpScl,
             .qtpMrr,
+            .qtpHgg,
+            .qtpGot,
+            .qtpKlg,
+            .qtpShp,
+            .qtpWhl,
+            .qtpSrm,
+            .qtpLcc,
             ]
     ]
 
@@ -106,7 +113,7 @@ class QtFormulas {
         return [.qtcBzt, .qtcFrd, .qtcHdg, .qtcFrm]
     }
     
-    // note sorting functions throw Bool; must be handled by calling function
+    // note sorting functions throw; must be handled by calling function
  
     func sortedByDate(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
         return formulas.sorted(by: {$1.publicationDate(formulaType: formulaType) > $0.publicationDate(formulaType: formulaType)})
