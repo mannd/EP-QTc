@@ -115,6 +115,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        print(Formula.qtcAdm.rawValue)
         // Do any additional setup after loading the view.
         qtTextField.delegate = self
         intervalRateTextField.delegate = self

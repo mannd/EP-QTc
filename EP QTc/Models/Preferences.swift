@@ -20,7 +20,9 @@ class Preferences {
     static let unitsKey = "UnitsKey"
     static let heartRateKey = "HeartRateKey"
     static let animateGraphsKey = "AnimateGraphsKey"
-    
+    static let qtcCustomSortKey = "QTcCustomSortKey"
+    static let qtpCustomSortKey = "QTpCustomSortKey"
+
     static let defaultPrecision = Precision.roundToInteger
     static let defaultSortOrder = SortOrder.bigFourFirstByDate
     static let defaultQTcLimits: Set<Criterion> = [Criterion.schwartz1985]
@@ -32,7 +34,9 @@ class Preferences {
     static let defaultUnitsMsec = true
     static let defaultHeartRateAsInterval = true
     static let defaultAnimateGraphs = true
-    
+    static let defaultQTcCustomSort: [String] = []
+    static let defaultQTpCustomSort: [String] = []
+
     var precision: Precision? = Preferences.defaultPrecision
     var sortOrder: SortOrder? = Preferences.defaultSortOrder
     var qtcLimits: Set<Criterion>? = Preferences.defaultQTcLimits
@@ -43,7 +47,9 @@ class Preferences {
     var unitsMsec: Bool? = Preferences.defaultUnitsMsec
     var heartRateAsInterval: Bool? = Preferences.defaultHeartRateAsInterval
     var animateGraphs: Bool? = Preferences.defaultAnimateGraphs
-    
+    var qtcCustomSort: [Formula]? = []
+    var qtpCustomSort: [Formula]? = []
+
     /// Returns updated set of preferences.
     static func retrieve() -> Preferences {
         let preferences = Preferences()
@@ -94,6 +100,10 @@ class Preferences {
         defaults.set(unitsMsec, forKey: Preferences.unitsKey)
         defaults.set(heartRateAsInterval, forKey: Preferences.heartRateKey)
         defaults.set(animateGraphs, forKey: Preferences.animateGraphsKey)
+        let qtcCustomSortMap = qtcCustomSort?.map {$0.rawValue}
+        defaults.set(qtcCustomSortMap, forKey: Preferences.qtcCustomSortKey)
+        let qtpCustomSortMap = qtpCustomSort?.map {$0.rawValue}
+        defaults.set(qtpCustomSortMap, forKey: Preferences.qtpCustomSortKey)
     }
     
     func load() {
@@ -108,6 +118,10 @@ class Preferences {
         unitsMsec = defaults.bool(forKey: Preferences.unitsKey)
         heartRateAsInterval = defaults.bool(forKey: Preferences.heartRateKey)
         animateGraphs = defaults.bool(forKey: Preferences.animateGraphsKey)
+        let qtcCustomSortMap = defaults.array(forKey: Preferences.qtcCustomSortKey) as? [String] ?? Preferences.defaultQTcCustomSort
+        let qtpCustomSortMap = defaults.array(forKey: Preferences.qtpCustomSortKey) as? [String] ?? Preferences.defaultQTpCustomSort
+        qtcCustomSort = qtcCustomSortMap.compactMap {Formula(rawValue: $0)}
+        qtpCustomSort = qtpCustomSortMap.compactMap {Formula(rawValue: $0)}
     }
     
     

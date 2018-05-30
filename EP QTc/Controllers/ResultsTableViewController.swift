@@ -10,6 +10,8 @@ import UIKit
 import QTc
 
 final class ResultsTableViewController: UITableViewController {
+    @IBOutlet var editButton: UIBarButtonItem!
+    
     let unknownColor = UIColor.blue
     let normalColor = UIColor.green
     
@@ -20,17 +22,20 @@ final class ResultsTableViewController: UITableViewController {
     var qtMeasurement: QtMeasurement?
     var formulaType: FormulaType?
     var resultsModel: ResultsModel?
+    var oldBarButtonItems: [UIBarButtonItem]?
+    var originalFormulas: [Formula] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
 
-        
         guard let formulaType = formulaType, let qtMeasurement = qtMeasurement else {
             assertionFailure("Error: formulaType and/or qtMeasurement can't be nil!")
             return
         }
+
+        self.tableView.isEditing = false
+        editButton.isEnabled = (preferences.sortOrder == .custom)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
 
         self.title = formulaType.name + " (\(qtMeasurement.units.string))"
                
@@ -54,8 +59,19 @@ final class ResultsTableViewController: UITableViewController {
             formulas = qtFormulas.bigFourFirstSortedByName(formulas: rawFormulas, formulaType: formulaType)
         case .byNumberOfSubjects:
             formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas, formulaType: formulaType)
+        // TODO: implement custom sorting
+        case .custom:
+            var customSort = (formulaType == .qtc ? preferences.qtcCustomSort : preferences.qtpCustomSort)
+            if let sorted = customSort, sorted.count > 1 {
+                formulas = sorted
+            }
+            else {
+                formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
+                customSort = formulas
+                preferences.save()
+            }
         }
-        
+        originalFormulas = formulas
         resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
     }
     
@@ -75,6 +91,64 @@ final class ResultsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func editTable(_ sender: Any) {
+        oldBarButtonItems = toolbarItems
+        toolbarItems?.removeAll()
+        toolbarItems?.append(UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(ResultsTableViewController.saveEdit)))
+        toolbarItems?.append(UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(ResultsTableViewController.resetEdit)))
+        toolbarItems?.append(UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ResultsTableViewController.cancelEdit)))
+        tableView.isEditing = true
+    }
+
+    @objc private func cancelEdit() {
+        toolbarItems?.removeAll()
+        toolbarItems = oldBarButtonItems
+        tableView.isEditing = false
+        formulas = originalFormulas
+        tableView.reloadData()
+    }
+
+    @objc private func saveEdit() {
+        toolbarItems?.removeAll()
+        toolbarItems = oldBarButtonItems
+        tableView.isEditing = false
+//        formulas = originalFormulas
+        originalFormulas = formulas
+        if formulaType == .qtc {
+            preferences.qtcCustomSort = formulas
+        }
+        else {
+            preferences.qtpCustomSort = formulas
+        }
+        preferences.save()
+        resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement!)
+        tableView.reloadData()
+    }
+
+    @objc private func resetEdit() {
+        toolbarItems?.removeAll()
+        toolbarItems = oldBarButtonItems
+        tableView.isEditing = false
+        let qtFormulas = QtFormulas()
+        guard let formulaType = formulaType, let rawFormulas = qtFormulas.formulas[formulaType] else {
+            assertionFailure("Formula type or formula not found!")
+            return
+        }
+        formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
+        originalFormulas = formulas
+        if formulaType == .qtc {
+            preferences.qtcCustomSort = formulas
+        }
+        else {
+            preferences.qtpCustomSort = formulas
+        }
+        preferences.save()
+        resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement!)
+
+        tableView.reloadData()
+
+    }
+
     @objc private func oopyToClipboard() {
         if let text = resultsModel?.resultsSummary(preferences: preferences) {
             print(text)
@@ -113,6 +187,27 @@ final class ResultsTableViewController: UITableViewController {
         selectedFormula = formulas[row]
         performSegue(withIdentifier: "detailsTableSegue", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+//        return .none
+//    }
+//
+//    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = formulas[sourceIndexPath.row]
+        formulas.remove(at: sourceIndexPath.row)
+        formulas.insert(movedObject, at: destinationIndexPath.row)
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.formulas.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
     // MARK: - Navigation

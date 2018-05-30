@@ -68,8 +68,8 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         precisionLabels = ["Full", "Integer", "1 place", "2 places", "4 places", "4 figures"]
         precisionOptions = [.raw, .roundToInteger, .roundOnePlace, .roundTwoPlaces, .roundFourPlaces, .roundFourFigures]
 
-        sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first"]
-        sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName]
+        sortOrderLabels = ["Date", "Name", "Number of subjects", "Date big 4 first", "Name big 4 first", "Custom"]
+        sortOrderOptions = [.byDate, .byName, .byNumberOfSubjects, .bigFourFirstByDate, .bigFourFirstByName, .custom]
         
         let separator = NSLocale.current.decimalSeparator ?? "."
         // regex allows zero and positive decimal numbers

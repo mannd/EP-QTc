@@ -65,6 +65,7 @@ enum SortOrder: String {
     // The sort orders below keep them first in the list, and only apply to QTc formulas.
     case bigFourFirstByDate = "bigFourFirstByDate"
     case bigFourFirstByName = "bigFourFirstByName"
+    case custom = "Custom"
 }
 
 class QtFormulas {

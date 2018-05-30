@@ -26,7 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                      Preferences.copyToCSVKey: Preferences.defaultCopyToCSV,
                                      Preferences.unitsKey: Preferences.defaultUnitsMsec,
                                      Preferences.heartRateKey: Preferences.defaultHeartRateAsInterval,
-                                     Preferences.animateGraphsKey: Preferences.defaultAnimateGraphs])
+                                     Preferences.animateGraphsKey: Preferences.defaultAnimateGraphs,
+                                     Preferences.qtcCustomSortKey: Preferences.defaultQTcCustomSort,
+                                     Preferences.qtpCustomSortKey: Preferences.defaultQTpCustomSort
+                                     ])
         return true
     }
 

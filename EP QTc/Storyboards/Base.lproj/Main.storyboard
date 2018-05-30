@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e9r-OD-jO5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e9r-OD-jO5">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -369,9 +369,15 @@
                                 <segue destination="SLC-b1-l2u" kind="show" identifier="QTpvRRSegue" id="MKd-zC-QAm"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="Edit" id="Og2-TJ-p4t">
+                            <connections>
+                                <action selector="editTable:" destination="Hrc-3Z-VXJ" id="2tX-qp-lRJ"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editButton" destination="Og2-TJ-p4t" id="YoS-Cc-1ru"/>
                         <segue destination="Czm-Y4-ul2" kind="show" identifier="detailsTableSegue" id="JyU-FN-nFM"/>
                     </connections>
                 </tableViewController>
