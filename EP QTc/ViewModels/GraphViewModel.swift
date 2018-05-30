@@ -189,7 +189,7 @@ class GraphViewModel {
                     setLabel("Mean \(formulaTypeName ?? "value")")
                 }
                 else if index == formulas.count + 1 {
-                    setLabel("Measured QT")  // only displayed with QTp graph
+                    setLabel("QT")  // only displayed with QTp graph
                 }
                 else {
                     setLabel("???")

@@ -82,7 +82,7 @@ class DetailsModel {
         let numberOfSubjectsDetail = Parameter()
         numberOfSubjectsDetail.key = "Number of subjects"
         if let totalNumberOfSubjects = calculator.numberOfSubjects {
-            numberOfSubjectsDetail.value = String(totalNumberOfSubjects)
+            numberOfSubjectsDetail.value = String.localizedStringWithFormat("%i", totalNumberOfSubjects)
         }
         else {
             numberOfSubjectsDetail.value = "not given"

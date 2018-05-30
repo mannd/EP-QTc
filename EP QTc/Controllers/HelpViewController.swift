@@ -15,7 +15,7 @@ class HelpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Help"
-        if let path = Bundle.main.path(forResource: "help", ofType: "html", inDirectory: nil) {
+        if let path = Bundle.main.path(forResource: "help", ofType: "html", inDirectory: "docs") {
             helpWebView.load(URLRequest(url: URL(fileURLWithPath: path)))
         }
     }

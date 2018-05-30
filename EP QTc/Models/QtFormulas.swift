@@ -122,9 +122,10 @@ class QtFormulas {
     func sortedByName(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
         return formulas.sorted(by: {$1.longName(formulaType: formulaType) > $0.longName(formulaType: formulaType)})
     }
-    
+
+    // Number of subjects sorted in descending order
     func sortedByNumberOfSubjects(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
-        return formulas.sorted(by: {$1.numberOfSubjects(formulaType: formulaType) > $0.numberOfSubjects(formulaType: formulaType)})
+        return formulas.sorted(by: {$1.numberOfSubjects(formulaType: formulaType) < $0.numberOfSubjects(formulaType: formulaType)})
     }
     
     private func formulasWithoutBigFour() -> ArraySlice<Formula> {

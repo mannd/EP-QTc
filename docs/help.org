@@ -15,15 +15,21 @@
 #+XSLT:
 #+HTML_HEAD: <style media="screen" type="text/css"> img {max-width: 100%; height: auto;} </style>
 * Unlocking the QT interval
-It has long been recognized that the QT interval on the electrocardiogram, representing the cumulative action potential duration in the ventricles, is dependent on the heart rate.  In 1920 Bazett[fn:1] was one of the first to attempt to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  His study, using primitive methodology and with a measly 39 subjects, somehow has become the most commonly used formula for correcting the QT interval for heart rate, despite many papers showing how far off the formula is and many alternative formulas -- some based on thousands of subjects.  How frustating for these more meticulous authors!  Further discussion of this somewhat sorry state of affairs can be found in the blog post: "Hacking the QTc."[fn:4]
+#+CAPTION: Long QT and Torsades de Pointes
+[[./images/lqt.png]]
+
+It has long been recognized that the QT interval on the electrocardiogram is dependent on heart rate.  In 1920 Bazett[fn:1] was one of the first to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  The familiar Bazett formula, developed using primitive methodology and based on only 39 subjects, somehow has become the most commonly used formula for correcting the QT interval for heart rate---this despite the availability of a large collection of newer formulas developed from studies with better methodologies and subjects numbering up to the thousands.  How frustating for these more meticulous authors!  Further discussion of this somewhat sorry state of affairs can be found in the blog post: "Hacking the QTc."[fn:2]
 
 The QT interval is important.  Long and short QT intervals have been associated with ventricular arrhythmias and sudden death.  Many drugs, antiarrhythmic and otherwise, can prolong the QT interval and iatrogenically create long QT syndrome.
 
-The cavalier cardiologist might glance at the automatically measured and calculated QTc interval on a digital electrocardiogram and be satisfied, despite well-known issues with automatic measurement of the QTc[fn:2].  He or she might not even know (or care about) which QTc formula was used by the computer.  The more inquisitive cardiologist might want to measure the QT manually (the EP Calipers app is a good way to do this[fn:3]) and then put some thought into the evaluation of that QT interval.  This app, *EP QTc* is intended for the latter type of cardiologist.
+The cavalier cardiologist might glance at the automatically measured and calculated QTc interval on a digital electrocardiogram and be satisfied, despite well-known issues with automatic measurement of the QTc[fn:3].  He or she might not even know (or care about) which QTc formula was used by the computer.  The more inquisitive cardiologist might want to measure the QT manually (the [[https://itunes.apple.com/us/app/ep-calipers/id982313078?mt=8][*EP Calipers*]] app is a good way to do this) and then put some thought into the evaluation of that QT interval.  This app, *EP QTc* is intended for the latter type of cardiologist.
 * Formulas and limits of normal
-The numerous QTc (corrected QT) and QTp (predicated QT) formulas in this app are gathered (mostly) from the paper by Rabkin et al., [[https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm][Nomenclature, categorization and usage of formulae to adjust QT interval for heart rate]].  To the extent possible, primary sources were obtained and reviewed for each formula.  In addition, there have been numerous attempts to define the normal QTc interval.  Many of these algorithms are also included in the app.
+The numerous QTc (corrected QT) and QTp (predicted QT) formulas in this app are mostly gathered from the paper by Rabkin et al., [[https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm][Nomenclature, categorization and usage of formulae to adjust QT interval for heart rate]].  To the extent possible, primary sources were obtained and reviewed for each formula.  In addition, there have been numerous attempts to define the normal QTc interval.  Many of these algorithms are also included in the app.
 * Calculator screen
-At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds or milliseconds.  Results are given in the same units (though strictly speaking the exact units for calculated QTc intervals depend on the formula, e.g. the Bazett formula QTc units are sec^0.5).  If possible also add sex and age, as some formulas are dependent on sex and/or age.
+#+CAPTION: Calculator screen
+[[./images/calculator_screen.png]]
+
+At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  Results are given in the same units (though strictly speaking the exact units for calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5).  If possible also add sex and age, as some formulas are dependent on sex and/or age.
 ** Menu items
 - *QTc* Calculate and show results of QTc formulas
 - *QTp* Calculate and show results of QTp formulas
@@ -31,31 +37,37 @@ At minimum enter the QT interval and heart rate or RR interval.  Units can be se
 - *Prefs* Show preferences screen
 - *Help* Show this screen
 * Results screen
-This shows a list of results of either the QTc or QTp formulas.  If you have selected QTc limits on the preferences screen, the results will be color coded depending on if they are normal or abnormal.  Tap any result and get a details screen as described below.  Tap the Copy button at the top right of the screen and the list of results will be copied to the clipboard so that they can be pasted elsewhere.  If you have the CSV on copy preference set, the results will be copied in CSV format, which can be easily imported into a spreadsheet program.
+#+CAPTION: Results screen
+[[./images/results_screen.png]]
+
+This shows a list of results of either the QTc or QTp formulas.  If you have selected QTc limits on the preferences screen, the results will be color coded depending on if they are normal or abnormal.  Tap any result and get a details screen as described below.  Tap the *Copy* button at the top right of the screen and the list of results will be copied to the clipboard so that they can be pasted elsewhere.  If you have the *CSV on copy* preference set, the results will be copied in CSV format, which can be easily imported into a spreadsheet program.
 ** Menu items
 - *Stats* Show the statistics screen, giving overall statistics of the formula results.
 - *Graph* Show a bar graph of the results.
 - *QTp vs HR* Show the measured QT vs the results of all QTp formulas.
 * Details screen
-This screen shows the detailed results of a specific formula.  These are divided into sections.
+#+CAPTION: Details screen
+[[./images/details_screen.png]]
+
+This screen shows the detailed results of a specific formula.  It is divided into sections.
 ** Parameters
 The input parameters, including QT, RR, heart rate, sex and age.
 ** Calculated QTc or QTp
 The result of the formula
 ** Interpretation
-The interpretation of the result, based on the QTc limits you have set.  Note that QTp intervals are by definition normal.  Also note that the interpretation may be "undefined" if you are using QTc limits that require entering the sex or age and you have not done so.  The interpretation may be "error" if the formula requires parameters such as sex or age and you have not entered them.
+The interpretation of the result, based on the QTc limits you have set.  Note that QTc limits only apply to QTc formulas and that QTp intervals are by definition normal.  Also note that the interpretation may be "undefined" if you are using QTc limits that require entering the sex or age and you have not done so.  The interpretation may be "error" if the formula requires parameters such as sex or age and you have not entered them.
 ** Formula details
 - *Name* the first author of the paper.
 - *Short name* the standard abbreviation of the formula, based on [[https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm][Rabkin et al.]]
 - *Publication date*
-- *Classification* the mathematical type of the formula.  More details can be found in Hacking the QTc[fn:4].
+- *Classification* the mathematical type of the formula.  More details can be found in Hacking the QTc[fn:2].
 - *Number of subjects* number of subjects from which the formula was derived.
 ** Equation
-The formula’s equation, based on HR (heart rate) or RR interval.  Parameters and results are in sec unless otherwise noted.  The equation has sometimes been normalized when the original form was unusual or had unusual units.  For example, the original units of Fridericia (QTcFRD) were 0.01 sec.  Another example, the original form of Merri (QTpMRR) was log(QT) = k + \alpha * log(RR).  For uniformity, this last equation was rewritten to solve for QT.
+The formula’s equation, based on QT interval, HR (heart rate) or RR interval.  Parameters and results are in sec unless otherwise noted.  The equation has sometimes been normalized when the original form was unusual or had unusual units.  For example, the original units of Fridericia (QTcFRD) were 0.01 sec.  Another example: the original form of Merri (QTpMRR) was log(QT) = k + \alpha * log(RR).  For uniformity, this last equation was rewritten to solve for QT.
 ** Reference
-The reference for the formula is given, as well as the DOI link if available.  If a DOI link is present, it is possible to tap on it and go the the reference online (though be forewarned, many are behind a paywall).
+The reference for the formula is given, as well as the DOI link if available.  If a DOI link is present, it is possible to tap on it and go the the reference online (though be forewarned, many are behind paywalls).
 ** Notes
-Generally a short summary of the study population.
+Short summary of the study population.
 ** QTc limits
 The QTc limits, if any, you have chosen to evaluate the formula result.
 ** QTc limits details
@@ -63,11 +75,14 @@ The cutoffs for normal and abnormal QTc intervals.
 ** QTc limits references
 The references for the QTc limits.  If there is a DOI link you can tap it and bring up the online reference.
 ** Copy button
-As with the results screen, tapping the Copy button in the upper right corner will copy this screen to the clipboard.
-* Stats screen
+As with the results screen, tapping the *Copy* button in the upper right corner will copy this screen to the clipboard.
+* Statistics screen
+#+CAPTION: Statistics screen
+[[./images/stats_screen.png]]
+
 This screen summarizes some statistics of the formulas.  The sections are as follows:
 ** Measured intervals
-The key measured intervals: QT and RR.
+The measured intervals: QT and RR.
 ** QTc or QTp statistics
 - *Number of formulas* The number of formulas that were applied, excluding formulas that were not used due to missing parameters (such as sex or age).
 - *Mean and Median* The mean and median of the results.
@@ -77,31 +92,43 @@ The key measured intervals: QT and RR.
 - *Mean QTc, Median QTc* In this case these values are compared against the QTc limits you have chosen.
 - *Number abnormal QTc, Percent abnormal QTc* The number of results considered abnormal compared with the total number of results.  For the purposes of this analysis any non-normal result (including borderline, mildly abnormal, etc.) is considered an abnormal result.
 ** Interpretation (QTp)
-- *QT vs QTp* Whether the measured QT is inside or outside the range of the calculated QTp intervals.  See Hacking the QTc[fn:4] for more details.
-- *\delta(QT-QTpMax) or \delta(QT-QTpMin)* How far above or below the maximum or minimum QTp result the QT is.  This value is absent if the QT is withing the QTp minimum to maximum range.
+- *QT vs QTp* Whether the measured QT is inside or outside the range of the calculated QTp intervals.  See Hacking the QTc[fn:2] for more details.
+- *\delta(QT-QTpMax) or \delta(QT-QTpMin)* How far above or below the maximum or minimum QTp result the QT is.  This value is absent if the QT is within the QTp minimum to maximum range.
 ** Copy button
-Tapping the Copy button in the upper right corner will copy this screen to the clipboard.
-* Graph
+Tapping the *Copy* button in the upper right corner will copy this screen to the clipboard.
+* Graph screen
+#+CAPTION: QTc graph screen
+[[./images/graph_screen]]
+
 Displays a bar graph of QTc or QTp results, including the mean QTc or QTp, and in the case of the QTp graph, the measured QT for comparison.  Results are color-coded based on the selected QTc limits, or comparison of the QT to the QTp range.  Color coded cutoff lines are drawn to indicate the QTc limits.  The graph can be zoomed and moved with finger gestures.  You can change the Y axis and whether or not the graph is animated using the preferences screen.
 ** Save button
 Save the graph to the Photos collection.
 * QTp vs HR
-This graph plots the QTp at a range of heart rates and the measured QT for comparison.  The measured QT is color-coded red if outside the QTp range, and blue if inside.  This graph can also be zoomed and moved with finger gestures, and saved to the Photos collection with the Save button.
+#+CAPTION: QTp vs HR
+[[./images/qtpvshr.png]]
+
+This graph plots the QTp at a range of heart rates and the measured QT for comparison.  The measured QT is color-coded red if outside the QTp range, and blue if inside.  This graph can also be zoomed and moved with finger gestures, and saved to the Photos collection with the *Save* button.
 * Preferences screen
+#+CAPTION: Preferences
+[[./images/preferences_screen]]
+
 - *Precision* Select rounding to integer, 1, 2 or 4 decimal places, 4 figures (e.g. 123.4, 1234, 12.34) or no rounding.  Rounding applies to msec values, sec values always show at least 4 decimal places.
-- *Sort order* Sort results by date, formula name or number of subjects studied.  Options also include "big 4 first" versions.  The "Big 4" formulas are the onces most frequently used: QTcBZT, QTcFRD, QTcHDG, and QTcFRM (Bazett, Fridericia, Hodges, and Framingham aka Sagie).  These Big 4 options only apply to sorting QTc formulas.
+- *Sort order* Sort results by date, formula name or number of subjects studied.  Options for sorting by date and name also include "big 4 first" versions.  The "big 4" formulas are the ones most frequently used: QTcBZT, QTcFRD, QTcHDG, and QTcFRM (Bazett, Fridericia, Hodges, and Framingham).  These big 4 options only apply to sorting QTc formulas.
 - *QTc limits* Tapping this preferences brings up the QTc limits screen, discussed below.
 - *CSV on copy*  Turn on to copy data to the clipboard using CSV format, a format that can be easily imported into a spreadsheet program.
 - *Units in msec* Turn on to make the default calculator units msec.  Turn off to make sec the default.  This option only takes hold when the app is restarted, otherwise the last selected units are used.
-- *Heart rate as interval* Turn on the make the default heart rate entry as an interval (either sec or msec) as opposed beats per min when this is turned off.  Again this option only applies to app startup.
-- *Animate graphs* Turn on see animated graphs, otherwise turn off.
+- *Heart rate as interval* Turn on to make the default heart rate entry as an interval (either sec or msec) as opposed beats per min when this is turned off.  Again this option only applies to app startup.
+- *Animate graphs* Turn on to see animated graphs.
 - *Automatic Y axis*  When on, the program will calculate the Y axis scale.  When off, the options below apply.
 - *Y axis maximum (msec)* the maximum value of the Y axis in msec.  This value and the one below are sanity checked and won’t take hold if they are too bizarre.
 - *Y axis minimum (msec)* the minimum Y axis value in msec.
 * QTc limits screen
-A number of publications have attempted to delineate upper and lower limits of the QTc.  You can select one or more of these sets of limits.  If you do select multiple limits, the less restrictive limits will "win out" over the more restrictive ones.  For example, if one limit says an abnormal QTc is > 440 msec and another > 460 msec, then a QTc of 450 msec will be classified as abnormal.  Selecting multiple QTc limits is appropriate when you want to select an upper and a lower limit to the QTc.
+#+CAPTION: QTc limits
+[[./images/qtclimits_screen.png]]
 
-Some limits are sex or age dependent.  If you don’t enter the sex or age, values will be intepreted as "undefined."  Some limits do more than distinguish between normal and abnormal.  Limits may be "borderline," or "mild," "moderate" or "severe."  These are color-coded and the colors are used in the results and graph screens.  Colors are:
+A number of publications have attempted to delineate upper and lower limits of the QTc.  You can select one or more of these sets of limits.  If you do select multiple limits, the less restrictive limits will "win out" over the more restrictive ones.  For example, if one limit says an abnormal QTc is > 440 msec and another > 460 msec, then a QTc of 450 msec will be classified as abnormal.  Selecting multiple QTc limits is appropriate when you want to select an upper and a lower limit for the QTc.
+
+Some limits are sex or age dependent.  If you don’t enter the sex or age, values will be intepreted as "undefined."  Some limits do more than distinguish between normal and abnormal.  Additional distinctions include "borderline," or "mild," "moderate" or "severe."  These are color-coded and the colors are used in the results and graph screens.  Colors are:
 | Interpretation      | Color          |
 |---------------------+----------------|
 | Error               | Blue           |
@@ -127,11 +154,9 @@ Website: https://www.epstudiossoftware.com
 Email: mannd@epstudiossoftware.com
 * Footnotes
 
-[fn:4] Link to the blog post.
+[fn:2] Link to the blog post.
 
-[fn:3] https://itunes.apple.com/us/app/ep-calipers/id982313078?mt=8
-
-[fn:2] https://www.physionet.org/challenge/2006/papers/0313.pdf
+[fn:3] https://www.physionet.org/challenge/2006/papers/0313.pdf
 
 [fn:1] Bazett HC. An analysis of the time-relations of electrocardiograms. Heart 1920;7:353–370.
 
