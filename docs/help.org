@@ -98,19 +98,19 @@ The measured intervals: QT and RR.
 Tapping the *Copy* button in the upper right corner will copy this screen to the clipboard.
 * Graph screen
 #+CAPTION: QTc graph screen
-[[./images/graph_screen]]
+[[./images/graph_screen.png]]
 
 Displays a bar graph of QTc or QTp results, including the mean QTc or QTp, and in the case of the QTp graph, the measured QT for comparison.  Results are color-coded based on the selected QTc limits, or comparison of the QT to the QTp range.  Color coded cutoff lines are drawn to indicate the QTc limits.  The graph can be zoomed and moved with finger gestures.  You can change the Y axis and whether or not the graph is animated using the preferences screen.
 ** Save button
 Save the graph to the Photos collection.
 * QTp vs HR
 #+CAPTION: QTp vs HR
-[[./images/qtpvshr.png]]
+[[./images/qtpvshr_screen.png]]
 
 This graph plots the QTp at a range of heart rates and the measured QT for comparison.  The measured QT is color-coded red if outside the QTp range, and blue if inside.  This graph can also be zoomed and moved with finger gestures, and saved to the Photos collection with the *Save* button.
 * Preferences screen
 #+CAPTION: Preferences
-[[./images/preferences_screen]]
+[[./images/preferences_screen.png]]
 
 - *Precision* Select rounding to integer, 1, 2 or 4 decimal places, 4 figures (e.g. 123.4, 1234, 12.34) or no rounding.  Rounding applies to msec values, sec values always show at least 4 decimal places.
 - *Sort order* Sort results by date, formula name or number of subjects studied.  Options for sorting by date and name also include "big 4 first" versions.  The "big 4" formulas are the ones most frequently used: QTcBZT, QTcFRD, QTcHDG, and QTcFRM (Bazett, Fridericia, Hodges, and Framingham).  These big 4 options only apply to sorting QTc formulas.
