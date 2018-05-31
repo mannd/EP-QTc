@@ -50,16 +50,15 @@ final class ResultsTableViewController: UITableViewController {
         case .none:
             formulas = rawFormulas
         case .byDate:
-            formulas = qtFormulas.sortedByDate(formulas: rawFormulas, formulaType: formulaType)
+            formulas = qtFormulas.sortedByDate(formulas: rawFormulas)
         case .byName:
-            formulas = qtFormulas.sortedByName(formulas: rawFormulas, formulaType: formulaType)
+            formulas = qtFormulas.sortedByName(formulas: rawFormulas)
         case .bigFourFirstByDate:
             formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
         case .bigFourFirstByName:
             formulas = qtFormulas.bigFourFirstSortedByName(formulas: rawFormulas, formulaType: formulaType)
         case .byNumberOfSubjects:
-            formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas, formulaType: formulaType)
-        // TODO: implement custom sorting
+            formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas)
         case .custom:
             var customSort = (formulaType == .qtc ? preferences.qtcCustomSort : preferences.qtpCustomSort)
             if let sorted = customSort, sorted.count > 1 {
@@ -70,6 +69,10 @@ final class ResultsTableViewController: UITableViewController {
                 customSort = formulas
                 preferences.save()
             }
+        case .byResultDescending:
+            formulas = qtFormulas.sortedByResultsDescending(formulas: rawFormulas, qtMeasurement: qtMeasurement)
+        case .byResultAscending:
+            formulas = qtFormulas.sortedByResultsAscending(formulas: rawFormulas, qtMeasurement: qtMeasurement)
         }
         originalFormulas = formulas
         resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)

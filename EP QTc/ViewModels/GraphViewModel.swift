@@ -140,8 +140,9 @@ class GraphViewModel {
         if let criteria = preferences.qtcLimits, formulaType == .qtc {
             for criterion in criteria {
                 let testSuite = AbnormalQTc.qtcTestSuite(criterion: criterion)
-                if let cutoffs = testSuite?.cutoffs() {
+                if let cutoffs = testSuite?.cutoffs(units: qtMeasurement.units) {
                     for cutoff in cutoffs {
+
                         let limitLine = ChartLimitLine(limit: cutoff.value)
                         limitLine.lineColor = cutoff.severity.color()
                         barChartView.leftAxis.addLimitLine(limitLine)
@@ -183,7 +184,7 @@ class GraphViewModel {
             if let formulas = formulas {
                 let index = Int(entry.x)
                 if index < formulas.count {
-                    setLabel(formulas[index].shortName(formulaType: .qtc))
+                    setLabel(formulas[index].shortName())
                 }
                 else if index == formulas.count {
                     setLabel("Mean \(formulaTypeName ?? "value")")

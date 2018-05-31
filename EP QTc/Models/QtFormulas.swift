@@ -10,29 +10,34 @@ import Foundation
 import QTc
 
 extension Formula {
-    func longName(formulaType: FormulaType) -> String {
+    func longName() -> String {
         return QTc.calculator(formula: self).longName
     }
     
-    func shortName(formulaType: FormulaType) -> String {
+    func shortName() -> String {
         return QTc.calculator(formula: self).shortName
     }
     
-    func classificationName(formulaType: FormulaType) -> String {
+    func classificationName() -> String {
         return QTc.calculator(formula: self).classification.label
     }
     
-    func publicationDate(formulaType: FormulaType) -> String {
+    func publicationDate() -> String {
         guard let date = QTc.calculator(formula: self).publicationDate else {
             return "date unspecified"
         }
         return date
     }
-    
+
     // This func assumes if numberOfSubjects is missing, they are 0.
     // This shouldn't happen when all the QTc/p formulas are completed
-    func numberOfSubjects(formulaType: FormulaType) -> Int {
+    func numberOfSubjects() -> Int {
         return QTc.calculator(formula: self).numberOfSubjects ?? 0
+    }
+
+    func result(qtMeasurement: QtMeasurement) -> Double {
+        let result = (try? QTc.calculator(formula: self).calculate(qtMeasurement: qtMeasurement)) ?? 0
+        return result
     }
 }
 
@@ -57,15 +62,17 @@ extension FormulaClassification {
 
 // Using String raw values here for serialization in UserDefaults
 enum SortOrder: String {
-    case none = "none"  // just used for testing
-    case byDate = "byDate"
-    case byName = "byName"
-    case byNumberOfSubjects = "byNumberOfSubjects"
+    case none // just used for testing
+    case byDate
+    case byName
+    case byNumberOfSubjects
     // "Big Four" are the most common formulas: QTcBZT, QTcFrd, QTcHdg, & QTcFrm.
     // The sort orders below keep them first in the list, and only apply to QTc formulas.
-    case bigFourFirstByDate = "bigFourFirstByDate"
-    case bigFourFirstByName = "bigFourFirstByName"
-    case custom = "Custom"
+    case bigFourFirstByDate
+    case bigFourFirstByName
+    case custom
+    case byResultDescending
+    case byResultAscending
 }
 
 class QtFormulas {
@@ -116,17 +123,17 @@ class QtFormulas {
     
     // note sorting functions throw; must be handled by calling function
  
-    func sortedByDate(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
-        return formulas.sorted(by: {$1.publicationDate(formulaType: formulaType) > $0.publicationDate(formulaType: formulaType)})
+    func sortedByDate(formulas: [Formula]) -> [Formula] {
+        return formulas.sorted(by: {$1.publicationDate() > $0.publicationDate()})
     }
     
-    func sortedByName(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
-        return formulas.sorted(by: {$1.longName(formulaType: formulaType) > $0.longName(formulaType: formulaType)})
+    func sortedByName(formulas: [Formula]) -> [Formula] {
+        return formulas.sorted(by: {$1.longName() > $0.longName()})
     }
 
     // Number of subjects sorted in descending order
-    func sortedByNumberOfSubjects(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
-        return formulas.sorted(by: {$1.numberOfSubjects(formulaType: formulaType) < $0.numberOfSubjects(formulaType: formulaType)})
+    func sortedByNumberOfSubjects(formulas: [Formula]) -> [Formula] {
+        return formulas.sorted(by: {$1.numberOfSubjects() < $0.numberOfSubjects()})
     }
     
     private func formulasWithoutBigFour() -> ArraySlice<Formula> {
@@ -134,13 +141,13 @@ class QtFormulas {
         return formulasMinusBigFour
     }
     
-    // All the Big Four functions ignore QTp formulas, i.e., only appy to QTc
+    // All the Big Four functions ignore QTp formulas, i.e., only apply to QTc
     func bigFourFirstSortedByDate(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
         if formulaType == .qtp {
-            return sortedByDate(formulas: formulas, formulaType: formulaType)
+            return sortedByDate(formulas: formulas)
         }
         else {
-            var sortedFormulas = sortedByDate(formulas: Array(formulasWithoutBigFour()), formulaType: .qtc)
+            var sortedFormulas = sortedByDate(formulas: Array(formulasWithoutBigFour()))
             sortedFormulas = bigFourFormulas() + sortedFormulas
             return sortedFormulas
         }
@@ -148,13 +155,21 @@ class QtFormulas {
     
     func bigFourFirstSortedByName(formulas: [Formula], formulaType: FormulaType) -> [Formula] {
         if formulaType == .qtp {
-            return sortedByName(formulas: formulas, formulaType: formulaType)
+            return sortedByName(formulas: formulas)
         }
         else {
-            var sortedFormulas = sortedByName(formulas: Array(formulasWithoutBigFour()), formulaType: .qtc)
+            var sortedFormulas = sortedByName(formulas: Array(formulasWithoutBigFour()))
             sortedFormulas = [.qtcBzt, .qtcFrm, .qtcFrd, .qtcHdg] + sortedFormulas
             return sortedFormulas
         }
     }
-    
+
+    func sortedByResultsDescending(formulas: [Formula], qtMeasurement: QtMeasurement) -> [Formula] {
+        return formulas.sorted(by: {$0.result(qtMeasurement: qtMeasurement) > $1.result(qtMeasurement: qtMeasurement)})
+    }
+
+    func sortedByResultsAscending(formulas: [Formula], qtMeasurement: QtMeasurement) -> [Formula] {
+        return formulas.sorted(by: {$1.result(qtMeasurement: qtMeasurement) > $0.result(qtMeasurement: qtMeasurement)})
+    }
+
 }

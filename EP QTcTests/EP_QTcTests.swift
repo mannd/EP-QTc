@@ -169,12 +169,12 @@ class EP_QTcTests: XCTestCase {
             XCTAssertEqual(bigFour[idx], trueBigFour[idx])
         }
         let trueSortedByDate: [Formula] = [.qtcBzt, .qtcFrd, .qtcMyd, .qtcAdm, .qtcHdg, .qtcKwt]
-        let sortedByDate = qtFormulas.sortedByDate(formulas: trueSortedByDate, formulaType: .qtc)
+        let sortedByDate = qtFormulas.sortedByDate(formulas: trueSortedByDate)
         for idx in [0..<6] {
             XCTAssertEqual(sortedByDate[idx], trueSortedByDate[idx])
         }
         let trueSortedByName: [Formula] = [.qtcAdm, .qtcArr, .qtcBzt, .qtcDmt, .qtcFrm, .qtcFrd]
-        let sortedByName = qtFormulas.sortedByName(formulas: trueSortedByName, formulaType: .qtc)
+        let sortedByName = qtFormulas.sortedByName(formulas: trueSortedByName)
         for idx in [0..<6] {
             XCTAssertEqual(sortedByName[idx], trueSortedByName[idx])
         }
@@ -222,12 +222,18 @@ class EP_QTcTests: XCTestCase {
         qtMeasurement = QtMeasurement(qt: nil, intervalRate: 0.500, units: .sec, intervalRateType: .interval, sex: .unspecified)
         severity = Calculator.resultSeverity(result: 0.501, qtMeasurement: qtMeasurement, formulaType: .qtc, qtcLimits: [.schwartz1985, .fda2005])
         XCTAssertEqual(severity, .severe)
-        
+    }
 
-
-
-
-
+    // Make sure all formulas have number of subjects
+    func testNumberOfSubjects() {
+        let qtcFormulas = QtFormulas().formulas[.qtc]
+        let qtpFormulas = QtFormulas().formulas[.qtp]
+        for formula in qtcFormulas! {
+            XCTAssert(QTc.qtcCalculator(formula: formula).numberOfSubjects! > 0)
+        }
+        for formula in qtpFormulas! {
+            XCTAssert(QTc.qtpCalculator(formula: formula).numberOfSubjects! > 0)
+        }
     }
 
 }
