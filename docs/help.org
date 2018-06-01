@@ -130,16 +130,17 @@ This graph plots the QTp at a range of heart rates and the measured QT for compa
 A number of publications have attempted to delineate upper and lower limits of the QTc.  You can select one or more of these sets of limits.  If you do select multiple limits, the less restrictive limits will "win out" over the more restrictive ones.  For example, if one limit says an abnormal QTc is > 440 msec and another > 460 msec, then a QTc of 450 msec will be classified as abnormal.  Selecting multiple QTc limits is appropriate when you want to select an upper and a lower limit for the QTc.
 
 Some limits are sex or age dependent.  If you don’t enter the sex or age, values will be interpreted as "undefined."  Some limits do more than distinguish between normal and abnormal.  Additional distinctions include "borderline," or "mild," "moderate" or "severe."  These are color-coded and the colors are used in the results and graph screens.  Colors are:
-| Interpretation      | Color          |
-|---------------------+----------------|
-| Error               | Blue           |
-| Normal              | Black or Green |
-| Borderline abnormal | Orange         |
-| Mild abnormal       | Orange         |
-| Moderately abnormal | Red            |
-| Severely abnormal   | Purple         |
-| Abnormal            | Red            |
-| Undefined           | Gray           |
+| Color  | Interpretation          |
+|--------+-------------------------|
+| Cyan   | QTp interval            |
+| Green  | Normal QTc or QT        |
+| Red    | Abnormal QTc or QT      |
+| Black  | Normal mean interval    |
+| Blue   | Abnormal mean interval  |
+| Orange | Borderline abnormal QTc |
+| Orange | Mildly abnormal QTc     |
+| Red    | Moderately abnormal QTc |
+| Purple | Severely abnormal QTc   |
 * Acknowledgments
 Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas!
 

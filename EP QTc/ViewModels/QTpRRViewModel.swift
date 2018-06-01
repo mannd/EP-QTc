@@ -11,10 +11,20 @@ import QTc
 import Charts
 import SigmaSwiftStatistics
 
+extension UIColor {
+    // This is the default graph color in Charts, a little lighter than UIColor.cyan
+    static func prettyCyan() -> UIColor {
+        return UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
+    }
+}
+
 class QTpRRViewModel {
     var chartView: ScatterChartView
     var qtMeasurement: QtMeasurement
     let preferences: Preferences
+    let cyan = UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
+//    let cyan = [UIExtendedSRGBColorSpace 0.54902 0.917647 1 1]
+
     
     init(chartView: ScatterChartView, qtMeasurement: QtMeasurement) {
         self.chartView = chartView
@@ -58,8 +68,8 @@ class QTpRRViewModel {
         let qtSet = ScatterChartDataSet(values: qtValues, label: (qtIsAbnormal ? "Abnormal " : "") + "QT")
         let qtpSet = ScatterChartDataSet(values: qtpValues, label: "QTp")
         qtpSet.drawValuesEnabled = false
-        qtSet.setColor(qtIsAbnormal ? UIColor.red : UIColor.blue)
-        qtpSet.setColor(UIColor.green)
+        qtSet.setColor(qtIsAbnormal ? UIColor.red : UIColor.green)
+        qtpSet.setColor(UIColor.prettyCyan())
         qtpSet.setScatterShape(.circle)
         let data = ScatterChartData(dataSets: [qtpSet, qtSet])
         chartView.data = data

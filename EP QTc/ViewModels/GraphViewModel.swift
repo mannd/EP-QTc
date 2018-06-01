@@ -14,9 +14,9 @@ import Charts
 class GraphViewModel {
     let undefinedColor = UIColor.lightGray
     let normalColor = UIColor.green
-    let normalQTColor = UIColor.cyan
     let abnormalColor = UIColor.red
-    let meanColor = UIColor.black
+    let normalQTpColor = UIColor.prettyCyan()
+    let normalMeanColor = UIColor.black
     let abnormalMeanColor = UIColor.blue
     let borderlineColor = UIColor.orange
     let mildColor = UIColor.orange
@@ -82,7 +82,7 @@ class GraphViewModel {
         // Note that QTp intervals can only be normal by definition
         let normalLabel = (formulaType == .qtp ? "QTp" : "Normal QTc")
         let normalValuesSet = BarChartDataSet(values: normalValues, label: normalLabel)
-        normalValuesSet.setColor(normalColor)
+        normalValuesSet.setColor(formulaType == .qtp ? normalQTpColor: normalColor)
         let undefinedValuesSet = BarChartDataSet(values: undefinedValues, label: "Uninterpreted QTc")
         let borderlineValuesSet = BarChartDataSet(values: borderlineValues, label: "Borderline QTc")
         borderlineValuesSet.setColor(borderlineColor)
@@ -101,7 +101,7 @@ class GraphViewModel {
             meanValuesSet.setColor(abnormalMeanColor)
         }
         else {
-            meanValuesSet.setColor(meanColor)
+            meanValuesSet.setColor(normalMeanColor)
         }
         // Show measured QT in QTp graph
         var qtValuesSet = BarChartDataSet()
@@ -112,7 +112,7 @@ class GraphViewModel {
                 qtValuesSet.setColor(abnormalColor)
             }
             else {
-                qtValuesSet.setColor(normalQTColor)
+                qtValuesSet.setColor(normalColor)
             }
         }
         barChartView.data = BarChartData(dataSets: [undefinedValuesSet, normalValuesSet, borderlineValuesSet,
