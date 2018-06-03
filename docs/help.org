@@ -148,6 +148,8 @@ Some limits are sex or age dependent.  If you don’t enter the sex or age, valu
 - This app uses [[https://github.com/evgenyneu/SigmaSwiftStatistics][SigmaSwiftStatistics]] for statistical analysis of the QT formulas.  This framework is copyright (c) 2015 Evgenii Neumerzhitckii and is licensed under the [[https://github.com/evgenyneu/SigmaSwiftStatistics/blob/master/LICENSE][MIT License]].
 
 - The app also uses the [[https://github.com/danielgindi/Charts][Charts]] framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi & Philipp Jahoda, and is licensed under the [[http://www.apache.org/licenses/LICENSE-2.0.html][Apache License, Version 2.0]].
+
+- The app uses [[https://github.com/adamwaite/Validator][Validator]] which has an unrestricted license.
 * Limitations
 This app uses published formulas and every attempt has been made to verify sources and test for accuracy.  Clinical interpretation of the results of this app is up to the clinician.  The QT interval is only one factor to consider in diagnosing long and short QT syndromes and the risk of ventricular arrhythmias.  EP Studios is not responsible for the accuracy of this app or its application for clinical use.  On the other hand, every effort will be made to correct any errors brought to our attention.  Please let us know if you have any corrections, suggestions, or additions.
 * Privacy
