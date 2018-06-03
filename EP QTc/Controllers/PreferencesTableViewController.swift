@@ -157,7 +157,8 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         let yAxisMax = yAxisMaximumTextField.text?.stringToDouble()
         let yAxisMin = yAxisMinimumTextField.text?.stringToDouble()
         if let yAxisMax = yAxisMax, let yAxisMin = yAxisMin {
-            if yAxisMax > yAxisMin {
+            // sanity check to make sure graph isn't too bizarre
+            if yAxisMax > yAxisMin && yAxisMax - yAxisMin > 99.0 {
                 return (yAxisMax, yAxisMin)
             }
         }
