@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-03 Sun 10:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="David Mann" />
+<meta name="description" content="EP QTc Help"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style media="screen" type="text/css"> img {max-width: 100%; height: auto;} </style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org22d1d38">Unlocking the QT interval</a></li>
+<li><a href="#org5280ce0">Formulas and limits of normal</a></li>
+<li><a href="#org8481f1c">Calculator screen</a>
+<ul>
+<li><a href="#org1160270">Menu items</a></li>
+</ul>
+</li>
+<li><a href="#org1a02217">Results screen</a>
+<ul>
+<li><a href="#org9146221">Menu items</a></li>
+</ul>
+</li>
+<li><a href="#org62e8629">Details screen</a>
+<ul>
+<li><a href="#org9d8f624">Parameters</a></li>
+<li><a href="#org9324a4b">Calculated QTc or QTp</a></li>
+<li><a href="#orgecc8240">Interpretation</a></li>
+<li><a href="#org0810e27">Formula details</a></li>
+<li><a href="#orgb45e5b4">Equation</a></li>
+<li><a href="#org767833c">Reference</a></li>
+<li><a href="#org2232aaa">Notes</a></li>
+<li><a href="#org65ba612">QTc limits</a></li>
+<li><a href="#org334681e">QTc limits details</a></li>
+<li><a href="#org726f2c4">QTc limits references</a></li>
+<li><a href="#org6a413ee">Copy button</a></li>
+</ul>
+</li>
+<li><a href="#org5ce038a">Statistics screen</a>
+<ul>
+<li><a href="#org208443a">Measured intervals</a></li>
+<li><a href="#org441fe20">QTc or QTp statistics</a></li>
+<li><a href="#orgfa5f764">Interpretation (QTc)</a></li>
+<li><a href="#orgfe692c7">Interpretation (QTp)</a></li>
+<li><a href="#orgfc3e14e">Copy button</a></li>
+</ul>
+</li>
+<li><a href="#org472d75b">Graph screen</a>
+<ul>
+<li><a href="#org5248232">Save button</a></li>
+</ul>
+</li>
+<li><a href="#org28b0b32">QTp vs HR</a></li>
+<li><a href="#org9876c8f">Preferences screen</a></li>
+<li><a href="#org0d6e2b5">QTc limits screen</a></li>
+<li><a href="#org03b7d68">Acknowledgments</a></li>
+<li><a href="#org401bd91">Limitations</a></li>
+<li><a href="#org63bf8aa">Privacy</a></li>
+<li><a href="#org1c8abb7">License</a></li>
+<li><a href="#orgfbfe726">Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org22d1d38" class="outline-2">
+<h2 id="org22d1d38">Unlocking the QT interval</h2>
+<div class="outline-text-2" id="text-org22d1d38">
+
+<div class="figure">
+<p><img src="./images/lqt.png" alt="lqt.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Long QT and Torsades de Pointes</p>
+</div>
+
+<p>
+It has long been recognized that the QT interval on the electrocardiogram is dependent on heart rate.  In 1920 Bazett<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> was one of the first to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  The familiar Bazett formula, developed using primitive methodology and based on only 39 subjects, somehow has become the most commonly used formula for correcting the QT interval for heart rate&#x2014;this despite the availability of a large collection of newer formulas developed from studies with better methodologies and subjects numbering up to the thousands.  How frustrating for these more meticulous authors!  Further discussion of this somewhat sorry state of affairs can be found in the blog post <a href="https://www.epstudiossoftware.com/hacking-the-qtc">Hacking the QTc</a>.
+</p>
+
+<p>
+The QT interval is important.  Long and short QT intervals have been associated with ventricular arrhythmias and sudden death.  Many drugs, antiarrhythmic and otherwise, can prolong the QT interval.
+</p>
+
+<p>
+The cavalier cardiologist might glance at the automatically measured and calculated QTc interval on a digital electrocardiogram and be satisfied, despite well-known issues with automatic measurement of the QTc<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.  He or she might not even know (or care about) which QTc formula was used by the computer.  The more inquisitive cardiologist might want to measure the QT manually (the <a href="https://itunes.apple.com/us/app/ep-calipers/id982313078?mt=8"><b>EP Calipers</b></a> app is a good way to do this) and then put some thought into the evaluation of that QT interval.  This app, <b>EP QTc</b> is intended for the latter type of cardiologist.
+</p>
+</div>
+</div>
+<div id="outline-container-org5280ce0" class="outline-2">
+<h2 id="org5280ce0">Formulas and limits of normal</h2>
+<div class="outline-text-2" id="text-org5280ce0">
+<p>
+The numerous QTc (corrected QT) and QTp (predicted QT) formulas in this app are mostly gathered from the paper by Rabkin et al., <a href="https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm">Nomenclature, categorization and usage of formulae to adjust QT interval for heart rate</a>.  To the extent possible, primary sources were obtained and reviewed for each formula.  In addition, there have been numerous attempts to define the normal QTc interval.  Many of these definitions are also included in the app.
+</p>
+</div>
+</div>
+<div id="outline-container-org8481f1c" class="outline-2">
+<h2 id="org8481f1c">Calculator screen</h2>
+<div class="outline-text-2" id="text-org8481f1c">
+
+<div class="figure">
+<p><img src="./images/calculator_screen.png" alt="calculator_screen.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Calculator screen</p>
+</div>
+
+<p>
+At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  Results are given in the same units (though strictly speaking the exact units for calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec<sup>0.5</sup>).  If possible also add sex and age, as some formulas are dependent on sex and/or age.
+</p>
+</div>
+<div id="outline-container-org1160270" class="outline-3">
+<h3 id="org1160270">Menu items</h3>
+<div class="outline-text-3" id="text-org1160270">
+<ul class="org-ul">
+<li><b>QTc</b> Calculate and show results of QTc formulas</li>
+<li><b>QTp</b> Calculate and show results of QTp formulas</li>
+<li><b>Clear</b> Clear values and start over</li>
+<li><b>Prefs</b> Show preferences screen</li>
+<li><b>Help</b> Show this screen</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a02217" class="outline-2">
+<h2 id="org1a02217">Results screen</h2>
+<div class="outline-text-2" id="text-org1a02217">
+
+<div class="figure">
+<p><img src="./images/results_screen.png" alt="results_screen.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Results screen</p>
+</div>
+
+<p>
+This shows a list of results of either the QTc or QTp formulas.  If you have selected QTc limits on the preferences screen, the results will be color coded depending on if they are normal or abnormal.  Tap any result and get a details screen as described below.  Tap the <b>Copy</b> button at the top right of the screen and the list of results will be copied to the clipboard so that they can be pasted elsewhere.  If you have the <b>CSV on copy</b> preference set, the results will be copied in CSV format, which can be easily imported into a spreadsheet program.
+</p>
+</div>
+<div id="outline-container-org9146221" class="outline-3">
+<h3 id="org9146221">Menu items</h3>
+<div class="outline-text-3" id="text-org9146221">
+<ul class="org-ul">
+<li><b>Stats</b> Show the statistics screen, giving overall statistics of the formula results.</li>
+<li><b>Graph</b> Show a bar graph of the results.</li>
+<li><b>QTp vs HR</b> Show the measured QT vs the results of all QTp formulas.</li>
+<li><b>Edit</b> This button is only enabled if you have chosen the Custom sorting preference.  If you tap this button, the order of formulas can be customized, and you can delete formulas if you like.  Tap <b>Save</b> to keep the changes you made, <b>Reset</b> to undo previously saved customization, or <b>Cancel</b> to cancel your changes.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org62e8629" class="outline-2">
+<h2 id="org62e8629">Details screen</h2>
+<div class="outline-text-2" id="text-org62e8629">
+
+<div class="figure">
+<p><img src="./images/details_screen.png" alt="details_screen.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Details screen</p>
+</div>
+
+<p>
+This screen shows the detailed results of a specific formula.  It is divided into sections.
+</p>
+</div>
+<div id="outline-container-org9d8f624" class="outline-3">
+<h3 id="org9d8f624">Parameters</h3>
+<div class="outline-text-3" id="text-org9d8f624">
+<p>
+The input parameters, including QT, RR, heart rate, sex and age.
+</p>
+</div>
+</div>
+<div id="outline-container-org9324a4b" class="outline-3">
+<h3 id="org9324a4b">Calculated QTc or QTp</h3>
+<div class="outline-text-3" id="text-org9324a4b">
+<p>
+The result of the formula
+</p>
+</div>
+</div>
+<div id="outline-container-orgecc8240" class="outline-3">
+<h3 id="orgecc8240">Interpretation</h3>
+<div class="outline-text-3" id="text-orgecc8240">
+<p>
+The interpretation of the result, based on the QTc limits you have set.  Note that QTc limits only apply to QTc formulas and that QTp intervals are by definition normal.  Also note that the interpretation may be "undefined" if you are using QTc limits that require entering the sex or age and you have not done so.  The interpretation may be "error" if the formula requires parameters such as sex or age and you have not entered them.
+</p>
+</div>
+</div>
+<div id="outline-container-org0810e27" class="outline-3">
+<h3 id="org0810e27">Formula details</h3>
+<div class="outline-text-3" id="text-org0810e27">
+<ul class="org-ul">
+<li><b>Name</b> the first author of the paper.</li>
+<li><b>Short name</b> the standard abbreviation of the formula, based on <a href="https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm">Rabkin et al.</a></li>
+<li><b>Publication date</b></li>
+<li><b>Classification</b> the mathematical type of the formula.  More details can be found in <a href="https://www.epstudiossoftware.com/hacking-the-qtc">Hacking the QTc</a>.</li>
+<li><b>Number of subjects</b> number of subjects from which the formula was derived.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb45e5b4" class="outline-3">
+<h3 id="orgb45e5b4">Equation</h3>
+<div class="outline-text-3" id="text-orgb45e5b4">
+<p>
+The formula’s equation, based on QT interval, HR (heart rate) or RR interval.  Parameters and results are in sec unless otherwise noted.  The equation has sometimes been normalized when the original form was unusual or had unusual units.  For example, the original units of Fridericia (QTcFRD) were 0.01 sec.  Another example: the original form of Merri (QTpMRR) was log(QT) = k + &alpha; * log(RR).  For uniformity, this equation was rewritten to solve for QT.
+</p>
+</div>
+</div>
+<div id="outline-container-org767833c" class="outline-3">
+<h3 id="org767833c">Reference</h3>
+<div class="outline-text-3" id="text-org767833c">
+<p>
+The reference for the formula is given, as well as the DOI link if available.  If a DOI link is present, it is possible to tap on it and go the reference online (though be forewarned, many are behind paywalls).
+</p>
+</div>
+</div>
+<div id="outline-container-org2232aaa" class="outline-3">
+<h3 id="org2232aaa">Notes</h3>
+<div class="outline-text-3" id="text-org2232aaa">
+<p>
+Short summary of the study population.
+</p>
+</div>
+</div>
+<div id="outline-container-org65ba612" class="outline-3">
+<h3 id="org65ba612">QTc limits</h3>
+<div class="outline-text-3" id="text-org65ba612">
+<p>
+The QTc limits, if any, you have chosen to evaluate the formula result.
+</p>
+</div>
+</div>
+<div id="outline-container-org334681e" class="outline-3">
+<h3 id="org334681e">QTc limits details</h3>
+<div class="outline-text-3" id="text-org334681e">
+<p>
+The cutoffs for normal and abnormal QTc intervals.
+</p>
+</div>
+</div>
+<div id="outline-container-org726f2c4" class="outline-3">
+<h3 id="org726f2c4">QTc limits references</h3>
+<div class="outline-text-3" id="text-org726f2c4">
+<p>
+The references for the QTc limits.  If there is a DOI link you can tap it and bring up the online reference.
+</p>
+</div>
+</div>
+<div id="outline-container-org6a413ee" class="outline-3">
+<h3 id="org6a413ee">Copy button</h3>
+<div class="outline-text-3" id="text-org6a413ee">
+<p>
+As with the results screen, tapping the <b>Copy</b> button in the upper right corner will copy this screen to the clipboard.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ce038a" class="outline-2">
+<h2 id="org5ce038a">Statistics screen</h2>
+<div class="outline-text-2" id="text-org5ce038a">
+
+<div class="figure">
+<p><img src="./images/stats_screen.png" alt="stats_screen.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Statistics screen</p>
+</div>
+
+<p>
+This screen summarizes some statistics of the formulas.  The sections are as follows:
+</p>
+</div>
+<div id="outline-container-org208443a" class="outline-3">
+<h3 id="org208443a">Measured intervals</h3>
+<div class="outline-text-3" id="text-org208443a">
+<p>
+The measured intervals: QT and RR.
+</p>
+</div>
+</div>
+<div id="outline-container-org441fe20" class="outline-3">
+<h3 id="org441fe20">QTc or QTp statistics</h3>
+<div class="outline-text-3" id="text-org441fe20">
+<ul class="org-ul">
+<li><b>Number of formulas</b> The number of formulas that were applied, excluding formulas that were not used due to missing parameters (such as sex or age).</li>
+<li><b>Mean and Median</b> The mean and median of the results.</li>
+<li><b>Maximum and Minimum value</b> The range of the results.</li>
+<li><b>Standard deviation</b> The standard deviation of the results.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa5f764" class="outline-3">
+<h3 id="orgfa5f764">Interpretation (QTc)</h3>
+<div class="outline-text-3" id="text-orgfa5f764">
+<ul class="org-ul">
+<li><b>Mean QTc, Median QTc</b> In this case these values are compared against the QTc limits you have chosen.</li>
+<li><b>Number abnormal QTc, Percent abnormal QTc</b> The number of results considered abnormal compared with the total number of results.  For the purposes of this analysis any non-normal result (including borderline, mildly abnormal, etc.) is considered an abnormal result.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfe692c7" class="outline-3">
+<h3 id="orgfe692c7">Interpretation (QTp)</h3>
+<div class="outline-text-3" id="text-orgfe692c7">
+<ul class="org-ul">
+<li><b>QT vs QTp</b> Whether the measured QT is inside or outside the range of the calculated QTp intervals.  See <a href="https://www.epstudiossoftware.com/hacking-the-qtc">Hacking the QTc</a> for more details.</li>
+<li><b>&delta;(QT-QTpMax) or &delta;(QT-QTpMin)</b> How far above or below the maximum or minimum QTp result the QT is.  This value is absent if the QT is within the QTp minimum to maximum range.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfc3e14e" class="outline-3">
+<h3 id="orgfc3e14e">Copy button</h3>
+<div class="outline-text-3" id="text-orgfc3e14e">
+<p>
+Tapping the <b>Copy</b> button in the upper right corner will copy this screen to the clipboard.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org472d75b" class="outline-2">
+<h2 id="org472d75b">Graph screen</h2>
+<div class="outline-text-2" id="text-org472d75b">
+
+<div class="figure">
+<p><img src="./images/graph_screen.png" alt="graph_screen.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>QTc graph screen</p>
+</div>
+
+<p>
+This screen displays a bar graph of QTc or QTp results, including the mean QTc or QTp, and in the case of the QTp graph, the measured QT for comparison.  Results are color-coded based on the selected QTc limits, or comparison of the QT to the QTp range.  Color coded cutoff lines are drawn to indicate the QTc limits.  The graph can be zoomed and moved with finger gestures.  Tap on a bar to see the QTc for QTp formula for that measurement.  You can change the Y axis and whether or not the graph is animated using the preferences screen.
+</p>
+</div>
+<div id="outline-container-org5248232" class="outline-3">
+<h3 id="org5248232">Save button</h3>
+<div class="outline-text-3" id="text-org5248232">
+<p>
+Save the graph to the Photos collection.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org28b0b32" class="outline-2">
+<h2 id="org28b0b32">QTp vs HR</h2>
+<div class="outline-text-2" id="text-org28b0b32">
+
+<div class="figure">
+<p><img src="./images/qtpvshr_screen.png" alt="qtpvshr_screen.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>QTp vs HR</p>
+</div>
+
+<p>
+This graph plots the QTp at a range of heart rates and the measured QT for comparison.  The measured QT is color-coded red if outside the QTp range, and green if inside.  This graph can also be zoomed and moved with finger gestures, and saved to the Photos collection with the <b>Save</b> button.
+</p>
+</div>
+</div>
+<div id="outline-container-org9876c8f" class="outline-2">
+<h2 id="org9876c8f">Preferences screen</h2>
+<div class="outline-text-2" id="text-org9876c8f">
+
+<div class="figure">
+<p><img src="./images/preferences_screen.png" alt="preferences_screen.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Preferences screen</p>
+</div>
+
+<p>
+Customize the calculator using the preferences screen.
+</p>
+<ul class="org-ul">
+<li><b>Precision</b> Select rounding to integer, 1, 2 or 4 decimal places, 4 figures (e.g. 123.4, 1234, 12.34) or no rounding.  Rounding applies to msec values. Sec values always show at least 4 decimal places.</li>
+<li><b>Sort order</b> Sort results by date, formula name, number of subjects studied, result, or customize the order of formulas.  Options for sorting by date and name also include "big 4 first" versions.  The "big 4" formulas are the ones most frequently used: QTcBZT, QTcFRD, QTcHDG, and QTcFRM (Bazett, Fridericia, Hodges, and Framingham).  These big 4 options only apply to sorting QTc formulas.  If you choose the custom option, formulas can be rearranged or deleted per your personal preference using the <b>Edit</b> button on the results screen.</li>
+<li><b>QTc limits</b> Tapping this preferences brings up the QTc limits screen, discussed below.</li>
+<li><b>CSV on copy</b>  Turn on to copy data to the clipboard using CSV format, a format that can be easily imported into a spreadsheet program.</li>
+<li><b>Units in msec</b> Turn on to make the default calculator units msec.  Turn off to make sec the default.  This option only takes hold when the app is restarted, otherwise the last selected units are used.</li>
+<li><b>Heart rate as interval</b> Turn on to make the default heart rate entry an interval (either sec or msec) as opposed beats per min when this is turned off.  Again this option only applies to app startup.</li>
+<li><b>Animate graphs</b> Turn on to see animated graphs.</li>
+<li><b>Automatic Y axis</b>  When on, the program will calculate the Y axis scale.  When off, the options below apply.</li>
+<li><b>Y axis maximum (msec)</b> the maximum value of the Y axis in msec.  This value and the one below are sanity checked and won’t take hold if they are too bizarre.</li>
+<li><b>Y axis minimum (msec)</b> the minimum Y axis value in msec.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0d6e2b5" class="outline-2">
+<h2 id="org0d6e2b5">QTc limits screen</h2>
+<div class="outline-text-2" id="text-org0d6e2b5">
+
+<div class="figure">
+<p><img src="./images/qtclimits_screen.png" alt="qtclimits_screen.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>QTc limits</p>
+</div>
+
+<p>
+A number of publications have attempted to delineate upper and lower limits of the QTc.  You can select one or more of these sets of limits.  If you do select multiple limits, the less restrictive limits will "win out" over the more restrictive ones.  For example, if one limit says an abnormal QTc is &gt; 440 msec and another &gt; 460 msec, then a QTc of 450 msec will be classified as abnormal.  Selecting multiple QTc limits is appropriate when you want to select an upper and a lower limit for the QTc.
+</p>
+
+<p>
+Some limits are sex or age dependent.  If you don’t enter the sex or age, values will be interpreted as "undefined."  Some limits do more than distinguish between normal and abnormal.  Additional distinctions include "borderline," or "mild," "moderate" or "severe."  These are color-coded and the colors are used in the results and graph screens.  Colors are:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Color</th>
+<th scope="col" class="org-left">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Cyan</td>
+<td class="org-left">QTp interval</td>
+</tr>
+
+<tr>
+<td class="org-left">Green</td>
+<td class="org-left">Normal QTc or QT</td>
+</tr>
+
+<tr>
+<td class="org-left">Red</td>
+<td class="org-left">Abnormal QTc or QT</td>
+</tr>
+
+<tr>
+<td class="org-left">Black</td>
+<td class="org-left">Normal mean interval</td>
+</tr>
+
+<tr>
+<td class="org-left">Blue</td>
+<td class="org-left">Abnormal mean interval</td>
+</tr>
+
+<tr>
+<td class="org-left">Orange</td>
+<td class="org-left">Borderline abnormal QTc</td>
+</tr>
+
+<tr>
+<td class="org-left">Orange</td>
+<td class="org-left">Mildly abnormal QTc</td>
+</tr>
+
+<tr>
+<td class="org-left">Red</td>
+<td class="org-left">Moderately abnormal QTc</td>
+</tr>
+
+<tr>
+<td class="org-left">Purple</td>
+<td class="org-left">Severely abnormal QTc</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org03b7d68" class="outline-2">
+<h2 id="org03b7d68">Acknowledgments</h2>
+<div class="outline-text-2" id="text-org03b7d68">
+<ul class="org-ul">
+<li>Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas!</li>
+
+<li>This app uses <a href="https://github.com/evgenyneu/SigmaSwiftStatistics">SigmaSwiftStatistics</a> for statistical analysis of the QT formulas.  This framework is copyright (c) 2015 Evgenii Neumerzhitckii and is licensed under the <a href="https://github.com/evgenyneu/SigmaSwiftStatistics/blob/master/LICENSE">MIT License</a>.</li>
+
+<li>The app also uses the <a href="https://github.com/danielgindi/Charts">Charts</a> framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi &amp; Philipp Jahoda, and is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org401bd91" class="outline-2">
+<h2 id="org401bd91">Limitations</h2>
+<div class="outline-text-2" id="text-org401bd91">
+<p>
+This app uses published formulas and every attempt has been made to verify sources and test for accuracy.  Clinical interpretation of the results of this app is up to the clinician.  The QT interval is only one factor to consider in diagnosing long and short QT syndromes and the risk of ventricular arrhythmias.  EP Studios is not responsible for the accuracy of this app or its application for clinical use.  On the other hand, every effort will be made to correct any errors brought to our attention.  Please let us know if you have any corrections, suggestions, or additions.
+</p>
+</div>
+</div>
+<div id="outline-container-org63bf8aa" class="outline-2">
+<h2 id="org63bf8aa">Privacy</h2>
+<div class="outline-text-2" id="text-org63bf8aa">
+<p>
+No user data is collected by this app.  No data is stored either on the user’s device or on remote servers.  Please see the EP Studios <a href="https://www.epstudiossoftware.com/about/privacy-policy/">privacy policy</a> for more information.
+</p>
+</div>
+</div>
+<div id="outline-container-org1c8abb7" class="outline-2">
+<h2 id="org1c8abb7">License</h2>
+<div class="outline-text-2" id="text-org1c8abb7">
+<p>
+This app is open source and licensed under the 
+<a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>.  When used with Apple devices via the iTunes App Store, it is subject to the <a href="http://images.apple.com/legal/sla/docs/AppleStoreApp.pdf">standard Apple iOS license agreement</a>.  Source code for this app is available on <a href="https://github.com/mannd/EP-QTc">GitHub</a>.
+</p>
+
+<p>
+This app is copyright © 2018 by EP Studios, Inc.  All rights reserved.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfbfe726" class="outline-2">
+<h2 id="orgfbfe726">Contact</h2>
+<div class="outline-text-2" id="text-orgfbfe726">
+<p>
+Website: <a href="https://www.epstudiossoftware.com">https://www.epstudiossoftware.com</a>
+</p>
+
+<p>
+Email: mannd@epstudiossoftware.com
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Bazett HC. An analysis of the time-relations of electrocardiograms. Heart 1920;7:353–370.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.physionet.org/challenge/2006/papers/0313.pdf">https://www.physionet.org/challenge/2006/papers/0313.pdf</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+</body>
+</html>

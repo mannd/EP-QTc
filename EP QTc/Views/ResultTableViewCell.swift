@@ -10,30 +10,33 @@ import UIKit
 import QTc
 
 class ResultTableViewCell: UITableViewCell {
+    static let identifier = "ResultCell"
 
     @IBOutlet var calculatorNameLabel: UILabel!
     @IBOutlet var resultLabel: UILabel!
+    @IBOutlet var shortNameLabel: UILabel!
     
-    var formula: QTcFormula!
+    var preferences: Preferences!
+    var resultViewModel: ResultViewModel!
+    var calculator: Calculator!
+    
     var qtMeasurement: QtMeasurement! {
         didSet {
-            resultLabel.text = String(format: "%.1f %@", qtMeasurement.calculateQTc(formula: formula) ?? 0, qtMeasurement.units == .msec ? " msec" : " sec")
-            calculatorNameLabel.text = qtMeasurement.calculatorName(formula: formula)
+            guard calculator != nil, preferences != nil else {
+                assertionFailure("Programming error: cell.calculator and preferences must be set before setting qtMeasurement!")
+                return
+            }
+            resultViewModel = ResultViewModel(calculator: calculator, qtMeasurement: qtMeasurement, preferences: preferences)
+            resultLabel.text = resultViewModel.resultLabel()
+            resultLabel.textColor = resultViewModel.severityColor()
+            calculatorNameLabel.text = resultViewModel.longCalculatorName()
+            shortNameLabel.text = resultViewModel.shortCalculatorName()
+            resultLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: resultViewModel.severityFontWeight())
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        resultLabel.font = .boldSystemFont(ofSize: 24)
         accessoryType = .disclosureIndicator
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    
-    }
-
 }

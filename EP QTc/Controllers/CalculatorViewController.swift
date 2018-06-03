@@ -9,6 +9,7 @@
 import UIKit
 import Validator
 import QTc
+import SafariServices
 
 // Best way to dismiss keyboard on tap on view.
 // See https://stackoverflow.com/questions/32281651/how-to-dismiss-keyboard-when-touching-anywhere-outside-uitextfield-in-swift
@@ -26,11 +27,45 @@ extension UIViewController {
     {
         view.endEditing(true)
     }
+    
+    func stringToDouble(_ string: String?) -> Double? {
+        guard let string = string else { return nil }
+        return string.stringToDouble()
+    }
+    
+    func showCopyToClipboardDialog(inCSVFormat: Bool = false) {
+        let message = String(format: "The data on this screen has been copied in %@ format to the system clipboard.  You can switch to another application and paste it for further analysis.", inCSVFormat ? "CSV" : "text")
+        let dialog = UIAlertController(title: "Data copied to clipboard", message: message, preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(dialog, animated: true)
+    }
 }
 
+// This version of stringToDouble respects locale
+// (i.e. 140.4 OK in US, 140,4 OK in France
+extension String {
+    func stringToDouble() -> Double? {
+        let nf = NumberFormatter()
+        guard let number = nf.number(from: self) else { return nil }
+        return number.doubleValue
+    }
+    
+}
 
+extension FormulaType {
+    var name: String {
+        get {
+            switch self {
+            case .qtc:
+                return "QTc"
+            case .qtp:
+                return "QTp"
+            }
+        }
+    }
+}
 
-class CalculatorViewController: UIViewController, UITextFieldDelegate {
+class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate {
     
     // All the controls on the calculator form
     @IBOutlet var scrollView: UIScrollView!
@@ -45,7 +80,10 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var qtUnitsLabel: UILabel!
     @IBOutlet var intervalRateUnitsLabel: UILabel!
     @IBOutlet var calculateButton: UIBarButtonItem!
- 
+    @IBOutlet var optionalInformationLabel: UILabel!
+    
+    weak var viewController: UITableViewController?
+    
     private let msecText = "msec"
     private let secText = "sec"
     private let bpmText = "bpm"
@@ -65,6 +103,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     private var errorMessage = ""
     private var units: Units = .msec
     private var intervalRateType: IntervalRateType = .interval
+    private var formulaType: FormulaType?
     
     enum EntryErrorCode {
         case invalidEntry
@@ -76,6 +115,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        print(Formula.qtcAdm.rawValue)
         // Do any additional setup after loading the view.
         qtTextField.delegate = self
         intervalRateTextField.delegate = self
@@ -98,6 +140,17 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         qtTextField.validationRules = rules
         intervalRateTextField.validationRules = rules
         ageTextField.validationRules = rules
+        
+        // set up default units/intervalRate preferences when app starts
+        let preferences = Preferences.retrieve()
+        if let unitsMsec = preferences.unitsMsec, !unitsMsec {
+            unitsSegmentedControl.selectedSegmentIndex = 1
+            unitsChanged(self)
+        }
+        if let heartRateAsInterval = preferences.heartRateAsInterval, !heartRateAsInterval {
+            intervalRateSegmentedControl.selectedSegmentIndex = 1
+            intervalRateChanged(self)
+        }
         
     }
     
@@ -149,9 +202,16 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @objc
     fileprivate func showAbout() {
-        NSLog("Show about")
         let about = About()
         about.show(viewController: self)
+    }
+    
+    struct ValidationError: Error {
+        public let message: String
+        
+        public init(message m: String) {
+            message = m
+        }
     }
 
     @IBAction func unitsChanged(_ sender: Any) {
@@ -208,21 +268,29 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func sexChanged(_ sender: Any) {
         sexLabel.isEnabled = !(sexSegmentedControl.selectedSegmentIndex == 0)
+        updateOptionalInformationLabel()
     }
     
     @IBAction func ageChanged(_ sender: Any) {
         ageLabel.isEnabled = ageTextField.text != nil && !ageTextField.text!.isEmpty
+        updateOptionalInformationLabel()
+    }
+    
+    private func updateOptionalInformationLabel() {
+        optionalInformationLabel.isEnabled = sexLabel.isEnabled || ageLabel.isEnabled
     }
 
-    struct ValidationError: Error {
-        public let message: String
-
-        public init(message m: String) {
-            message = m
-        }
+    @IBAction func calculateQTc(_ sender: Any) {
+        formulaType = .qtc
+        prepareCalculation()
     }
-
-    @IBAction func calculate(_ sender: Any) {
+    
+    @IBAction func calculateQTp(_ sender: Any) {
+        formulaType = .qtp
+        prepareCalculation()
+    }
+    
+    private func prepareCalculation() {
         let validationCode = fieldsValidationResult()
         var message = ""
         var error = true
@@ -245,6 +313,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         }
         performSegue(withIdentifier: "resultsTableSegue", sender: self)
     }
+    
     
     private func fieldsValidationResult() -> EntryErrorCode {
         // Empty qt and interval fields will be considered invalid
@@ -301,16 +370,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    // This version of stringToDouble respects locale
-    // (i.e. 140.4 OK in US, 140,4 OK in France
-    func stringToDouble(_ string: String?) -> Double? {
-        guard let string = string else { return nil }
-        let nf = NumberFormatter()
-        guard let number = nf.number(from: string) else { return nil }
-        return number.doubleValue
-    }
-    
     private func clearFields() {
         qtTextField.text = ""
         intervalRateTextField.text = ""
@@ -318,6 +377,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         ageLabel.isEnabled = false
         sexSegmentedControl.selectedSegmentIndex = 0  // set sex to "unknown"
         sexLabel.isEnabled = false
+        optionalInformationLabel.isEnabled = false
     }
     
     
@@ -327,7 +387,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        // First, final sanity check!
+        
+        if segue.identifier == "preferencesSegue" || segue.identifier == "helpSegue" {
+            return
+        }
+        
+        // Final sanity check!
         if !finalValueCheck() {
             showErrorMessage(invalidFieldsMessage)
             return
@@ -350,13 +415,42 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         case 2:
             sex = .female
         default:
-            sex = .unspecified
+            assertionFailure("Sex segmented control out of range.")
         }
         let age = stringToDouble(ageTextField.text)
-        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType, sex: sex, age: age)
+        var intAge: Int?
+        if let age = age {
+            intAge = Int(age)
+        }
+        let qtMeasurement = QtMeasurement(qt: qt, intervalRate: rr, units: units, intervalRateType: intervalRateType, sex: sex, age: intAge)
+        if valuesOutOfRange(qtMeasurement: qtMeasurement) {
+            showErrorMessage("Heart rate or QT interval out of range.\nAllowed heart rates 20-250 bpm.\nAllowed QT intervals 200-800 msec.")
+            return
+        }
         vc.qtMeasurement = qtMeasurement
+        vc.formulaType = formulaType
     }
     
+    // assumes no null or negative fields
+    func valuesOutOfRange(qtMeasurement: QtMeasurement) -> Bool {
+        let minQT = 0.2
+        let maxQT = 0.8
+        let minRate = 20.0
+        let maxRate = 250.0
+        var outOfRange = false
+        if qtMeasurement.heartRate() < minRate || qtMeasurement.heartRate() > maxRate {
+            outOfRange = true
+        }
+        if let qt = qtMeasurement.qtInSec() {
+            if qt < minQT || qt > maxQT {
+                outOfRange = true
+            }
+        }
+        else {
+            outOfRange = true
+        }
+        return outOfRange
+    }
     
     func finalValueCheck() -> Bool {
         // Don't ever send any nils, zeros or negative numbers to the poor calculators!

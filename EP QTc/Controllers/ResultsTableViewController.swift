@@ -9,126 +9,243 @@
 import UIKit
 import QTc
 
-class ResultsTableViewController: UITableViewController {
-    var formulas: [QTcFormula]? = nil
+final class ResultsTableViewController: UITableViewController {
+    @IBOutlet var editButton: UIBarButtonItem!
     
-    // these are passed via the segue
-    var qtMeasurement: QtMeasurement? = nil
+    let unknownColor = UIColor.blue
+    let normalColor = UIColor.green
+    
+    let preferences = Preferences.retrieve()
+
+    var formulas: [Formula] = []
+    var selectedFormula: Formula?
+    var qtMeasurement: QtMeasurement?
+    var formulaType: FormulaType?
+    var resultsModel: ResultsModel?
+    var oldBarButtonItems: [UIBarButtonItem]?
+    var originalFormulas: [Formula] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        guard let formulaType = formulaType, let qtMeasurement = qtMeasurement else {
+            assertionFailure("Error: formulaType and/or qtMeasurement can't be nil!")
+            return
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        processParameters()
+        self.tableView.isEditing = false
+        editButton.isEnabled = (preferences.sortOrder == .custom)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
+
+        self.title = formulaType.name + " (\(qtMeasurement.units.string))"
+               
         let qtFormulas = QtFormulas()
-        formulas = qtFormulas.formulas
+        guard let rawFormulas = qtFormulas.formulas[formulaType] else {
+            assertionFailure("Formula type not found!")
+            return
+        }
         
+        let sortingPreference = preferences.sortOrder ?? Preferences.defaultSortOrder
+        switch sortingPreference {
+        case .none:
+            formulas = rawFormulas
+        case .byDate:
+            formulas = qtFormulas.sortedByDate(formulas: rawFormulas)
+        case .byName:
+            formulas = qtFormulas.sortedByName(formulas: rawFormulas)
+        case .bigFourFirstByDate:
+            formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
+        case .bigFourFirstByName:
+            formulas = qtFormulas.bigFourFirstSortedByName(formulas: rawFormulas, formulaType: formulaType)
+        case .byNumberOfSubjects:
+            formulas = qtFormulas.sortedByNumberOfSubjects(formulas: rawFormulas)
+        case .custom:
+            var customSort = (formulaType == .qtc ? preferences.qtcCustomSort : preferences.qtpCustomSort)
+            if let sorted = customSort, sorted.count > 1 {
+                formulas = sorted
+            }
+            else {
+                formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
+                customSort = formulas
+                preferences.save()
+            }
+        case .byResultDescending:
+            formulas = qtFormulas.sortedByResultsDescending(formulas: rawFormulas, qtMeasurement: qtMeasurement)
+        case .byResultAscending:
+            formulas = qtFormulas.sortedByResultsAscending(formulas: rawFormulas, qtMeasurement: qtMeasurement)
+        }
+        originalFormulas = formulas
+        resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated);
+        self.navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setToolbarHidden(true, animated: animated)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func editTable(_ sender: Any) {
+        oldBarButtonItems = toolbarItems
+        toolbarItems?.removeAll()
+        toolbarItems?.append(UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(ResultsTableViewController.saveEdit)))
+        toolbarItems?.append(UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(ResultsTableViewController.resetEdit)))
+        toolbarItems?.append(UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ResultsTableViewController.cancelEdit)))
+        tableView.isEditing = true
+    }
 
-    func processParameters() {
-        guard let qtMeasurement = qtMeasurement else { return }
-        NSLog("units = %@", qtMeasurement.units == .msec ? "msec" : "sec")
-        NSLog("qt = %f", qtMeasurement.qt)
-        NSLog("rr = %f", qtMeasurement.intervalRate)
-        NSLog("intervalRateType = %@", qtMeasurement.intervalRateType == .interval ? "interval" : "rate")
-        NSLog("age = %f", qtMeasurement.age ?? -1)
-        let sexString: String
-        if qtMeasurement.sex == .unspecified {
-            sexString = "unspecified"
-        }
-        else if qtMeasurement.sex == .male {
-            sexString = "male"
+    @objc private func cancelEdit() {
+        toolbarItems?.removeAll()
+        toolbarItems = oldBarButtonItems
+        tableView.isEditing = false
+        formulas = originalFormulas
+        tableView.reloadData()
+    }
+
+    @objc private func saveEdit() {
+        toolbarItems?.removeAll()
+        toolbarItems = oldBarButtonItems
+        tableView.isEditing = false
+//        formulas = originalFormulas
+        originalFormulas = formulas
+        if formulaType == .qtc {
+            preferences.qtcCustomSort = formulas
         }
         else {
-            sexString = "female"
+            preferences.qtpCustomSort = formulas
         }
-        NSLog("sex = %@", sexString)
+        preferences.save()
+        resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement!)
+        tableView.reloadData()
     }
-    
+
+    @objc private func resetEdit() {
+        toolbarItems?.removeAll()
+        toolbarItems = oldBarButtonItems
+        tableView.isEditing = false
+        let qtFormulas = QtFormulas()
+        guard let formulaType = formulaType, let rawFormulas = qtFormulas.formulas[formulaType] else {
+            assertionFailure("Formula type or formula not found!")
+            return
+        }
+        formulas = qtFormulas.bigFourFirstSortedByDate(formulas: rawFormulas, formulaType: formulaType)
+        originalFormulas = formulas
+        if formulaType == .qtc {
+            preferences.qtcCustomSort = formulas
+        }
+        else {
+            preferences.qtpCustomSort = formulas
+        }
+        preferences.save()
+        resultsModel = ResultsModel(formulas: formulas, qtMeasurement: qtMeasurement!)
+
+        tableView.reloadData()
+
+    }
+
+    @objc private func oopyToClipboard() {
+        if let text = resultsModel?.resultsSummary(preferences: preferences) {
+            print(text)
+            UIPasteboard.general.string = text
+            showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)
+        }
+    }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return formulas?.count ?? 0
+        return formulas.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! ResultTableViewCell
-
-        // Configure the cell...
-        let row = indexPath.row
-        let qtcFormula = formulas?[row]
-        if let qtcFormula = qtcFormula {
-            cell.formula = qtcFormula
-            cell.qtMeasurement = qtMeasurement
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
+        // Must set calculator and preferences before qtMeasurement.
+        // Passing preloaded preferences, rather than have each cell load preferences.
+        cell.preferences = preferences
+        cell.calculator = resultsModel?.allCalculators()[indexPath.row]
+        cell.qtMeasurement = qtMeasurement
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        selectedFormula = formulas[row]
+        performSegue(withIdentifier: "detailsTableSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+//        return .none
+//    }
+//
+//    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = formulas[sourceIndexPath.row]
+        formulas.remove(at: sourceIndexPath.row)
+        formulas.insert(movedObject, at: destinationIndexPath.row)
+    }
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            self.formulas.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let formulaType = formulaType else { return }
+        if segue.identifier == "detailsTableSegue" {
+            guard let selectedFormula = selectedFormula else { return }
+            if let vc = segue.destination as? DetailsTableViewController {
+                vc.qtMeasurement = qtMeasurement
+                vc.formulaType = formulaType
+                vc.calculator = QTc.calculator(formula: selectedFormula)
+                // we pass the results array to see if QT outside of max/min QTp range
+                vc.results = resultsModel?.allResults() ?? []
+            }
+        }
+        else if segue.identifier == "statsSegue" {
+            if let vc = segue.destination as? StatsTableViewController {
+                vc.qtMeasurement = qtMeasurement
+                vc.formulaType = formulaType
+                vc.results = resultsModel?.allResults() ?? []
+            }
+        }
+        else if segue.identifier == "graphSegue" {
+            if let vc = segue.destination as? GraphViewController {
+                vc.qtMeasurement = qtMeasurement
+                vc.formulaType = formulaType
+                vc.results = resultsModel?.allResults() ?? []
+                vc.formulas = resultsModel?.allFormulas() ?? []
+            }
+        }
+        else if segue.identifier == "QTpvRRSegue" {
+            if let vc = segue.destination as? QTpRRViewController {
+                vc.qtMeasurement = qtMeasurement
+            }
+        }
     }
-    */
-
 }
