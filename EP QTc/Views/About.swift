@@ -9,7 +9,7 @@
 import UIKit
 
 class About {
-    let version = "0.9 Pre-release"
+    let version = "1.0"
     
     func show(viewController: UIViewController) {
         let message = String(format: "Copyright © 2017, EP Studios, Inc.\nAll rights reserved.\nVersion %@", version)
