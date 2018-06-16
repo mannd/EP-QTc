@@ -26,9 +26,6 @@ final class QTcLimitsTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        for element in selectedQTcLimits {
-            print(element)  
-        }
         let preferences = Preferences.retrieve()
         preferences.qtcLimits = selectedQTcLimits
         preferences.save()

@@ -154,7 +154,6 @@ final class ResultsTableViewController: UITableViewController {
 
     @objc private func oopyToClipboard() {
         if let text = resultsModel?.resultsSummary(preferences: preferences) {
-            print(text)
             UIPasteboard.general.string = text
             showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)
         }

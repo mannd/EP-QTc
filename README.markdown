@@ -15,6 +15,8 @@ This app uses [SigmaSwiftStatistics](https://github.com/evgenyneu/SigmaSwiftStat
 
 The app also uses the [Charts](https://github.com/danielgindi/Charts) framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi & Philipp Jahoda, and is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). 
 
+The app uses [Validator]([https://github.com/adamwaite/Validator) which has an unrestricted license.
+
 ## Author
 David Mann, MD
 
