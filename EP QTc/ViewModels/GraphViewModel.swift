@@ -183,18 +183,21 @@ class GraphViewModel {
         public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
             if let formulas = formulas {
                 let index = Int(entry.x)
+                var label: String = ""
                 if index < formulas.count {
-                    setLabel(formulas[index].shortName())
+                    label = formulas[index].shortName()
                 }
                 else if index == formulas.count {
-                    setLabel("Mean \(formulaTypeName ?? "value")")
+                    label = "Mean \(formulaTypeName ?? "value")"
                 }
                 else if index == formulas.count + 1 {
-                    setLabel("QT")  // only displayed with QTp graph
+                    label = "QT"  // only displayed with QTp graph
                 }
                 else {
-                    setLabel("???")
+                    label = "???"
                 }
+                label = label + "\n" + String(format: "%.1f", entry.y)
+                setLabel(label)
             }
         }
     }
