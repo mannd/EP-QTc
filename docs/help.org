@@ -101,7 +101,7 @@ Tapping the *Copy* button in the upper right corner will copy this screen to the
 #+CAPTION: QTc graph screen
 [[./images/graph_screen.png]]
 
-This screen displays a bar graph of QTc or QTp results, including the mean QTc or QTp, and in the case of the QTp graph, the measured QT for comparison.  Results are color-coded based on the selected QTc limits, or comparison of the QT to the QTp range.  Color coded cutoff lines are drawn to indicate the QTc limits.  The graph can be zoomed and moved with finger gestures.  Tap on a bar to see the QTc for QTp formula for that measurement.  You can change the Y axis and whether or not the graph is animated using the preferences screen.
+This screen displays a bar graph of QTc or QTp results, including the mean QTc or QTp, and in the case of the QTp graph, the measured QT for comparison.  Results are color-coded based on the selected QTc limits, or comparison of the QT to the QTp range.  Color coded cutoff lines are drawn to indicate the QTc limits.  The graph can be zoomed and moved with finger gestures.  Tap on a bar to see the QTc or QTp formula and result for that measurement.  You can change the Y axis and whether or not the graph is animated using the preferences screen.
 ** Save button
 Save the graph to the Photos collection.
 * QTp vs HR
