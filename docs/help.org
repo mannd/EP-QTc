@@ -18,7 +18,7 @@
 #+CAPTION: Long QT and Torsades de Pointes
 [[./images/lqt.png]]
 
-It has long been recognized that the QT interval on the electrocardiogram is dependent on heart rate.  In 1920 Bazett[fn:1] was one of the first to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  The familiar Bazett formula, developed using primitive methodology and based on only 39 subjects, somehow has become the most commonly used formula for correcting the QT interval for heart rate---this despite the availability of a large collection of newer formulas developed from studies with better methodologies and subjects numbering up to the thousands.  How frustrating for these more meticulous authors!  Further discussion of this somewhat sorry state of affairs can be found in the blog post [[https://www.epstudiossoftware.com/hacking-the-qtc][Hacking the QTc]].
+It has long been recognized that the duration of the electrocardiographic QT interval is dependent on heart rate.  In 1920 Bazett[fn:1] was one of the first to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  The familiar Bazett formula, developed using primitive methodology and based on only 39 subjects, has become the most commonly used formula for correcting the QT interval for heart rate---this despite the availability of a large collection of newer formulas developed from studies with better methodologies and subjects numbering up to the thousands.  Further discussion of this somewhat sorry state of affairs can be found in the blog post [[https://www.epstudiossoftware.com/hacking-the-qtc][Hacking the QTc]].
 
 The QT interval is important.  Long and short QT intervals have been associated with ventricular arrhythmias and sudden death.  Many drugs, antiarrhythmic and otherwise, can prolong the QT interval.
 
@@ -29,7 +29,7 @@ The numerous QTc (corrected QT) and QTp (predicted QT) formulas in this app are 
 #+CAPTION: Calculator screen
 [[./images/calculator_screen.png]]
 
-At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  Results are given in the same units (though strictly speaking the exact units for calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5).  If possible also add sex and age, as some formulas are dependent on sex and/or age.
+At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  Results are given in the same units (though strictly speaking the exact units or calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5).  If possible also add sex and age, as some formulas are dependent on sex and/or age.
 ** Menu items
 - *QTc* Calculate and show results of QTc formulas
 - *QTp* Calculate and show results of QTp formulas
@@ -56,7 +56,7 @@ The input parameters, including QT, RR, heart rate, sex and age.
 ** Calculated QTc or QTp
 The result of the formula
 ** Interpretation
-The interpretation of the result, based on the QTc limits you have set.  Note that QTc limits only apply to QTc formulas and that QTp intervals are by definition normal.  Also note that the interpretation may be "undefined" if you are using QTc limits that require entering the sex or age and you have not done so.  The interpretation may be "error" if the formula requires parameters such as sex or age and you have not entered them.
+The interpretation of the result, based on the QTc limits you have set.  Note that QTc limits only apply to QTc formulas and that QTp intervals are by definition normal.  Also note that the interpretation may be /undefined/ if you are using QTc limits that require entering the sex or age and you have not done so.  The interpretation may be /error/ if the formula requires parameters such as sex or age and you have not entered them.
 ** Formula details
 - *Name* the first author of the paper.
 - *Short name* the standard abbreviation of the formula, based on [[https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm][Rabkin et al.]]
@@ -128,7 +128,7 @@ Customize the calculator using the preferences screen.
 #+CAPTION: QTc limits
 [[./images/qtclimits_screen.png]]
 
-A number of publications have attempted to delineate upper and lower limits of the QTc.  You can select one or more of these sets of limits.  If you do select multiple limits, the less restrictive limits will "win out" over the more restrictive ones.  For example, if one limit says an abnormal QTc is > 440 msec and another > 460 msec, then a QTc of 450 msec will be classified as abnormal.  Selecting multiple QTc limits is appropriate when you want to select an upper and a lower limit for the QTc.
+A number of publications have attempted to delineate upper and lower limits of the QTc.  You can select one or more of these sets of limits.  If you do select multiple limits, the more restrictive limits will "win out" over the less restrictive ones.  For example, if one limit says an abnormal QTc is > 440 msec and another > 460 msec, then a QTc of 450 msec will be classified as abnormal.  Selecting multiple QTc limits is appropriate when you want to select an upper and a lower limit for the QTc.
 
 Some limits are sex or age dependent.  If you don’t enter the sex or age, values will be interpreted as "undefined."  Some limits do more than distinguish between normal and abnormal.  Additional distinctions include "borderline," or "mild," "moderate" or "severe."  These are color-coded and the colors are used in the results and graph screens.  Colors are:
 | Color  | Interpretation          |
@@ -147,7 +147,7 @@ Some limits are sex or age dependent.  If you don’t enter the sex or age, valu
 
 - This app uses [[https://github.com/evgenyneu/SigmaSwiftStatistics][SigmaSwiftStatistics]] for statistical analysis of the QT formulas.  This framework is copyright (c) 2015 Evgenii Neumerzhitckii and is licensed under the [[https://github.com/evgenyneu/SigmaSwiftStatistics/blob/master/LICENSE][MIT License]].
 
-- The app also uses the [[https://github.com/danielgindi/Charts][Charts]] framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi & Philipp Jahoda, and is licensed under the [[http://www.apache.org/licenses/LICENSE-2.0.html][Apache License, Version 2.0]].
+- The app uses the [[https://github.com/danielgindi/Charts][Charts]] framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi & Philipp Jahoda, and is licensed under the [[http://www.apache.org/licenses/LICENSE-2.0.html][Apache License, Version 2.0]].
 
 - The app uses [[https://github.com/adamwaite/Validator][Validator]] which has an unrestricted license.
 * Limitations
