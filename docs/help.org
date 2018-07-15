@@ -18,18 +18,18 @@
 #+CAPTION: Long QT and Torsades de Pointes
 [[./images/lqt.png]]
 
-It has long been recognized that the duration of the electrocardiographic QT interval is dependent on heart rate.  In 1920 Bazett[fn:1] was one of the first to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  The familiar Bazett formula, developed using primitive methodology and based on only 39 subjects, has become the most commonly used formula for correcting the QT interval for heart rate---this despite the availability of a large collection of newer formulas developed from studies with better methodologies and subjects numbering up to the thousands.  Further discussion of this somewhat sorry state of affairs can be found in the blog post [[https://www.epstudiossoftware.com/hacking-the-qtc][Hacking the QTc]].
+It has long been recognized that the duration of the electrocardiographic QT interval is dependent on heart rate.  In 1920 Bazett[fn:1] was one of the first to describe this dependency in mathematical form, relating the QT interval to the square root of the RR interval.  The familiar Bazett formula, derived using primitive methodology and based on only 39 subjects, has become the most commonly used formula for correcting the QT interval for heart rate---despite the availability of many other formulas developed from studies with better methodologies and subjects numbering up to the thousands.  Further discussion of this somewhat sorry state of affairs can be found in the blog post [[https://www.epstudiossoftware.com/hacking-the-qtc][Hacking the QTc]].
 
 The QT interval is important.  Long and short QT intervals have been associated with ventricular arrhythmias and sudden death.  Many drugs, antiarrhythmic and otherwise, can prolong the QT interval.
 
 The cavalier cardiologist might glance at the automatically measured and calculated QTc interval on a digital electrocardiogram and be satisfied, despite well-known issues with automatic measurement of the QTc[fn:2].  He or she might not even know (or care about) which QTc formula was used by the computer.  The more inquisitive cardiologist might want to measure the QT manually (the [[https://itunes.apple.com/us/app/ep-calipers/id982313078?mt=8][*EP Calipers*]] app is a good way to do this) and then put some thought into the evaluation of that QT interval.  This app, *EP QTc* is intended for the latter type of cardiologist.
 * Formulas and limits of normal
-The numerous QTc (corrected QT) and QTp (predicted QT) formulas in this app are mostly gathered from the paper by Rabkin et al., [[https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm][Nomenclature, categorization and usage of formulae to adjust QT interval for heart rate]].  To the extent possible, primary sources were obtained and reviewed for each formula.  In addition, there have been numerous attempts to define the normal QTc interval.  Many of these definitions are also included in the app.
+The many QTc (corrected QT) and QTp (predicted QT) formulas used in this app are mostly gathered from the paper by Rabkin et al., [[https://www.wjgnet.com/1949-8462/full/v7/i6/315.htm][Nomenclature, categorization and usage of formulae to adjust QT interval for heart rate]].  To the extent possible, primary sources were obtained and reviewed for each formula.  In addition, there have been numerous attempts to define the normal QTc interval.  Many of these definitions are also included in the app.
 * Calculator screen
 #+CAPTION: Calculator screen
 [[./images/calculator_screen.png]]
 
-At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  Results are given in the same units (though strictly speaking the exact units or calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5).  If possible also add sex and age, as some formulas are dependent on sex and/or age.
+At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  If possible also enter the sex and age, as some formulas are dependent on sex and/or age.  Results are given in the same units as the QT interval, following the convention in the literature, though strictly speaking the units for calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5.  
 ** Menu items
 - *QTc* Calculate and show results of QTc formulas
 - *QTp* Calculate and show results of QTp formulas
@@ -40,7 +40,7 @@ At minimum enter the QT interval and heart rate or RR interval.  Units can be se
 #+CAPTION: Results screen
 [[./images/results_screen.png]]
 
-This shows a list of results of either the QTc or QTp formulas.  If you have selected QTc limits on the preferences screen, the results will be color coded depending on if they are normal or abnormal.  Tap any result and get a details screen as described below.  Tap the *Copy* button at the top right of the screen and the list of results will be copied to the clipboard so that they can be pasted elsewhere.  If you have the *CSV on copy* preference set, the results will be copied in CSV format, which can be easily imported into a spreadsheet program.
+This screen shows a list of the results of the QTc or QTp formulas.  If you have selected QTc limits on the preferences screen, the results will be color coded depending on if they are normal or abnormal.  Tap any result and get a details screen as described below.  Tap the *Copy* button at the top right of the screen and the list of results will be copied to the clipboard so that they can be pasted elsewhere.  If you have the *CSV on copy* preference set, the results will be copied in CSV format, which can be easily imported into a spreadsheet program.
 ** Menu items
 - *Stats* Show the statistics screen, giving overall statistics of the formula results.
 - *Graph* Show a bar graph of the results.
