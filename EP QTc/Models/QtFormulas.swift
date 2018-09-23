@@ -90,6 +90,7 @@ class QtFormulas {
             .qtcDmt,
             .qtcAdm,
             .qtcGot,
+            .qtcRbk,
             ],
          .qtp: [
             .qtpBzt,
@@ -113,6 +114,7 @@ class QtFormulas {
             .qtpWhl,
             .qtpSrm,
             .qtpLcc,
+            .qtpRbk,
             ]
     ]
 

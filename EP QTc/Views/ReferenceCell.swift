@@ -29,7 +29,7 @@ class ReferenceCell: UITableViewCell {
                     hasDoi = true
                     doiString = doiStrings[0]
                     let doiRange = (item.reference as NSString).range(of: doiString)
-                    let attributes: [NSAttributedStringKey: Any] = [.link: doiString,
+                    let attributes: [NSAttributedString.Key: Any] = [.link: doiString,
                                                                     .foregroundColor: UIColor.blue]
                     underlinedString.addAttributes(attributes, range: doiRange)
                 }

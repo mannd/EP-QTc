@@ -122,7 +122,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         ageTextField.delegate = self
         // About info button
         let aboutButton = UIButton(type: .infoLight)
-        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControlEvents.touchUpInside)
+        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
         
         qtTextField.placeholder = qtHintInMsec
@@ -170,8 +170,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     }
     
     private func registerNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc
@@ -179,7 +179,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         guard let info = notification.userInfo, let activeField = activeField else {
             return
         }
-        if let kbSize =  (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
+        if let kbSize =  (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
             let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbSize.height, right: 0)
             self.scrollView.contentInset = contentInsets
             self.scrollView.scrollIndicatorInsets = contentInsets
@@ -352,7 +352,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     }
     
     private func showErrorMessage(_ message: String) {
-        let dialog = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let dialog = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(dialog, animated: true, completion: nil)
     }
