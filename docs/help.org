@@ -143,7 +143,9 @@ Some limits are sex or age dependent.  If you don’t enter the sex or age, valu
 | Red    | Moderately abnormal QTc |
 | Purple | Severely abnormal QTc   |
 * Acknowledgments
-- Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas!
+- Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas.
+
+- Thanks to Dr. Simon Rabkin at the University of British Columbia for corresponding with me regarding the QT interval, and for his and his team's fine work on the [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4478566/][nomenclature and categorization]] of the numerous QT formulas which formed a basis and inspiration for this app.  I also thank the multitude of investigators who over the years have attacked the problematic QT interval, using math in an attempt to flatten nature's heart rate versus repolarization curve.  
 
 - This app uses [[https://github.com/evgenyneu/SigmaSwiftStatistics][SigmaSwiftStatistics]] for statistical analysis of the QT formulas.  This framework is copyright (c) 2015 Evgenii Neumerzhitckii and is licensed under the [[https://github.com/evgenyneu/SigmaSwiftStatistics/blob/master/LICENSE][MIT License]].
 

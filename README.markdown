@@ -11,6 +11,8 @@ Copyright © 2017, 2018 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 ## Acknowledgments
 Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas.
 
+Thanks to Dr. Simon Rabkin at the University of British Columbia for corresponding with me regarding the QT interval, and for his and his team's fine work on the [nomenclature and categorization](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4478566/) of the numerous QT formulas which formed a basis and inspiration for this app.  I also thank the multitude of investigators who over the years have attacked the problematic QT interval, using math in an attempt to flatten nature's heart rate versus repolarization curve.
+
 This app uses [SigmaSwiftStatistics](https://github.com/evgenyneu/SigmaSwiftStatistics) for statistical analysis of the QT formulas.  This framework is copyright (c) 2015 Evgenii Neumerzhitckii and is licensed under the [MIT License](https://github.com/evgenyneu/SigmaSwiftStatistics/blob/master/LICENSE).
 
 The app also uses the [Charts](https://github.com/danielgindi/Charts) framework for graphing.  This framework is copyright 2016 Daniel Cohen Gindi & Philipp Jahoda, and is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). 
