@@ -2,7 +2,7 @@ PODS:
   - Charts (3.2.0):
     - Charts/Core (= 3.2.0)
   - Charts/Core (3.2.0)
-  - QTc (3.3.1)
+  - QTc (3.4)
   - SigmaSwiftStatistics (8.0.1)
   - Validator (3.0.3)
 
@@ -38,7 +38,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Charts: 680c8328bd5e90cb14f67e00d2176f3113d19141
-  QTc: 22e3abcfcf3395f56c5a96d457193aed53eb431c
+  QTc: 58ee5af50cda2200c9194d1ee48a643703e995f8
   SigmaSwiftStatistics: 063591f136428920b3083e3d9c181c9c6b1a9dec
   Validator: e2b61f8e83add637226a7447f7dcdec1c87a29b6
 
