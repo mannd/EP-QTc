@@ -21,9 +21,9 @@ class About {
         guard let dictionary = Bundle.main.infoDictionary else {
             preconditionFailure("Error: main bundle not found!")
         }
-        let version = dictionary["CFBundleShortVersionString"] ?? "error"
+        let version = dictionary["CFBundleShortVersionString"] as? String ?? "error"
     #if DEBUG // Get build number, if you want it. Cleaner to leave out of release version.
-        let build = dictionary["CFBundleVersion"] ?? "error"
+        let build = dictionary["CFBundleVersion"] as? String ?? "error"
         // the version+build format is recommended by https://semver.org
         let versionBuild = "\(version)+\(build)"
         return versionBuild
