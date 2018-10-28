@@ -1,5 +1,5 @@
 ## Description
-**EP QTc** is an iOS app that simultaneously calculates QTc (corrected QT) and QTp (predicted QT) intervals using many different published formulas.  Detailed information on each formula is given and the results can be graphed and imported into text editors or spreadsheets.  The app uses the [QTc framework](https://github.com/mannd/QTc).
+**EP QTc** is an iOS app that simultaneously calculates QTc (corrected QT) and QTp (predicted QT) intervals using many different published formulas.  Detailed information on each formula is given and the results can be graphed and imported into text editors or spreadsheets.  The app uses the [QTc framework](https://github.com/mannd/QTc).  For more background see [Hacking the QTc](https://www.epstudiossoftware.com/hacking-the-qtc/).
 
 ## License
 This app is open source, and licensed under the 
