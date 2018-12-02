@@ -5,5 +5,5 @@ xcode_workspace: EP QTc.xcworkspace
 xcode_scheme: EP QTc
 xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone XR
 before_install:
-	- gem install cocoapods --pre
-	- pod install --repo-update
+  - gem install cocoapods --pre
+  - pod install --repo-update
