@@ -1,14 +1,14 @@
 PODS:
-  - Charts (3.2.0):
-    - Charts/Core (= 3.2.0)
-  - Charts/Core (3.2.0)
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
   - QTc (3.4.1)
   - SigmaSwiftStatistics (8.0.1)
-  - Validator (3.0.3)
+  - Validator (3.1.1)
 
 DEPENDENCIES:
   - Charts (from `https://github.com/danielgindi/Charts`, branch `master`)
-  - QTc (from `~/dev/QTc`)
+  - QTc (from `https://github.com/mannd/QTc.git`, branch `master`)
   - SigmaSwiftStatistics (from `https://github.com/evgenyneu/SigmaSwiftStatistics`, branch `master`)
   - Validator (from `https://github.com/adamwaite/Validator.git`, branch `master`)
 
@@ -17,7 +17,8 @@ EXTERNAL SOURCES:
     :branch: master
     :git: https://github.com/danielgindi/Charts
   QTc:
-    :path: "~/dev/QTc"
+    :branch: master
+    :git: https://github.com/mannd/QTc.git
   SigmaSwiftStatistics:
     :branch: master
     :git: https://github.com/evgenyneu/SigmaSwiftStatistics
@@ -27,21 +28,24 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: 5087a04bbefc9f15995113954ce217bbfb445577
+    :commit: 9f2c13009f8230c40cc31c25b330ccda6ad18ff6
     :git: https://github.com/danielgindi/Charts
+  QTc:
+    :commit: 49048895ab486b9bd8475674c44fd5b12060ea6e
+    :git: https://github.com/mannd/QTc.git
   SigmaSwiftStatistics:
     :commit: 3e629a2e1594097501071d961b481738bd129611
     :git: https://github.com/evgenyneu/SigmaSwiftStatistics
   Validator:
-    :commit: d7e76e955d8c0906378808378c8d47abb2fefa04
+    :commit: ac89559748dc9bf5069aed350b4a7f4c39e667dc
     :git: https://github.com/adamwaite/Validator.git
 
 SPEC CHECKSUMS:
-  Charts: 680c8328bd5e90cb14f67e00d2176f3113d19141
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
   QTc: ede7a196a674e49a94a2e06be7a43347ceefae51
   SigmaSwiftStatistics: 063591f136428920b3083e3d9c181c9c6b1a9dec
-  Validator: e2b61f8e83add637226a7447f7dcdec1c87a29b6
+  Validator: b34ab17a8fffd0c1ffd8f9002ead4d1e02cd9e6e
 
-PODFILE CHECKSUM: fc34ee4264fdd865f38454b61f6bbe45c052e14f
+PODFILE CHECKSUM: dcd3b17a42ee3d87f5461ab5a008952c733367f7
 
 COCOAPODS: 1.6.0.beta.2
