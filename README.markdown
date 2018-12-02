@@ -1,7 +1,7 @@
 EP QTc
 ======
 
-[![Build Status](https://travis-ci.org/mannd/EP-QTc.svg?branch=master)](https://travis-ci.org/mannd/EP-QTc)
+<R.swift!-- [![Build Status](https://travis-ci.org/mannd/EP-QTc.svg?branch=master)](https://travis-ci.org/mannd/EP-QTc) -->
 
 ## Ultimate QTc/QTp calculator
 **EP QTc** is an iOS app that simultaneously calculates QTc (corrected QT) and QTp (predicted QT) intervals using many different published formulas.  Detailed information on each formula is given and the results can be graphed and imported into text editors or spreadsheets.  The app uses the [QTc framework](https://github.com/mannd/QTc).  For more background see [Hacking the QTc](https://www.epstudiossoftware.com/hacking-the-qtc/).
