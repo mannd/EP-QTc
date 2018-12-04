@@ -7,5 +7,6 @@ xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone XR
 before_install:
   - gem install cocoapods --pre
   - pod install --repo-update
+  - pwd -P
   - ls -R
  
