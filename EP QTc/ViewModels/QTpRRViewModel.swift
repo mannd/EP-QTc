@@ -81,7 +81,11 @@ class QTpRRViewModel {
         }
     }
     
-    func saveToCameraRoll() {
-        UIImageWriteToSavedPhotosAlbum(chartView.getChartImage(transparent: false)!, nil, nil, nil)
+    func saveToCameraRoll(target: Any, selector: Selector) {
+        // Do nothing gracefully if necessary.
+        guard let image = chartView.getChartImage(transparent: false) else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, target, selector, nil)
     }
 }

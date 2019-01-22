@@ -12,6 +12,7 @@
 		8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892A1FDF9AA70018D8D1 /* About.swift */; };
 		8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */; };
 		8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */; };
+		8E2A6F4E21F7E2B800756BB9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6F4D21F7E2B800756BB9 /* Alerts.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
 		8E3FD15B20A1EBC1005E2943 /* QTpRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */; };
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
@@ -77,6 +78,7 @@
 		8E0B892A1FDF9AA70018D8D1 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtFormulas.swift; sourceTree = "<group>"; };
 		8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		8E2A6F4D21F7E2B800756BB9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
 		8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTpRRViewController.swift; sourceTree = "<group>"; };
 		8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				8E47B1D62092AFEE0042C5F9 /* ResultModel.swift */,
 				8E47B1DA209571840042C5F9 /* ResultsModel.swift */,
 				8ED6619D209CD5AE000513B1 /* Severity.swift */,
+				8E2A6F4D21F7E2B800756BB9 /* Alerts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				8E9674C9204909A200D49C05 /* DetailsViewModel.swift in Sources */,
 				8EBE89D7205C3CEA00A60296 /* NotesCell.swift in Sources */,
 				8ED652A520A36B3800001ABB /* QTpRRViewModel.swift in Sources */,
+				8E2A6F4E21F7E2B800756BB9 /* Alerts.swift in Sources */,
 				8E47B1E12096DE1E0042C5F9 /* BalloonMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

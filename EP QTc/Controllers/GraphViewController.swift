@@ -33,6 +33,11 @@ final class GraphViewController: UIViewController {
     }
     
     @objc func saveToCameraRoll() {
-        viewModel?.saveToCameraRoll()
+        viewModel?.saveToCameraRoll(target:self, selector:#selector(image(_:didFinishSavingWithError:contextInfo:)))
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        let ac = Alerts.saveAlert(error: error)
+        present(ac, animated: true)
     }
 }

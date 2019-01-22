@@ -171,11 +171,14 @@ class GraphViewModel {
         }
     }
     
-    func saveToCameraRoll() {
-        UIImageWriteToSavedPhotosAlbum(barChartView.getChartImage(transparent: false)!, nil, nil, nil)
+    func saveToCameraRoll(target: Any, selector: Selector) {
+        // Do nothing gracefully if necessary.
+        guard let image = barChartView.getChartImage(transparent: false) else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, target, selector, nil)
     }
-    
-    
+
     private class QtMarkerView: BalloonMarker {
         var formulas: [Formula]?
         var formulaTypeName: String?
