@@ -35,7 +35,12 @@ class QTpRRViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc private func saveToCameraRoll() {
-        viewModel?.saveToCameraRoll()
+    @objc func saveToCameraRoll() {
+        viewModel?.saveToCameraRoll(target:self, selector:#selector(image(_:didFinishSavingWithError:contextInfo:)))
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        let ac = Alerts.saveAlert(error: error)
+        present(ac, animated: true)
     }
 }
