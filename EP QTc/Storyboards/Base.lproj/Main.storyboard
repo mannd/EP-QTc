@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e9r-OD-jO5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e9r-OD-jO5">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -186,7 +184,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age in years" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d28-y2-f5u" customClass="AgeTextField" customModule="EP_QTc" customModuleProvider="target">
-                                                        <rect key="frame" x="93" y="0.0" width="118.5" height="36"/>
+                                                        <rect key="frame" x="93" y="0.0" width="119" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="dUz-zi-J1o"/>
                                                         </constraints>
@@ -198,7 +196,7 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF9-PH-WVT">
-                                                        <rect key="frame" x="219.5" y="0.0" width="60.5" height="36"/>
+                                                        <rect key="frame" x="220" y="0.0" width="60" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="yJT-jZ-ZWI"/>
                                                         </constraints>
@@ -235,21 +233,25 @@
                                             <action selector="calculateQTc:" destination="noH-fe-75o" id="tfS-i4-Rdw"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="G7Q-Q9-Rnf"/>
                                     <barButtonItem title="QTp" id="xh9-8E-bBa">
                                         <connections>
                                             <action selector="calculateQTp:" destination="noH-fe-75o" id="pM1-mf-yMm"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yuM-LR-rR2"/>
                                     <barButtonItem title="Clear" id="hwE-dR-flQ">
                                         <connections>
                                             <action selector="clear:" destination="noH-fe-75o" id="clN-w8-QLN"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xcV-NJ-1bN"/>
                                     <barButtonItem title="Prefs" id="3iz-y1-Q0t">
                                         <connections>
                                             <segue destination="aDr-gs-Jv6" kind="show" identifier="preferencesSegue" id="jeS-nk-vQx"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TxX-d7-3Jl"/>
                                     <barButtonItem title="Help" id="eRS-Yu-h2k">
                                         <connections>
                                             <action selector="showHelp:" destination="noH-fe-75o" id="TMU-Wm-Wpd"/>
@@ -358,17 +360,20 @@
                                 <segue destination="IPa-kz-NAN" kind="show" identifier="statsSegue" id="IRP-dx-OFx"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="EtS-8W-ngC"/>
                         <barButtonItem title="Graph" id="jDE-fq-jXJ">
                             <connections>
                                 <action selector="showGraph:" destination="Hrc-3Z-VXJ" id="1uT-Jk-6AS"/>
                                 <segue destination="QcK-eC-D98" kind="show" identifier="graphSegue" id="xSd-7F-pO0"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Cxv-vB-zQo"/>
                         <barButtonItem title="QTp vs HR" id="GkK-VZ-aDy">
                             <connections>
                                 <segue destination="SLC-b1-l2u" kind="show" identifier="QTpvRRSegue" id="MKd-zC-QAm"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="BpT-nb-gQQ"/>
                         <barButtonItem title="Edit" id="Og2-TJ-p4t">
                             <connections>
                                 <action selector="editTable:" destination="Hrc-3Z-VXJ" id="2tX-qp-lRJ"/>
@@ -518,18 +523,18 @@
                                         <rect key="frame" x="0.0" y="520" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rL4-qM-TFL" id="LWg-GQ-bup">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="QTc limits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="87o-7I-C2c">
-                                                    <rect key="frame" x="16" y="5" width="74.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="5" width="74.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jFF-pW-vdO">
-                                                    <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -549,13 +554,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSV on copy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWA-pi-idu">
-                                                    <rect key="frame" x="8" y="11" width="98.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="98.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hca-kc-P0C">
-                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="263" y="6.5" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -575,7 +580,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units in msec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YH-il-AbP">
-                                                    <rect key="frame" x="8" y="11" width="103.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="103.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -601,7 +606,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart rate as interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpx-Wo-1JW">
-                                                    <rect key="frame" x="8" y="11" width="159.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="159.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -627,7 +632,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animate graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTp-GX-f5N">
-                                                    <rect key="frame" x="8" y="11" width="120.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="120.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -653,13 +658,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Y axis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv0-QN-jcK">
-                                                    <rect key="frame" x="8" y="11" width="127.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="127" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q53-ev-HUK">
-                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="263" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="automaticYAxisValueChanged:" destination="aDr-gs-Jv6" eventType="valueChanged" id="HCU-xN-MG7"/>
                                                     </connections>
@@ -682,13 +687,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y axis maximum (msec)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zd-zo-ftS">
-                                                    <rect key="frame" x="8" y="11" width="181.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="181.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max Y axis" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Efo-nv-zlG" customClass="CalculatorTextField" customModule="EP_QTc" customModuleProvider="target">
-                                                    <rect key="frame" x="212" y="6" width="100" height="30"/>
+                                                    <rect key="frame" x="212" y="7" width="100" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="H9m-EY-1Id"/>
                                                     </constraints>
@@ -715,13 +720,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y axis minimum (msec)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWB-s7-0ZM">
-                                                    <rect key="frame" x="8" y="11" width="177.5" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="177.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Min Y axis" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hI9-p7-qlC" customClass="CalculatorTextField" customModule="EP_QTc" customModuleProvider="target">
-                                                    <rect key="frame" x="212" y="6" width="100" height="30"/>
+                                                    <rect key="frame" x="212" y="7" width="100" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="OJ1-T0-ZnZ"/>
                                                     </constraints>
