@@ -97,11 +97,11 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
             let preferences = Preferences.retrieve()
             var preferenceRow = 0
             if let precisionPreference = preferences.precision {
-                preferenceRow = self.precisionOptions.index(of: precisionPreference) ?? 0
+                preferenceRow = self.precisionOptions.firstIndex(of: precisionPreference) ?? 0
             }
             var sortRow = 0
             if let sortPreference = preferences.sortOrder {
-                sortRow = self.sortOrderOptions.index(of: sortPreference) ?? 0
+                sortRow = self.sortOrderOptions.firstIndex(of: sortPreference) ?? 0
             }
             self.precisionPicker.selectRow(preferenceRow, inComponent: 0, animated: false)
             self.sortingPicker.selectRow(sortRow, inComponent: 0, animated: false)

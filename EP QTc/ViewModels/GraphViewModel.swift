@@ -81,22 +81,22 @@ class GraphViewModel {
         let baseLabel = formulaType.name
         // Note that QTp intervals can only be normal by definition
         let normalLabel = (formulaType == .qtp ? "QTp" : "Normal QTc")
-        let normalValuesSet = BarChartDataSet(values: normalValues, label: normalLabel)
+        let normalValuesSet = BarChartDataSet(entries: normalValues, label: normalLabel)
         normalValuesSet.setColor(formulaType == .qtp ? normalQTpColor: normalColor)
-        let undefinedValuesSet = BarChartDataSet(values: undefinedValues, label: "Uninterpreted QTc")
-        let borderlineValuesSet = BarChartDataSet(values: borderlineValues, label: "Borderline QTc")
+        let undefinedValuesSet = BarChartDataSet(entries: undefinedValues, label: "Uninterpreted QTc")
+        let borderlineValuesSet = BarChartDataSet(entries: borderlineValues, label: "Borderline QTc")
         borderlineValuesSet.setColor(borderlineColor)
-        let mildValuesSet = BarChartDataSet(values: mildValues, label: "Mildly abnormal QTc")
+        let mildValuesSet = BarChartDataSet(entries: mildValues, label: "Mildly abnormal QTc")
         mildValuesSet.setColor(mildColor)
-        let moderateValuesSet = BarChartDataSet(values: moderateValues, label: "Moderatedly abnormal QTc")
+        let moderateValuesSet = BarChartDataSet(entries: moderateValues, label: "Moderatedly abnormal QTc")
         moderateValuesSet.setColor(moderateColor)
-        let severeValuesSet = BarChartDataSet(values: severeValues, label: "Severely abnormal QTc")
+        let severeValuesSet = BarChartDataSet(entries: severeValues, label: "Severely abnormal QTc")
         severeValuesSet.setColor(severeColor)
-        let abnormalValuesSet = BarChartDataSet(values: abnormalValues, label: "Abnormal \(baseLabel)")
+        let abnormalValuesSet = BarChartDataSet(entries: abnormalValues, label: "Abnormal \(baseLabel)")
         abnormalValuesSet.setColor(abnormalColor)
         
         // get mean QTc/p
-        let meanValuesSet = BarChartDataSet(values: meanValues, label: "Mean \(baseLabel)")
+        let meanValuesSet = BarChartDataSet(entries: meanValues, label: "Mean \(baseLabel)")
         if Calculator.resultSeverity(result: meanValues[0].y, qtMeasurement: qtMeasurement, formulaType: formulaType, qtcLimits: preferences.qtcLimits).isAbnormal() {
             meanValuesSet.setColor(abnormalMeanColor)
         }
@@ -107,7 +107,7 @@ class GraphViewModel {
         var qtValuesSet = BarChartDataSet()
         if let qt = qtMeasurement.qt, formulaType == .qtp {
             let qtValue = BarChartDataEntry(x: Double(results.count + 1), y: qt)
-            qtValuesSet = BarChartDataSet(values: [qtValue], label: "QT")
+            qtValuesSet = BarChartDataSet(entries: [qtValue], label: "QT")
             if let max = results.max(), let min = results.min(), qt > max || qt < min {
                 qtValuesSet.setColor(abnormalColor)
             }

@@ -65,8 +65,8 @@ class QTpRRViewModel {
                 qtIsAbnormal = qt > max || qt < min
             }
         }
-        let qtSet = ScatterChartDataSet(values: qtValues, label: (qtIsAbnormal ? "Abnormal " : "") + "QT")
-        let qtpSet = ScatterChartDataSet(values: qtpValues, label: "QTp")
+        let qtSet = ScatterChartDataSet(entries: qtValues, label: (qtIsAbnormal ? "Abnormal " : "") + "QT")
+        let qtpSet = ScatterChartDataSet(entries: qtpValues, label: "QTp")
         qtpSet.drawValuesEnabled = false
         qtSet.setColor(qtIsAbnormal ? UIColor.red : UIColor.green)
         qtpSet.setColor(UIColor.prettyCyan())
