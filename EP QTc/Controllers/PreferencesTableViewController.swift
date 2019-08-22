@@ -74,7 +74,8 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         let separator = NSLocale.current.decimalSeparator ?? "."
         // regex allows zero and positive decimal numbers
         let localizedPattern = String(format:"^(?:\\d+|\\d*\\%@\\d+)$", separator, separator)
-        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "Invalid number"))
+        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: PreferencesValidationError(message: "Invalid number"))
+
         var rules = ValidationRuleSet<String>()
         rules.add(rule: isNumberRule)
         yAxisMinimumTextField.validationRules = rules
@@ -167,7 +168,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     
 
     // This is needed for Validation rule, but will not be called.
-    struct ValidationError: Error {
+    struct PreferencesValidationError: ValidationError {
         public let message: String
         
         public init(message m: String) {

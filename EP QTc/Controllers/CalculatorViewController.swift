@@ -132,7 +132,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         // regex now prohibits negative values, 0, and things like 0.0, i.e. only positive floats accepted
         // see https://stackoverflow.com/questions/8910972/regex-exclude-zero
         let localizedPattern = String(format:"^(?!0*(\\%@0+)?$)(\\d+|\\d*\\%@\\d+)$", separator, separator)
-        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "Invalid number"))
+
+        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: CalculatorValidationError(message: "Invalid number"))
         var rules = ValidationRuleSet<String>()
         rules.add(rule: isNumberRule)
         qtTextField.validationRules = rules
@@ -204,9 +205,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         about.show(viewController: self)
     }
     
-    struct ValidationError: Error {
+    struct CalculatorValidationError: ValidationError {
         public let message: String
-        
+
         public init(message m: String) {
             message = m
         }

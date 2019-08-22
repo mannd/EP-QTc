@@ -27,8 +27,21 @@ extension UITextField {
 }
 
 
+// FIXME: Need to understand the logic here.  See below.
 class CalculatorTextField: UITextField {
-    
+
+    @IBOutlet private(set) var textField: UITextField!
+
+
+    var validationRuleSet: ValidationRuleSet<String>? {
+
+        didSet {
+
+            textField.validationRules = validationRuleSet
+        }
+    }
+
+
     public func updateValidationState(result: ValidationResult) {
         switch result {
         case .valid:
@@ -37,11 +50,14 @@ class CalculatorTextField: UITextField {
             showErrorFieldBorder()
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        validateOnInputChange(enabled: true)
-        validationHandler = { [weak self] result in self?.updateValidationState(result: result) }
+        // TODO: Apparently need to reference the textField variable here (and not self),
+        // since we get an error if we leave out textField.  But how to set textField?
+        // Need to study the example validator program more.
+        textField.validateOnInputChange(enabled: true)
+        textField.validationHandler = { [weak self] result in self?.updateValidationState(result: result) }
     }
     
 }
