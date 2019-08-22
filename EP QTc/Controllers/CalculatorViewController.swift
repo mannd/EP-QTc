@@ -116,15 +116,17 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         qtTextField.delegate = self
         intervalRateTextField.delegate = self
         ageTextField.delegate = self
-        // About info button
-        let aboutButton = UIButton(type: .infoLight)
-        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
-        
+
+        qtTextField.validateOnInputChange(enabled: true)
+        qtTextField.validationHandler = { result in self.qtTextField.updateValidationState(result: result) }
+        intervalRateTextField.validateOnInputChange(enabled: true)
+        intervalRateTextField.validationHandler = { result in self.intervalRateTextField.updateValidationState(result: result) }
+        ageTextField.validateOnInputChange(enabled: true)
+        ageTextField.validationHandler = { result in self.ageTextField.updateValidationState(result: result) }
+
         qtTextField.placeholder = qtHintInMsec
         intervalRateTextField.placeholder = intervalRateHintInMsec
         
@@ -140,6 +142,11 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         intervalRateTextField.validationRules = rules
         ageTextField.validationRules = rules
         
+        // About info button
+        let aboutButton = UIButton(type: .infoLight)
+        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+
         // set up default units/intervalRate preferences when app starts
         let preferences = Preferences.retrieve()
         if let unitsMsec = preferences.unitsMsec, !unitsMsec {
