@@ -12,16 +12,17 @@ import SigmaSwiftStatistics
 import Charts
 
 class GraphViewModel {
-    let undefinedColor = UIColor.lightGray
-    let normalColor = UIColor.green
-    let abnormalColor = UIColor.red
-    let normalQTpColor = UIColor.prettyCyan()
-    let normalMeanColor = UIColor.black
-    let abnormalMeanColor = UIColor.blue
-    let borderlineColor = UIColor.orange
-    let mildColor = UIColor.orange
-    let moderateColor = UIColor.red
-    let severeColor = UIColor.purple
+    // TODO: change these to system colors (? nicer in dark mode) for iOS 13
+    let undefinedColor = UIColor.systemGray
+    let normalColor = UIColor.systemGreen
+    let abnormalColor = UIColor.systemRed
+    let normalQTpColor = UIColor.prettyCyan
+    let normalMeanColor: UIColor
+    let abnormalMeanColor = UIColor.systemBlue
+    let borderlineColor = UIColor.systemOrange
+    let mildColor = UIColor.systemOrange
+    let moderateColor = UIColor.systemRed
+    let severeColor = UIColor.systemPurple
     
     var barChartView: BarChartView
     var qtMeasurement: QtMeasurement
@@ -38,6 +39,11 @@ class GraphViewModel {
         self.formulas = formulas
         self.formulaType = formulaType
         self.preferences = preferences
+        if #available(iOS 13.0, *) {
+            normalMeanColor = UIColor.label
+        } else {
+            normalMeanColor = UIColor.black
+        }
     }
     
     func drawGraph() {
@@ -50,6 +56,16 @@ class GraphViewModel {
         var severeValues: [BarChartDataEntry] = []
         var meanValues: [BarChartDataEntry] = []
         var i: Double = 0
+
+        if #available(iOS 13.0, *) {
+            barChartView.xAxis.labelTextColor = UIColor.label
+            barChartView.leftAxis.labelTextColor = UIColor.label
+            barChartView.rightAxis.labelTextColor = UIColor.label
+            barChartView.chartDescription?.textColor = UIColor.label
+        } else {
+            // Use default label color
+        }
+
         for result in results {
             let entry = BarChartDataEntry(x: i, y: result)
             i += 1
@@ -119,6 +135,12 @@ class GraphViewModel {
                                                     mildValuesSet, moderateValuesSet,
                                                     severeValuesSet, abnormalValuesSet,
                                                     meanValuesSet, qtValuesSet])
+        let legend: Legend = barChartView.legend
+        if #available(iOS 13.0, *) {
+            legend.textColor = UIColor.label
+        } else {
+            // Use default legend color
+        }
         let marker = QtMarkerView(color: UIColor(white: 180/250, alpha: 1), font: UIFont.boldSystemFont(ofSize: 12.0), textColor: UIColor.white, insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
         marker.formulas = formulas
         marker.formulaTypeName = formulaType.name

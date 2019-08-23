@@ -79,7 +79,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     @IBOutlet var ageTextField: AgeTextField!
     @IBOutlet var qtUnitsLabel: UILabel!
     @IBOutlet var intervalRateUnitsLabel: UILabel!
-    @IBOutlet var calculateButton: UIBarButtonItem!
     @IBOutlet var optionalInformationLabel: UILabel!
     
     weak var viewController: UITableViewController?
@@ -116,15 +115,17 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         qtTextField.delegate = self
         intervalRateTextField.delegate = self
         ageTextField.delegate = self
-        // About info button
-        let aboutButton = UIButton(type: .infoLight)
-        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
-        
+
+        qtTextField.validateOnInputChange(enabled: true)
+        qtTextField.validationHandler = { result in self.qtTextField.updateValidationState(result: result) }
+        intervalRateTextField.validateOnInputChange(enabled: true)
+        intervalRateTextField.validationHandler = { result in self.intervalRateTextField.updateValidationState(result: result) }
+        ageTextField.validateOnInputChange(enabled: true)
+        ageTextField.validationHandler = { result in self.ageTextField.updateValidationState(result: result) }
+
         qtTextField.placeholder = qtHintInMsec
         intervalRateTextField.placeholder = intervalRateHintInMsec
         
@@ -132,13 +133,19 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         // regex now prohibits negative values, 0, and things like 0.0, i.e. only positive floats accepted
         // see https://stackoverflow.com/questions/8910972/regex-exclude-zero
         let localizedPattern = String(format:"^(?!0*(\\%@0+)?$)(\\d+|\\d*\\%@\\d+)$", separator, separator)
-        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: ValidationError(message: "Invalid number"))
+
+        let isNumberRule = ValidationRulePattern(pattern: localizedPattern, error: CalculatorValidationError(message: "Invalid number"))
         var rules = ValidationRuleSet<String>()
         rules.add(rule: isNumberRule)
         qtTextField.validationRules = rules
         intervalRateTextField.validationRules = rules
         ageTextField.validationRules = rules
         
+        // About info button
+        let aboutButton = UIButton(type: .infoLight)
+        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+
         // set up default units/intervalRate preferences when app starts
         let preferences = Preferences.retrieve()
         if let unitsMsec = preferences.unitsMsec, !unitsMsec {
@@ -204,9 +211,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         about.show(viewController: self)
     }
     
-    struct ValidationError: Error {
+    struct CalculatorValidationError: ValidationError {
         public let message: String
-        
+
         public init(message m: String) {
             message = m
         }

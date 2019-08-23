@@ -12,20 +12,17 @@ import Charts
 import SigmaSwiftStatistics
 
 extension UIColor {
-    // This is the default graph color in Charts, a little lighter than UIColor.cyan
-    static func prettyCyan() -> UIColor {
+    // This is the default graph color in Charts, a little lighter than UIColor.cyan.
+    static var prettyCyan: UIColor { get {
         return UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
-    }
+        }}
 }
 
 class QTpRRViewModel {
     var chartView: ScatterChartView
     var qtMeasurement: QtMeasurement
     let preferences: Preferences
-    let cyan = UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
-//    let cyan = [UIExtendedSRGBColorSpace 0.54902 0.917647 1 1]
 
-    
     init(chartView: ScatterChartView, qtMeasurement: QtMeasurement) {
         self.chartView = chartView
         self.qtMeasurement = qtMeasurement
@@ -35,6 +32,13 @@ class QTpRRViewModel {
     func drawGraph() {
         chartView.rightAxis.enabled = false
         chartView.xAxis.labelPosition = .bottom
+        if #available(iOS 13.0, *) {
+            chartView.xAxis.labelTextColor = UIColor.label
+            chartView.leftAxis.labelTextColor = UIColor.label
+            chartView.chartDescription?.textColor = UIColor.label
+        } else {
+            // Use default label color
+        }
         chartView.chartDescription?.text = "QTp, QT (\(qtMeasurement.units.string)) vs Heart Rate (bpm)"
         var qtpValues: [ChartDataEntry] = []
         var qtValues: [ChartDataEntry] = []
@@ -68,11 +72,18 @@ class QTpRRViewModel {
         let qtSet = ScatterChartDataSet(entries: qtValues, label: (qtIsAbnormal ? "Abnormal " : "") + "QT")
         let qtpSet = ScatterChartDataSet(entries: qtpValues, label: "QTp")
         qtpSet.drawValuesEnabled = false
-        qtSet.setColor(qtIsAbnormal ? UIColor.red : UIColor.green)
-        qtpSet.setColor(UIColor.prettyCyan())
+        qtSet.setColor(qtIsAbnormal ? UIColor.systemRed : UIColor.systemGreen)
+        qtpSet.setColor(UIColor.prettyCyan)
         qtpSet.setScatterShape(.circle)
+
         let data = ScatterChartData(dataSets: [qtpSet, qtSet])
         chartView.data = data
+        let legend: Legend = chartView.legend
+        if #available(iOS 13.0, *) {
+            legend.textColor = UIColor.label
+        } else {
+            // Use default legend color
+        }
         if let animateGraphs = preferences.animateGraphs, animateGraphs {
             chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
         }

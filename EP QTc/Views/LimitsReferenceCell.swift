@@ -28,8 +28,15 @@ class LimitsReferenceCell: UITableViewCell {
                     hasDoi = true
                     doiString = doiStrings[0]
                     let doiRange = (item as NSString).range(of: doiString)
+                    // TODO: change to link color
+                    let linkColor: UIColor
+                    if #available(iOS 13.0, *) {
+                        linkColor = UIColor.link
+                    } else {
+                        linkColor = UIColor.systemBlue
+                    }
                     let attributes: [NSAttributedString.Key: Any] = [.link: doiString,
-                                                                    .foregroundColor: UIColor.blue]
+                                                                    .foregroundColor: linkColor]
                     underlinedString.addAttributes(attributes, range: doiRange)
                 }
             }

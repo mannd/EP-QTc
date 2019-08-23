@@ -11,24 +11,23 @@ import Validator
 
 extension UITextField {
     public func showErrorFieldBorder() {
-        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderColor = UIColor.systemRed.cgColor
         self.layer.borderWidth = 1.0
     }
     
     public func showValidFieldBorder() {
-        self.layer.borderColor = UIColor.green.cgColor
+        self.layer.borderColor = UIColor.systemGreen.cgColor
         self.layer.borderWidth = 0.5
     }
     
     public func resetFieldBorder() {
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderColor = UIColor.systemGray.cgColor
         self.layer.borderWidth = 0.25
     }
 }
 
-
 class CalculatorTextField: UITextField {
-    
+
     public func updateValidationState(result: ValidationResult) {
         switch result {
         case .valid:
@@ -37,11 +36,9 @@ class CalculatorTextField: UITextField {
             showErrorFieldBorder()
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        validateOnInputChange(enabled: true)
-        validationHandler = { [weak self] result in self?.updateValidationState(result: result) }
     }
     
 }
