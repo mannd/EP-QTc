@@ -18,4 +18,3 @@ target 'EP QTc' do
     # Pods for testing
   end
 end
-nsi
