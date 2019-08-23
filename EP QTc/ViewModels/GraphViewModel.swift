@@ -13,16 +13,16 @@ import Charts
 
 class GraphViewModel {
     // TODO: change these to system colors (? nicer in dark mode) for iOS 13
-    let undefinedColor = UIColor.lightGray
-    let normalColor = UIColor.green
-    let abnormalColor = UIColor.red
+    let undefinedColor = UIColor.systemGray
+    let normalColor = UIColor.systemGreen
+    let abnormalColor = UIColor.systemRed
     let normalQTpColor = UIColor.prettyCyan()
     let normalMeanColor: UIColor
-    let abnormalMeanColor = UIColor.blue
-    let borderlineColor = UIColor.orange
-    let mildColor = UIColor.orange
-    let moderateColor = UIColor.red
-    let severeColor = UIColor.purple
+    let abnormalMeanColor = UIColor.systemBlue
+    let borderlineColor = UIColor.systemOrange
+    let mildColor = UIColor.systemOrange
+    let moderateColor = UIColor.systemRed
+    let severeColor = UIColor.systemPurple
     
     var barChartView: BarChartView
     var qtMeasurement: QtMeasurement

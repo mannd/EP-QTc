@@ -12,8 +12,8 @@ import QTc
 final class ResultsTableViewController: UITableViewController {
     @IBOutlet var editButton: UIBarButtonItem!
     
-    let unknownColor = UIColor.blue
-    let normalColor = UIColor.green
+    let unknownColor = UIColor.systemBlue
+    let normalColor = UIColor.systemGreen
     
     let preferences = Preferences.retrieve()
 

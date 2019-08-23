@@ -29,7 +29,7 @@ class LimitsReferenceCell: UITableViewCell {
                     doiString = doiStrings[0]
                     let doiRange = (item as NSString).range(of: doiString)
                     let attributes: [NSAttributedString.Key: Any] = [.link: doiString,
-                                                                    .foregroundColor: UIColor.blue]
+                                                                    .foregroundColor: UIColor.systemBlue]
                     underlinedString.addAttributes(attributes, range: doiRange)
                 }
             }

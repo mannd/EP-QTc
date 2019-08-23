@@ -193,25 +193,33 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     }
     
     func showPrecisionPickerViewCell() {
-        precisionCell.detailTextLabel?.textColor = UIColor.red
+        precisionCell.detailTextLabel?.textColor = UIColor.systemRed
         precisionPickerVisible = true
         showPickerView(precisionPicker)
     }
     
     func hidePrecisionPickerViewCell() {
-        precisionCell.detailTextLabel?.textColor = UIColor.darkText
+        if #available(iOS 13.0, *) {
+            precisionCell.detailTextLabel?.textColor = UIColor.label
+        } else {
+            // Fallback on earlier versions
+        }
         precisionPickerVisible = false
         hidePickerView(precisionPicker)
     }
     
     func showSortingPickerViewCell() {
-        sortingCell.detailTextLabel?.textColor = UIColor.red
+        sortingCell.detailTextLabel?.textColor = UIColor.systemRed
         sortingPickerVisible = true
         showPickerView(sortingPicker)
     }
     
     func hideSortingPickerViewCell() {
-        sortingCell.detailTextLabel?.textColor = UIColor.darkText
+        if #available(iOS 13.0, *) {
+            sortingCell.detailTextLabel?.textColor = UIColor.label
+        } else {
+            // Fallback on earlier versions
+        }
         sortingPickerVisible = false
         hidePickerView(sortingPicker)
     }

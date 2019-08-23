@@ -55,20 +55,20 @@ extension Severity {
     }
     
     func color() -> UIColor {
-        let errorColor = UIColor.blue
+        let errorColor = UIColor.systemBlue
         let normalColor: UIColor
         if #available(iOS 13.0, *) {
             normalColor = UIColor.label
         } else {
             normalColor = UIColor.black // green doesn't look good
         }
-        let borderlineColor = UIColor.orange
-        let mildColor = UIColor.orange
-        let moderateColor = UIColor.red
-        let severeColor = UIColor.purple
-        let abnormalColor = UIColor.red
-        let defaultColor = UIColor.black
-        let undefinedColor = UIColor.gray
+        let borderlineColor = UIColor.systemOrange
+        let mildColor = UIColor.systemOrange
+        let moderateColor = UIColor.systemRed
+        let severeColor = UIColor.systemPurple
+        let abnormalColor = UIColor.systemRed
+        let defaultColor = normalColor
+        let undefinedColor = UIColor.systemGray
         switch self {
         case .error:
             return errorColor
