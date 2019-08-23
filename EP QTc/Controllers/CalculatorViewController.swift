@@ -79,7 +79,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     @IBOutlet var ageTextField: AgeTextField!
     @IBOutlet var qtUnitsLabel: UILabel!
     @IBOutlet var intervalRateUnitsLabel: UILabel!
-    @IBOutlet var calculateButton: UIBarButtonItem!
     @IBOutlet var optionalInformationLabel: UILabel!
     
     weak var viewController: UITableViewController?

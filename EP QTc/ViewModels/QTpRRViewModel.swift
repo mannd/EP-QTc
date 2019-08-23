@@ -13,18 +13,15 @@ import SigmaSwiftStatistics
 
 extension UIColor {
     // This is the default graph color in Charts, a little lighter than UIColor.cyan.
-    // But, for now, change back to regular cyan: looks a little better in dark mode.
-    static func prettyCyan() -> UIColor {
-//        return UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
-        return UIColor.cyan
-    }
+    static var prettyCyan: UIColor { get {
+        return UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
+        }}
 }
 
 class QTpRRViewModel {
     var chartView: ScatterChartView
     var qtMeasurement: QtMeasurement
     let preferences: Preferences
-    let cyan = UIColor(displayP3Red: 0.54902, green: 0.917647, blue: 1, alpha: 1)
 
     init(chartView: ScatterChartView, qtMeasurement: QtMeasurement) {
         self.chartView = chartView
@@ -76,7 +73,7 @@ class QTpRRViewModel {
         let qtpSet = ScatterChartDataSet(entries: qtpValues, label: "QTp")
         qtpSet.drawValuesEnabled = false
         qtSet.setColor(qtIsAbnormal ? UIColor.systemRed : UIColor.systemGreen)
-        qtpSet.setColor(UIColor.prettyCyan())
+        qtpSet.setColor(UIColor.prettyCyan)
         qtpSet.setScatterShape(.circle)
 
         let data = ScatterChartData(dataSets: [qtpSet, qtSet])

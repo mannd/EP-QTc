@@ -16,7 +16,7 @@ class GraphViewModel {
     let undefinedColor = UIColor.systemGray
     let normalColor = UIColor.systemGreen
     let abnormalColor = UIColor.systemRed
-    let normalQTpColor = UIColor.prettyCyan()
+    let normalQTpColor = UIColor.prettyCyan
     let normalMeanColor: UIColor
     let abnormalMeanColor = UIColor.systemBlue
     let borderlineColor = UIColor.systemOrange
