@@ -62,6 +62,7 @@ class GraphViewModel {
             barChartView.leftAxis.labelTextColor = UIColor.label
             barChartView.rightAxis.labelTextColor = UIColor.label
             barChartView.chartDescription?.textColor = UIColor.label
+            barChartView.backgroundColor = UIColor.secondarySystemBackground
         } else {
             // Use default label color
         }

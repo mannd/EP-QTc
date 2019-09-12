@@ -36,6 +36,7 @@ class QTpRRViewModel {
             chartView.xAxis.labelTextColor = UIColor.label
             chartView.leftAxis.labelTextColor = UIColor.label
             chartView.chartDescription?.textColor = UIColor.label
+            chartView.backgroundColor = UIColor.secondarySystemBackground
         } else {
             // Use default label color
         }

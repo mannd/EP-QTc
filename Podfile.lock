@@ -28,7 +28,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: dd1bb7840254d6385400e07fd78e98dd0b0d0668
+    :commit: e93bfb9b7811b2d3953f95541949a2b93ba81a09
     :git: https://github.com/danielgindi/Charts
   QTc:
     :commit: fd2a0c53df5a1f98e11d8d2966b4bbc4566df12d
