@@ -1,10 +1,10 @@
 PODS:
-  - Charts (3.2.1):
-    - Charts/Core (= 3.2.1)
-  - Charts/Core (3.2.1)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
   - QTc (3.4.1)
-  - SigmaSwiftStatistics (8.0.1)
-  - Validator (3.1.1)
+  - SigmaSwiftStatistics (9.0.2)
+  - Validator (3.2.1)
 
 DEPENDENCIES:
   - Charts (from `https://github.com/danielgindi/Charts`, branch `master`)
@@ -28,24 +28,24 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: 9f2c13009f8230c40cc31c25b330ccda6ad18ff6
+    :commit: e93bfb9b7811b2d3953f95541949a2b93ba81a09
     :git: https://github.com/danielgindi/Charts
   QTc:
-    :commit: 49048895ab486b9bd8475674c44fd5b12060ea6e
+    :commit: fd2a0c53df5a1f98e11d8d2966b4bbc4566df12d
     :git: https://github.com/mannd/QTc.git
   SigmaSwiftStatistics:
-    :commit: 3e629a2e1594097501071d961b481738bd129611
+    :commit: d36db09f97a1739edc8c63897220c7ecbb5de684
     :git: https://github.com/evgenyneu/SigmaSwiftStatistics
   Validator:
-    :commit: ac89559748dc9bf5069aed350b4a7f4c39e667dc
+    :commit: 9dd9ac17fec55bd4cf8e2a3edf14c420fac15c10
     :git: https://github.com/adamwaite/Validator.git
 
 SPEC CHECKSUMS:
-  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
+  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
   QTc: ede7a196a674e49a94a2e06be7a43347ceefae51
-  SigmaSwiftStatistics: 063591f136428920b3083e3d9c181c9c6b1a9dec
-  Validator: b34ab17a8fffd0c1ffd8f9002ead4d1e02cd9e6e
+  SigmaSwiftStatistics: 0a7363d42331a5b8f57efb39155245544ce838a0
+  Validator: 3f2bbba603ffaed17df71bb4e0fbac67404dbfca
 
 PODFILE CHECKSUM: 19fe29641b96d86a6b43b227d0ffaf6ceb8d9630
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.8.0.beta.1

@@ -56,7 +56,7 @@ final class QTcLimitsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = abnormalQTc?.description
         
         for criterion in selectedQTcLimits {
-            if let row = qtcLimits.index(of: criterion) {
+            if let row = qtcLimits.firstIndex(of: criterion) {
                 if row == indexPath.row {
                     cell.accessoryType = .checkmark
                 }

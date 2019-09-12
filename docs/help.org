@@ -14,6 +14,7 @@
 #+LINK_HOME: 
 #+XSLT:
 #+HTML_HEAD: <style media="screen" type="text/css"> img {max-width: 100%; height: auto;} </style>
+#+HTML_HEAD: <style  type="text/css">:root { color-scheme: light dark; }</style>
 * Unlocking the QT interval
 #+CAPTION: Long QT and Torsades de Pointes
 [[./images/lqt.png]]
@@ -160,15 +161,14 @@ No user data is collected by this app.  No data is stored either on the user’s
 This app is open source and licensed under the 
 [[http://www.apache.org/licenses/LICENSE-2.0.html][Apache License, Version 2.0]].  When used with Apple devices via the iTunes App Store, it is subject to the [[http://images.apple.com/legal/sla/docs/AppleStoreApp.pdf][standard Apple iOS license agreement]].  Source code for this app is available on [[https://github.com/mannd/EP-QTc][GitHub]].
 
-This app is copyright © 2018 by EP Studios, Inc.  All rights reserved.
+This app is copyright © 2018--2019 by EP Studios, Inc.  All rights reserved.
 * Contact
 Website: https://www.epstudiossoftware.com
 
 Email: mannd@epstudiossoftware.com
 * Footnotes
 
-[fn:2] https://www.physionet.org/challenge/2006/papers/0313.pdf
-
+[fn:2] https://archive.physionet.org/challenge/2006/papers/0313.pdf
 [fn:1] Bazett HC. An analysis of the time-relations of electrocardiograms. Heart 1920;7:353–370.
 
 

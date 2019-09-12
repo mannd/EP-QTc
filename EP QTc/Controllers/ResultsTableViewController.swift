@@ -12,8 +12,8 @@ import QTc
 final class ResultsTableViewController: UITableViewController {
     @IBOutlet var editButton: UIBarButtonItem!
     
-    let unknownColor = UIColor.blue
-    let normalColor = UIColor.green
+    let unknownColor = UIColor.systemBlue
+    let normalColor = UIColor.systemGreen
     
     let preferences = Preferences.retrieve()
 
@@ -97,8 +97,11 @@ final class ResultsTableViewController: UITableViewController {
     @IBAction func editTable(_ sender: Any) {
         oldBarButtonItems = toolbarItems
         toolbarItems?.removeAll()
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbarItems?.append(UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(ResultsTableViewController.saveEdit)))
+        toolbarItems?.append(spacer)
         toolbarItems?.append(UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(ResultsTableViewController.resetEdit)))
+        toolbarItems?.append(spacer)
         toolbarItems?.append(UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ResultsTableViewController.cancelEdit)))
         tableView.isEditing = true
     }
