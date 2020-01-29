@@ -33,6 +33,9 @@ final class ResultsTableViewController: UITableViewController {
             return
         }
 
+        // Make this toolbar match the calculator's toolbar.
+        self.navigationController?.toolbar.barTintColor = nil
+        self.navigationController?.toolbar.isTranslucent = true
         self.tableView.isEditing = false
         editButton.isEnabled = (preferences.sortOrder == .custom)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))

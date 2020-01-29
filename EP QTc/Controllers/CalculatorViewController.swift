@@ -141,10 +141,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         intervalRateTextField.validationRules = rules
         ageTextField.validationRules = rules
         
-        // About info button
+        // About info button - don't show on mac
+        #if !targetEnvironment(macCatalyst)
         let aboutButton = UIButton(type: .infoLight)
         aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+        #endif
 
         // set up default units/intervalRate preferences when app starts
         let preferences = Preferences.retrieve()
