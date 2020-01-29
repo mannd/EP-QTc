@@ -276,10 +276,12 @@
                     <connections>
                         <outlet property="ageLabel" destination="1mp-G2-MR3" id="pXm-GL-xac"/>
                         <outlet property="ageTextField" destination="d28-y2-f5u" id="3wf-0C-qUf"/>
+                        <outlet property="helpButton" destination="eRS-Yu-h2k" id="NAy-av-qXw"/>
                         <outlet property="intervalRateSegmentedControl" destination="CUN-oG-nbc" id="SH1-wa-LpZ"/>
                         <outlet property="intervalRateTextField" destination="F35-8C-Ots" id="4wn-bK-p8O"/>
                         <outlet property="intervalRateUnitsLabel" destination="8Jj-cC-L0A" id="slg-5Z-oYM"/>
                         <outlet property="optionalInformationLabel" destination="GfA-B6-y5R" id="MWq-f8-8bi"/>
+                        <outlet property="prefsButton" destination="3iz-y1-Q0t" id="ptG-C9-hdm"/>
                         <outlet property="qtTextField" destination="PAt-US-WFE" id="4LI-Mk-6Yd"/>
                         <outlet property="qtUnitsLabel" destination="p1f-Ls-7b5" id="OiS-Yv-NP0"/>
                         <outlet property="scrollView" destination="PnG-Ib-4EF" id="yYy-h7-QT0"/>

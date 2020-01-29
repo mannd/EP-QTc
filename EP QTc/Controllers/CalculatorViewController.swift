@@ -81,6 +81,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     @IBOutlet var intervalRateUnitsLabel: UILabel!
     @IBOutlet var optionalInformationLabel: UILabel!
     
+    @IBOutlet var prefsButton: UIBarButtonItem!
+    @IBOutlet var helpButton: UIBarButtonItem!
+
     weak var viewController: UITableViewController?
     
     private let msecText = "msec"
@@ -115,6 +118,22 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Transitions on mac look better without animation.
+        UIView.setAnimationsEnabled(systemType() == .iOS)
+
+        // FIXME: This is a hack.  Buttons are no longer spaced out properly.
+        /*  Presumably we will move preferences and help to the menu bar.  In order to remove
+         the buttons cleanly we will need to create the toolbar programmaticaly, as is done in
+         the ResultsTableViewController.
+         */
+        if systemType() == .mac {
+            // Change toolbar buttons
+            prefsButton.isEnabled = false
+            prefsButton.tintColor = UIColor.clear
+            helpButton.isEnabled = false
+            helpButton.tintColor = UIColor.clear
+        }
+
         qtTextField.delegate = self
         intervalRateTextField.delegate = self
         ageTextField.delegate = self
@@ -142,11 +161,11 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         ageTextField.validationRules = rules
         
         // About info button - don't show on mac
-        #if !targetEnvironment(macCatalyst)
-        let aboutButton = UIButton(type: .infoLight)
-        aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
-        #endif
+        if systemType() == .iOS {
+            let aboutButton = UIButton(type: .infoLight)
+            aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+        }
 
         // set up default units/intervalRate preferences when app starts
         let preferences = Preferences.retrieve()
