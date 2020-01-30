@@ -4,14 +4,14 @@ EP QTc
 [![Build Status](https://travis-ci.org/mannd/EP-QTc.svg?branch=master)](https://travis-ci.org/mannd/EP-QTc)
 
 ## Ultimate QTc/QTp calculator
-**EP QTc** is an iOS app that simultaneously calculates QTc (corrected QT) and QTp (predicted QT) intervals using many different published formulas.  Detailed information on each formula is given and the results can be graphed and imported into text editors or spreadsheets.  The app uses the [QTc framework](https://github.com/mannd/QTc).  For more background see [Hacking the QTc](https://www.epstudiossoftware.com/hacking-the-qtc/).
+**EP QTc** is an iOS and macOS app that simultaneously calculates QTc (corrected QT) and QTp (predicted QT) intervals using many different published formulas.  Detailed information on each formula is given and the results can be graphed and imported into text editors or spreadsheets.  The app uses the [QTc framework](https://github.com/mannd/QTc).  For more background see [Hacking the QTc](https://www.epstudiossoftware.com/hacking-the-qtc/).
 
 ## License
 This app is open source, and licensed under the 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).  When used with Apple devices via the iTunes App Store, it is subject to the [standard Apple iOS license agreement](http://images.apple.com/legal/sla/docs/AppleStoreApp.pdf).
 
 ## Copyright
-Copyright © 2017, 2018 [EP Studios, Inc.](http://www.epstudiossoftware.com)
+Copyright © 2017-2020 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
 ## Acknowledgments
 Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas.

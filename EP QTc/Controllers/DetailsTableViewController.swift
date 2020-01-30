@@ -24,7 +24,7 @@ final class DetailsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
         
         if let qtMeasurement = qtMeasurement, let calculator = calculator, let formulaType = formulaType {
             detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, calculator: calculator, formulaType: formulaType, results: results)
@@ -40,7 +40,7 @@ final class DetailsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc private func oopyToClipboard() {
+    @objc private func copyToClipboard() {
         let preferences = Preferences.retrieve()
         if let text = detailsViewModel?.resultsSummary(preferences: preferences) {
             UIPasteboard.general.string = text
