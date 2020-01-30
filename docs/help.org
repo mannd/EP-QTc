@@ -30,7 +30,7 @@ The many QTc (corrected QT) and QTp (predicted QT) formulas used in this app are
 #+CAPTION: Calculator screen
 [[./images/calculator_screen.png]]
 
-At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  If possible also enter the sex and age, as some formulas are dependent on sex and/or age.  Results are given in the same units as the QT interval, following the convention in the literature, though strictly speaking the units for calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5.  
+At minimum enter the QT interval and heart rate or RR interval.  Units can be seconds (sec) or milliseconds (msec).  If possible also enter the sex and age, as some formulas are dependent on sex and/or age.  Results are given in the same units as the QT interval, following the convention in the literature, though strictly speaking the units for calculated QTc intervals depend on the formula, e.g. in the Bazett formula the QTc units are sec^0.5.  By the way all the figures shown here use screenshots from the iPhone version of the app.  There are only minor differences in screen layout between the iPhone, iPad, and Mac versions of the app.
 ** Menu items
 - *QTc* Calculate and show results of QTc formulas
 - *QTp* Calculate and show results of QTp formulas
@@ -161,7 +161,7 @@ No user data is collected by this app.  No data is stored either on the user’s
 This app is open source and licensed under the 
 [[http://www.apache.org/licenses/LICENSE-2.0.html][Apache License, Version 2.0]].  When used with Apple devices via the iTunes App Store, it is subject to the [[http://images.apple.com/legal/sla/docs/AppleStoreApp.pdf][standard Apple iOS license agreement]].  Source code for this app is available on [[https://github.com/mannd/EP-QTc][GitHub]].
 
-This app is copyright © 2018--2019 by EP Studios, Inc.  All rights reserved.
+This app is copyright © 2018--2020 by EP Studios, Inc.  All rights reserved.
 * Contact
 Website: https://www.epstudiossoftware.com
 
@@ -170,5 +170,3 @@ Email: mannd@epstudiossoftware.com
 
 [fn:2] https://archive.physionet.org/challenge/2006/papers/0313.pdf
 [fn:1] Bazett HC. An analysis of the time-relations of electrocardiograms. Heart 1920;7:353–370.
-
-
