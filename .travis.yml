@@ -3,7 +3,7 @@ language: swift
 osx_image: xcode11
 xcode_workspace: EP QTc.xcworkspace
 xcode_scheme: EP QTc
-xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone XR
+xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
 before_install:
   - gem install cocoapods --pre
   - pod install --repo-update
