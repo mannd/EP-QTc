@@ -81,9 +81,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     @IBOutlet var intervalRateUnitsLabel: UILabel!
     @IBOutlet var optionalInformationLabel: UILabel!
     
-    @IBOutlet var prefsButton: UIBarButtonItem!
-    @IBOutlet var helpButton: UIBarButtonItem!
-
     weak var viewController: UITableViewController?
     
     private let msecText = "msec"
@@ -121,18 +118,17 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         // Transitions on mac look better without animation.
         UIView.setAnimationsEnabled(systemType() == .iOS)
 
-        // FIXME: This is a hack.  Buttons are no longer spaced out properly.
-        /*  Presumably we will move preferences and help to the menu bar.  In order to remove
-         the buttons cleanly we will need to create the toolbar programmaticaly, as is done in
-         the ResultsTableViewController.
-         */
-        if systemType() == .mac {
-            // Change toolbar buttons
-            prefsButton.isEnabled = false
-            prefsButton.tintColor = UIColor.clear
-            helpButton.isEnabled = false
-            helpButton.tintColor = UIColor.clear
-        }
+        setupButtons()
+
+//        if systemType() == .mac {
+//            // Change toolbar buttons
+//            // Remove help and prefs buttons:
+//            // Note: must remove in reverse order, or index out of range!
+//            toolbarItems?.remove(at: 8)
+//            toolbarItems?.remove(at: 7)
+//            toolbarItems?.remove(at: 6)
+//            toolbarItems?.remove(at: 5)
+//        }
 
         qtTextField.delegate = self
         intervalRateTextField.delegate = self
@@ -177,7 +173,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
             intervalRateSegmentedControl.selectedSegmentIndex = 1
             intervalRateChanged(self)
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,6 +180,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         registerNotifications()
         hideKeyboard()
         view.becomeFirstResponder()
+        self.navigationController?.setToolbarHidden(false, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -200,6 +196,30 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    func setupButtons() {
+        toolbarItems?.removeAll()
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarItems?.append(UIBarButtonItem(title: "QTc", style: .plain, target: self, action: #selector(calculateQTc)))
+        toolbarItems?.append(spacer)
+        toolbarItems?.append(UIBarButtonItem(title: "QTp", style: .plain, target: self, action: #selector(calculateQTp)))
+        toolbarItems?.append(spacer)
+        toolbarItems?.append(UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clear)))
+        // Hide these buttons with mac (they are in the menu instead).
+        if systemType() == .iOS {
+            toolbarItems?.append(spacer)
+            toolbarItems?.append(UIBarButtonItem(title: "Prefs", style: .plain, target: self, action: #selector(showPreferences(_:))))
+            toolbarItems?.append(spacer)
+            toolbarItems?.append(UIBarButtonItem(title: "Help", style: .plain, target: self, action: #selector(showHelp(_:))))
+        }
+
+
+
+//        toolbarItems?.append(UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(ResultsTableViewController.resetEdit)))
+//        toolbarItems?.append(spacer)
+//        toolbarItems?.append(UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ResultsTableViewController.cancelEdit)))
+
     }
     
     @objc
@@ -315,8 +335,18 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         formulaType = .qtp
         prepareCalculation()
     }
-    
+
+    @IBAction func showPreferences(_ sender: Any) {
+        performSegue(withIdentifier: "preferencesSegue", sender: self)
+    }
+
+
+    @IBAction func showHelp(_ sender: Any) {
+        performSegue(withIdentifier: "helpSegue", sender: self)
+    }
+
     private func prepareCalculation() {
+
         let validationCode = fieldsValidationResult()
         var message = ""
         var error = true
