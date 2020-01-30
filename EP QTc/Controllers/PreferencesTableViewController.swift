@@ -53,7 +53,7 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
     var selectingSorting: SortOrder = .none
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+       super.viewDidLoad()
 
         precisionPicker.delegate = self
         precisionPicker.dataSource = self
