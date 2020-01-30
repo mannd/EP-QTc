@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let defaults = UserDefaults.standard
@@ -56,6 +55,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    override
+    func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        builder.remove(menu: .format)
+        let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: [.command], action: #selector(CalculatorViewController.showPreferences))
+        preferencesCommand.title = "Preferences..."
+        let openPreferences = UIMenu(title: "Preferences...", image: nil, identifier: UIMenu.Identifier("openPreferences"), options: .displayInline, children: [preferencesCommand])
+        builder.insertSibling(openPreferences, afterMenu: .about)
+    }
+
 }
+
 
 

@@ -39,6 +39,11 @@ extension UIViewController {
         dialog.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(dialog, animated: true)
     }
+
+    @IBAction func showHelp(_ sender: Any) {
+        performSegue(withIdentifier: "helpSegue", sender: self)
+    }
+
 }
 
 // This version of stringToDouble respects locale
@@ -340,10 +345,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebView
         performSegue(withIdentifier: "preferencesSegue", sender: self)
     }
 
-
-    @IBAction func showHelp(_ sender: Any) {
-        performSegue(withIdentifier: "helpSegue", sender: self)
-    }
+//    @IBAction func showHelp(_ sender: Any) {
+//        performSegue(withIdentifier: "helpSegue", sender: self)
+//    }
 
     private func prepareCalculation() {
 

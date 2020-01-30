@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fz-Qm-Swh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="-46"/>
+            <point key="canvasLocation" x="1532" y="-46"/>
         </scene>
         <!--Results-->
         <scene sceneID="uzh-jN-uXB">
@@ -355,6 +355,7 @@
                     <connections>
                         <outlet property="editButton" destination="Og2-TJ-p4t" id="YoS-Cc-1ru"/>
                         <segue destination="Czm-Y4-ul2" kind="show" identifier="detailsTableSegue" id="JyU-FN-nFM"/>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="nGR-H7-Jbx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2c-I1-6Kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boC-OV-cCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="677"/>
+            <point key="canvasLocation" x="730" y="723"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="lKT-gr-i6Z">
@@ -739,11 +740,12 @@
                         <outlet property="yAxisMaximumTextField" destination="Efo-nv-zlG" id="gkC-zi-yIa"/>
                         <outlet property="yAxisMinimumCell" destination="4ir-Yh-4Vm" id="FgH-yv-pku"/>
                         <outlet property="yAxisMinimumTextField" destination="hI9-p7-qlC" id="is9-VJ-Nhk"/>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="fxe-SE-qhc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2Y-Rg-LVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610.9375" y="677.9296875"/>
+            <point key="canvasLocation" x="1532" y="723"/>
         </scene>
         <!--QTc Limits-->
         <scene sceneID="Fl7-dK-zPd">
@@ -785,10 +787,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dia-8l-BSe"/>
+                    <connections>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="WFN-C0-WVu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYH-iF-pc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="1899"/>
+            <point key="canvasLocation" x="1532" y="1381"/>
         </scene>
         <!--QTpRR View Controller-->
         <scene sceneID="t6r-Wi-1Is">
@@ -814,6 +819,7 @@
                     </view>
                     <connections>
                         <outlet property="chartView" destination="I3O-LT-5S5" id="DfN-KK-Hfb"/>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="Yjy-Aw-v9J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vr8-tq-PVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -871,10 +877,13 @@
                             <outlet property="delegate" destination="IPa-kz-NAN" id="NWy-nZ-UO6"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="la9-78-F0J"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azM-tN-vKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="678"/>
+            <point key="canvasLocation" x="2277" y="723"/>
         </scene>
         <!--Graph View Controller-->
         <scene sceneID="bQS-sj-U7K">
@@ -900,11 +909,12 @@
                     </view>
                     <connections>
                         <outlet property="barChartView" destination="sDc-l1-59d" id="1uM-Wu-l1Z"/>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="uwX-Q0-lty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F9-wL-Pjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962.5" y="678.16901408450701"/>
+            <point key="canvasLocation" x="2964" y="723"/>
         </scene>
         <!--Details Table View Controller-->
         <scene sceneID="uy4-MV-7JR">
@@ -1205,10 +1215,16 @@
                             <outlet property="delegate" destination="Czm-Y4-ul2" id="JGB-AI-tGs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="izx-Gm-PTd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLh-VC-M9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2964.375" y="-45.422535211267608"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WFN-C0-WVu"/>
+    </inferredMetricsTieBreakers>
 </document>
