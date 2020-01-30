@@ -21,7 +21,7 @@ final class StatsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
         
         if let qtMeasurement = qtMeasurement, let formulaType = formulaType {
             viewModel = StatsViewModel(results: results, qtMeasurement: qtMeasurement, formulaType: formulaType)
@@ -35,7 +35,7 @@ final class StatsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc private func oopyToClipboard() {
+    @objc private func copyToClipboard() {
         let preferences = Preferences.retrieve()
         if let text = viewModel?.resultsSummary(preferences: preferences) {
             UIPasteboard.general.string = text

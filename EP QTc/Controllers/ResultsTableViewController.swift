@@ -38,7 +38,7 @@ final class ResultsTableViewController: UITableViewController {
         self.navigationController?.toolbar.isTranslucent = true
         self.tableView.isEditing = false
         editButton.isEnabled = (preferences.sortOrder == .custom)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(oopyToClipboard))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
 
         self.title = formulaType.name + " (\(qtMeasurement.units.string))"
                
@@ -158,7 +158,7 @@ final class ResultsTableViewController: UITableViewController {
 
     }
 
-    @objc private func oopyToClipboard() {
+    @objc private func copyToClipboard() {
         if let text = resultsModel?.resultsSummary(preferences: preferences) {
             UIPasteboard.general.string = text
             showCopyToClipboardDialog(inCSVFormat: preferences.copyToCSV ?? false)

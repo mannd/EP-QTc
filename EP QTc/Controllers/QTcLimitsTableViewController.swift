@@ -67,7 +67,7 @@ final class QTcLimitsTableViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         // toggle checkmark
@@ -80,8 +80,6 @@ final class QTcLimitsTableViewController: UITableViewController {
             selectedQTcLimits.insert(qtcLimits[indexPath.row])
         }
         cell?.setSelected(false, animated: true)
-        
-        
     }
 
     
