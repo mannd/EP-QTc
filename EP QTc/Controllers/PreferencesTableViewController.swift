@@ -123,8 +123,8 @@ final class PreferencesTableViewController: UITableViewController, UIPickerViewD
         super.viewWillAppear(animated)
     }
     
- 
-    // FIXME: this also called when segueing to QTcLimitsViewController
+    // This also called when segueing to QTcLimitsViewController, but that little bit
+    // of unnecessary work does no harm.
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
