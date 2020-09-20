@@ -12,7 +12,6 @@ import SigmaSwiftStatistics
 import Charts
 
 class GraphViewModel {
-    // TODO: change these to system colors (? nicer in dark mode) for iOS 13
     let undefinedColor = UIColor.systemGray
     let normalColor = UIColor.systemGreen
     let abnormalColor = UIColor.systemRed
