@@ -300,7 +300,7 @@
 		35088C86D17672A1D68410E918BB3469 /* Kurtosis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kurtosis.swift; path = SigmaSwiftStatistics/Kurtosis.swift; sourceTree = "<group>"; };
 		356D2D1CEEA26984B2F133AA89B83527 /* QTc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QTc.swift; path = CommonSource/QTc.swift; sourceTree = "<group>"; };
 		3597050781197EBDBF4BBF51DC0FFEA3 /* TransformerHorizontalBarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformerHorizontalBarChart.swift; path = Source/Charts/Utils/TransformerHorizontalBarChart.swift; sourceTree = "<group>"; };
-		35B128E365C54567EDCC6C61AA66E81B /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35B128E365C54567EDCC6C61AA66E81B /* QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QTc.framework; path = QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361B585288BD63B28AC011DF38A74DE8 /* SquareShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SquareShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift; sourceTree = "<group>"; };
 		391CBA2B0D47D7BD0AE02C2428DC1CFF /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A6829CC13E78399A7E9F56F6A2280D4 /* Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Sources/Validator.swift; sourceTree = "<group>"; };
@@ -341,7 +341,7 @@
 		60D472DD2734BD8B5D3AF45AA3304A4F /* IChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IChartDataSet.swift; path = Source/Charts/Data/Interfaces/IChartDataSet.swift; sourceTree = "<group>"; };
 		6183A865172E7C899D224FA24FBAB4A2 /* ScatterChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartData.swift; path = Source/Charts/Data/Implementations/Standard/ScatterChartData.swift; sourceTree = "<group>"; };
 		64175999F362A2A11CDD66EB6ADE2F57 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Source/Charts/Animation/Animator.swift; sourceTree = "<group>"; };
-		64C4EFC8E909C04C46B0F0503858B86C /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64C4EFC8E909C04C46B0F0503858B86C /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTcTests.framework; path = "Pods-EP QTcTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E959DCEF6B2967A8D8276571A55A5B /* LineChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartData.swift; path = Source/Charts/Data/Implementations/Standard/LineChartData.swift; sourceTree = "<group>"; };
 		666EF03257C6F34408CB760A877E6DFD /* ValidationError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationError.swift; path = Validator/Sources/ValidationError.swift; sourceTree = "<group>"; };
 		67EC3016977C76B830F0DC9A3E5447DC /* BarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 		741C22D841F31C95770DB64C1E955BFD /* AnimatedViewPortJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedViewPortJob.swift; path = Source/Charts/Jobs/AnimatedViewPortJob.swift; sourceTree = "<group>"; };
 		7439CC837FF93D757327D0E580E7FFB4 /* AxisBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisBase.swift; path = Source/Charts/Components/AxisBase.swift; sourceTree = "<group>"; };
 		7743579E8A872BD7AD685EF9070E75BB /* ValidationRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRule.swift; path = Validator/Sources/Rules/ValidationRule.swift; sourceTree = "<group>"; };
-		778A43DE3EA035383F503F3CB114C303 /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		778A43DE3EA035383F503F3CB114C303 /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Validator.framework; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CA61EA807B13AD63489DFED25A2E1D /* Charts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Charts.xcconfig; sourceTree = "<group>"; };
 		79B78C974EF6091F28F70CB45F3B578C /* RadarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartRenderer.swift; path = Source/Charts/Renderers/RadarChartRenderer.swift; sourceTree = "<group>"; };
 		7B76360FF4C6AA0DAEA4B7B00758CB9B /* Validator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validator-umbrella.h"; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 		81FB5F2E145ED8C0167F63591DFFB48A /* ValidationRuleCondition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRuleCondition.swift; path = Validator/Sources/Rules/ValidationRuleCondition.swift; sourceTree = "<group>"; };
 		8289B03E40989CBBDFD87A64E810847D /* BubbleChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartView.swift; path = Source/Charts/Charts/BubbleChartView.swift; sourceTree = "<group>"; };
 		8316A2400A523BF138ECFC054D65F055 /* Platform+Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Color.swift"; path = "Source/Charts/Utils/Platform+Color.swift"; sourceTree = "<group>"; };
-		833D42D148A8212A3664D1E71A056A08 /* SigmaSwiftStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SigmaSwiftStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		833D42D148A8212A3664D1E71A056A08 /* SigmaSwiftStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SigmaSwiftStatistics.framework; path = SigmaSwiftStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		837797B8A71BEFD979182FE437715B71 /* Pods-EP QTc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EP QTc-dummy.m"; sourceTree = "<group>"; };
 		83FC12AE8EB8A03A4EF71D0E74843041 /* BarChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarChartDataProvider.swift; path = Source/Charts/Interfaces/BarChartDataProvider.swift; sourceTree = "<group>"; };
 		84985859CA65F8606844B2100F287E00 /* UITextField+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UITextField+Validator.swift"; sourceTree = "<group>"; };
@@ -405,15 +405,15 @@
 		9BE62C650FF87BC844F382B7FF6BB9B0 /* QTc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QTc-prefix.pch"; sourceTree = "<group>"; };
 		9BFBF8BF932E9442938484D7DB4A2A76 /* Pearson.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pearson.swift; path = SigmaSwiftStatistics/Pearson.swift; sourceTree = "<group>"; };
 		9D1D1EFA9D854B10ED507F03B8168C68 /* UISlider+Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Validator.swift"; path = "Validator/Sources/UIKit+Validator/UISlider+Validator.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FC61A5B62EC5595793D90FB4055C317 /* YAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxis.swift; path = Source/Charts/Components/YAxis.swift; sourceTree = "<group>"; };
 		A05CA0AA16249E98F3F853421DD140A0 /* ChartLimitLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartLimitLine.swift; path = Source/Charts/Components/ChartLimitLine.swift; sourceTree = "<group>"; };
 		A05CB7C77076E35EB2BFA023CDA23DF0 /* Formulas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formulas.swift; path = CommonSource/Formulas.swift; sourceTree = "<group>"; };
 		A0735BBEEB2D195EFE5D6B9E350F814B /* PieRadarHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieRadarHighlighter.swift; path = Source/Charts/Highlight/PieRadarHighlighter.swift; sourceTree = "<group>"; };
 		A13E3C3E522B75745D173018AA828B92 /* CaseValidationPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaseValidationPattern.swift; path = Validator/Sources/Patterns/CaseValidationPattern.swift; sourceTree = "<group>"; };
-		A1968871DC34437C2B85D9DADC468236 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1968871DC34437C2B85D9DADC468236 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EP_QTc.framework; path = "Pods-EP QTc.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A24D715560D87023B023D2ECDD5814 /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift; sourceTree = "<group>"; };
-		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E029DD2C73FCE11F7FD26704761893 /* MoveViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoveViewJob.swift; path = Source/Charts/Jobs/MoveViewJob.swift; sourceTree = "<group>"; };
 		A5068E2972B75CEC36052912E980813F /* IHighlighter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IHighlighter.swift; path = Source/Charts/Highlight/IHighlighter.swift; sourceTree = "<group>"; };
 		A75773DE407BC03FA4811D0C8DA7CA5D /* QTc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QTc.xcconfig; sourceTree = "<group>"; };
@@ -721,6 +721,7 @@
 				1D607BFA95CC46FE43F137CC2CC7904C /* Variance.swift */,
 				CAA4AE64AE65AC7D48D1C80864399A7D /* Support Files */,
 			);
+			name = SigmaSwiftStatistics;
 			path = SigmaSwiftStatistics;
 			sourceTree = "<group>";
 		};
@@ -769,6 +770,7 @@
 				6FF9AF850807A6E5B31D4193CAF04861 /* QtMeasurement.swift */,
 				5C17FAA44F1A0E5A8AF7E91EEEACAC96 /* Support Files */,
 			);
+			name = QTc;
 			path = QTc;
 			sourceTree = "<group>";
 		};
@@ -800,6 +802,7 @@
 				3A6829CC13E78399A7E9F56F6A2280D4 /* Validator.swift */,
 				A1CC3473490C7F468868E80D0E386533 /* Support Files */,
 			);
+			name = Validator;
 			path = Validator;
 			sourceTree = "<group>";
 		};
@@ -839,6 +842,7 @@
 				1B6C68A5AA106D9EDAA825ED58A3D198 /* Core */,
 				D133DF7DF1129B535E9CC0BACE12DA2C /* Support Files */,
 			);
+			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -1095,7 +1099,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -1461,7 +1465,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1484,12 +1487,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -1499,6 +1503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B907720F12E332793E0727E934E4852B /* SigmaSwiftStatistics.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1511,7 +1516,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SigmaSwiftStatistics/SigmaSwiftStatistics-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SigmaSwiftStatistics/SigmaSwiftStatistics-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SigmaSwiftStatistics/SigmaSwiftStatistics.modulemap";
 				PRODUCT_MODULE_NAME = SigmaSwiftStatistics;
@@ -1532,6 +1537,7 @@
 			baseConfigurationReference = B6AB95FE83C989249E2101A808A6C5FD /* Pods-EP QTc.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1544,7 +1550,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-EP QTc/Pods-EP QTc-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-EP QTc/Pods-EP QTc.modulemap";
@@ -1565,6 +1571,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A75773DE407BC03FA4811D0C8DA7CA5D /* QTc.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1577,7 +1584,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/QTc/QTc-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/QTc/QTc-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/QTc/QTc.modulemap";
 				PRODUCT_MODULE_NAME = QTc;
@@ -1597,6 +1604,7 @@
 			baseConfigurationReference = 583526AFF1255E113FECAA785811280F /* Pods-EP QTc.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1609,7 +1617,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-EP QTc/Pods-EP QTc-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-EP QTc/Pods-EP QTc.modulemap";
@@ -1631,6 +1639,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BBB1632BA332EEEB9D8FAB627D1A91F /* Validator.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1643,7 +1652,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Validator/Validator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Validator/Validator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Validator/Validator.modulemap";
 				PRODUCT_MODULE_NAME = Validator;
@@ -1663,6 +1672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77CA61EA807B13AD63489DFED25A2E1D /* Charts.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1675,7 +1685,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Charts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
 				PRODUCT_MODULE_NAME = Charts;
@@ -1696,6 +1706,7 @@
 			baseConfigurationReference = 6D84CE18A984F866C5DB2FB96381CAFB /* Pods-EP QTcTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1708,7 +1719,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.modulemap";
@@ -1730,6 +1741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B907720F12E332793E0727E934E4852B /* SigmaSwiftStatistics.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1742,7 +1754,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SigmaSwiftStatistics/SigmaSwiftStatistics-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SigmaSwiftStatistics/SigmaSwiftStatistics-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SigmaSwiftStatistics/SigmaSwiftStatistics.modulemap";
 				PRODUCT_MODULE_NAME = SigmaSwiftStatistics;
@@ -1761,6 +1773,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A75773DE407BC03FA4811D0C8DA7CA5D /* QTc.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1773,7 +1786,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/QTc/QTc-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/QTc/QTc-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/QTc/QTc.modulemap";
 				PRODUCT_MODULE_NAME = QTc;
@@ -1815,7 +1828,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1841,7 +1853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1858,6 +1870,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77CA61EA807B13AD63489DFED25A2E1D /* Charts.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1870,7 +1883,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Charts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
 				PRODUCT_MODULE_NAME = Charts;
@@ -1890,6 +1903,7 @@
 			baseConfigurationReference = 391CBA2B0D47D7BD0AE02C2428DC1CFF /* Pods-EP QTcTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1902,7 +1916,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.modulemap";
@@ -1923,6 +1937,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BBB1632BA332EEEB9D8FAB627D1A91F /* Validator.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1935,7 +1950,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Validator/Validator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Validator/Validator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Validator/Validator.modulemap";
 				PRODUCT_MODULE_NAME = Validator;
