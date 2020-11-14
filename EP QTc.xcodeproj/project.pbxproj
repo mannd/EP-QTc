@@ -244,6 +244,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8E4DE7EB25606D8400643FC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8E6E55941FD30B66004B1B2F = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +274,7 @@
 		8E6E559F1FD30B66004B1B2F /* EP QTc */ = {
 			isa = PBXGroup;
 			children = (
+				8E4DE7EB25606D8400643FC0 /* Extensions */,
 				8E0A142923E2203800BEFC4C /* EP QTc.entitlements */,
 				8EB7E1E920BE3FBB00031FF4 /* docs */,
 				8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */,
@@ -692,12 +700,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EP QTc/EP QTc.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = W74NPJXYEG;
 				INFOPLIST_FILE = "EP QTc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -713,12 +721,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "EP QTc/EP QTc.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = W74NPJXYEG;
 				INFOPLIST_FILE = "EP QTc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
