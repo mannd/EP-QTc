@@ -70,7 +70,7 @@ extension FormulaType {
     }
 }
 
-class CalculatorViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate {
+class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     // All the controls on the calculator form
     @IBOutlet var scrollView: UIScrollView!
