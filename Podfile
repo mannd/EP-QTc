@@ -10,7 +10,7 @@ target 'EP QTc' do
   pod 'QTc', :git => 'https://github.com/mannd/QTc.git', :branch => 'master'
   # pod 'QTc', :path => '~/dev/QTc'
   pod 'Validator', :git => 'https://github.com/adamwaite/Validator.git', :branch => 'master'
-  pod 'Charts', :git => 'https://github.com/danielgindi/Charts', :branch => 'xcode-12'
+  #pod 'Charts', :git => 'https://github.com/danielgindi/Charts', :branch => 'xcode-12'
   pod 'SigmaSwiftStatistics', :git => 'https://github.com/evgenyneu/SigmaSwiftStatistics', :branch => 'master'
   
   target 'EP QTcTests' do
