@@ -10,7 +10,7 @@ import UIKit
 
 class About {
     func show(viewController: UIViewController) {
-        let message = String(format: "Copyright © 2017-2020 EP Studios, Inc.\nAll rights reserved.\nVersion %@", getVersion())
+        let message = String(format: "Copyright © 2017-2021 EP Studios, Inc.\nAll rights reserved.\nVersion %@", getVersion())
         let dialog = UIAlertController(title: "EP QTc", message: message, preferredStyle: UIAlertController.Style.alert)
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(dialog, animated: true, completion: nil)
