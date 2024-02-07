@@ -9,7 +9,7 @@
 import Foundation
 import QTc
 import SigmaSwiftStatistics
-import Charts
+import DGCharts
 
 class GraphViewModel {
     let undefinedColor = UIColor.systemGray
@@ -56,11 +56,11 @@ class GraphViewModel {
         var meanValues: [BarChartDataEntry] = []
         var i: Double = 0
 
-        if #available(iOS 13.0, *) {
+       if #available(iOS 13.0, *) {
             barChartView.xAxis.labelTextColor = UIColor.label
             barChartView.leftAxis.labelTextColor = UIColor.label
             barChartView.rightAxis.labelTextColor = UIColor.label
-            barChartView.chartDescription?.textColor = UIColor.label
+            barChartView.chartDescription.textColor = UIColor.label
             barChartView.backgroundColor = UIColor.secondarySystemBackground
         } else {
             // Use default label color
@@ -146,7 +146,7 @@ class GraphViewModel {
         marker.formulaTypeName = formulaType.name
         barChartView.marker = marker
         // Chart description doesn't contrast well with the bars.
-        barChartView.chartDescription?.enabled = false
+        barChartView.chartDescription.enabled = false
         barChartView.pinchZoomEnabled = true
         barChartView.xAxis.enabled = false
         if formulaType == .qtp {

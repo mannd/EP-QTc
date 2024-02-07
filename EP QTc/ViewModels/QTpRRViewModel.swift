@@ -8,7 +8,7 @@
 
 import Foundation
 import QTc
-import Charts
+import DGCharts
 import SigmaSwiftStatistics
 
 extension UIColor {
@@ -35,12 +35,12 @@ class QTpRRViewModel {
         if #available(iOS 13.0, *) {
             chartView.xAxis.labelTextColor = UIColor.label
             chartView.leftAxis.labelTextColor = UIColor.label
-            chartView.chartDescription?.textColor = UIColor.label
+            chartView.chartDescription.textColor = UIColor.label
             chartView.backgroundColor = UIColor.secondarySystemBackground
         } else {
             // Use default label color
         }
-        chartView.chartDescription?.text = "QTp, QT (\(qtMeasurement.units.string)) vs Heart Rate (bpm)"
+        chartView.chartDescription.text = "QTp, QT (\(qtMeasurement.units.string)) vs Heart Rate (bpm)"
         var qtpValues: [ChartDataEntry] = []
         var qtValues: [ChartDataEntry] = []
         guard let qtpFormulas = QtFormulas().formulas[.qtp] else {
