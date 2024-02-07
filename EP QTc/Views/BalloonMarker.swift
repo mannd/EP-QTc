@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import Charts
+import DGCharts
 
 
 open class BalloonMarker: MarkerImage

@@ -28,6 +28,8 @@ final class ResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+
         guard let formulaType = formulaType, let qtMeasurement = qtMeasurement else {
             assertionFailure("Error: formulaType and/or qtMeasurement can't be nil!")
             return
