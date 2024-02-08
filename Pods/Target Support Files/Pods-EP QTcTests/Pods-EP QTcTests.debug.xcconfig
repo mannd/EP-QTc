@@ -1,9 +1,11 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Charts" "${PODS_CONFIGURATION_BUILD_DIR}/QTc" "${PODS_CONFIGURATION_BUILD_DIR}/SigmaSwiftStatistics" "${PODS_CONFIGURATION_BUILD_DIR}/Validator"
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DGCharts" "${PODS_CONFIGURATION_BUILD_DIR}/QTc" "${PODS_CONFIGURATION_BUILD_DIR}/SigmaSwiftStatistics" "${PODS_CONFIGURATION_BUILD_DIR}/Validator"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Charts/Charts.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/QTc/QTc.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Validator/Validator.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Charts" -framework "QTc" -framework "SigmaSwiftStatistics" -framework "UIKit" -framework "Validator"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DGCharts/DGCharts.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/QTc/QTc.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Validator/Validator.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "DGCharts" -framework "QTc" -framework "SigmaSwiftStatistics" -framework "UIKit" -framework "Validator"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

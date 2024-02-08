@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Charts
+import DGCharts
 import QTc
 
 final class GraphViewController: UIViewController {

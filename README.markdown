@@ -11,7 +11,7 @@ This app is open source, and licensed under the
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).  When used with Apple devices via the iTunes App Store, it is subject to the [standard Apple iOS license agreement](http://images.apple.com/legal/sla/docs/AppleStoreApp.pdf).
 
 ## Copyright
-Copyright © 2017-2020 [EP Studios, Inc.](http://www.epstudiossoftware.com)
+Copyright © 2017-2021 [EP Studios, Inc.](http://www.epstudiossoftware.com)
 
 ## Acknowledgments
 Thanks to Marian Stiehler for help in acquiring the original literature that forms the basis of these QTc and QTp formulas.
