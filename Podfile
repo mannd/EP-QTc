@@ -7,7 +7,6 @@ target 'EP QTc' do
   use_frameworks!
 
   # Pods for EP QTc
-  pod 'DGCharts', :git => 'https://github.com/danielgindi/Charts', :branch => 'master'
 
   target 'EP QTcTests' do
     inherit! :search_paths

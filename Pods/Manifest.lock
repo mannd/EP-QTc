@@ -1,24 +1,3 @@
-PODS:
-  - DGCharts (5.0.0):
-    - DGCharts/Core (= 5.0.0)
-  - DGCharts/Core (5.0.0)
-
-DEPENDENCIES:
-  - DGCharts (from `https://github.com/danielgindi/Charts`, branch `master`)
-
-EXTERNAL SOURCES:
-  DGCharts:
-    :branch: master
-    :git: https://github.com/danielgindi/Charts
-
-CHECKOUT OPTIONS:
-  DGCharts:
-    :commit: e516b04834b6e2072367f1366750c01c164e6545
-    :git: https://github.com/danielgindi/Charts
-
-SPEC CHECKSUMS:
-  DGCharts: 6e0cf2644e8f81ad13f04caa8bc18502870a1c54
-
-PODFILE CHECKSUM: 0dd62bae22184d6eaae194b38420c2712dd241f0
+PODFILE CHECKSUM: f88afb19f13988b0fdcff000ad748f425f869e63
 
 COCOAPODS: 1.16.2

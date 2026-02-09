@@ -19,6 +19,7 @@
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
 		8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA682F3A5E9E0061A041 /* Validator */; };
 		8E37AA6C2F3A63D00061A041 /* SigmaSwiftStatistics in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA6B2F3A63D00061A041 /* SigmaSwiftStatistics */; };
+		8E37AA6F2F3A660F0061A041 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA6E2F3A660F0061A041 /* DGCharts */; };
 		8E3FD15B20A1EBC1005E2943 /* QTpRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */; };
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
 		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
@@ -152,6 +153,7 @@
 				8E0A142B23E222FF00BEFC4C /* Photos.framework in Frameworks */,
 				8E37AA6C2F3A63D00061A041 /* SigmaSwiftStatistics in Frameworks */,
 				D115BD2A64C6F6C59C80ABDB /* Pods_EP_QTc.framework in Frameworks */,
+				8E37AA6F2F3A660F0061A041 /* DGCharts in Frameworks */,
 				8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +347,6 @@
 				8E6E55991FD30B66004B1B2F /* Sources */,
 				8E6E559A1FD30B66004B1B2F /* Frameworks */,
 				8E6E559B1FD30B66004B1B2F /* Resources */,
-				883401D2A4AE41DD93263A40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +413,7 @@
 				8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */,
 				8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */,
 				8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */,
+				8E37AA6D2F3A660F0061A041 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 8E6E559E1FD30B66004B1B2F /* Products */;
 			projectDirPath = "";
@@ -465,24 +467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		883401D2A4AE41DD93263A40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DGCharts/DGCharts.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGCharts.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A7B07E8B40B51811120CEF /* [CP] Check Pods Manifest.lock */ = {
@@ -871,6 +855,14 @@
 				minimumVersion = 9.0.2;
 			};
 		};
+		8E37AA6D2F3A660F0061A041 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -893,6 +885,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */;
 			productName = SigmaSwiftStatistics;
+		};
+		8E37AA6E2F3A660F0061A041 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E37AA6D2F3A660F0061A041 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
