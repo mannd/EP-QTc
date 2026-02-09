@@ -758,7 +758,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rdu-sd-bwV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QTcLimitsCell" textLabel="6oD-xo-fDa" detailTextLabel="M5r-eI-PTG" rowHeight="124" style="IBUITableViewCellStyleSubtitle" id="2ak-Re-LO4">
                                 <rect key="frame" x="0.0" y="50" width="414" height="124"/>
@@ -790,7 +790,6 @@
                             <outlet property="delegate" destination="0l0-fJ-pSp" id="tYi-FF-2Ve"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dia-8l-BSe"/>
                     <connections>
                         <segue destination="WMH-rF-qcK" kind="show" identifier="helpSegue" id="WFN-C0-WVu"/>
                     </connections>
