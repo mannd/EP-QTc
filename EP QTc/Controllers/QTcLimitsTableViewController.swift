@@ -22,6 +22,10 @@ final class QTcLimitsTableViewController: UITableViewController {
                      .goldenberg2006, .aha2009, .gollob2011, .mazzanti2014]
         let preferences = Preferences.retrieve()
         selectedQTcLimits = preferences.qtcLimits ?? []
+        tableView.allowsMultipleSelection = false
+        if selectedQTcLimits.count != 1, let firstLimit = qtcLimits.first {
+            selectedQTcLimits = [firstLimit]
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -29,6 +33,15 @@ final class QTcLimitsTableViewController: UITableViewController {
         let preferences = Preferences.retrieve()
         preferences.qtcLimits = selectedQTcLimits
         preferences.save()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let selectedLimit = selectedQTcLimits.first else { return }
+        if let row = qtcLimits.firstIndex(of: selectedLimit) {
+            let indexPath = IndexPath(row: row, section: 0)
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,14 +67,7 @@ final class QTcLimitsTableViewController: UITableViewController {
         let abnormalQTc = AbnormalQTc.qtcTestSuite(criterion: qtcLimits[indexPath.row])
         cell.textLabel?.text = abnormalQTc?.name
         cell.detailTextLabel?.text = abnormalQTc?.description
-        
-        for criterion in selectedQTcLimits {
-            if let row = qtcLimits.firstIndex(of: criterion) {
-                if row == indexPath.row {
-                    cell.accessoryType = .checkmark
-                }
-            }
-        }
+        cell.accessoryType = selectedQTcLimits.contains(qtcLimits[indexPath.row]) ? .checkmark : .none
 
         return cell
     }
@@ -69,17 +75,23 @@ final class QTcLimitsTableViewController: UITableViewController {
     // MARK: - Table view delegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        // toggle checkmark
-        if cell?.accessoryType == .checkmark {
-            cell?.accessoryType = .none
-            selectedQTcLimits.remove(qtcLimits[indexPath.row])
+        let selectedLimit = qtcLimits[indexPath.row]
+        if selectedQTcLimits.contains(selectedLimit) {
+            return
         }
-        else {
-            cell?.accessoryType = .checkmark
-            selectedQTcLimits.insert(qtcLimits[indexPath.row])
+
+        let previousLimit = selectedQTcLimits.first
+        selectedQTcLimits = [selectedLimit]
+
+        var indexPathsToReload: [IndexPath] = [indexPath]
+        if let previousLimit, let previousRow = qtcLimits.firstIndex(of: previousLimit) {
+            indexPathsToReload.append(IndexPath(row: previousRow, section: 0))
         }
-        cell?.setSelected(false, animated: true)
+        tableView.reloadRows(at: indexPathsToReload, with: .none)
+    }
+
+    override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 
     
