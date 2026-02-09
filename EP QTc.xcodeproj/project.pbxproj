@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DA299DA182A3308F58769C0 /* Pods_EP_QTcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937AAFC23376C28297D06FC6 /* Pods_EP_QTcTests.framework */; };
 		8E097EEE1FDE1489003F380A /* AgeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E097EED1FDE1489003F380A /* AgeTextField.swift */; };
 		8E0A142B23E222FF00BEFC4C /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0A142A23E222FF00BEFC4C /* Photos.framework */; };
 		8E0A142E23E2312800BEFC4C /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A142D23E2312800BEFC4C /* System.swift */; };
 		8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892A1FDF9AA70018D8D1 /* About.swift */; };
 		8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */; };
 		8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */; };
+		8E11AD932F3925070070F898 /* QTc in Frameworks */ = {isa = PBXBuildFile; productRef = 8E11AD922F3925070070F898 /* QTc */; };
+		8E11AD952F3925230070F898 /* QTc in Frameworks */ = {isa = PBXBuildFile; productRef = 8E11AD942F3925230070F898 /* QTc */; };
 		8E2A6F4E21F7E2B800756BB9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6F4D21F7E2B800756BB9 /* Alerts.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
+		8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA682F3A5E9E0061A041 /* Validator */; };
 		8E3FD15B20A1EBC1005E2943 /* QTpRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */; };
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
 		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
@@ -59,6 +61,7 @@
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
 		8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */; };
+		9074B045B3EC8121C6D4B293 /* Pods_EP_QTcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937AAFC23376C28297D06FC6 /* Pods_EP_QTcTests.framework */; };
 		D115BD2A64C6F6C59C80ABDB /* Pods_EP_QTc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5434130C611B9F25955EAF28 /* Pods_EP_QTc.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,8 +147,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E11AD932F3925070070F898 /* QTc in Frameworks */,
 				8E0A142B23E222FF00BEFC4C /* Photos.framework in Frameworks */,
 				D115BD2A64C6F6C59C80ABDB /* Pods_EP_QTc.framework in Frameworks */,
+				8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DA299DA182A3308F58769C0 /* Pods_EP_QTcTests.framework in Frameworks */,
+				8E11AD952F3925230070F898 /* QTc in Frameworks */,
+				9074B045B3EC8121C6D4B293 /* Pods_EP_QTcTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +406,10 @@
 				Base,
 			);
 			mainGroup = 8E6E55941FD30B66004B1B2F;
+			packageReferences = (
+				8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */,
+				8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */,
+			);
 			productRefGroup = 8E6E559E1FD30B66004B1B2F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,16 +472,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DGCharts/DGCharts.framework",
-				"${BUILT_PRODUCTS_DIR}/QTc/QTc.framework",
 				"${BUILT_PRODUCTS_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework",
-				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGCharts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QTc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SigmaSwiftStatistics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -767,7 +773,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 85A7D7A45DFE1EE240B939ED /* Pods-EP QTcTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W74NPJXYEG;
@@ -790,7 +795,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E2841B37C70300041E20856 /* Pods-EP QTcTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W74NPJXYEG;
@@ -840,6 +844,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mannd/QTcPackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.2;
+			};
+		};
+		8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Maxvit5/Validator.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E11AD922F3925070070F898 /* QTc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */;
+			productName = QTc;
+		};
+		8E11AD942F3925230070F898 /* QTc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */;
+			productName = QTc;
+		};
+		8E37AA682F3A5E9E0061A041 /* Validator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */;
+			productName = Validator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E6E55951FD30B66004B1B2F /* Project object */;
 }

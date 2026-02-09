@@ -7,9 +7,6 @@ target 'EP QTc' do
   use_frameworks!
 
   # Pods for EP QTc
-  pod 'QTc', :git => 'https://github.com/mannd/QTc.git', :branch => 'master'
-  # pod 'QTc', :path => '~/dev/QTc'
-  pod 'Validator', :git => 'https://github.com/adamwaite/Validator.git', :branch => 'master'
   pod 'DGCharts', :git => 'https://github.com/danielgindi/Charts', :branch => 'master'
   pod 'SigmaSwiftStatistics', :git => 'https://github.com/evgenyneu/SigmaSwiftStatistics', :branch => 'master'
 
@@ -17,4 +14,12 @@ target 'EP QTc' do
     inherit! :search_paths
     # Pods for testing
   end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+    end
+  end
+end
 end
