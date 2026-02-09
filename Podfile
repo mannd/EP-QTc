@@ -8,7 +8,6 @@ target 'EP QTc' do
 
   # Pods for EP QTc
   pod 'DGCharts', :git => 'https://github.com/danielgindi/Charts', :branch => 'master'
-  pod 'SigmaSwiftStatistics', :git => 'https://github.com/evgenyneu/SigmaSwiftStatistics', :branch => 'master'
 
   target 'EP QTcTests' do
     inherit! :search_paths

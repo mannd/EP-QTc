@@ -18,6 +18,7 @@
 		8E2A6F4E21F7E2B800756BB9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6F4D21F7E2B800756BB9 /* Alerts.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
 		8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA682F3A5E9E0061A041 /* Validator */; };
+		8E37AA6C2F3A63D00061A041 /* SigmaSwiftStatistics in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA6B2F3A63D00061A041 /* SigmaSwiftStatistics */; };
 		8E3FD15B20A1EBC1005E2943 /* QTpRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */; };
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
 		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
@@ -149,6 +150,7 @@
 			files = (
 				8E11AD932F3925070070F898 /* QTc in Frameworks */,
 				8E0A142B23E222FF00BEFC4C /* Photos.framework in Frameworks */,
+				8E37AA6C2F3A63D00061A041 /* SigmaSwiftStatistics in Frameworks */,
 				D115BD2A64C6F6C59C80ABDB /* Pods_EP_QTc.framework in Frameworks */,
 				8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */,
 			);
@@ -409,6 +411,7 @@
 			packageReferences = (
 				8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */,
 				8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */,
+				8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */,
 			);
 			productRefGroup = 8E6E559E1FD30B66004B1B2F /* Products */;
 			projectDirPath = "";
@@ -472,12 +475,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DGCharts/DGCharts.framework",
-				"${BUILT_PRODUCTS_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGCharts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SigmaSwiftStatistics.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -862,6 +863,14 @@
 				kind = branch;
 			};
 		};
+		8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/SigmaSwiftStatistics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -879,6 +888,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */;
 			productName = Validator;
+		};
+		8E37AA6B2F3A63D00061A041 /* SigmaSwiftStatistics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */;
+			productName = SigmaSwiftStatistics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
