@@ -22,6 +22,8 @@ final class StatsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
+        tableView.estimatedSectionHeaderHeight = 28
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         
         if let qtMeasurement = qtMeasurement, let formulaType = formulaType {
             viewModel = StatsViewModel(results: results, qtMeasurement: qtMeasurement, formulaType: formulaType)
