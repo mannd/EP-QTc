@@ -13,8 +13,13 @@
 		8E0B892B1FDF9AA70018D8D1 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892A1FDF9AA70018D8D1 /* About.swift */; };
 		8E0B892D1FE0620B0018D8D1 /* QtFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0B892C1FE0620B0018D8D1 /* QtFormulas.swift */; };
 		8E10B7DD1FDA428A00A729D2 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10B7DC1FDA428A00A729D2 /* ResultsTableViewController.swift */; };
+		8E11AD932F3925070070F898 /* QTc in Frameworks */ = {isa = PBXBuildFile; productRef = 8E11AD922F3925070070F898 /* QTc */; };
+		8E11AD952F3925230070F898 /* QTc in Frameworks */ = {isa = PBXBuildFile; productRef = 8E11AD942F3925230070F898 /* QTc */; };
 		8E2A6F4E21F7E2B800756BB9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6F4D21F7E2B800756BB9 /* Alerts.swift */; };
 		8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30F0131FDDC1830072E5A8 /* CalculatorTextField.swift */; };
+		8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA682F3A5E9E0061A041 /* Validator */; };
+		8E37AA6C2F3A63D00061A041 /* SigmaSwiftStatistics in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA6B2F3A63D00061A041 /* SigmaSwiftStatistics */; };
+		8E37AA6F2F3A660F0061A041 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8E37AA6E2F3A660F0061A041 /* DGCharts */; };
 		8E3FD15B20A1EBC1005E2943 /* QTpRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD15A20A1EBC1005E2943 /* QTpRRViewController.swift */; };
 		8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1CF20878F0D0042C5F9 /* PreferencesTableViewController.swift */; };
 		8E47B1D2208F8FF10042C5F9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47B1D1208F8FF10042C5F9 /* Preferences.swift */; };
@@ -27,6 +32,7 @@
 		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
 		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
 		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
+		8E581BA12F3BB20400F27495 /* epqtc_app_liquid_glass.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8E581BA02F3BB20400F27495 /* epqtc_app_liquid_glass.icon */; };
 		8E5B0E412097FF4700F7AA9C /* LimitsReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */; };
 		8E5BA617206B1E6500B35B12 /* SimpleStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */; };
 		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
@@ -58,8 +64,6 @@
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
 		8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */; };
-		D76FA89AB4AD9A49EF595202 /* Pods_EP_QTcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4822762A298500E4DBFDBE18 /* Pods_EP_QTcTests.framework */; };
-		E99606328088C2657EC75845 /* Pods_EP_QTc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C004D9E73D73F6A1EB74435 /* Pods_EP_QTc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,10 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29654327202BBC54AF16C274 /* Pods-EP QTc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.release.xcconfig"; path = "Target Support Files/Pods-EP QTc/Pods-EP QTc.release.xcconfig"; sourceTree = "<group>"; };
-		2C004D9E73D73F6A1EB74435 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4822762A298500E4DBFDBE18 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78CF8D8D8ABEEDCC8AF99969 /* Pods-EP QTcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTcTests.release.xcconfig"; path = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.release.xcconfig"; sourceTree = "<group>"; };
+		5434130C611B9F25955EAF28 /* Pods_EP_QTc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E097EED1FDE1489003F380A /* AgeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTextField.swift; sourceTree = "<group>"; };
 		8E0A142923E2203800BEFC4C /* EP QTc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EP QTc.entitlements"; sourceTree = "<group>"; };
 		8E0A142A23E222FF00BEFC4C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
@@ -98,6 +99,7 @@
 		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		8E581BA02F3BB20400F27495 /* epqtc_app_liquid_glass.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = epqtc_app_liquid_glass.icon; sourceTree = "<group>"; };
 		8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsReferenceCell.swift; sourceTree = "<group>"; };
 		8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStatsCell.swift; sourceTree = "<group>"; };
 		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,8 +137,7 @@
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
 		8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelCell.swift; sourceTree = "<group>"; };
-		C6229BF8DF17912B180A1612 /* Pods-EP QTcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTcTests.debug.xcconfig"; path = "Target Support Files/Pods-EP QTcTests/Pods-EP QTcTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB54A56AA8F31DE58DBE4B60 /* Pods-EP QTc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EP QTc.debug.xcconfig"; path = "Target Support Files/Pods-EP QTc/Pods-EP QTc.debug.xcconfig"; sourceTree = "<group>"; };
+		937AAFC23376C28297D06FC6 /* Pods_EP_QTcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EP_QTcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +145,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E11AD932F3925070070F898 /* QTc in Frameworks */,
 				8E0A142B23E222FF00BEFC4C /* Photos.framework in Frameworks */,
-				E99606328088C2657EC75845 /* Pods_EP_QTc.framework in Frameworks */,
+				8E37AA6C2F3A63D00061A041 /* SigmaSwiftStatistics in Frameworks */,
+				8E37AA6F2F3A660F0061A041 /* DGCharts in Frameworks */,
+				8E37AA692F3A5E9E0061A041 /* Validator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,32 +157,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D76FA89AB4AD9A49EF595202 /* Pods_EP_QTcTests.framework in Frameworks */,
+				8E11AD952F3925230070F898 /* QTc in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01E6A8082C88479F8D0F919E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DB54A56AA8F31DE58DBE4B60 /* Pods-EP QTc.debug.xcconfig */,
-				29654327202BBC54AF16C274 /* Pods-EP QTc.release.xcconfig */,
-				C6229BF8DF17912B180A1612 /* Pods-EP QTcTests.debug.xcconfig */,
-				78CF8D8D8ABEEDCC8AF99969 /* Pods-EP QTcTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		0C884E0CA2294839591E53EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				8E9A44602B7424BF00DA2343 /* DGCharts.framework */,
 				8EE0B47D266EF378006DEC27 /* CoreGraphics.framework */,
 				8E0A142A23E222FF00BEFC4C /* Photos.framework */,
-				2C004D9E73D73F6A1EB74435 /* Pods_EP_QTc.framework */,
-				4822762A298500E4DBFDBE18 /* Pods_EP_QTcTests.framework */,
+				5434130C611B9F25955EAF28 /* Pods_EP_QTc.framework */,
+				937AAFC23376C28297D06FC6 /* Pods_EP_QTcTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,7 +266,6 @@
 				8E6E55B41FD30B66004B1B2F /* EP QTcTests */,
 				8E6E559E1FD30B66004B1B2F /* Products */,
 				0C884E0CA2294839591E53EA /* Frameworks */,
-				01E6A8082C88479F8D0F919E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,6 +293,7 @@
 				8E30F0121FDDC0820072E5A8 /* Views */,
 				8E6E55A71FD30B66004B1B2F /* Assets.xcassets */,
 				8E6E55AC1FD30B66004B1B2F /* Info.plist */,
+				8E581BA02F3BB20400F27495 /* epqtc_app_liquid_glass.icon */,
 			);
 			path = "EP QTc";
 			sourceTree = "<group>";
@@ -333,11 +326,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E6E55BA1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTc" */;
 			buildPhases = (
-				518E0BF405B75EEC1D6C226A /* [CP] Check Pods Manifest.lock */,
 				8E6E55991FD30B66004B1B2F /* Sources */,
 				8E6E559A1FD30B66004B1B2F /* Frameworks */,
 				8E6E559B1FD30B66004B1B2F /* Resources */,
-				36D0CD0063711544E8CF9616 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,7 +343,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E6E55BD1FD30B66004B1B2F /* Build configuration list for PBXNativeTarget "EP QTcTests" */;
 			buildPhases = (
-				36E82680F616B00112B46E64 /* [CP] Check Pods Manifest.lock */,
 				8E6E55AD1FD30B66004B1B2F /* Sources */,
 				8E6E55AE1FD30B66004B1B2F /* Frameworks */,
 				8E6E55AF1FD30B66004B1B2F /* Resources */,
@@ -375,7 +365,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 2630;
 				ORGANIZATIONNAME = "EP Studios";
 				TargetAttributes = {
 					8E6E559C1FD30B66004B1B2F = {
@@ -400,6 +390,12 @@
 				Base,
 			);
 			mainGroup = 8E6E55941FD30B66004B1B2F;
+			packageReferences = (
+				8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */,
+				8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */,
+				8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */,
+				8E37AA6D2F3A660F0061A041 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 8E6E559E1FD30B66004B1B2F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -416,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E6E55AB1FD30B66004B1B2F /* LaunchScreen.storyboard in Resources */,
+				8E581BA12F3BB20400F27495 /* epqtc_app_liquid_glass.icon in Resources */,
 				8EB7E1EA20BE3FBB00031FF4 /* docs in Resources */,
 				8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */,
 				8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */,
@@ -430,77 +427,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		36D0CD0063711544E8CF9616 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DGCharts/DGCharts.framework",
-				"${BUILT_PRODUCTS_DIR}/QTc/QTc.framework",
-				"${BUILT_PRODUCTS_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework",
-				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGCharts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QTc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SigmaSwiftStatistics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EP QTc/Pods-EP QTc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		36E82680F616B00112B46E64 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EP QTcTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		518E0BF405B75EEC1D6C226A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EP QTc-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E6E55991FD30B66004B1B2F /* Sources */ = {
@@ -618,7 +544,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -628,6 +554,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = W74NPJXYEG;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -649,6 +576,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -679,7 +607,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -689,6 +617,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = W74NPJXYEG;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -703,6 +632,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -711,15 +641,16 @@
 		};
 		8E6E55BB1FD30B66004B1B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB54A56AA8F31DE58DBE4B60 /* Pods-EP QTc.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = epqtc_app_liquid_glass;
 				CODE_SIGN_ENTITLEMENTS = "EP QTc/EP QTc.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEFINES_MODULE = NO;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
-				DEVELOPMENT_TEAM = W74NPJXYEG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = YES;
 				INFOPLIST_FILE = "EP QTc/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -727,7 +658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -738,15 +669,16 @@
 		};
 		8E6E55BC1FD30B66004B1B2F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29654327202BBC54AF16C274 /* Pods-EP QTc.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = epqtc_app_liquid_glass;
 				CODE_SIGN_ENTITLEMENTS = "EP QTc/EP QTc.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 21;
 				DEFINES_MODULE = NO;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
-				DEVELOPMENT_TEAM = W74NPJXYEG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = YES;
 				INFOPLIST_FILE = "EP QTc/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -754,7 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.epstudios.EP-QTc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -765,12 +697,9 @@
 		};
 		8E6E55BE1FD30B66004B1B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6229BF8DF17912B180A1612 /* Pods-EP QTcTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W74NPJXYEG;
 				INFOPLIST_FILE = "EP QTcTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -788,12 +717,9 @@
 		};
 		8E6E55BF1FD30B66004B1B2F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78CF8D8D8ABEEDCC8AF99969 /* Pods-EP QTcTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W74NPJXYEG;
 				INFOPLIST_FILE = "EP QTcTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -840,6 +766,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mannd/QTcPackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.2;
+			};
+		};
+		8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Maxvit5/Validator.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/SigmaSwiftStatistics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.2;
+			};
+		};
+		8E37AA6D2F3A660F0061A041 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E11AD922F3925070070F898 /* QTc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */;
+			productName = QTc;
+		};
+		8E11AD942F3925230070F898 /* QTc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E11AD912F3925070070F898 /* XCRemoteSwiftPackageReference "QTcPackage" */;
+			productName = QTc;
+		};
+		8E37AA682F3A5E9E0061A041 /* Validator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E37AA672F3A5E9E0061A041 /* XCRemoteSwiftPackageReference "Validator" */;
+			productName = Validator;
+		};
+		8E37AA6B2F3A63D00061A041 /* SigmaSwiftStatistics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E37AA6A2F3A63D00061A041 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */;
+			productName = SigmaSwiftStatistics;
+		};
+		8E37AA6E2F3A660F0061A041 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E37AA6D2F3A660F0061A041 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E6E55951FD30B66004B1B2F /* Project object */;
 }

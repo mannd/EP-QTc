@@ -1,0 +1,42 @@
+{
+  "originHash" : "b5a0a33ac775cda43b5c9aaea7ef7e12c6cc5b7a8f4ebaabbccbc5fa627093ef",
+  "pins" : [
+    {
+      "identity" : "charts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielgindi/Charts.git",
+      "state" : {
+        "revision" : "dd9c72e3d7e751e769971092a6bd72d39198ae63",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "qtcpackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mannd/QTcPackage",
+      "state" : {
+        "revision" : "cb004a90bedb8e4bb6202cd730715ad7515d94f3",
+        "version" : "3.6.2"
+      }
+    },
+    {
+      "identity" : "sigmaswiftstatistics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/SigmaSwiftStatistics.git",
+      "state" : {
+        "revision" : "d36db09f97a1739edc8c63897220c7ecbb5de684",
+        "version" : "9.0.2"
+      }
+    },
+    {
+      "identity" : "validator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Maxvit5/Validator.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "68f534344744fa0a0c87ff4dc1687b5b4db71fa3"
+      }
+    }
+  ],
+  "version" : 3
+}

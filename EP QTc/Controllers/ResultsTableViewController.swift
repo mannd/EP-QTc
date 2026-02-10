@@ -41,6 +41,8 @@ final class ResultsTableViewController: UITableViewController {
         self.tableView.isEditing = false
         editButton.isEnabled = (preferences.sortOrder == .custom)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
 
         self.title = formulaType.name + " (\(qtMeasurement.units.string))"
                
@@ -177,10 +179,6 @@ final class ResultsTableViewController: UITableViewController {
         return formulas.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
-    }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
         // Must set calculator and preferences before qtMeasurement.

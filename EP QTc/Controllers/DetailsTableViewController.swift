@@ -25,6 +25,8 @@ final class DetailsTableViewController: UITableViewController {
         
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
+        tableView.estimatedSectionHeaderHeight = 28
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         
         if let qtMeasurement = qtMeasurement, let calculator = calculator, let formulaType = formulaType {
             detailsViewModel = DetailsViewModel(qtMeasurement: qtMeasurement, calculator: calculator, formulaType: formulaType, results: results)

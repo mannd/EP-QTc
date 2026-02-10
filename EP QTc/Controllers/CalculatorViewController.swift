@@ -179,7 +179,33 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
             intervalRateChanged(self)
         }
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+//        // There appears to be a bug in iOS 26 where label on selected segmental control is not drawn initially.
+//        // Workaround for iOS 26: force segmented control to redraw selected label
+//        if #available(iOS 26.0, *) {
+//            if sexSegmentedControl.selectedSegmentIndex != UISegmentedControl.noSegment {
+//                let index = sexSegmentedControl.selectedSegmentIndex
+//                sexSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
+//                sexSegmentedControl.selectedSegmentIndex = index
+//            }
+//
+//            if unitsSegmentedControl.selectedSegmentIndex != UISegmentedControl.noSegment {
+//                let index = unitsSegmentedControl.selectedSegmentIndex
+//                unitsSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
+//                unitsSegmentedControl.selectedSegmentIndex = index
+//            }
+//            if intervalRateSegmentedControl.selectedSegmentIndex != UISegmentedControl.noSegment {
+//                let index = intervalRateSegmentedControl.selectedSegmentIndex
+//                intervalRateSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
+//                intervalRateSegmentedControl.selectedSegmentIndex = index
+//            }
+//        }
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerNotifications()
