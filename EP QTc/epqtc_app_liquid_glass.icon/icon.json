@@ -6,19 +6,9 @@
     {
       "layers" : [
         {
-          "blend-mode" : "normal",
-          "fill" : "automatic",
           "glass" : true,
-          "hidden" : false,
-          "image-name" : "appstore.png",
-          "name" : "appstore",
-          "position" : {
-            "scale" : 1,
-            "translation-in-points" : [
-              0,
-              0
-            ]
-          }
+          "image-name" : "qtc.png",
+          "name" : "qtc"
         }
       ],
       "shadow" : {

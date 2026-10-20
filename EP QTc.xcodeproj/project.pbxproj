@@ -32,7 +32,7 @@
 		8E50622A206B099600BF9C3E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E506229206B099600BF9C3E /* StatsTableViewController.swift */; };
 		8E50622C206B0A2800BF9C3E /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622B206B0A2800BF9C3E /* StatsModel.swift */; };
 		8E50622E206B123C00BF9C3E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50622D206B123C00BF9C3E /* StatsViewModel.swift */; };
-		8E581BA12F3BB20400F27495 /* epqtc_app_liquid_glass.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8E581BA02F3BB20400F27495 /* epqtc_app_liquid_glass.icon */; };
+		8E581BA32F3BBAAF00F27495 /* epqtc_app_liquid_glass.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8E581BA22F3BBAAF00F27495 /* epqtc_app_liquid_glass.icon */; };
 		8E5B0E412097FF4700F7AA9C /* LimitsReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */; };
 		8E5BA617206B1E6500B35B12 /* SimpleStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */; };
 		8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E55A01FD30B66004B1B2F /* AppDelegate.swift */; };
@@ -99,7 +99,7 @@
 		8E506229206B099600BF9C3E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8E50622B206B0A2800BF9C3E /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		8E50622D206B123C00BF9C3E /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
-		8E581BA02F3BB20400F27495 /* epqtc_app_liquid_glass.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = epqtc_app_liquid_glass.icon; sourceTree = "<group>"; };
+		8E581BA22F3BBAAF00F27495 /* epqtc_app_liquid_glass.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = epqtc_app_liquid_glass.icon; sourceTree = "<group>"; };
 		8E5B0E402097FF4700F7AA9C /* LimitsReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitsReferenceCell.swift; sourceTree = "<group>"; };
 		8E5BA616206B1E6500B35B12 /* SimpleStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStatsCell.swift; sourceTree = "<group>"; };
 		8E6E559D1FD30B66004B1B2F /* EP QTc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EP QTc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +281,7 @@
 		8E6E559F1FD30B66004B1B2F /* EP QTc */ = {
 			isa = PBXGroup;
 			children = (
+				8E581BA22F3BBAAF00F27495 /* epqtc_app_liquid_glass.icon */,
 				8E4DE7EB25606D8400643FC0 /* Extensions */,
 				8E0A142923E2203800BEFC4C /* EP QTc.entitlements */,
 				8EB7E1E920BE3FBB00031FF4 /* docs */,
@@ -293,7 +294,6 @@
 				8E30F0121FDDC0820072E5A8 /* Views */,
 				8E6E55A71FD30B66004B1B2F /* Assets.xcassets */,
 				8E6E55AC1FD30B66004B1B2F /* Info.plist */,
-				8E581BA02F3BB20400F27495 /* epqtc_app_liquid_glass.icon */,
 			);
 			path = "EP QTc";
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E6E55AB1FD30B66004B1B2F /* LaunchScreen.storyboard in Resources */,
-				8E581BA12F3BB20400F27495 /* epqtc_app_liquid_glass.icon in Resources */,
+				8E581BA32F3BBAAF00F27495 /* epqtc_app_liquid_glass.icon in Resources */,
 				8EB7E1EA20BE3FBB00031FF4 /* docs in Resources */,
 				8E6E55A81FD30B66004B1B2F /* Assets.xcassets in Resources */,
 				8E6E55A61FD30B66004B1B2F /* Main.storyboard in Resources */,
@@ -645,7 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = epqtc_app_liquid_glass;
 				CODE_SIGN_ENTITLEMENTS = "EP QTc/EP QTc.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEFINES_MODULE = NO;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				ENABLE_APP_SANDBOX = YES;
@@ -653,7 +653,7 @@
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = YES;
 				INFOPLIST_FILE = "EP QTc/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,7 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = epqtc_app_liquid_glass;
 				CODE_SIGN_ENTITLEMENTS = "EP QTc/EP QTc.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEFINES_MODULE = NO;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				ENABLE_APP_SANDBOX = YES;
@@ -681,7 +681,7 @@
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = YES;
 				INFOPLIST_FILE = "EP QTc/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
