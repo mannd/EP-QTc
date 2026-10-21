@@ -61,6 +61,7 @@
 		8ED6619E209CD5AE000513B1 /* Severity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6619D209CD5AE000513B1 /* Severity.swift */; };
 		8EDB08432059EAC7008123D9 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB08422059EAC7008123D9 /* ResultCell.swift */; };
 		8EE53A3C20BB124E00F7D1FF /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE53A3B20BB124E00F7D1FF /* HelpViewController.swift */; };
+		8EE5BF7B30884DB50001B896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5BF7A30884DB50001B896 /* SceneDelegate.swift */; };
 		8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */; };
 		8EEC282E2051D0750060A5AD /* SingleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */; };
 		8EEC28302051D09D0060A5AD /* TwoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */; };
@@ -134,6 +135,7 @@
 		8EDB08422059EAC7008123D9 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		8EE0B47D266EF378006DEC27 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		8EE53A3B20BB124E00F7D1FF /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		8EE5BF7A30884DB50001B896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8EE870DA2018F19D00833493 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		8EEC282D2051D0750060A5AD /* SingleLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLabelCell.swift; sourceTree = "<group>"; };
 		8EEC282F2051D09D0060A5AD /* TwoLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelCell.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				8E30F0121FDDC0820072E5A8 /* Views */,
 				8E6E55A71FD30B66004B1B2F /* Assets.xcassets */,
 				8E6E55AC1FD30B66004B1B2F /* Info.plist */,
+				8EE5BF7A30884DB50001B896 /* SceneDelegate.swift */,
 			);
 			path = "EP QTc";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				8EA5108D20509EB600D77A77 /* FormulaNameCell.swift in Sources */,
 				8E47B1D020878F0D0042C5F9 /* PreferencesTableViewController.swift in Sources */,
 				8E6E55A11FD30B66004B1B2F /* AppDelegate.swift in Sources */,
+				8EE5BF7B30884DB50001B896 /* SceneDelegate.swift in Sources */,
 				8E30F0141FDDC1830072E5A8 /* CalculatorTextField.swift in Sources */,
 				8E47B1DB209571840042C5F9 /* ResultsModel.swift in Sources */,
 				8EE870DB2018F19D00833493 /* DetailsTableViewController.swift in Sources */,
