@@ -163,9 +163,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         
         // About info button - don't show on mac
         if systemType() == .iOS {
-            let aboutButton = UIButton(type: .infoLight)
-            aboutButton.addTarget(self, action: #selector(showAbout), for: UIControl.Event.touchUpInside)
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+            let newButton = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self,  action: #selector(showAbout))
+            self.navigationItem.rightBarButtonItem = newButton
         }
 
         // set up default units/intervalRate preferences when app starts
@@ -240,17 +239,10 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         // Hide these buttons with mac (they are in the menu instead).
         if systemType() == .iOS {
             toolbarItems?.append(spacer)
-            toolbarItems?.append(UIBarButtonItem(title: "Prefs", style: .plain, target: self, action: #selector(showPreferences(_:))))
+            toolbarItems?.append(UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(showPreferences(_:))))
             toolbarItems?.append(spacer)
-            toolbarItems?.append(UIBarButtonItem(title: "Help", style: .plain, target: self, action: #selector(showHelp(_:))))
+            toolbarItems?.append(UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .plain, target: self, action: #selector(showHelp(_:))))
         }
-
-
-
-//        toolbarItems?.append(UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(ResultsTableViewController.resetEdit)))
-//        toolbarItems?.append(spacer)
-//        toolbarItems?.append(UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ResultsTableViewController.cancelEdit)))
-
     }
     
     @objc

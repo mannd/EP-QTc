@@ -24,7 +24,7 @@ class QTpRRViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
         self.title = "QTp vs Heart Rate"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveToCameraRoll))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(saveToCameraRoll))
        
         viewModel = QTpRRViewModel(chartView: chartView, qtMeasurement: qtMeasurement)
         viewModel?.drawGraph()

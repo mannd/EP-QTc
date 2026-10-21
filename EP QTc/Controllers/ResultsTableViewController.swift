@@ -40,7 +40,7 @@ final class ResultsTableViewController: UITableViewController {
         self.navigationController?.toolbar.isTranslucent = true
         self.tableView.isEditing = false
         editButton.isEnabled = (preferences.sortOrder == .custom)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "document.on.document"), style: .plain, target: self, action: #selector(copyToClipboard))
         tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
 

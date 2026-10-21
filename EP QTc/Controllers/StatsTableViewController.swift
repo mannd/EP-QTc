@@ -21,7 +21,7 @@ final class StatsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyToClipboard))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "document.on.document"), style: .plain, target: self, action: #selector(copyToClipboard))
         tableView.estimatedSectionHeaderHeight = 28
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         

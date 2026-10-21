@@ -27,7 +27,7 @@ final class GraphViewController: UIViewController {
         }
         let preferences = Preferences.retrieve()
         self.title = String(format: "%@ Graph", formulaType.name)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveToCameraRoll))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(saveToCameraRoll))
         viewModel = GraphViewModel(barChartView: barChartView, qtMeasurement: qtMeasurement, results: results, formulas: formulas, formulaType: formulaType, preferences: preferences)
         viewModel?.drawGraph()
     }
